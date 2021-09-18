@@ -1,0 +1,72 @@
+body {
+  @apply bg-bg01 text-white;
+}
+
+button,
+button:hover,
+button:active,
+button:focus {
+  @apply outline-none;
+}
+
+/* scale about brands */
+.scale-img-child img {
+  transform: scale(1.35);
+}
+
+@screen md {
+  .scale-img-child img {
+    transform: scale(1);
+  }
+}
+
+/* triangle bullet image */
+.triangle-bullet li {
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: left 0 bottom 5px;
+  padding-left: 22px;
+}
+
+/* text gradient */
+.text-gradient-01 {
+  background: linear-gradient(to bottom, #fff, rgba(104, 124, 208, 0.39));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-02 {
+  background: linear-gradient(180deg, #8683c2 0%, #c2bfd5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-03 {
+  background: linear-gradient(180deg, #8683c2 0%, #c2bfd5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* image */
+.image-wrapper img,
+.image-wrapper .image-placeholder {
+  transition: var(--transition) ease;
+  transition-property: filter, opacity, transform;
+  will-change: filter, transform;
+}
+
+.image-wrapper img {
+  opacity: 0;
+  filter: blur(var(--blur));
+  transform: scale(var(--scale));
+}
+
+.image-wrapper.is-image-loaded img {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.image-wrapper.is-image-loaded .image-placeholder {
+  opacity: 0;
+}

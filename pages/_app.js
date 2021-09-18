@@ -1,7 +1,11 @@
-import '../styles/globals.css'
+import 'windi.css';
+import 'styles/global.css';
+import { AnimatePresence } from 'framer-motion';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }) => (
+  <AnimatePresence exitBeforeEnter onExitComplete={() => console.log(1231)}>
+    <Component {...pageProps} />
+  </AnimatePresence>
+);
 
-export default MyApp
+export default App;

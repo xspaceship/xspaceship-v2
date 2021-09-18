@@ -1,20 +1,37 @@
 {
-  "name": "vte",
+  "name": "forte",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev -p 3456",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pretty": "prettier --write '**/*.{js,css,md,jsx,html}'",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{js,css,md,jsx,html}": "prettier --write"
   },
   "dependencies": {
+    "framer-motion": "^4.1.17",
     "next": "11.1.2",
+    "preact": "^10.5.14",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
+    "husky": "^7.0.0",
+    "image-size": "^1.0.0",
+    "lqip-modern-loader": "^0.1.2",
+    "prettier": "^2.4.0",
+    "pretty-quick": "^3.1.1",
+    "windicss-webpack-plugin": "^1.4.7"
   }
 }

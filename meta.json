@@ -1,0 +1,327 @@
+{
+  "name": "Forte Creatives",
+  "shortName": "Forte",
+  "email": "hello@fortecreatives.com",
+  "default_image_color": "#f549b9",
+  "default_image_blur": "20px",
+  "default_image_scale": 1.1,
+  "default_image_transition": "1s",
+  "nav": [
+    {
+      "name": "Work",
+      "path": "/"
+    },
+    {
+      "name": "Services",
+      "path": "/services"
+    },
+    {
+      "name": "About",
+      "path": "/about"
+    },
+    {
+      "name": "Blog",
+      "path": "/blog"
+    }
+  ],
+  "home": {
+    "title": "Forte Creatives",
+    "headline": "Global Branding & Digital Products",
+    "works": [
+      {
+        "id": "rapid-ascent",
+        "name": "RapidAscent",
+        "type": ["Technology", "Education"],
+        "image": {
+          "name": "/images/home/01.png",
+          "w": 1180,
+          "h": 650
+        }
+      },
+      {
+        "id": "uber",
+        "name": "Uber",
+        "type": ["Technology", "Saas"],
+        "image": {
+          "name": "/images/home/02.png",
+          "w": 580,
+          "h": 650,
+          "span": 6
+        }
+      },
+      {
+        "id": "laha",
+        "name": "Laha",
+        "type": ["Beauty"],
+        "image": {
+          "name": "/images/home/03.png",
+          "w": 580,
+          "h": 650,
+          "span": 6
+        }
+      },
+      {
+        "id": "whippy",
+        "name": "Whippy",
+        "type": ["Beauty"],
+        "image": {
+          "name": "/images/home/04.png",
+          "w": 1180,
+          "h": 650
+        }
+      },
+      {
+        "id": "roomi",
+        "name": "Roomi",
+        "type": ["Real Estate", "Technology"],
+        "image": {
+          "name": "/images/home/05.png",
+          "w": 1180,
+          "h": 650
+        }
+      },
+      {
+        "id": "app",
+        "name": "App",
+        "type": ["Technology"],
+        "image": {
+          "name": "/images/home/06.png",
+          "w": 1180,
+          "h": 650
+        }
+      }
+    ]
+  },
+  "about": {
+    "title": "About",
+    "headline": "We are a group of <span class='text-gradient-03'>art directors, product designers, & technologists</span>.",
+    "why": {
+      "headline": "The gap we are filling.",
+      "text": "Most agencies can only do one thing well — branding or digital strategy. That results in a big dilemma: hiring both, or only one.",
+      "subtext": "That means you are choosing between an expensive & fragmented process, or a sacrifice in quality. Both options are not great.",
+      "image": {
+        "name": "/images/about/01.png",
+        "w": 680,
+        "h": 440
+      }
+    },
+    "what": {
+      "headline": "FORTE",
+      "text": "We are a team of veterans from the world of Ogilvy & Mather, Collins, Facebook, & Uber to deliver the most unifying, thoughtful and comprehensive creative services.",
+      "image": {
+        "name": "/images/about/02.png",
+        "w": 1440,
+        "h": 764
+      }
+    },
+    "brand": {
+      "headline": "Trusted by",
+      "image": [
+        {
+          "name": "/images/about/03.png",
+          "w": 100,
+          "h": 34.72
+        },
+        {
+          "name": "/images/about/04.png",
+          "w": 175.65,
+          "h": 20
+        },
+        {
+          "name": "/images/about/05.png",
+          "w": 118,
+          "h": 40
+        },
+        {
+          "name": "/images/about/06.png",
+          "w": 153.66,
+          "h": 32.87
+        }
+      ]
+    }
+  },
+  "services": {
+    "title": "Services",
+    "headline": "We fuse <span class='text-gradient-02'>creativity, craft, & technology</span> into  <span class='text-gradient-02'>experiences</span> that improve people’s lives.",
+    "product": {
+      "headline": "Digital Design & Strategy",
+      "list": ["Mobile applications", "Web applications", "Digital campaigns"],
+      "image": [
+        {
+          "name": "/images/services/01.png",
+          "w": 1021,
+          "h": 303,
+          "span": 7
+        },
+        {
+          "name": "/images/services/02.png",
+          "w": 280,
+          "h": 306,
+          "span": 3
+        },
+        {
+          "name": "/images/services/03.png",
+          "w": 380,
+          "h": 306,
+          "span": 4
+        },
+        {
+          "name": "/images/services/04.png",
+          "w": 1021,
+          "h": 273,
+          "span": 7
+        }
+      ],
+      "imageM": [
+        {
+          "name": "/images/services/13.png",
+          "w": 335,
+          "h": 195.58,
+          "span": 7
+        },
+        {
+          "name": "/images/services/02.png",
+          "w": 280,
+          "h": 306,
+          "span": 3
+        },
+        {
+          "name": "/images/services/14.png",
+          "w": 187.21,
+          "h": 150.75,
+          "span": 4
+        },
+        {
+          "name": "/images/services/15.png",
+          "w": 335,
+          "h": 195.58,
+          "span": 7
+        }
+      ]
+    },
+    "branding": {
+      "headline": "Branding",
+      "list": ["Logo", "Typography", "Illustrations", "Photography"],
+      "image": [
+        {
+          "name": "/images/services/05.png",
+          "w": 1021,
+          "h": 256,
+          "span": 7
+        },
+        {
+          "name": "/images/services/06.png",
+          "w": 380,
+          "h": 397,
+          "span": 4
+        },
+        {
+          "name": "/images/services/07.png",
+          "w": 280,
+          "h": 397,
+          "span": 3
+        },
+        {
+          "name": "/images/services/08.png",
+          "w": 1021,
+          "h": 185,
+          "span": 7
+        }
+      ],
+      "imageM": [
+        {
+          "name": "/images/services/16.png",
+          "w": 335,
+          "h": 195.58,
+          "span": 7
+        },
+        {
+          "name": "/images/services/06.png",
+          "w": 380,
+          "h": 397,
+          "span": 4
+        },
+        {
+          "name": "/images/services/07.png",
+          "w": 280,
+          "h": 397,
+          "span": 3
+        },
+        {
+          "name": "/images/services/17.png",
+          "w": 335,
+          "h": 195.58,
+          "span": 7
+        }
+      ]
+    },
+    "development": {
+      "headline": "Development",
+      "list": [
+        "Mobile apps (iOS & Android)",
+        "Web applications",
+        "Web campaigns and marketing sites"
+      ],
+      "image": [
+        {
+          "name": "/images/services/09.png",
+          "w": 1021,
+          "h": 303,
+          "span": 7
+        },
+        {
+          "name": "/images/services/10.png",
+          "w": 280,
+          "h": 306,
+          "span": 3
+        },
+        {
+          "name": "/images/services/11.png",
+          "w": 380,
+          "h": 306,
+          "span": 4
+        },
+        {
+          "name": "/images/services/12.png",
+          "w": 1021,
+          "h": 273,
+          "span": 7
+        }
+      ],
+      "imageM": [
+        {
+          "name": "/images/services/18.png",
+          "w": 335,
+          "h": 195.58,
+          "span": 7
+        },
+        {
+          "name": "/images/services/10.png",
+          "w": 137.94,
+          "h": 150.75,
+          "span": 3
+        },
+        {
+          "name": "/images/services/19.png",
+          "w": 187.21,
+          "h": 150.75,
+          "span": 4
+        },
+        {
+          "name": "/images/services/20.png",
+          "w": 335,
+          "h": 195.58,
+          "span": 7
+        }
+      ]
+    },
+    "quote01": {
+      "text": "“You've got to start with the customer experience and work backwards to the technology. You can't start with the technology and try to figure out where can I sell it.”",
+      "author": "Steve Jobs"
+    },
+    "quote02": {
+      "text": "“There are three responses to a piece of design — yes, no, and WOW! Wow is the one to aim for.”",
+      "author": "Milton Glaser"
+    }
+  }
+}
