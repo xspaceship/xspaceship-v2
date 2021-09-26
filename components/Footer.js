@@ -9,7 +9,7 @@ const Footer = () => (
     font="jetbrain"
     grid="lg:~ lg:cols-12 lg:gap-5">
     <div grid="lg:col-span-10 lg:col-start-2">
-      <h3 display="lg:hidden" m="y-10" className="text-3xl uppercase">
+      <h3 display="lg:hidden" m="y-10" className="text-3xl">
         {meta.shortName}
       </h3>
       <a

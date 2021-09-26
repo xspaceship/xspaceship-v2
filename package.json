@@ -14,6 +14,7 @@
     "**/*.{js,css,md,jsx,html}": "prettier --write"
   },
   "dependencies": {
+    "body-scroll-lock": "^4.0.0-beta.0",
     "framer-motion": "^4.1.17",
     "next": "11.1.2",
     "preact": "^10.5.14",

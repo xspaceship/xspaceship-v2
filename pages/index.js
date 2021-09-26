@@ -30,7 +30,7 @@ const Index = ({ types, works, title, headline }) => {
         flex="~ wrap"
         grid="gap-3"
         font="worksans medium"
-        className="text-xl leading-6">
+        className="md:text-xl leading-6">
         {types.map((type, index) => (
           <div
             p="x-4 y-2"
