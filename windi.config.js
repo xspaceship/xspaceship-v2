@@ -29,6 +29,7 @@ export default defineConfig({
 				bg06: '#1A1A1A',
 				bg07: '#141414',
 				bg08: '#1F2030',
+				bg09: '#282828',
 			},
 			fontSize: {
 				fs01: '2.5rem',
@@ -49,6 +50,7 @@ export default defineConfig({
 				tc02: '#8D8D8D',
 				tc03: '#F4D9B9',
 				tc04: '#F4F4F4',
+				tc05: '#9D9D9D',
 			},
 			padding: {
 				7.5: '1.875rem',

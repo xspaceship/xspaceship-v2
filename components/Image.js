@@ -6,11 +6,12 @@ import meta from 'meta.json';
 const Image = forwardRef((props, ref) => {
 	const [isLoaded, setIsLoaded] = useState(false);
 
-	const { width = 900, height = 600, color = meta.default_image_color } = props;
+	const { color = meta.default_image_color } = props;
 
 	return (
 		<div
 			pos="relative"
+			display="block"
 			overflow="hidden"
 			className={`image-wrapper ${isLoaded ? 'is-image-loaded' : ''}`}
 		>
@@ -25,10 +26,7 @@ const Image = forwardRef((props, ref) => {
 			<NextImage
 				ref={ref}
 				{...props}
-				layout="responsive"
 				quality="100"
-				width={width}
-				height={height}
 				onLoadingComplete={() => setIsLoaded(true)}
 			/>
 		</div>

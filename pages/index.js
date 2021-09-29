@@ -55,8 +55,26 @@ const Index = ({ types, works, title, headline }) => {
 						const { name: src, span = 12, w, h } = image;
 						return (
 							<Link href={`/work/${id}`} key={id}>
-								<a className={`col-span-${span}`}>
+								<a className={`col-span-${span} relative parent`}>
 									<Image src={src} alt={name} width={w} height={h} />
+									<div
+										className="child"
+										w="full"
+										h="full"
+										pos="absolute top-0 left-0"
+										bg="bg09"
+										p="10"
+										font="worksans"
+									>
+										<h3 className="text-white text-3xl">{name}</h3>
+										<p className="text-tc05 text-3xl" m="b-5" w="2/4">
+											An immersive online academy that enables you to launch a
+											career in cyber security.
+										</p>
+										<p font="jetbrain" className="text-tc05">
+											Branding, web design & development | 2021
+										</p>
+									</div>
 								</a>
 							</Link>
 						);
