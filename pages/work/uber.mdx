@@ -1,19 +1,25 @@
 import Layout from 'components/Layout';
 import Image from 'components/Image';
+import { getAllImage } from 'utils/image';
 
 export const meta = {
-	slug: 'app',
-	name: 'App',
-	category: ['Technology'],
+	slug: 'uber',
+	name: 'Uber',
+	category: ['Technology', 'Saas'],
 	description:
 		'An immersive online academy that enables you to launch a career in cyber security.',
 	sub: 'Branding, web design & development',
 	year: 2021,
-	preview: '06',
-	link: false,
-	width: 'full',
-	order: 6,
+	preview: '02',
+	link: true,
+	width: 'half',
+	order: 2,
 };
+
+export async function getStaticProps() {
+	const images = await getAllImage('uber');
+	return { props: { images } };
+}
 
 export default ({ children }) => (
 	<Layout title={meta.name} container="2xl:~" m="2xl:x-auto" p="lg:x-32.5">
@@ -21,6 +27,6 @@ export default ({ children }) => (
 	</Layout>
 );
 
-<!-- Your content goes below -->
+This is Uber page
 
-This is App page
+<Image {...props.images['01']} />

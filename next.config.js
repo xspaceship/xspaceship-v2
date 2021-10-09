@@ -2,10 +2,11 @@ const withPlugins = require('next-compose-plugins');
 const mdx = require('@next/mdx')({
 	extension: /\.mdx?$/,
 });
+const { withPlaiceholder: plaiceholder } = require('@plaiceholder/next');
 
 const WindiCSS = require('windicss-webpack-plugin').default;
 
-module.exports = withPlugins([mdx], {
+module.exports = withPlugins([mdx, plaiceholder], {
 	reactStrictMode: true,
 	pageExtensions: ['js', 'jsx', 'mdx'],
 

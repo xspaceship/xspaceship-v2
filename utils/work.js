@@ -4,5 +4,5 @@ const importAll = r => {
 };
 
 export const allWorks = importAll(
-	require.context('pages/new-work', false, /\.mdx$/),
+	require.context('pages/work', false, /\.mdx$/),
 );

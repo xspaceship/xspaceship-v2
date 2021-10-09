@@ -7,16 +7,16 @@
 		"build": "next build && next export",
 		"start": "next start",
 		"lint": "next lint",
-		"pretty": "prettier --write '**/*.{js,css,md,jsx,html}'",
+		"pretty": "prettier --write '**/*.{js,css,mdx,jsx,html}'",
 		"prepare": "husky install"
 	},
 	"lint-staged": {
-		"**/*.{js,css,md,jsx,html}": "prettier --write"
+		"**/*.{js,css,mdx,jsx,html}": "prettier --write"
 	},
 	"dependencies": {
-		"@mdx-js/loader": "^1.6.22",
+		"@mdx-js/loader": "^2.0.0-next.9",
 		"@next/mdx": "^11.1.2",
-		"add": "^2.0.6",
+		"@plaiceholder/next": "^2.1.0",
 		"body-scroll-lock": "^4.0.0-beta.0",
 		"framer-motion": "^4.1.17",
 		"imagemin-mozjpeg": "^9.0.0",
@@ -25,10 +25,11 @@
 		"next": "11.1.2",
 		"next-compose-plugins": "^2.2.1",
 		"next-optimized-images": "^2.6.2",
+		"plaiceholder": "^2.0.1",
 		"preact": "^10.5.14",
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
-		"yarn": "^1.22.15"
+		"sharp": "^0.29.1"
 	},
 	"devDependencies": {
 		"eslint": "7.32.0",

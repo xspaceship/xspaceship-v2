@@ -1,23 +1,7 @@
 import Layout from 'components/Layout';
 import Image from 'components/Image';
 import meta from 'meta.json';
-
-// images
-import IMG01 from 'public/images/about/01.png';
-import IMG02 from 'public/images/about/02.png';
-import IMG03 from 'public/images/about/03.png';
-import IMG04 from 'public/images/about/04.png';
-import IMG05 from 'public/images/about/05.png';
-import IMG06 from 'public/images/about/06.png';
-
-const images = {
-	'01': IMG01,
-	'02': IMG02,
-	'03': IMG03,
-	'04': IMG04,
-	'05': IMG05,
-	'06': IMG06,
-};
+import { getAllImage } from 'utils/image';
 
 const About = ({ title, headline, why, what, brand }) => (
 	<Layout title={title} container="2xl:~" m="2xl:x-auto">
@@ -61,13 +45,13 @@ const About = ({ title, headline, why, what, brand }) => (
 				<p text="md:lg">{why.subtext}</p>
 			</div>
 			<div grid="col-span-7 col-start-6" order="1">
-				<Image src={images[why.image]} alt="" />
+				<Image {...why.image} alt="" />
 			</div>
 		</div>
 
 		{/* Section: What */}
 		<div pos="relative">
-			<Image src={images[what.image]} alt="" />
+			<Image {...what.image} alt="" />
 			<div pos="lg:absolute lg:bottom-24" grid="lg:~ lg:cols-12 lg:gap-5">
 				<div
 					className="text-tc03 text-center text-2xl"
@@ -107,7 +91,7 @@ const About = ({ title, headline, why, what, brand }) => (
 						m="x-auto"
 						key={index}
 					>
-						<Image src={images[i]} alt="" />
+						<Image {...i} alt="" />
 					</div>
 				))}
 			</div>
@@ -118,5 +102,12 @@ const About = ({ title, headline, why, what, brand }) => (
 export default About;
 
 export async function getStaticProps() {
-	return { props: { ...meta.about } };
+	const images = await getAllImage('about');
+	const about = { ...meta.about };
+
+	about.why.image = images[about.why.image];
+	about.what.image = images[about.what.image];
+	about.brand.image = about.brand.image.map(img => images[img]);
+
+	return { props: { ...about } };
 }

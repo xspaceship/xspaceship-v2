@@ -6,7 +6,9 @@ import meta from 'meta.json';
 const Image = forwardRef((props, ref) => {
 	const [isLoaded, setIsLoaded] = useState(false);
 
-	const { color = meta.default_image_color } = props;
+	const style = props.css
+		? { ...props.css, filter: 'blur(60px)' }
+		: { backgroundColor: meta.default_image_color };
 
 	return (
 		<div
@@ -19,7 +21,7 @@ const Image = forwardRef((props, ref) => {
 				pos="inset-0 absolute"
 				w="full"
 				h="full"
-				style={{ backgroundColor: color }}
+				style={{ ...style }}
 				aria-hidden="true"
 				className="image-placeholder"
 			/>

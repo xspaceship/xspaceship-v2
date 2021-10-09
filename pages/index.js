@@ -4,23 +4,7 @@ import Layout from 'components/Layout';
 import Image from 'components/Image';
 import meta from 'meta.json';
 import { allWorks } from 'utils/work';
-
-// images
-import IMG01 from 'public/images/home/01.png';
-import IMG02 from 'public/images/home/02.png';
-import IMG03 from 'public/images/home/03.png';
-import IMG04 from 'public/images/home/04.png';
-import IMG05 from 'public/images/home/05.png';
-import IMG06 from 'public/images/home/06.png';
-
-const images = {
-	'01': IMG01,
-	'02': IMG02,
-	'03': IMG03,
-	'04': IMG04,
-	'05': IMG05,
-	'06': IMG06,
-};
+import { getAllImage } from 'utils/image';
 
 const Index = ({ types, works, title, headline }) => {
 	const [activeType, setActiveType] = useState('All');
@@ -82,13 +66,13 @@ const Index = ({ types, works, title, headline }) => {
 					}) => {
 						if (activeType === 'All' || isIncludeActiveType(category)) {
 							return (
-								<Link href={link ? `/new-work/${slug}` : ''} key={slug}>
+								<Link href={link ? `/work/${slug}` : ''} key={slug}>
 									<a
 										className={`${
 											width === 'full' ? 'col-span-12' : 'col-span-6'
 										} relative parent`}
 									>
-										<Image src={images[preview]} alt={name} />
+										<Image {...preview} alt={name} />
 										<div
 											className="child"
 											w="full"
@@ -127,8 +111,15 @@ export async function getStaticProps() {
 	const worksByOrder = allWorks.sort(
 		(first, second) => first.order - second.order,
 	);
+
 	const allTypes = worksByOrder.reduce((acc, i) => [...acc, ...i.category], []);
 	const types = ['All', ...new Set(allTypes)];
 
-	return { props: { types, works: worksByOrder, title, headline } };
+	const images = await getAllImage('home');
+	const worksWithImage = worksByOrder.map(work => ({
+		...work,
+		preview: images[work.preview],
+	}));
+
+	return { props: { types, works: worksWithImage, title, headline } };
 }
