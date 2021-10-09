@@ -1,7 +1,14 @@
+const withPlugins = require('next-compose-plugins');
+const mdx = require('@next/mdx')({
+	extension: /\.mdx?$/,
+});
+
 const WindiCSS = require('windicss-webpack-plugin').default;
 
-module.exports = {
+module.exports = withPlugins([mdx], {
 	reactStrictMode: true,
+	pageExtensions: ['js', 'jsx', 'mdx'],
+
 	webpack(config, { isServer }) {
 		// Replace React with Preact only in client
 		if (!isServer) {
@@ -17,4 +24,4 @@ module.exports = {
 
 		return config;
 	},
-};
+});

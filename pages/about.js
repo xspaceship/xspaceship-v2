@@ -2,6 +2,23 @@ import Layout from 'components/Layout';
 import Image from 'components/Image';
 import meta from 'meta.json';
 
+// images
+import IMG01 from 'public/images/about/01.png';
+import IMG02 from 'public/images/about/02.png';
+import IMG03 from 'public/images/about/03.png';
+import IMG04 from 'public/images/about/04.png';
+import IMG05 from 'public/images/about/05.png';
+import IMG06 from 'public/images/about/06.png';
+
+const images = {
+	'01': IMG01,
+	'02': IMG02,
+	'03': IMG03,
+	'04': IMG04,
+	'05': IMG05,
+	'06': IMG06,
+};
+
 const About = ({ title, headline, why, what, brand }) => (
 	<Layout title={title} container="2xl:~" m="2xl:x-auto">
 		{/* Headline */}
@@ -44,23 +61,13 @@ const About = ({ title, headline, why, what, brand }) => (
 				<p text="md:lg">{why.subtext}</p>
 			</div>
 			<div grid="col-span-7 col-start-6" order="1">
-				<Image
-					src={why.image.name}
-					alt=""
-					width={why.image.w}
-					height={why.image.h}
-				/>
+				<Image src={images[why.image]} alt="" />
 			</div>
 		</div>
 
 		{/* Section: What */}
 		<div pos="relative">
-			<Image
-				src={what.image.name}
-				alt=""
-				width={what.image.w}
-				height={what.image.h}
-			/>
+			<Image src={images[what.image]} alt="" />
 			<div pos="lg:absolute lg:bottom-24" grid="lg:~ lg:cols-12 lg:gap-5">
 				<div
 					className="text-tc03 text-center text-2xl"
@@ -92,7 +99,7 @@ const About = ({ title, headline, why, what, brand }) => (
 				{brand.headline}
 			</h3>
 			<div grid="md:~ md:cols-12 md:gap-5">
-				{brand.image.map(({ name }, index) => (
+				{brand.image.map((i, index) => (
 					<div
 						grid="md:col-span-3"
 						w="48 md:full"
@@ -100,7 +107,7 @@ const About = ({ title, headline, why, what, brand }) => (
 						m="x-auto"
 						key={index}
 					>
-						<Image src={name} alt="" layout="fill" />
+						<Image src={images[i]} alt="" />
 					</div>
 				))}
 			</div>

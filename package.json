@@ -14,12 +14,21 @@
 		"**/*.{js,css,md,jsx,html}": "prettier --write"
 	},
 	"dependencies": {
+		"@mdx-js/loader": "^1.6.22",
+		"@next/mdx": "^11.1.2",
+		"add": "^2.0.6",
 		"body-scroll-lock": "^4.0.0-beta.0",
 		"framer-motion": "^4.1.17",
+		"imagemin-mozjpeg": "^9.0.0",
+		"imagemin-optipng": "^8.0.0",
+		"lqip-loader": "^2.2.1",
 		"next": "11.1.2",
+		"next-compose-plugins": "^2.2.1",
+		"next-optimized-images": "^2.6.2",
 		"preact": "^10.5.14",
 		"react": "17.0.2",
-		"react-dom": "17.0.2"
+		"react-dom": "17.0.2",
+		"yarn": "^1.22.15"
 	},
 	"devDependencies": {
 		"eslint": "7.32.0",

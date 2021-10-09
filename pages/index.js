@@ -3,6 +3,24 @@ import Link from 'components/Link';
 import Layout from 'components/Layout';
 import Image from 'components/Image';
 import meta from 'meta.json';
+import { allWorks } from 'utils/work';
+
+// images
+import IMG01 from 'public/images/home/01.png';
+import IMG02 from 'public/images/home/02.png';
+import IMG03 from 'public/images/home/03.png';
+import IMG04 from 'public/images/home/04.png';
+import IMG05 from 'public/images/home/05.png';
+import IMG06 from 'public/images/home/06.png';
+
+const images = {
+	'01': IMG01,
+	'02': IMG02,
+	'03': IMG03,
+	'04': IMG04,
+	'05': IMG05,
+	'06': IMG06,
+};
 
 const Index = ({ types, works, title, headline }) => {
 	const [activeType, setActiveType] = useState('All');
@@ -50,37 +68,52 @@ const Index = ({ types, works, title, headline }) => {
 
 			{/* Works */}
 			<div grid="~ gap-5 cols-12">
-				{works.map(({ name, type, image, id }) => {
-					if (activeType === 'All' || isIncludeActiveType(type)) {
-						const { name: src, span = 12, w, h } = image;
-						return (
-							<Link href={`/work/${id}`} key={id}>
-								<a className={`col-span-${span} relative parent`}>
-									<Image src={src} alt={name} width={w} height={h} />
-									<div
-										className="child"
-										w="full"
-										h="full"
-										pos="absolute top-0 left-0"
-										bg="bg09"
-										p="10"
-										font="worksans"
+				{works.map(
+					({
+						slug,
+						name,
+						description,
+						sub,
+						year,
+						preview,
+						link,
+						width,
+						category,
+					}) => {
+						if (activeType === 'All' || isIncludeActiveType(category)) {
+							return (
+								<Link href={link ? `/new-work/${slug}` : ''} key={slug}>
+									<a
+										className={`${
+											width === 'full' ? 'col-span-12' : 'col-span-6'
+										} relative parent`}
 									>
-										<h3 className="text-white text-3xl">{name}</h3>
-										<p className="text-tc05 text-3xl" m="b-5" w="2/4">
-											An immersive online academy that enables you to launch a
-											career in cyber security.
-										</p>
-										<p font="jetbrain" className="text-tc05">
-											Branding, web design & development | 2021
-										</p>
-									</div>
-								</a>
-							</Link>
-						);
-					}
-					return null;
-				})}
+										<Image src={images[preview]} alt={name} />
+										<div
+											className="child"
+											w="full"
+											h="full"
+											pos="absolute top-0 left-0"
+											bg="bg09"
+											p="10"
+											font="worksans"
+										>
+											<h3 className="text-white text-3xl">{name}</h3>
+											<p className="text-tc05 text-3xl" m="b-5" w="2/4">
+												{description}
+											</p>
+											<p font="jetbrain" className="text-tc05">
+												{sub} | {year}
+											</p>
+										</div>
+									</a>
+								</Link>
+							);
+						}
+
+						return null;
+					},
+				)}
 			</div>
 		</Layout>
 	);
@@ -89,10 +122,13 @@ const Index = ({ types, works, title, headline }) => {
 export default Index;
 
 export async function getStaticProps() {
-	const { works, title, headline } = meta.home;
+	const { title, headline } = meta.home;
 
-	const allTypes = works.reduce((acc, i) => [...acc, ...i.type], []);
+	const worksByOrder = allWorks.sort(
+		(first, second) => first.order - second.order,
+	);
+	const allTypes = worksByOrder.reduce((acc, i) => [...acc, ...i.category], []);
 	const types = ['All', ...new Set(allTypes)];
 
-	return { props: { types, works, title, headline } };
+	return { props: { types, works: worksByOrder, title, headline } };
 }

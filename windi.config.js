@@ -76,6 +76,7 @@ export default defineConfig({
 				bc01: '#2D2D2D',
 				bc02: '#4F4F4F',
 				bc03: 'rgba(255, 255, 255, 0.2)',
+				bc04: 'rgba(255, 255, 255, 0.1)',
 			},
 		},
 	},
