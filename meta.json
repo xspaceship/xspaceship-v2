@@ -2,7 +2,7 @@
 	"name": "Hypereason",
 	"shortName": "Hypereason",
 	"email": "hello@hypereason.com",
-	"default_image_color": "#f549b9",
+	"default_image_color": "#444",
 	"default_image_blur": "20px",
 	"default_image_scale": 1.1,
 	"default_image_transition": "1s",

@@ -100,7 +100,7 @@ const About = ({
 				bg="bg06"
 			>
 				<div
-					font="medium"
+					font="medium worksans"
 					grid="lg:col-span-8 lg:col-start-3"
 					className="text-center text-tc03 text-2xl"
 				>
@@ -178,7 +178,7 @@ const About = ({
 				bg="bg06"
 			>
 				<div
-					font="medium"
+					font="medium worksans"
 					grid="lg:col-span-8 lg:col-start-3"
 					className="text-center text-tc03 text-2xl"
 				>

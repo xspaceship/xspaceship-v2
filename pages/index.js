@@ -72,7 +72,7 @@ const Index = ({ types, works, title, headline }) => {
 											width === 'full' ? 'col-span-12' : 'col-span-6'
 										} relative parent`}
 									>
-										<Image {...preview} alt={name} />
+										<Image {...preview} alt={name} className="rounded" />
 										<div
 											className="child"
 											w="full"
@@ -83,7 +83,7 @@ const Index = ({ types, works, title, headline }) => {
 											font="worksans"
 										>
 											<h3 className="text-white text-3xl">{name}</h3>
-											<p className="text-tc05 text-3xl" m="b-5" w="2/4">
+											<p className="text-tc05 text-3xl" m="b-5" w="lg:2/4">
 												{description}
 											</p>
 											<p font="jetbrain" className="text-tc05">

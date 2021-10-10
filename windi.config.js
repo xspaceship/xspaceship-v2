@@ -13,6 +13,7 @@ export default defineConfig({
 				/col-span-(1[0-2]|[0-9])/,
 				/text-gradient-(1[0-2]|[0-9])/,
 				'col-span-6',
+				'col-span-12',
 			],
 			keyframes: false,
 		},
@@ -30,6 +31,7 @@ export default defineConfig({
 				bg07: '#141414',
 				bg08: '#1F2030',
 				bg09: '#282828',
+				bg10: 'rgba(0, 0, 0, 0.4)',
 			},
 			fontSize: {
 				fs01: '2.5rem',
@@ -51,6 +53,7 @@ export default defineConfig({
 				tc03: '#F4D9B9',
 				tc04: '#F4F4F4',
 				tc05: '#9D9D9D',
+				tc06: '#A5A6F6',
 			},
 			padding: {
 				7.5: '1.875rem',
@@ -71,6 +74,7 @@ export default defineConfig({
 			},
 			width: {
 				12.5: '3.125rem',
+				104: '26rem',
 			},
 			borderColor: {
 				bc01: '#2D2D2D',
