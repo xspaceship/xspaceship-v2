@@ -1,0 +1,23 @@
+import Layout from 'components/Layout';
+import Image from 'components/Image';
+
+export const meta = {
+	slug: 'fuze',
+	name: 'Fuze',
+	category: ['Technology'],
+	description: 'Unified Communication as a Service.',
+	sub: 'Mobile design',
+	year: 2019,
+	preview: '06',
+	link: false,
+	width: 'full',
+	order: 6,
+};
+
+export default ({ children }) => (
+	<Layout title={meta.name} container="2xl:~" m="2xl:x-auto">
+		{children}
+	</Layout>
+);
+
+This is an App page

@@ -1,5 +1,7 @@
 import Layout from 'components/Layout';
 import Image from 'components/Image';
+import FullWidth from 'components/md/FullWidth';
+import { getAllImage } from 'utils/image';
 
 export const meta = {
 	slug: 'rapid-ascent',
@@ -15,10 +17,17 @@ export const meta = {
 	order: 1,
 };
 
+export async function getStaticProps() {
+	const images = await getAllImage('rapid-ascent');
+	return { props: { images } };
+}
+
 export default ({ children }) => (
-	<Layout title={meta.name} container="2xl:~" m="2xl:x-auto" p="lg:x-32.5">
+	<Layout title={meta.name} container="2xl:~" m="2xl:x-auto">
 		{children}
 	</Layout>
 );
 
-This is RapidAscent page
+<FullWidth>
+	<Image {...props.images['01']} />
+</FullWidth>

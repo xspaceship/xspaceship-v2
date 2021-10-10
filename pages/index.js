@@ -75,6 +75,7 @@ const Index = ({ types, works, title, headline }) => {
 										<Image {...preview} alt={name} className="rounded" />
 										<div
 											className="child"
+											display="hidden lg:block"
 											w="full"
 											h="full"
 											pos="absolute top-0 left-0"

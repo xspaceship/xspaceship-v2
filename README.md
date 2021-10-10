@@ -20,7 +20,7 @@ Your built site is now in `public` folder.
 2. Create a new `mdx` page inside `pages/work`.
 3. In the `mdx` page you have just created. Add some essential code.
 
-- import all necessary libs and components
+- import all necessary libs and components. import `layout` components from `components/md` if you need
 
 ```
 import Layout from 'components/Layout';

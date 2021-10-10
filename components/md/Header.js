@@ -1,10 +1,12 @@
 const Header = ({ children }) => (
-	<>
-		<hr className="mx-5 border-t border-bc04 mt-15 mb-5 lg:mb-10 lg:mx-0" />
-		<h2 className="mb-10 font-montserrat text-2xl px-5 lg:px-0 lg:text-4xl lg:mb-15">
-			{children}
-		</h2>
-	</>
+	<h2
+		className="text-2xl lg:text-3xl md-header"
+		font="questrial children:questrial"
+		m="x-5 b-5 lg:x-10"
+		p="lg:x-22.5 lg:y-10"
+	>
+		{children}
+	</h2>
 );
 
 export default Header;

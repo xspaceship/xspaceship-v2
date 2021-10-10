@@ -1,5 +1,8 @@
 import Layout from 'components/Layout';
 import Image from 'components/Image';
+import FullWidth from 'components/md/FullWidth';
+import TwoColumns from 'components/md/TwoColumns';
+import { getAllImage } from 'utils/image';
 
 export const meta = {
 	slug: 'whippy',
@@ -15,10 +18,35 @@ export const meta = {
 	order: 5,
 };
 
+export async function getStaticProps() {
+	const images = await getAllImage('whippy');
+	return { props: { images } };
+}
+
 export default ({ children }) => (
-	<Layout title={meta.name} container="2xl:~" m="2xl:x-auto" p="lg:x-32.5">
+	<Layout title={meta.name} container="2xl:~" m="2xl:x-auto">
 		{children}
 	</Layout>
 );
 
-This is Whippy page
+<FullWidth space="y-5">
+	<Image {...props.images['01']} />
+	<TwoColumns>
+		<Image {...props.images['02']} />
+		<Image {...props.images['03']} />
+	</TwoColumns>
+	<Image {...props.images['04']} />
+	<TwoColumns>
+		<Image {...props.images['05']} />
+		<Image {...props.images['06']} />
+	</TwoColumns>
+	<Image {...props.images['07']} />
+	<TwoColumns>
+		<Image {...props.images['08']} />
+		<Image {...props.images['09']} />
+	</TwoColumns>
+	<Image {...props.images['10']} />
+	<Image {...props.images['11']} />
+	<Image {...props.images['12']} />
+	<Image {...props.images['13']} />
+</FullWidth>

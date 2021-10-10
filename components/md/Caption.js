@@ -1,10 +1,10 @@
-const Paragraph = ({ children }) => (
-	<section
-		key={4}
-		p="x-5 y-5 lg:x-10 lg:y-10"
+const Caption = ({ children }) => (
+	<div
+		className="md-caption"
+		key={1}
 		grid="~ cols-12 gap-5"
 		m="b-5"
-		className="md-paragraph"
+		p="x-5 lg:x-10"
 	>
 		<div grid="col-span-12 md:col-span-8 md:col-start-3">
 			<p
@@ -15,7 +15,7 @@ const Paragraph = ({ children }) => (
 				{children}
 			</p>
 		</div>
-	</section>
+	</div>
 );
 
-export default Paragraph;
+export default Caption;

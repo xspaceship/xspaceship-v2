@@ -1,5 +1,12 @@
 import Layout from 'components/Layout';
 import Image from 'components/Image';
+import FullWidth from 'components/md/FullWidth';
+import Title from 'components/md/Title';
+import Paragraph from 'components/md/Paragraph';
+import Header from 'components/md/Header';
+import TwoColumns from 'components/md/TwoColumns';
+import RegularWidth from 'components/md/RegularWidth';
+import Caption from 'components/md/Caption';
 import { getAllImage } from 'utils/image';
 
 export const meta = {
@@ -22,11 +29,114 @@ export async function getStaticProps() {
 }
 
 export default ({ children }) => (
-	<Layout title={meta.name} container="2xl:~" m="2xl:x-auto" p="lg:x-32.5">
+	<Layout title={meta.name} container="2xl:~" m="2xl:x-auto">
 		{children}
 	</Layout>
 );
 
-This is Uber page
+<Title text="An alert framework for global live ops." sub="UberEats 2020" />
 
-<Image {...props.images['01']} />
+<FullWidth>
+	<Image {...props.images['01']} />
+</FullWidth>
+
+<Paragraph>
+	Terra is UberEats’ marketplace real-time monitoring tool used by global Live
+	Ops to manage our global marketplace dynamics. When there is an imbalance in
+	supply and demand (a sudden spike in demand, for example), ops teams can pull
+	various levers that help balance the marketplace in real-time.
+</Paragraph>
+
+<Header>1 — The new feature</Header>
+
+<RegularWidth>
+	<Image {...props.images['02']} />
+</RegularWidth>
+
+<Paragraph>
+	We designed and developed a new activity and alert framework within Terra that
+	gave UberEats Live Ops team timely alerts and full context of global
+	marketplace dynamics. This new feature led to:
+</Paragraph>
+
+<Header>2 — The challenge</Header>
+
+<RegularWidth>
+	<Image {...props.images['03']} />
+</RegularWidth>
+
+<RegularWidth>123</RegularWidth>
+
+<RegularWidth>
+	<Image {...props.images['04']} />
+</RegularWidth>
+
+<Header>3 — User research</Header>
+
+<RegularWidth>Custom</RegularWidth>
+
+<RegularWidth>
+	<Image {...props.images['05']} />
+</RegularWidth>
+
+<Header>4 — Setting goals</Header>
+
+<RegularWidth>
+	<Image {...props.images['06']} />
+</RegularWidth>
+
+<RegularWidth>
+	<Image {...props.images['07']} />
+</RegularWidth>
+
+<div>Custom</div>
+
+<Header>5 — The solutions</Header>
+
+<RegularWidth>
+	<Image {...props.images['08']} />
+</RegularWidth>
+
+<Caption>
+	We streamlined the workflow by removing the dependency on Klaxon. This helped
+	conslidate the number of steps because agents have full context of marketplace
+	dynamics within Terra. Team communication is streamlined since agents have
+	visibility over who works on which tasks.
+</Caption>
+
+<RegularWidth>
+	<Image {...props.images['09']} />
+</RegularWidth>
+
+<Caption>
+	Agents can filter alerts by locations, down to the country and region level.
+</Caption>
+
+<RegularWidth>
+	<Image {...props.images['10']} />
+</RegularWidth>
+
+<Caption>
+	Tapping on each row reveals full context of marketplace dynamics at that time.
+	A graph helps ops understand how and why the alert was fired.
+</Caption>
+
+<RegularWidth>
+	<Image {...props.images['11']} />
+</RegularWidth>
+
+<Caption>
+	On Activity tab, Ops managers can monitor team performance at any time.
+	There’s no need to run hours long query anymore. Terra highlights actions that
+	go against AI’s recommendations to make it easier for managers to inspect
+	special cases.
+</Caption>
+
+<RegularWidth>
+	<Image {...props.images['12']} />
+</RegularWidth>
+
+<Caption>
+	We added alerts to the historical chart to help ops managers understand the
+	relationship between alerts and market conditions.
+</Caption>

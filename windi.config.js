@@ -2,7 +2,7 @@ import { defineConfig } from 'windicss/helpers';
 
 export default defineConfig({
 	extract: {
-		include: ['**/*.{jsx,css,js}'],
+		include: ['**/*.{jsx,css,js,mdx}'],
 		exclude: ['node_modules', '.git', '.next', 'out'],
 	},
 	attributify: true,

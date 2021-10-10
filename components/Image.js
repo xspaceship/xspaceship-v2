@@ -27,8 +27,9 @@ const Image = forwardRef((props, ref) => {
 			/>
 			<NextImage
 				ref={ref}
-				{...props}
+				alt=""
 				quality="100"
+				{...props}
 				onLoadingComplete={() => setIsLoaded(true)}
 			/>
 		</div>
