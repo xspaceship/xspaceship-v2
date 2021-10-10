@@ -268,7 +268,5 @@ export async function getStaticProps() {
 	transformImage(services.branding);
 	transformImage(services.development);
 
-	console.log(services.product.image);
-
 	return { props: { ...services } };
 }
