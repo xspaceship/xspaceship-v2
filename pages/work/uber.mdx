@@ -59,13 +59,81 @@ export default ({ children }) => (
 	marketplace dynamics. This new feature led to:
 </Paragraph>
 
+<RegularWidth>
+	<div className="flex justify-center px-5 lg:py-10 lg:flex-row lg:px-0">
+		<div className="lg:flex lg:gap-5">
+			<div className="flex items-start mb-6 lg:mb-0">
+				<Image
+					{...props.images['arrow_up']}
+					className="mr-5 w-10 lg:mr-6 lg:w-16"
+				/>
+				<ul>
+					<li className="font-medium font-ubermove text-4xl lg:text-6xl">
+						25%
+					</li>
+					<li className="opacity-50 lg:text-xl">Agents productivity</li>
+				</ul>
+			</div>
+			<div className="flex items-start">
+				<Image
+					{...props.images['arrow_down']}
+					className="mr-5 w-10 lg:mr-6 lg:w-16"
+				/>
+				<ul>
+					<li className="font-medium font-ubermove text-4xl lg:text-6xl">
+						15m
+					</li>
+					<li className="opacity-50 lg:text-xl">Alerts resolvement time</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</RegularWidth>
+
 <Header>2 — The challenge</Header>
 
 <RegularWidth>
 	<Image {...props.images['03']} />
 </RegularWidth>
 
-<RegularWidth>123</RegularWidth>
+<RegularWidth>
+	<div className="font-worksans flex flex-col gap-5 py-10 px-5 lg:gap-10 lg:mb-5 lg:py-20 lg:grid lg:grid-cols-12 lg:px-0">
+		<div className="lg:text-xl lg:font-medium lg:col-start-2 lg:col-span-4">
+			<p>
+				There was not a centralized place to view actions taken to manage the
+				marketplace.
+			</p>
+			<p>
+				Ops needed multiple tools to understand what was happening in the
+				marketplace:
+			</p>
+		</div>
+		<div className="lg:col-start-7 lg:col-span-5 lg:text-xl">
+			<div className="bg-white bg-opacity-10 p-5 rounded-xl mb-5">
+				<h3 className="font-bold">Gchat bot</h3>
+				<p className="font-medium">
+					Ops built a bot that share real-time alerts in Gchat. However, this
+					chat does not give agents full context of the marketplace dynamics.
+				</p>
+			</div>
+			<div className="bg-white bg-opacity-10 p-5 rounded-xl mb-5">
+				<h3 className="font-bold">Klaxon web app</h3>
+				<p className="font-medium">
+					Independent app that stores global marketplace real-time alerts, which
+					does not provide any context about marketplace health.
+				</p>
+			</div>
+			<div className="bg-white bg-opacity-10 p-5 rounded-xl">
+				<h3 className="font-bold">Ops activity query</h3>
+				<p className="font-medium">
+					Terra logs all actions taken and state of the market at the time.
+					However, this is only available in a database that must be queried
+					externally and on an ad hoc basis.
+				</p>
+			</div>
+		</div>
+	</div>
+</RegularWidth>
 
 <RegularWidth>
 	<Image {...props.images['04']} />
@@ -73,7 +141,103 @@ export default ({ children }) => (
 
 <Header>3 — User research</Header>
 
-<RegularWidth>Custom</RegularWidth>
+<RegularWidth>
+	<div className="font-worksans px-5 mb-10 lg:mb-20 lg:px-0 lg:grid lg:grid-cols-12 lg:gap-5">
+		<div className="border-opacity-20 border border-light-gray rounded-lg p-5 lg:p-10 lg:col-span-10 lg:col-start-2">
+			<div className="pb-10 flex border-b border-s-light-gray flex-col lg:flex-row">
+				<Image
+					{...props.images['A01']}
+					className="mr-10 rounded-full w-32 h-32 mb-4 lg:mb-0"
+				/>
+				<div className="lg:ml-10">
+					<h3 className="font-bold mb-4 text-2xl">Sam - Ops Manager</h3>
+					<p className="font-medium lg:w-7/12">
+						Ensure consistent supply and demand across Eats marketplace through
+						continuous analytical assessment and intervention. Manage a team of
+						COEs.
+					</p>
+				</div>
+			</div>
+			<div className="flex pt-10 flex-col lg:flex-row">
+				<div className="lg:w-6/12 lg:pr-4">
+					<h4 className="font-bold leading-5 mb-4">Tasks & Responsibilities</h4>
+					<ul className="text-sm">
+						<li className="mb-2">
+							• Use Terra once a week for reviewing and reportingpurposes.
+						</li>
+						<li className="mb-2">
+							• Help COE agents when serious issues arise, or when COE agents
+							request to review their work
+						</li>
+						<li>• Run queries once a week to review COE performance</li>
+					</ul>
+				</div>
+				<div className="lg:w-6/12 lg:pl-4">
+					<h4 className="font-bold leading-5 mb-4">Core needs</h4>
+					<ul className="text-sm">
+						<li className="mb-2">
+							• Comprehensive picture of Marketplace health and COEs’ actions.
+							Data is real-time so historical metrics are crucial in his
+							evaluation of team performance.
+						</li>
+						<li>
+							• Deeply care about COE agents responsiveness to alerts and the
+							results of their actions
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div className="font-worksans px-5 mb-10 lg:mb-20 lg:px-0 lg:grid lg:grid-cols-12 lg:gap-5">
+		<div className="border-opacity-20 border border-light-gray rounded-lg p-5 lg:p-10 lg:col-span-10 lg:col-start-2">
+			<div className="pb-10 flex border-b border-s-light-gray flex-col lg:flex-row">
+				<Image
+					{...props.images['A02']}
+					className="mr-10 rounded-full w-32 h-32 mb-4 lg:mb-0"
+				/>
+				<div className="lg:ml-10">
+					<h3 className="font-bold mb-4 text-2xl">
+						Peter - Center of Excellence agent
+					</h3>
+					<p className="font-medium lg:w-7/12">
+						Monitor the Marketplace in real-time and resolve when problems
+						arise. If the problem is serious, escalate to Ops managers.
+					</p>
+				</div>
+			</div>
+			<div className="flex pt-10 flex-col lg:flex-row">
+				<div className="lg:w-6/12 lg:pr-4">
+					<h4 className="font-bold leading-5 mb-4">Tasks & Responsibilities</h4>
+					<ul className="text-sm">
+						<li className="mb-2">
+							• Use Terra daily for marketplace monitoring
+						</li>
+						<li className="mb-2">
+							• Depending on level of autonomy, fix problems when they arise
+						</li>
+						<li>• For serious issues, escalate to Ops Managers</li>
+					</ul>
+				</div>
+				<div className="lg:w-6/12 lg:pl-4">
+					<h4 className="font-bold leading-5 mb-4">Core needs</h4>
+					<ul className="text-sm">
+						<li className="mb-2">• Monitor the latest alerts in real-time</li>
+						<li className="mb-2">
+							• Avoid duplicated efforts by having insights into his team’s work
+							progress
+						</li>
+						<li>
+							• The ability to communicate to his team when special
+							circumstances happen that they decided to do something out of the
+							norm
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</RegularWidth>
 
 <RegularWidth>
 	<Image {...props.images['05']} />
@@ -89,7 +253,48 @@ export default ({ children }) => (
 	<Image {...props.images['07']} />
 </RegularWidth>
 
-<div>Custom</div>
+<RegularWidth>
+	<div className="flex justify-center font-ubermove px-5 pt-10 lg:pt-20 lg:px-0">
+		<div>
+			<div className="flex mb-5 items-center">
+				<Image
+					{...props.images['arrow_up']}
+					className="mr-5 w-5 lg:mr-10 lg:w-10"
+				/>
+				<h3 className="font-bold text-lg lg:text-3xl lg:text-4xl">
+					User adoption: 7-day active users
+				</h3>
+			</div>
+			<div className="flex mb-5 items-center">
+				<Image
+					{...props.images['arrow_down']}
+					className="mr-5 w-5 lg:mr-10 lg:w-10"
+				/>
+				<h3 className="font-bold text-lg lg:text-3xl lg:text-4xl">
+					Time to alerts resolvement
+				</h3>
+			</div>
+			<div className="flex mb-5 items-center">
+				<Image
+					{...props.images['arrow_up']}
+					className="mr-5 w-5 lg:mr-10 lg:w-10"
+				/>
+				<h3 className="font-bold text-lg lg:text-3xl lg:text-4xl">
+					# of markets per agent
+				</h3>
+			</div>
+			<div className="flex items-center">
+				<Image
+					{...props.images['arrow_up']}
+					className="mr-5 w-5 lg:mr-10 lg:w-10"
+				/>
+				<h3 className="font-bold text-lg lg:text-3xl lg:text-4xl">
+					# of markets per agent
+				</h3>
+			</div>
+		</div>
+	</div>
+</RegularWidth>
 
 <Header>5 — The solutions</Header>
 
