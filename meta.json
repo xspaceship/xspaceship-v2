@@ -1,7 +1,7 @@
 {
-	"name": "Hypereason",
-	"shortName": "Hypereason",
-	"email": "hello@hypereason.com",
+	"name": "xspaceship",
+	"shortName": "xspaceship",
+	"email": "hello@xspaceship.com",
 	"default_image_color": "#444",
 	"default_image_blur": "20px",
 	"default_image_scale": 1.1,
@@ -21,7 +21,7 @@
 		}
 	],
 	"home": {
-		"title": "Hypereason",
+		"title": "xspaceship",
 		"headline": "Global Branding & Digital Products"
 	},
 	"about": {
