@@ -1,6 +1,11 @@
 import Layout from 'components/Layout';
 import Image from 'components/Image';
 import FullWidth from 'components/md/FullWidth';
+import Title from 'components/md/Title';
+import Paragraph from 'components/md/Paragraph';
+import Header from 'components/md/Header';
+import TwoColumns from 'components/md/TwoColumns';
+import RegularWidth from 'components/md/RegularWidth';
 import { getAllImage } from 'utils/image';
 
 export const meta = {
@@ -31,3 +36,56 @@ export default ({ children }) => (
 <FullWidth>
 	<Image {...props.images['01']} />
 </FullWidth>
+
+<Paragraph>
+	<div>
+		Roomi is the largest social network for roommates. It’s a dynamic
+		marketplace where people can get verified, matched based on compatibility,
+		search for their ideal rooms, and post their rooms for rent.
+	</div>
+	<div>
+		We partnered with the Roomi team to revamp the mobile applications on iOS
+		and Android, with a common goal to streamline user experience and maximize
+		values to users.
+	</div>
+</Paragraph>
+
+<Header>1 — The program</Header>
+
+<RegularWidth>
+	<Image {...props.images['02']} />
+</RegularWidth>
+
+<RegularWidth>
+	<Image {...props.images['03']} />
+</RegularWidth>
+
+<RegularWidth>
+	<Image {...props.images['04']} />
+</RegularWidth>
+
+<Header>2 — Application flow</Header>
+
+<RegularWidth>
+	<Image {...props.images['apply_01']} />
+</RegularWidth>
+
+<RegularWidth>
+	<Image {...props.images['apply_02']} />
+</RegularWidth>
+
+<RegularWidth>
+	<Image {...props.images['apply_03']} />
+</RegularWidth>
+
+<RegularWidth>
+	<Image {...props.images['apply_04']} />
+</RegularWidth>
+
+<RegularWidth>
+	<Image {...props.images['apply_05']} />
+</RegularWidth>
+
+<RegularWidth>
+	<Image {...props.images['apply_06']} />
+</RegularWidth>
