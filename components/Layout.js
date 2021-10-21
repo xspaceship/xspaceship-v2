@@ -12,15 +12,17 @@ const Layout = props => {
 				{title && <title>{title}</title>}
 				{desc && <meta name="description" content={desc} />}
 			</Head>
-			<Header />
-			<motion.main
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				exit={{ opacity: 0 }}
-				transition={{ type: 'easeInOut', duration: 0.5 }}
-			>
-				<div {...rest}>{children}</div>
-			</motion.main>
+			<div display="2xl:flex" container="2xl:~" m="2xl:x-auto">
+				<Header />
+				<motion.main
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					transition={{ type: 'easeInOut', duration: 0.5 }}
+				>
+					<div {...rest}>{children}</div>
+				</motion.main>
+			</div>
 			<Footer />
 		</>
 	);

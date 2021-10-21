@@ -20,6 +20,10 @@ export default defineConfig({
 	},
 	darkMode: false,
 	theme: {
+		screens: {
+			lg: '1280px',
+			'2xl': '1600px',
+		},
 		extend: {
 			backgroundColor: {
 				bg01: '#040404',
@@ -28,7 +32,7 @@ export default defineConfig({
 				bg04: '#302B29',
 				bg05: '#24301F',
 				bg06: '#1A1A1A',
-				bg07: '#141414',
+				bg07: '#020202',
 				bg08: '#1F2030',
 				bg09: '#282828',
 				bg10: 'rgba(0, 0, 0, 0.4)',

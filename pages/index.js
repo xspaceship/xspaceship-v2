@@ -15,7 +15,7 @@ const Index = ({ types, works, title, headline }) => {
 	);
 
 	return (
-		<Layout title={title} container="2xl:~" m="2xl:x-auto" p="x-5 lg:x-32.5">
+		<Layout title={title} p="x-5 lg:x-32.5 2xl:x-0">
 			{/* Headline */}
 			<div m="y-7.5 md:y-10 lg:y-20" grid="~ gap-5 cols-12">
 				<h3
@@ -76,9 +76,10 @@ const Index = ({ types, works, title, headline }) => {
 										<div
 											className="child"
 											display="hidden lg:block"
+											border="rounded-lg"
+											pos="absolute top-0 left-0"
 											w="full"
 											h="full"
-											pos="absolute top-0 left-0"
 											bg="bg09"
 											p="10"
 											font="worksans"

@@ -14,7 +14,11 @@ const About = ({
 	quote02,
 }) => {
 	const getRoundClass = useCallback(index => {
-		const m = ['rounded-bl rounded-br', 'rounded', 'rounded-tl rounded-tf'];
+		const m = [
+			'rounded-bl-lg rounded-br-lg',
+			'rounded-lg',
+			'rounded-tl-lg rounded-tf-lg',
+		];
 		return m[index] || '';
 	}, []);
 
@@ -40,6 +44,7 @@ const About = ({
 				m="lg:x-10"
 				p="5 lg:x-22.5 lg:y-0"
 				bg="bg03"
+				border="lg:rounded-t-lg"
 				grid="lg:~ lg:cols-12 lg:gap-5"
 			>
 				<div
@@ -80,14 +85,19 @@ const About = ({
 				>
 					{product.image.map(({ name, span }, index) => (
 						<div key={index} className={`col-span-${span}`}>
-							<Image {...name} alt="" className={getRoundClass(index)} />
+							<Image
+								{...name}
+								noRound
+								alt=""
+								className={getRoundClass(index)}
+							/>
 						</div>
 					))}
 				</div>
 				<div display="lg:hidden" grid="~ col-span-7 cols-7 gap-2 lg:gap-5">
 					{product.imageM.map(({ name, span }, index) => (
 						<div key={index} className={`col-span-${span}`}>
-							<Image {...name} alt="" className="rounded" />
+							<Image {...name} noRound alt="" className="rounded" />
 						</div>
 					))}
 				</div>
@@ -122,7 +132,12 @@ const About = ({
 				>
 					{branding.image.map(({ name, span }, index) => (
 						<div key={index} className={`col-span-${span}`}>
-							<Image {...name} alt="" className={getRoundClass(index)} />
+							<Image
+								{...name}
+								noRound
+								alt=""
+								className={getRoundClass(index)}
+							/>
 						</div>
 					))}
 				</div>
@@ -133,7 +148,7 @@ const About = ({
 				>
 					{branding.imageM.map(({ name, span }, index) => (
 						<div key={index} className={`col-span-${span}`}>
-							<Image {...name} alt="" className="rounded" />
+							<Image {...name} noRound alt="" className="rounded" />
 						</div>
 					))}
 				</div>
@@ -191,6 +206,7 @@ const About = ({
 				m="lg:x-10"
 				p="5 lg:x-22.5 lg:y-0"
 				bg="bg05"
+				border="rounded-b-lg"
 				grid="lg:~ lg:cols-12 lg:gap-5"
 			>
 				<div
@@ -231,14 +247,19 @@ const About = ({
 				>
 					{development.image.map(({ name, span }, index) => (
 						<div key={index} className={`col-span-${span}`}>
-							<Image {...name} alt="" className={getRoundClass(index)} />
+							<Image
+								{...name}
+								noRound
+								alt=""
+								className={getRoundClass(index)}
+							/>
 						</div>
 					))}
 				</div>
 				<div display="lg:hidden" grid="~ col-span-7 cols-7 gap-2 lg:gap-5">
 					{development.imageM.map(({ name, span }, index) => (
 						<div key={index} className={`col-span-${span}`}>
-							<Image {...name} alt="" className="rounded" />
+							<Image {...name} noRound alt="" className="rounded" />
 						</div>
 					))}
 				</div>

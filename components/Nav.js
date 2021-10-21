@@ -60,7 +60,7 @@ const Nav = () => {
 
 	useEffect(() => {
 		window.onscroll = () => {
-			if (!navRef.current) return;
+			if (!navRef.current || window.innerWidth >= 1600) return;
 			if (window.pageYOffset > 100) {
 				buttonRef.current.classList.remove('lg:hidden');
 			} else {
@@ -82,12 +82,13 @@ const Nav = () => {
 				className="lg:hidden"
 				display="flex"
 				border="~ rounded-full white"
-				pos="fixed top-5 right-5 2xl:top-6"
+				pos="fixed top-5 right-5 lg:right-10 lg:top-8"
 				w="12.5"
 				h="12.5"
 				justify="center"
 				align="items-center"
 				z="20"
+				bg="black"
 				onClick={toggleVisibleNav}
 			>
 				<Image
@@ -112,7 +113,7 @@ const Nav = () => {
 				justify="end"
 				onClick={toggleVisibleNav}
 			>
-				<div ref={navMainRef} bg="bg07" w="lg:104" p="5 lg:y-8 x-10">
+				<div ref={navMainRef} bg="bg07" w="full lg:104" p="5 lg:y-8 lg:x-10">
 					<div
 						h="12.5 lg:14"
 						flex="~"

@@ -6,8 +6,12 @@ import meta from 'meta.json';
 const Image = forwardRef((props, ref) => {
 	const [isLoaded, setIsLoaded] = useState(false);
 
-	const style = props.css
-		? { ...props.css, filter: 'blur(60px)' }
+	const { css, noRound } = props;
+
+	const round = noRound ? '' : 'rounded-lg';
+
+	const style = css
+		? { ...css, filter: 'blur(60px)' }
 		: { backgroundColor: meta.default_image_color };
 
 	return (
@@ -15,12 +19,14 @@ const Image = forwardRef((props, ref) => {
 			pos="relative"
 			display="block"
 			overflow="hidden"
+			border={round}
 			className={`image-wrapper ${isLoaded ? 'is-image-loaded' : ''}`}
 		>
 			<div
 				pos="inset-0 absolute"
 				w="full"
 				h="full"
+				border={round}
 				style={{ ...style }}
 				aria-hidden="true"
 				className="image-placeholder"
@@ -30,6 +36,7 @@ const Image = forwardRef((props, ref) => {
 				alt=""
 				quality="100"
 				{...props}
+				border={round}
 				onLoadingComplete={() => setIsLoaded(true)}
 			/>
 		</div>

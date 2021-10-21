@@ -50,14 +50,14 @@ const About = ({ title, headline, why, what, brand }) => (
 		</div>
 
 		{/* Section: What */}
-		<div pos="relative">
+		<div pos="relative" m="lg:x-10">
 			<Image {...what.image} alt="" />
 			<div pos="lg:absolute lg:bottom-24" grid="lg:~ lg:cols-12 lg:gap-5">
 				<div
 					className="text-tc03 text-center text-2xl"
 					p="x-5 y-10 lg:x-10"
 					font="worksans"
-					border="b bc02 lg:white lg:~ lg:rounded-lg"
+					border="b bc02 lg:transparent lg:~ lg:rounded-lg"
 					bg="lg:black"
 					grid="lg:col-span-8 lg:col-start-3"
 				>
