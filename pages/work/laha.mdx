@@ -1,5 +1,12 @@
 import Layout from 'components/Layout';
 import Image from 'components/Image';
+import FullWidth from 'components/md/FullWidth';
+import Title from 'components/md/Title';
+import Paragraph from 'components/md/Paragraph';
+import Header from 'components/md/Header';
+import TwoColumns from 'components/md/TwoColumns';
+import RegularWidth from 'components/md/RegularWidth';
+import { getAllImage } from 'utils/image';
 
 export const meta = {
 	slug: 'laha',
@@ -9,15 +16,32 @@ export const meta = {
 	sub: 'Branding',
 	year: 2020,
 	preview: '03',
-	link: false,
+	link: true,
 	width: 'half',
 	order: 3,
 };
 
+export async function getStaticProps(context) {
+	const images = await getAllImage('laha');
+	return { props: { images } };
+}
+
 export default ({ children }) => (
-	<Layout title={meta.name} container="2xl:~" m="2xl:x-auto" p="lg:x-32.5">
+	<Layout title={meta.name} container="2xl:~" m="2xl:x-auto">
 		{children}
 	</Layout>
 );
 
-This is Laha page
+<Header>2 — Website</Header>
+
+<RegularWidth>
+	<Image {...props.images['web_01']} />
+</RegularWidth>
+
+<RegularWidth>
+	<Image {...props.images['web_02']} />
+</RegularWidth>
+
+<RegularWidth>
+	<Image {...props.images['web_03']} />
+</RegularWidth>
