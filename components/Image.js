@@ -6,13 +6,23 @@ import meta from 'meta.json';
 const Image = forwardRef((props, ref) => {
 	const [isLoaded, setIsLoaded] = useState(false);
 
-	const { css, noRound } = props;
+	const { css, noRound = null, gradientFrom = null, gradientTo = null } = props;
 
 	const round = noRound ? '' : 'rounded-lg';
 
-	const style = css
-		? { ...css, filter: 'blur(60px)' }
-		: { backgroundColor: meta.default_image_color };
+	let style = '';
+
+	console.log(111, gradientFrom, gradientTo);
+
+	if (gradientFrom && gradientTo) {
+		style = {
+			background: `linear-gradient(135deg, ${gradientFrom} 0%, ${gradientTo} 100%)`,
+		};
+	} else {
+		style = css
+			? { ...css, filter: 'blur(60px)' }
+			: { backgroundColor: meta.default_image_color };
+	}
 
 	return (
 		<div
@@ -44,3 +54,7 @@ const Image = forwardRef((props, ref) => {
 });
 
 export default Image;
+
+Image.defaultProps = {
+	noRound: false,
+};

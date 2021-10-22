@@ -4,12 +4,7 @@ import meta from 'meta.json';
 
 const Header = () => {
 	return (
-		<header
-			p="5 lg:t-6 lg:x-32.5 lg:b-5 2xl:t-8 2xl:x-0"
-			w="2xl:72"
-			min-w="2xl:72"
-			grid="2xl:gap-10"
-		>
+		<header p="5 lg:t-6 lg:x-32.5 lg:b-5 2xl:x-8 2xl:y-0">
 			<div
 				h="12.5 lg:14"
 				flex="~ 2xl:col"
@@ -17,7 +12,7 @@ const Header = () => {
 				align="items-center 2xl:items-start 2xl:self-start"
 				font="jetbrain"
 				space="2xl:y-5"
-				pos="2xl:sticky 2xl:top-5"
+				pos="2xl:sticky 2xl:top-8"
 			>
 				<Link href="/">
 					<a className="text-fs02 lg:text-fs01">{meta.shortName}</a>

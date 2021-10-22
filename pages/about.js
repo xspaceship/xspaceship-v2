@@ -3,8 +3,8 @@ import Image from 'components/Image';
 import meta from 'meta.json';
 import { getAllImage } from 'utils/image';
 
-const About = ({ title, headline, why, what, brand }) => (
-	<Layout title={title} container="2xl:~" m="2xl:x-auto">
+const About = ({ title, headline, why, what, branding }) => (
+	<Layout title={title} p="2xl:t-8">
 		{/* Headline */}
 		<div
 			p="x-5 y-7.5 lg:x-22.5 lg:y-32"
@@ -80,10 +80,10 @@ const About = ({ title, headline, why, what, brand }) => (
 				m="b-5"
 				className="text-lg leading-7 text-tc05 text-center"
 			>
-				{brand.headline}
+				{branding.headline}
 			</h3>
 			<div grid="md:~ md:cols-12 md:gap-5">
-				{brand.image.map((i, index) => (
+				{branding.image.map((i, index) => (
 					<div
 						grid="md:col-span-3"
 						w="48 md:full"
@@ -105,9 +105,15 @@ export async function getStaticProps() {
 	const images = await getAllImage('about');
 	const about = { ...meta.about };
 
-	about.why.image = images[about.why.image];
-	about.what.image = images[about.what.image];
-	about.brand.image = about.brand.image.map(img => images[img]);
+	about.why.image = {
+		...images[about.why.image.name],
+		...about.why.image,
+	};
+	about.what.image = {
+		...images[about.what.image.name],
+		...about.what.image,
+	};
+	about.branding.image = about.branding.image.map(img => images[img]);
 
 	return { props: { ...about } };
 }

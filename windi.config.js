@@ -20,11 +20,11 @@ export default defineConfig({
 	},
 	darkMode: false,
 	theme: {
-		screens: {
-			lg: '1280px',
-			'2xl': '1600px',
-		},
 		extend: {
+			screens: {
+				lg: '1280px',
+				'2xl': '1600px',
+			},
 			backgroundColor: {
 				bg01: '#040404',
 				bg02: '#222222',

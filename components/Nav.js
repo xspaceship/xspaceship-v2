@@ -113,7 +113,16 @@ const Nav = () => {
 				justify="end"
 				onClick={toggleVisibleNav}
 			>
-				<div ref={navMainRef} bg="bg07" w="full lg:104" p="5 lg:y-8 lg:x-10">
+				<div
+					ref={navMainRef}
+					bg="bg07"
+					w="full lg:104"
+					p="5 lg:y-8 lg:x-10"
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					transition={{ type: 'easeInOut', duration: 0.5 }}
+				>
 					<div
 						h="12.5 lg:14"
 						flex="~"

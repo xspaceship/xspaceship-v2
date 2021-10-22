@@ -15,9 +15,9 @@ const Index = ({ types, works, title, headline }) => {
 	);
 
 	return (
-		<Layout title={title} p="x-5 lg:x-32.5 2xl:x-0">
+		<Layout title={title} p="x-5 lg:x-32.5 2xl:x-5 2xl:t-8">
 			{/* Headline */}
-			<div m="y-7.5 md:y-10 lg:y-20" grid="~ gap-5 cols-12">
+			<div p="y-7.5 md:y-10 lg:y-20 2xl:t-0" grid="~ gap-5 cols-12">
 				<h3
 					grid="col-span-12 md:col-span-9 2xl:col-span-6"
 					font="questrial ld01 md:leading-tight"
@@ -72,7 +72,13 @@ const Index = ({ types, works, title, headline }) => {
 											width === 'full' ? 'col-span-12' : 'col-span-6'
 										} relative parent`}
 									>
-										<Image {...preview} alt={name} className="rounded" />
+										<Image
+											{...preview}
+											alt={name}
+											gradientFrom="#0F0"
+											gradientTo="#456"
+											className="rounded"
+										/>
 										<div
 											className="child"
 											display="hidden lg:block"

@@ -12,7 +12,12 @@ const Layout = props => {
 				{title && <title>{title}</title>}
 				{desc && <meta name="description" content={desc} />}
 			</Head>
-			<div display="2xl:flex" container="2xl:~" m="2xl:x-auto">
+			<div
+				display="2xl:flex"
+				container="2xl:~"
+				m="2xl:x-auto"
+				grid="2xl:gap-10"
+			>
 				<Header />
 				<motion.main
 					initial={{ opacity: 0 }}
