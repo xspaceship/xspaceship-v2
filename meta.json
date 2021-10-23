@@ -31,12 +31,20 @@
 			"headline": "The gap we are filling.",
 			"text": "Most agencies can only do one thing well — branding or digital strategy. That results in a big dilemma: hiring both, or only one.",
 			"subtext": "That means you are choosing between an expensive & fragmented process, or a sacrifice in quality. Both options are not great.",
-			"image": { "name": "01", "gradientFrom": "#0F0", "gradientTo": "#F00" }
+			"image": {
+				"name": "01",
+				"gradientFrom": "#21277C",
+				"gradientTo": "#181B49"
+			}
 		},
 		"what": {
 			"headline": "xspaceship",
 			"text": "We are a team of veterans from the world of Ogilvy & Mather, Collins, Facebook, & Uber to deliver the most unifying, thoughtful and comprehensive creative services.",
-			"image": { "name": "02", "gradientFrom": "#0F0", "gradientTo": "#F00" }
+			"image": {
+				"name": "02",
+				"gradientFrom": "#21277C",
+				"gradientTo": "#181B49"
+			}
 		},
 		"branding": {
 			"headline": "Trusted by",
@@ -45,7 +53,7 @@
 	},
 	"services": {
 		"title": "Services",
-		"headline": "We fuse <span class='text-gradient-02'>creativity, craft, & technology</span> into  <span class='text-gradient-02'>experiences</span> that improve people’s lives.",
+		"headline": "We fuse <span class='text-gradient-02'>creativity, craft, & technology</span> into  <span class='text-gradient-02'>experiences</span> that improve lives.",
 		"product": {
 			"headline": "Digital Design & Strategy",
 			"list": ["Mobile applications", "Web applications", "Digital campaigns"],
@@ -53,52 +61,52 @@
 				{
 					"name": "01",
 					"span": 7,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "02",
 					"span": 3,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "03",
 					"span": 4,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "04",
 					"span": 7,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				}
 			],
 			"imageM": [
 				{
 					"name": "13",
 					"span": 7,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "02",
 					"span": 3,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "14",
 					"span": 4,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "15",
 					"span": 7,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				}
 			]
 		},
@@ -109,52 +117,52 @@
 				{
 					"name": "05",
 					"span": 7,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "06",
 					"span": 4,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "07",
 					"span": 3,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "08",
 					"span": 7,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				}
 			],
 			"imageM": [
 				{
 					"name": "16",
 					"span": 7,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "06",
 					"span": 4,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "07",
 					"span": 3,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "17",
 					"span": 7,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				}
 			]
 		},
@@ -169,52 +177,52 @@
 				{
 					"name": "09",
 					"span": 7,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "10",
 					"span": 3,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "11",
 					"span": 4,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "12",
 					"span": 7,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				}
 			],
 			"imageM": [
 				{
 					"name": "18",
 					"span": 7,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "10",
 					"span": 3,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "19",
 					"span": 4,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				},
 				{
 					"name": "20",
 					"span": 7,
-					"gradientFrom": "#0F0",
-					"gradientTo": "#F00"
+					"gradientFrom": "#21277C",
+					"gradientTo": "#181B49"
 				}
 			]
 		},

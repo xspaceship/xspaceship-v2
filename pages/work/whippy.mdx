@@ -1,7 +1,12 @@
 import Layout from 'components/Layout';
 import Image from 'components/Image';
 import FullWidth from 'components/md/FullWidth';
+import Title from 'components/md/Title';
+import Paragraph from 'components/md/Paragraph';
+import Header from 'components/md/Header';
 import TwoColumns from 'components/md/TwoColumns';
+import RegularWidth from 'components/md/RegularWidth';
+import Caption from 'components/md/Caption';
 import { getAllImage } from 'utils/image';
 
 export const meta = {
@@ -28,6 +33,8 @@ export default ({ children }) => (
 		{children}
 	</Layout>
 );
+
+<Title text="Conversational marketing" sub="Whippy 2021" />
 
 <FullWidth space="y-5">
 	<Image {...props.images['01']} />
