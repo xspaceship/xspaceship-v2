@@ -104,16 +104,16 @@ export default About;
 export async function getStaticProps() {
 	const images = await getAllImage('about');
 	const about = { ...meta.about };
+	const { what, why, branding } = about;
 
-	about.why.image = {
-		...images[about.why.image.name],
-		...about.why.image,
+	const newAbout = {
+		...about,
+		what: { ...what, image: { ...what.image, ...images[what.image.name] } },
+		why: { ...why, image: { ...why.image, ...images[why.image.name] } },
+		branding: { ...branding, image: branding.image.map(i => images[i]) },
 	};
-	about.what.image = {
-		...images[about.what.image.name],
-		...about.what.image,
-	};
-	about.branding.image = about.branding.image.map(img => images[img]);
 
-	return { props: { ...about } };
+	console.log(1, newAbout);
+
+	return { props: { ...newAbout } };
 }

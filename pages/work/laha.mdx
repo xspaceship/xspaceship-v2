@@ -16,13 +16,18 @@ export const meta = {
 	sub: 'Branding',
 	year: 2020,
 	preview: '03',
-	link: true,
 	width: 'half',
 	order: 3,
+	gradientFrom: '#00ff00',
+	gradientTo: '#123456',
 };
 
 export async function getStaticProps(context) {
 	const images = await getAllImage('laha');
+	const { gradientFrom, gradientTo } = meta;
+	for (const key in images) {
+		images[key] = { ...images[key], gradientFrom, gradientTo };
+	}
 	return { props: { images } };
 }
 

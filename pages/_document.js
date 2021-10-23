@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import meta from 'meta.json';
 
 class MyDocument extends Document {
 	render() {
@@ -16,14 +15,7 @@ class MyDocument extends Document {
 					<link rel="shortcut icon" href="./favicon.ico" />
 					<meta name="theme-color" content="#000" />
 				</Head>
-				<body
-					pos="relative"
-					style={{
-						'--blur': meta.default_image_blur,
-						'--scale': meta.default_image_scale,
-						'--transition': meta.default_image_transition,
-					}}
-				>
+				<body pos="relative">
 					<Main />
 					<NextScript />
 				</body>

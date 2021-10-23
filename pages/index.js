@@ -41,7 +41,11 @@ const Index = ({ types, works, title, headline }) => {
 						border="~ rounded-full bc02"
 						cursor="pointer"
 						display="inline-block"
-						className={`${isActiveType(type) ? 'bg-white text-black' : ''}`}
+						className={`${
+							isActiveType(type)
+								? 'bg-white text-black'
+								: 'hover:bg-bg11 transition-all duration-300'
+						}`}
 						onClick={() => setActiveType(type)}
 						key={index}
 					>
@@ -60,13 +64,14 @@ const Index = ({ types, works, title, headline }) => {
 						sub,
 						year,
 						preview,
-						link,
 						width,
 						category,
+						gradientFrom,
+						gradientTo,
 					}) => {
 						if (activeType === 'All' || isIncludeActiveType(category)) {
 							return (
-								<Link href={link ? `/work/${slug}` : ''} key={slug}>
+								<Link href={`/work/${slug}`} key={slug}>
 									<a
 										className={`${
 											width === 'full' ? 'col-span-12' : 'col-span-6'
@@ -75,8 +80,8 @@ const Index = ({ types, works, title, headline }) => {
 										<Image
 											{...preview}
 											alt={name}
-											gradientFrom="#0F0"
-											gradientTo="#456"
+											gradientFrom={gradientFrom}
+											gradientTo={gradientTo}
 											className="rounded"
 										/>
 										<div

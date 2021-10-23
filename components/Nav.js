@@ -142,7 +142,7 @@ const Nav = () => {
 									display="block"
 									p="y-5"
 									font="questrial lh01"
-									className="text-fs01 hover:text-tc06"
+									className="transition-colors duration-300	text-fs01 hover:text-tc06"
 									border="t-1 last:b-1 bc01"
 								>
 									{name}

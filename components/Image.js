@@ -1,27 +1,27 @@
-/* eslint-disable @next/next/no-img-element */
-import { forwardRef, useState } from 'react';
+import { useState } from 'react';
 import NextImage from 'next/image';
-import meta from 'meta.json';
 
-const Image = forwardRef((props, ref) => {
+const Image = props => {
 	const [isLoaded, setIsLoaded] = useState(false);
 
-	const { css, noRound = null, gradientFrom = null, gradientTo = null } = props;
+	const {
+		css,
+		noRound = null,
+		gradientFrom = null,
+		gradientTo = null,
+		...rest
+	} = props;
 
 	const round = noRound ? '' : 'rounded-lg';
 
 	let style = '';
-
-	console.log(111, gradientFrom, gradientTo);
 
 	if (gradientFrom && gradientTo) {
 		style = {
 			background: `linear-gradient(135deg, ${gradientFrom} 0%, ${gradientTo} 100%)`,
 		};
 	} else {
-		style = css
-			? { ...css, filter: 'blur(60px)' }
-			: { backgroundColor: meta.default_image_color };
+		style = { ...css, filter: 'blur(60px)' };
 	}
 
 	return (
@@ -42,19 +42,14 @@ const Image = forwardRef((props, ref) => {
 				className="image-placeholder"
 			/>
 			<NextImage
-				ref={ref}
 				alt=""
 				quality="100"
-				{...props}
+				{...rest}
 				border={round}
 				onLoadingComplete={() => setIsLoaded(true)}
 			/>
 		</div>
 	);
-});
+};
 
 export default Image;
-
-Image.defaultProps = {
-	noRound: false,
-};

@@ -25,7 +25,12 @@ const Header = () => {
 				>
 					{meta.nav.map(({ name, path }, index) => (
 						<Link href={path} key={index}>
-							<a p="6 2xl:y-3 2xl:x-0">{name}</a>
+							<a
+								p="6 2xl:y-3 2xl:x-0"
+								className="transition-colors duration-300	hover:text-tc06"
+							>
+								{name}
+							</a>
 						</Link>
 					))}
 				</nav>

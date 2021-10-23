@@ -23,7 +23,7 @@ export default defineConfig({
 		extend: {
 			screens: {
 				lg: '1280px',
-				'2xl': '1600px',
+				'2xl': '1800px',
 			},
 			backgroundColor: {
 				bg01: '#040404',
@@ -36,6 +36,7 @@ export default defineConfig({
 				bg08: '#1F2030',
 				bg09: '#282828',
 				bg10: 'rgba(0, 0, 0, 0.4)',
+				bg11: 'rgba(255, 255, 255, 0.2)',
 			},
 			fontSize: {
 				fs01: '2.5rem',

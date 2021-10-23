@@ -2,10 +2,6 @@
 	"name": "xspaceship",
 	"shortName": "xspaceship",
 	"email": "hello@xspaceship.com",
-	"default_image_color": "#444",
-	"default_image_blur": "20px",
-	"default_image_scale": 1.1,
-	"default_image_transition": "1s",
 	"nav": [
 		{
 			"name": "Work",

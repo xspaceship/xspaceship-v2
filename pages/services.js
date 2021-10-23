@@ -314,22 +314,31 @@ export async function getStaticProps() {
 	const images = await getAllImage('services');
 	const services = { ...meta.services };
 
-	const transformImage = src => {
-		src.image = src.image.map(i => ({
+	const { product, branding, development } = services;
+
+	const transformImage = image =>
+		image.map(i => ({
 			...i,
 			name: images[i.name],
 		}));
-		src.imageM = src.imageM.map(i => ({
-			...i,
-			name: images[i.name],
-		}));
+
+	const getTransformedImage = src => {
+		const image = transformImage(src.image);
+		const imageM = transformImage(src.imageM);
+
+		return { image, imageM };
 	};
 
-	transformImage(services.product);
-	transformImage(services.branding);
-	transformImage(services.development);
+	const productImage = getTransformedImage(product);
+	const brandingImage = getTransformedImage(branding);
+	const developmentImage = getTransformedImage(development);
 
-	await new Promise(res => setTimeout(res, 500));
+	const newServices = {
+		...services,
+		product: { ...product, ...productImage },
+		branding: { ...product, ...brandingImage },
+		development: { ...product, ...developmentImage },
+	};
 
-	return { props: { ...services } };
+	return { props: { ...newServices } };
 }

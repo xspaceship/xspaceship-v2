@@ -18,13 +18,18 @@ export const meta = {
 	sub: 'Branding, web design & development',
 	year: 2021,
 	preview: '02',
-	link: true,
 	width: 'half',
 	order: 2,
+	gradientFrom: '#ffff00',
+	gradientTo: '#123456',
 };
 
 export async function getStaticProps() {
 	const images = await getAllImage('uber');
+	const { gradientFrom, gradientTo } = meta;
+	for (const key in images) {
+		images[key] = { ...images[key], gradientFrom, gradientTo };
+	}
 	return { props: { images } };
 }
 

@@ -19,10 +19,10 @@ export const getAllImage = async dir => {
 
 	const images = await Promise.all(
 		imagePaths.map(async src => {
-			const { css, img, blurhash, base64, svg } = await getPlaiceholder(src, {
+			const { css, img } = await getPlaiceholder(src, {
 				size: 4,
 			});
-			return { ...img, css, blurhash, base64, svg };
+			return { ...img, css };
 		}),
 	);
 

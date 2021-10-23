@@ -26,9 +26,9 @@ const Layout = props => {
 					transition={{ type: 'easeInOut', duration: 0.5 }}
 				>
 					<div {...rest}>{children}</div>
+					<Footer />
 				</motion.main>
 			</div>
-			<Footer />
 		</>
 	);
 };

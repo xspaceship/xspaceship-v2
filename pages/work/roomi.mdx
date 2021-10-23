@@ -16,13 +16,18 @@ export const meta = {
 	sub: 'Mobile design',
 	year: 2020,
 	preview: '05',
-	link: true,
 	width: 'full',
 	order: 4,
+	gradientFrom: '#ff0000',
+	gradientTo: '#123456',
 };
 
 export async function getStaticProps(context) {
 	const images = await getAllImage('roomi');
+	const { gradientFrom, gradientTo } = meta;
+	for (const key in images) {
+		images[key] = { ...images[key], gradientFrom, gradientTo };
+	}
 	return { props: { images } };
 }
 
