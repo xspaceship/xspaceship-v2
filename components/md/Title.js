@@ -9,7 +9,7 @@ const Title = ({ text, sub }) => (
 	>
 		<h3
 			font="questrial children:questrial"
-			grid="col-span-12 md:col-span-9 lg:col-span-7"
+			grid="col-span-12 md:col-span-9 lg:col-span-9"
 			className="text-fs01 lg:text-6xl"
 		>
 			{text}
