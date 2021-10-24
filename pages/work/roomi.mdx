@@ -7,6 +7,7 @@ import Paragraph from 'components/md/Paragraph';
 import Header from 'components/md/Header';
 import TwoColumns from 'components/md/TwoColumns';
 import RegularWidth from 'components/md/RegularWidth';
+import Caption from 'components/md/Caption';
 import { getAllImage } from 'utils/image';
 import rootMeta from 'meta.json';
 
@@ -67,18 +68,20 @@ export default ({ children }) => (
 	<Image {...props.images['01']} />
 </FullWidth>
 
-<Paragraph>
-	<div>
-		Roomi is the largest social network for roommates. It’s a dynamic
-		marketplace where people can get verified, matched based on compatibility,
-		search for their ideal rooms, and post their rooms for rent.
-	</div>
-	<div>
-		We partnered with the Roomi team to revamp the mobile applications on iOS
-		and Android, with a common goal to streamline user experience and maximize
-		values to users.
-	</div>
-</Paragraph>
+<RegularWidth>
+	<Paragraph>
+		<div className="mb-3">
+			Roomi is the largest social network for roommates. It’s a dynamic
+			marketplace where people can get verified, matched based on compatibility,
+			search for their ideal rooms, and post their rooms for rent.
+		</div>
+		<div>
+			We partnered with the Roomi team to revamp the mobile applications on iOS
+			and Android, with a common goal to streamline user experience and maximize
+			values to users.
+		</div>
+	</Paragraph>
+</RegularWidth>
 
 <Header>1 — Getting started</Header>
 
@@ -89,13 +92,15 @@ export default ({ children }) => (
 	</TwoColumns>
 </RegularWidth>
 
-<Paragraph>
-	After downloading the application, users can already browse listing without
-	signing up. This lower the barrier to entry and enable users to get values out
-	of the application immediately. The sign up experience is extremely simple
-	with only a few basic questions. Users will then go through a phone
-	verification to guarantee maximum security.
-</Paragraph>
+<RegularWidth>
+	<Caption>
+		After downloading the application, users can already browse listing without
+		signing up. This lower the barrier to entry and enable users to get values
+		out of the application immediately. The sign up experience is extremely
+		simple with only a few basic questions. Users will then go through a phone
+		verification to guarantee maximum security.
+	</Caption>
+</RegularWidth>
 
 <Header>2 — Finding a place to stay</Header>
 
@@ -106,13 +111,16 @@ export default ({ children }) => (
 	</TwoColumns>
 </RegularWidth>
 
-<Paragraph>
-	To find rooms and apartments, users go to the very first tab - Listings. Here
-	users can scroll through thousands of listings with a high-level overview with
-	important information. Tapping on each listing reveals a detailed screen that
-	show case comprehensive and well-organized information, such as layouts,
-	capacity, host profile, amenities, house rules, transportations, and more.
-</Paragraph>
+<RegularWidth>
+	<Caption>
+		To find rooms and apartments, users go to the very first tab - Listings.
+		Here users can scroll through thousands of listings with a high-level
+		overview with important information. Tapping on each listing reveals a
+		detailed screen that show case comprehensive and well-organized information,
+		such as layouts, capacity, host profile, amenities, house rules,
+		transportations, and more.
+	</Caption>
+</RegularWidth>
 
 <RegularWidth>
 	<TwoColumns>
@@ -121,12 +129,14 @@ export default ({ children }) => (
 	</TwoColumns>
 </RegularWidth>
 
-<Paragraph>
-	To ensure that we are showing the best results. We have designed a robust
-	filtering system, which enable users to tailor their search in various
-	requirements, such as Location, neighborhood, listing type, number of beds,
-	baths, budget, etc.
-</Paragraph>
+<RegularWidth>
+	<Caption>
+		To ensure that we are showing the best results. We have designed a robust
+		filtering system, which enable users to tailor their search in various
+		requirements, such as Location, neighborhood, listing type, number of beds,
+		baths, budget, etc.
+	</Caption>
+</RegularWidth>
 
 <Header>3 — Searching for roomate</Header>
 
@@ -134,11 +144,13 @@ export default ({ children }) => (
 	<Image {...props.images['08']} />
 </FullWidth>
 
-<Paragraph>
-	Finding a roommate is like dating. We use an algorithm to give you the best
-	roommate matches. The experience is gamified to make the search fun. We
-	designed a rich profile experience that brings out diverse personalities.
-</Paragraph>
+<RegularWidth>
+	<Caption>
+		Finding a roommate is like dating. We use an algorithm to give you the best
+		roommate matches. The experience is gamified to make the search fun. We
+		designed a rich profile experience that brings out diverse personalities.
+	</Caption>
+</RegularWidth>
 
 <RegularWidth>
 	<Image {...props.images['09']} />
@@ -150,12 +162,14 @@ export default ({ children }) => (
 	<Image {...props.images['10']} />
 </RegularWidth>
 
-<Paragraph>
-	Roomi’s biggest value proposition is being the safest social network with
-	robust background verifications. We created digital touch points that appeared
-	at the right moments to educate users about how Roomi verifies users and at
-	the same time, prompt user to get verified.
-</Paragraph>
+<RegularWidth>
+	<Caption>
+		Roomi’s biggest value proposition is being the safest social network with
+		robust background verifications. We created digital touch points that
+		appeared at the right moments to educate users about how Roomi verifies
+		users and at the same time, prompt user to get verified.
+	</Caption>
+</RegularWidth>
 
 <Header>5 — Boosts</Header>
 

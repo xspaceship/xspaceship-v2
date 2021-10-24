@@ -1,5 +1,5 @@
 const Paragraph = ({ children }) => (
-	<section
+	<div
 		key={4}
 		p="x-5 y-5 lg:x-10 lg:y-10"
 		grid="~ cols-12 gap-5"
@@ -7,15 +7,15 @@ const Paragraph = ({ children }) => (
 		className="md-paragraph"
 	>
 		<div grid="col-span-8 md:col-span-8 md:col-start-3">
-			<p
-				className="text-center lg:text-xl"
+			<div
+				className="text-center text-xl"
 				space="y-5"
 				font="worksans children:worksans lg:medium"
 			>
 				{children}
-			</p>
+			</div>
 		</div>
-	</section>
+	</div>
 );
 
 export default Paragraph;
