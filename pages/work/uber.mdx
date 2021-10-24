@@ -9,6 +9,7 @@ import TwoColumns from 'components/md/TwoColumns';
 import RegularWidth from 'components/md/RegularWidth';
 import Caption from 'components/md/Caption';
 import { getAllImage } from 'utils/image';
+import rootMeta from 'meta.json';
 
 export const meta = {
 	slug: 'uber',
@@ -33,7 +34,8 @@ export async function getStaticProps() {
 	}
 	const ogImage =
 		(process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
-	return { props: { images, ...meta, ogImage } };
+	const title = rootMeta.name + ' | ' + meta.name;
+	return { props: { images, ...meta, title, ogImage } };
 }
 
 export default ({ children }) => (
@@ -43,15 +45,15 @@ export default ({ children }) => (
 );
 
 <NextSeo
-	title={props.name}
+	title={props.title}
 	description={props.description}
 	openGraph={{
-		title: props.name,
+		title: props.title,
 		description: props.description,
 		images: [
 			{
 				url: props.ogImage,
-				alt: props.name,
+				alt: props.title,
 				type: 'png',
 			},
 		],

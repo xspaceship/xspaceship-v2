@@ -18,7 +18,7 @@ const Image = props => {
 	return (
 		<div
 			pos="relative"
-			display="inline-block"
+			display="block"
 			overflow="hidden"
 			h="full"
 			border={round}
