@@ -112,7 +112,7 @@
 		},
 		"branding": {
 			"headline": "Branding",
-			"list": ["Logo", "Typography", "Illustrations", "Photography"],
+			"list": ["Logo", "Typography", "Illustration", "Photography"],
 			"image": [
 				{
 					"name": "05",
