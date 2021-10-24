@@ -11,7 +11,7 @@ import { getAllImage } from 'utils/image';
 export const meta = {
 	slug: 'rapid-ascent',
 	name: 'RapidAscent',
-	category: ['Technology', 'Education'],
+	category: ['SaaS', 'Education', 'Web'],
 	description:
 		'An immersive online academy that enables you to launch a career in cyber security.',
 	sub: 'Branding, web design & development',
@@ -37,6 +37,8 @@ export default ({ children }) => (
 		{children}
 	</Layout>
 );
+
+<Title text={meta.description} sub="RapidAscent 2021" />
 
 <FullWidth>
 	<Image {...props.images['01']} />

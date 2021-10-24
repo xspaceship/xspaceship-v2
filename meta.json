@@ -29,8 +29,8 @@
 			"subtext": "That means you are choosing between an expensive & fragmented process, or a sacrifice in quality. Both options are not great.",
 			"image": {
 				"name": "01",
-				"gradientFrom": "#21277C",
-				"gradientTo": "#181B49"
+				"gradientFrom": "rgba(255,255,255,0.2)",
+				"gradientTo": "rgba(255,255,255,0.1)"
 			}
 		},
 		"what": {
@@ -38,8 +38,8 @@
 			"text": "We are a team of veterans from the world of Ogilvy & Mather, Collins, Facebook, & Uber to deliver the most unifying, thoughtful and comprehensive creative services.",
 			"image": {
 				"name": "02",
-				"gradientFrom": "#21277C",
-				"gradientTo": "#181B49"
+				"gradientFrom": "rgba(255,255,255,0.2)",
+				"gradientTo": "rgba(255,255,255,0.1)"
 			}
 		},
 		"branding": {
@@ -57,52 +57,52 @@
 				{
 					"name": "01",
 					"span": 7,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "02",
 					"span": 3,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "03",
 					"span": 4,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "04",
 					"span": 7,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				}
 			],
 			"imageM": [
 				{
 					"name": "13",
 					"span": 7,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "02",
 					"span": 3,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "14",
 					"span": 4,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "15",
 					"span": 7,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				}
 			]
 		},
@@ -113,52 +113,52 @@
 				{
 					"name": "05",
 					"span": 7,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "06",
 					"span": 4,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "07",
 					"span": 3,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "08",
 					"span": 7,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				}
 			],
 			"imageM": [
 				{
 					"name": "16",
 					"span": 7,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "06",
 					"span": 4,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "07",
 					"span": 3,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "17",
 					"span": 7,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				}
 			]
 		},
@@ -173,52 +173,52 @@
 				{
 					"name": "09",
 					"span": 7,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "10",
 					"span": 3,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "11",
 					"span": 4,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "12",
 					"span": 7,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				}
 			],
 			"imageM": [
 				{
 					"name": "18",
 					"span": 7,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "10",
 					"span": 3,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "19",
 					"span": 4,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				},
 				{
 					"name": "20",
 					"span": 7,
-					"gradientFrom": "#21277C",
-					"gradientTo": "#181B49"
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
 				}
 			]
 		},
