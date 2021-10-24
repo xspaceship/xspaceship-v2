@@ -60,7 +60,7 @@ export async function getStaticProps() {
 
 ```
 export default ({ children }) => (
-	<Layout title={meta.name} container="2xl:~" m="2xl:x-auto" p="lg:x-32.5">
+	<Layout title={meta.name} p="2xl:t-8" p="lg:x-32.5">
 		{children}
 	</Layout>
 );

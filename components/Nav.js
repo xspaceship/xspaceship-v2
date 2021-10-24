@@ -1,11 +1,12 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'components/Link';
 import {
 	disableBodyScroll,
 	enableBodyScroll,
 	clearAllBodyScrollLocks,
 } from 'body-scroll-lock';
+import { AnimatePresence, motion } from 'framer-motion';
+import Link from 'components/Link';
 import { currentYear } from 'utils/time';
 import meta from 'meta.json';
 
@@ -20,47 +21,51 @@ const Nav = () => {
 		reserveScrollBarGap: true,
 	};
 
-	const getNumberFromValue = value => Number(value.slice(0, value.length - 2));
-
 	const toggleVisibleNav = useCallback(() => {
-		if (!navRef.current || !window) return;
+		if (!window) return;
 
 		setVisibleNav(v => {
 			if (v) {
 				enableBodyScroll(navRef.current, option);
-				navRef.current.style.removeProperty('top');
-
-				buttonRef.current.style.removeProperty('right');
-				navMainRef.current.style.removeProperty('padding-right');
 			} else {
 				disableBodyScroll(navRef.current, option);
-				navRef.current.style.top = window.scrollY + 'px';
-
-				const bodyPR = document.body.style.paddingRight;
-				const buttonR = window.getComputedStyle(buttonRef.current).right;
-				const navMainPR = window.getComputedStyle(
-					navMainRef.current,
-				).paddingRight;
-
-				if (bodyPR && buttonR && navMainPR) {
-					const bodyPRNumber = getNumberFromValue(bodyPR);
-					const buttonRNumber = getNumberFromValue(buttonR);
-					const navMainPRNumber = getNumberFromValue(navMainPR);
-
-					buttonRef.current.style.right = `${bodyPRNumber + buttonRNumber}px`;
-					navMainRef.current.style.paddingRight = `${
-						bodyPRNumber + navMainPRNumber
-					}px`;
-				}
 			}
 
 			return !v;
 		});
 	}, []);
 
+	const navVariants = {
+		initial: { x: '100%' },
+		animate: { x: '0%', transition: { duration: 0.5 } },
+		exit: {
+			x: '100%',
+			transition: { delay: 0.7, duration: 0.5 },
+		},
+	};
+
+	const itemVariants = {
+		closed: { opacity: 0 },
+		open: { opacity: 1 },
+	};
+
+	const sideVariants = {
+		closed: {
+			transition: { staggerChildren: 0.2, staggerDirection: -1 },
+		},
+		open: {
+			transition: {
+				staggerChildren: 0.2,
+				staggerDirection: 1,
+				delayChildren: 0.4,
+			},
+		},
+	};
+
 	useEffect(() => {
 		window.onscroll = () => {
-			if (!navRef.current || window.innerWidth >= 1600) return;
+			if (window.innerWidth >= 1800) return;
+
 			if (window.pageYOffset > 100) {
 				buttonRef.current.classList.remove('lg:hidden');
 			} else {
@@ -97,64 +102,73 @@ const Nav = () => {
 					}.png`}
 					width="20"
 					height="20"
-					alt={visibleNav ? 'close' : isDesktop ? 'hamburger-2' : 'hamburger'}
+					alt=""
 				/>
 			</button>
 
-			<div
-				ref={navRef}
-				className={visibleNav ? 'block' : 'hidden'}
-				pos="absolute top-0 right-0"
-				w="screen"
-				h="screen"
-				bg="bg10"
-				z="10"
-				flex="~"
-				justify="end"
-				onClick={toggleVisibleNav}
-			>
-				<div
-					ref={navMainRef}
-					bg="bg07"
-					w="full lg:104"
-					p="5 lg:y-8 lg:x-10"
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					exit={{ opacity: 0 }}
-					transition={{ type: 'easeInOut', duration: 0.5 }}
-				>
+			<AnimatePresence>
+				{visibleNav && (
 					<div
-						h="12.5 lg:14"
+						ref={navRef}
+						pos="fixed top-0 right-0"
+						w="screen"
+						h="screen"
+						bg="bg10"
+						z="10"
 						flex="~"
-						justify="start"
-						align="items-center"
-						font="jetbrain"
-						m="b-10 lg:t-16"
+						justify="end"
+						onClick={toggleVisibleNav}
 					>
-						<Link href="/">
-							<a className="text-fs02">{meta.shortName}</a>
-						</Link>
+						<motion.aside
+							ref={navMainRef}
+							initial="initial"
+							animate="animate"
+							exit="exit"
+							variants={navVariants}
+							className="bg-bg07 w-full p-5 lg:w-104 lg:py-8 lg:px-10"
+						>
+							<div
+								h="12.5 lg:14"
+								flex="~"
+								justify="start"
+								align="items-center"
+								font="jetbrain"
+								m="b-10 lg:t-16"
+							>
+								<Link href="/">
+									<a className="text-fs02">{meta.shortName}</a>
+								</Link>
+							</div>
+							<motion.nav
+								className="mb-10"
+								initial="closed"
+								animate="open"
+								exit="closed"
+								variants={sideVariants}
+							>
+								{meta.nav.map(({ name, path }, index) => (
+									<motion.div key={index} variants={itemVariants}>
+										<Link href={path}>
+											<a
+												display="block"
+												p="y-5"
+												font="questrial lh01"
+												className="transition-colors duration-300	text-fs01 hover:text-tc06"
+												border="t-1 last:b-1 bc01"
+											>
+												{name}
+											</a>
+										</Link>
+									</motion.div>
+								))}
+							</motion.nav>
+							<h3 font="jetbrain leading-4" className="text-xs">
+								© {currentYear} {meta.shortName}
+							</h3>
+						</motion.aside>
 					</div>
-					<nav m="b-10">
-						{meta.nav.map(({ name, path }, index) => (
-							<Link href={path} key={index}>
-								<a
-									display="block"
-									p="y-5"
-									font="questrial lh01"
-									className="transition-colors duration-300	text-fs01 hover:text-tc06"
-									border="t-1 last:b-1 bc01"
-								>
-									{name}
-								</a>
-							</Link>
-						))}
-					</nav>
-					<h3 font="jetbrain leading-4" className="text-xs">
-						© {currentYear} {meta.shortName}
-					</h3>
-				</div>
-			</div>
+				)}
+			</AnimatePresence>
 		</>
 	);
 };

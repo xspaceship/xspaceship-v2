@@ -4,31 +4,23 @@ import NextImage from 'next/image';
 const Image = props => {
 	const [isLoaded, setIsLoaded] = useState(false);
 
-	const {
-		css,
-		noRound = null,
-		gradientFrom = null,
-		gradientTo = null,
-		...rest
-	} = props;
+	const { css, noRound, gradientFrom, gradientTo, ...rest } = props;
 
 	const round = noRound ? '' : 'rounded-lg';
 
-	let style = '';
-
-	if (gradientFrom && gradientTo) {
-		style = {
-			background: `linear-gradient(135deg, ${gradientFrom} 0%, ${gradientTo} 100%)`,
-		};
-	} else {
-		style = { ...css, filter: 'blur(60px)' };
-	}
+	const style =
+		gradientFrom && gradientTo
+			? {
+					background: `linear-gradient(135deg, ${gradientFrom} 0%, ${gradientTo} 100%)`,
+			  }
+			: { ...css, filter: 'blur(60px)' };
 
 	return (
 		<div
 			pos="relative"
-			display="block"
+			display="inline-block"
 			overflow="hidden"
+			h="full"
 			border={round}
 			className={`image-wrapper ${isLoaded ? 'is-image-loaded' : ''}`}
 		>

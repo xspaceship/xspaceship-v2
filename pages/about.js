@@ -113,7 +113,5 @@ export async function getStaticProps() {
 		branding: { ...branding, image: branding.image.map(i => images[i]) },
 	};
 
-	console.log(1, newAbout);
-
 	return { props: { ...newAbout } };
 }

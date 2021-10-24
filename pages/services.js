@@ -17,11 +17,11 @@ const About = ({
 		const m = [
 			'rounded-bl-lg rounded-br-lg',
 			'rounded-lg',
-			'rounded-tl-lg rounded-tf-lg',
+			'rounded-lg',
+			'rounded-tl-lg rounded-tr-lg',
 		];
 		return m[index] || '';
 	}, []);
-	// p="x-5 lg:x-32.5 2xl:x-5"
 
 	return (
 		<Layout title={title} p="2xl:t-8">
