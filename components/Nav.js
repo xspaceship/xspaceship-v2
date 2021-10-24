@@ -37,10 +37,10 @@ const Nav = () => {
 
 	const navVariants = {
 		initial: { x: '100%' },
-		animate: { x: '0%', transition: { duration: 0.5 } },
+		animate: { x: '0%', transition: { duration: 0.3 } },
 		exit: {
 			x: '100%',
-			transition: { delay: 0.7, duration: 0.5 },
+			transition: { delay: 0.2, duration: 0.3 },
 		},
 	};
 
@@ -57,7 +57,7 @@ const Nav = () => {
 			transition: {
 				staggerChildren: 0.2,
 				staggerDirection: 1,
-				delayChildren: 0.4,
+				delayChildren: 0.1,
 			},
 		},
 	};
