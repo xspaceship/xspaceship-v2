@@ -1,10 +1,35 @@
+import { NextSeo } from 'next-seo';
 import Layout from 'components/Layout';
 import Image from 'components/Image';
 import meta from 'meta.json';
 import { getAllImage } from 'utils/image';
 
-const About = ({ title, headline, why, what, branding }) => (
+const About = ({
+	title,
+	description,
+	ogImage,
+	headline,
+	why,
+	what,
+	branding,
+}) => (
 	<Layout title={title} p="2xl:t-8">
+		{/* SEO */}
+		<NextSeo
+			title={title}
+			description={description}
+			openGraph={{
+				title,
+				description,
+				images: [
+					{
+						url: ogImage,
+						alt: title,
+						type: 'png',
+					},
+				],
+			}}
+		/>
 		{/* Headline */}
 		<div
 			p="x-5 y-7.5 lg:x-22.5 lg:y-32"
@@ -104,6 +129,9 @@ export default About;
 export async function getStaticProps() {
 	const images = await getAllImage('about');
 	const about = { ...meta.about };
+	const { ogImage } = meta;
+	const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;
+
 	const { what, why, branding } = about;
 
 	const newAbout = {
@@ -113,5 +141,5 @@ export async function getStaticProps() {
 		branding: { ...branding, image: branding.image.map(i => images[i]) },
 	};
 
-	return { props: { ...newAbout } };
+	return { props: { ...newAbout, ogImage: addedHostUrlOgImage } };
 }

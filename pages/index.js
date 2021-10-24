@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { NextSeo } from 'next-seo';
 import Link from 'components/Link';
 import Layout from 'components/Layout';
 import Image from 'components/Image';
@@ -6,7 +7,7 @@ import meta from 'meta.json';
 import { allWorks } from 'utils/work';
 import { getAllImage } from 'utils/image';
 
-const Index = ({ types, works, title, headline }) => {
+const Index = ({ types, works, title, description, headline, ogImage }) => {
 	const [activeType, setActiveType] = useState('All');
 	const isActiveType = useCallback(type => activeType === type, [activeType]);
 	const isIncludeActiveType = useCallback(
@@ -16,6 +17,22 @@ const Index = ({ types, works, title, headline }) => {
 
 	return (
 		<Layout title={title} p="x-5 lg:x-32.5 2xl:x-5 2xl:t-8">
+			{/* SEO */}
+			<NextSeo
+				title={title}
+				description={description}
+				openGraph={{
+					title,
+					description,
+					images: [
+						{
+							url: ogImage,
+							alt: title,
+							type: 'png',
+						},
+					],
+				}}
+			/>
 			{/* Headline */}
 			<div p="y-7.5 md:y-10 lg:y-20 2xl:t-0" grid="~ gap-5 cols-12">
 				<h3
@@ -119,7 +136,10 @@ const Index = ({ types, works, title, headline }) => {
 export default Index;
 
 export async function getStaticProps() {
-	const { title, headline } = meta.home;
+	const { title, headline, description } = meta.home;
+	const { ogImage } = meta;
+
+	const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;
 
 	const worksByOrder = allWorks.sort(
 		(first, second) => first.order - second.order,
@@ -134,5 +154,14 @@ export async function getStaticProps() {
 		preview: images[work.preview],
 	}));
 
-	return { props: { types, works: worksWithImage, title, headline } };
+	return {
+		props: {
+			types,
+			works: worksWithImage,
+			title,
+			description,
+			headline,
+			ogImage: addedHostUrlOgImage,
+		},
+	};
 }

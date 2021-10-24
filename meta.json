@@ -2,6 +2,7 @@
 	"name": "xspaceship",
 	"shortName": "xspaceship",
 	"email": "hello@xspaceship.com",
+	"ogImage": "/images/xspaceship.png",
 	"nav": [
 		{
 			"name": "Work",
@@ -18,10 +19,12 @@
 	],
 	"home": {
 		"title": "xspaceship",
+		"description": "Some description / for SEO purpose",
 		"headline": "Global Branding & Digital Products"
 	},
 	"about": {
 		"title": "About",
+		"description": "Some description / for SEO purpose",
 		"headline": "We are a group of <span class='text-gradient-03'>art directors, product designers, & technologists</span>.",
 		"why": {
 			"headline": "The gap we are filling.",
@@ -49,6 +52,7 @@
 	},
 	"services": {
 		"title": "Services",
+		"description": "Some description / for SEO purpose",
 		"headline": "We fuse <span class='text-gradient-02'>creativity, craft, & technology</span> into  <span class='text-gradient-02'>experiences</span> that improve lives.",
 		"product": {
 			"headline": "Digital Design & Strategy",
