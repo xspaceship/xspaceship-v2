@@ -7,13 +7,13 @@ const Caption = ({ children }) => (
 		p="x-5 lg:x-10"
 	>
 		<div grid="col-span-12 md:col-span-8 md:col-start-3">
-			<p
-				className="text-center lg:text-xl"
+			<div
+				className="text-center text-sm"
 				space="y-5"
-				font="worksans children:worksans lg:medium"
+				font="worksans children:worksans"
 			>
 				{children}
-			</p>
+			</div>
 		</div>
 	</div>
 );

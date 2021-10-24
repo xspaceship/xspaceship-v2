@@ -9,6 +9,7 @@ import TwoColumns from 'components/md/TwoColumns';
 import RegularWidth from 'components/md/RegularWidth';
 import Caption from 'components/md/Caption';
 import { getAllImage } from 'utils/image';
+import rootMeta from 'meta.json';
 
 export const meta = {
 	slug: 'uber',
@@ -33,7 +34,8 @@ export async function getStaticProps() {
 	}
 	const ogImage =
 		(process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
-	return { props: { images, ...meta, ogImage } };
+	const title = rootMeta.name + ' | ' + meta.name;
+	return { props: { images, ...meta, title, ogImage } };
 }
 
 export default ({ children }) => (
@@ -43,15 +45,15 @@ export default ({ children }) => (
 );
 
 <NextSeo
-	title={props.name}
+	title={props.title}
 	description={props.description}
 	openGraph={{
-		title: props.name,
+		title: props.title,
 		description: props.description,
 		images: [
 			{
 				url: props.ogImage,
-				alt: props.name,
+				alt: props.title,
 				type: 'png',
 			},
 		],
@@ -64,12 +66,14 @@ export default ({ children }) => (
 	<Image {...props.images['01']} />
 </FullWidth>
 
-<Paragraph>
-	Terra is UberEats’ marketplace real-time monitoring tool used by global Live
-	Ops to manage our global marketplace dynamics. When there is an imbalance in
-	supply and demand (a sudden spike in demand, for example), ops teams can pull
-	various levers that help balance the marketplace in real-time.
-</Paragraph>
+<RegularWidth>
+	<Paragraph>
+		Terra is UberEats’ marketplace real-time monitoring tool used by global Live
+		Ops to manage our global marketplace dynamics. When there is an imbalance in
+		supply and demand (a sudden spike in demand, for example), ops teams can
+		pull various levers that help balance the marketplace in real-time.
+	</Paragraph>
+</RegularWidth>
 
 <Header>1 — The new feature</Header>
 
@@ -77,36 +81,32 @@ export default ({ children }) => (
 	<Image {...props.images['02']} />
 </RegularWidth>
 
-<Paragraph>
-	We designed and developed a new activity and alert framework within Terra that
-	gave UberEats Live Ops team timely alerts and full context of global
-	marketplace dynamics. This new feature led to:
-</Paragraph>
+<RegularWidth>
+	<Paragraph>
+		We designed and developed a new activity and alert framework within Terra
+		that gave UberEats Live Ops team timely alerts and full context of global
+		marketplace dynamics. This new feature led to:
+	</Paragraph>
+</RegularWidth>
 
 <RegularWidth>
-	<div className="flex justify-center px-5 lg:py-10 lg:flex-row lg:px-0">
+	<div className="flex justify-center font-worksans px-5 lg:py-10 lg:flex-row lg:px-0">
 		<div className="lg:flex lg:gap-5">
-			<div className="flex items-start mb-6 lg:mb-0">
-				<Image
-					{...props.images['arrow_up']}
-					className="mr-5 w-10 lg:mr-6 lg:w-16"
-				/>
+			<div className="flex gap-6">
+				<div className="w-16 h-16">
+					<Image {...props.images['arrow_up']} />
+				</div>
 				<ul>
-					<li className="font-medium font-ubermove text-4xl lg:text-6xl">
-						25%
-					</li>
+					<li className="font-medium mb-5 text-4xl lg:text-6xl">25%</li>
 					<li className="opacity-50 lg:text-xl">Agents productivity</li>
 				</ul>
 			</div>
-			<div className="flex items-start">
-				<Image
-					{...props.images['arrow_down']}
-					className="mr-5 w-10 lg:mr-6 lg:w-16"
-				/>
+			<div className="flex gap-6">
+				<div className="w-16 h-16">
+					<Image {...props.images['arrow_down']} />
+				</div>
 				<ul>
-					<li className="font-medium font-ubermove text-4xl lg:text-6xl">
-						15m
-					</li>
+					<li className="font-medium mb-5 text-4xl lg:text-6xl">15m</li>
 					<li className="opacity-50 lg:text-xl">Alerts resolvement time</li>
 				</ul>
 			</div>
@@ -123,32 +123,32 @@ export default ({ children }) => (
 <RegularWidth>
 	<div className="font-worksans flex flex-col gap-5 py-10 px-5 lg:gap-10 lg:mb-5 lg:py-20 lg:grid lg:grid-cols-12 lg:px-0">
 		<div className="lg:text-xl lg:font-medium lg:col-start-2 lg:col-span-4">
-			<p>
+			<div className="lg:mb-3">
 				There was not a centralized place to view actions taken to manage the
 				marketplace.
-			</p>
-			<p>
+			</div>
+			<div>
 				Ops needed multiple tools to understand what was happening in the
 				marketplace:
-			</p>
+			</div>
 		</div>
-		<div className="lg:col-start-7 lg:col-span-5 lg:text-xl">
+		<div className="lg:col-start-7 lg:col-span-5 lg:text-base">
 			<div className="bg-white bg-opacity-10 p-5 rounded-xl mb-5">
-				<h3 className="font-bold">Gchat bot</h3>
+				<h3 className="font-bold lg:mb-3">Gchat bot</h3>
 				<p className="font-medium">
 					Ops built a bot that share real-time alerts in Gchat. However, this
 					chat does not give agents full context of the marketplace dynamics.
 				</p>
 			</div>
 			<div className="bg-white bg-opacity-10 p-5 rounded-xl mb-5">
-				<h3 className="font-bold">Klaxon web app</h3>
+				<h3 className="font-bold lg:mb-3">Klaxon web app</h3>
 				<p className="font-medium">
 					Independent app that stores global marketplace real-time alerts, which
 					does not provide any context about marketplace health.
 				</p>
 			</div>
 			<div className="bg-white bg-opacity-10 p-5 rounded-xl">
-				<h3 className="font-bold">Ops activity query</h3>
+				<h3 className="font-bold lg:mb-3">Ops activity query</h3>
 				<p className="font-medium">
 					Terra logs all actions taken and state of the market at the time.
 					However, this is only available in a database that must be queried
@@ -171,6 +171,7 @@ export default ({ children }) => (
 			<div className="pb-10 flex border-b border-s-light-gray flex-col lg:flex-row">
 				<Image
 					{...props.images['A01']}
+					noRound
 					className="mr-10 rounded-full w-32 h-32 mb-4 lg:mb-0"
 				/>
 				<div className="lg:ml-10">
@@ -218,6 +219,7 @@ export default ({ children }) => (
 			<div className="pb-10 flex border-b border-s-light-gray flex-col lg:flex-row">
 				<Image
 					{...props.images['A02']}
+					noRound
 					className="mr-10 rounded-full w-32 h-32 mb-4 lg:mb-0"
 				/>
 				<div className="lg:ml-10">
@@ -278,43 +280,33 @@ export default ({ children }) => (
 </RegularWidth>
 
 <RegularWidth>
-	<div className="flex justify-center font-ubermove px-5 pt-10 lg:pt-20 lg:px-0">
+	<div className="flex justify-center font-worksans px-5 pt-10 lg:pt-20 lg:px-0">
 		<div>
-			<div className="flex mb-5 items-center">
-				<Image
-					{...props.images['arrow_up']}
-					className="mr-5 w-5 lg:mr-10 lg:w-10"
-				/>
-				<h3 className="font-bold text-lg lg:text-3xl lg:text-4xl">
+			<div className="flex mb-5 items-center gap-10">
+				<div className="w-10 h-10">
+					<Image {...props.images['arrow_up']} />
+				</div>
+				<h3 className="font-bold text-4xl">
 					User adoption: 7-day active users
 				</h3>
 			</div>
-			<div className="flex mb-5 items-center">
-				<Image
-					{...props.images['arrow_down']}
-					className="mr-5 w-5 lg:mr-10 lg:w-10"
-				/>
-				<h3 className="font-bold text-lg lg:text-3xl lg:text-4xl">
-					Time to alerts resolvement
-				</h3>
+			<div className="flex mb-5 items-center gap-10">
+				<div className="w-10 h-10">
+					<Image {...props.images['arrow_down']} />
+				</div>
+				<h3 className="font-bold text-4xl">Time to alerts resolvement</h3>
 			</div>
-			<div className="flex mb-5 items-center">
-				<Image
-					{...props.images['arrow_up']}
-					className="mr-5 w-5 lg:mr-10 lg:w-10"
-				/>
-				<h3 className="font-bold text-lg lg:text-3xl lg:text-4xl">
-					# of markets per agent
-				</h3>
+			<div className="flex mb-5 items-center gap-10">
+				<div className="w-10 h-10">
+					<Image {...props.images['arrow_up']} />
+				</div>
+				<h3 className="font-bold text-4xl"># of markets per agent</h3>
 			</div>
-			<div className="flex items-center">
-				<Image
-					{...props.images['arrow_up']}
-					className="mr-5 w-5 lg:mr-10 lg:w-10"
-				/>
-				<h3 className="font-bold text-lg lg:text-3xl lg:text-4xl">
-					# of markets per agent
-				</h3>
+			<div className="flex mb-5 items-center gap-10">
+				<div className="w-10 h-10">
+					<Image {...props.images['arrow_up']} />
+				</div>
+				<h3 className="font-bold text-4xl"># of markets per agent</h3>
 			</div>
 		</div>
 	</div>
@@ -326,46 +318,56 @@ export default ({ children }) => (
 	<Image {...props.images['08']} />
 </RegularWidth>
 
-<Caption>
-	We streamlined the workflow by removing the dependency on Klaxon. This helped
-	conslidate the number of steps because agents have full context of marketplace
-	dynamics within Terra. Team communication is streamlined since agents have
-	visibility over who works on which tasks.
-</Caption>
+<RegularWidth>
+	<Caption>
+		We streamlined the workflow by removing the dependency on Klaxon. This
+		helped conslidate the number of steps because agents have full context of
+		marketplace dynamics within Terra. Team communication is streamlined since
+		agents have visibility over who works on which tasks.
+	</Caption>
+</RegularWidth>
 
 <RegularWidth>
 	<Image {...props.images['09']} />
 </RegularWidth>
 
-<Caption>
-	Agents can filter alerts by locations, down to the country and region level.
-</Caption>
+<RegularWidth>
+	<Caption>
+		Agents can filter alerts by locations, down to the country and region level.
+	</Caption>
+</RegularWidth>
 
 <RegularWidth>
 	<Image {...props.images['10']} />
 </RegularWidth>
 
-<Caption>
-	Tapping on each row reveals full context of marketplace dynamics at that time.
-	A graph helps ops understand how and why the alert was fired.
-</Caption>
+<RegularWidth>
+	<Caption>
+		Tapping on each row reveals full context of marketplace dynamics at that
+		time. A graph helps ops understand how and why the alert was fired.
+	</Caption>
+</RegularWidth>
 
 <RegularWidth>
 	<Image {...props.images['11']} />
 </RegularWidth>
 
-<Caption>
-	On Activity tab, Ops managers can monitor team performance at any time.
-	There’s no need to run hours long query anymore. Terra highlights actions that
-	go against AI’s recommendations to make it easier for managers to inspect
-	special cases.
-</Caption>
+<RegularWidth>
+	<Caption>
+		On Activity tab, Ops managers can monitor team performance at any time.
+		There’s no need to run hours long query anymore. Terra highlights actions
+		that go against AI’s recommendations to make it easier for managers to
+		inspect special cases.
+	</Caption>
+</RegularWidth>
 
 <RegularWidth>
 	<Image {...props.images['12']} />
 </RegularWidth>
 
-<Caption>
-	We added alerts to the historical chart to help ops managers understand the
-	relationship between alerts and market conditions.
-</Caption>
+<RegularWidth>
+	<Caption>
+		We added alerts to the historical chart to help ops managers understand the
+		relationship between alerts and market conditions.
+	</Caption>
+</RegularWidth>
