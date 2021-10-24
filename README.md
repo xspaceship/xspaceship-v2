@@ -1,6 +1,11 @@
 ## 🚀 Quick start
 
 ```shell
+yarn
+cp .env.example .env.local
+```
+
+```shell
 yarn dev
 ```
 

@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { NextSeo } from 'next-seo';
 import Layout from 'components/Layout';
 import Image from 'components/Image';
 import meta from 'meta.json';
@@ -6,6 +7,8 @@ import { getAllImage } from 'utils/image';
 
 const About = ({
 	title,
+	description,
+	ogImage,
 	headline,
 	product,
 	branding,
@@ -25,6 +28,22 @@ const About = ({
 
 	return (
 		<Layout title={title} p="2xl:t-8">
+			{/* SEO */}
+			<NextSeo
+				title={title}
+				description={description}
+				openGraph={{
+					title,
+					description,
+					images: [
+						{
+							url: ogImage,
+							alt: title,
+							type: 'png',
+						},
+					],
+				}}
+			/>
 			{/* Headline */}
 			<div
 				p="x-5 y-7.5 lg:x-22.5 lg:y-32"
@@ -313,8 +332,11 @@ export default About;
 export async function getStaticProps() {
 	const images = await getAllImage('services');
 	const services = { ...meta.services };
+	const { ogImage } = meta;
 
 	const { product, branding, development } = services;
+
+	const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;
 
 	const transformImage = image =>
 		image.map(i => ({
@@ -340,5 +362,5 @@ export async function getStaticProps() {
 		development: { ...product, ...developmentImage },
 	};
 
-	return { props: { ...newServices } };
+	return { props: { ...newServices, ogImage: addedHostUrlOgImage } };
 }

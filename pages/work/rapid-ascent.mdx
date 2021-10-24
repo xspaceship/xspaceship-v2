@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import Layout from 'components/Layout';
 import Image from 'components/Image';
 import FullWidth from 'components/md/FullWidth';
@@ -29,7 +30,9 @@ export async function getStaticProps() {
 	for (const key in images) {
 		images[key] = { ...images[key], gradientFrom, gradientTo };
 	}
-	return { props: { images } };
+	const ogImage =
+		(process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+	return { props: { images, ...meta, ogImage } };
 }
 
 export default ({ children }) => (
@@ -37,6 +40,22 @@ export default ({ children }) => (
 		{children}
 	</Layout>
 );
+
+<NextSeo
+	title={props.name}
+	description={props.description}
+	openGraph={{
+		title: props.name,
+		description: props.description,
+		images: [
+			{
+				url: props.ogImage,
+				alt: props.name,
+				type: 'png',
+			},
+		],
+	}}
+/>
 
 <Title text={meta.description} sub="RapidAscent 2021" />
 
