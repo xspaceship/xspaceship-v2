@@ -358,8 +358,8 @@ export async function getStaticProps() {
 	const newServices = {
 		...services,
 		product: { ...product, ...productImage },
-		branding: { ...product, ...brandingImage },
-		development: { ...product, ...developmentImage },
+		branding: { ...branding, ...brandingImage },
+		development: { ...development, ...developmentImage },
 	};
 
 	return { props: { ...newServices, ogImage: addedHostUrlOgImage } };
