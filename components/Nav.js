@@ -64,8 +64,6 @@ const Nav = () => {
 
 	useEffect(() => {
 		window.onscroll = () => {
-			if (window.innerWidth >= 1800) return;
-
 			if (window.pageYOffset > 100) {
 				buttonRef.current.classList.remove('lg:hidden');
 			} else {

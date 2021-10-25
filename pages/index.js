@@ -61,7 +61,7 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
 						className={`${
 							isActiveType(type)
 								? 'bg-white text-black'
-								: 'hover:bg-bg11 transition-all duration-300'
+								: 'hover:bg-bg11 transition-colors duration-300'
 						}`}
 						onClick={() => setActiveType(type)}
 						key={index}

@@ -1,8 +1,18 @@
+import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'components/Link';
-import Nav from 'components/Nav';
 import meta from 'meta.json';
 
+const Nav = dynamic(() => import('./Nav'));
+
 const Header = () => {
+	const [is2XL, setIs2XL] = useState(true);
+
+	useEffect(() => {
+		if (window && window.innerWidth < 1800) {
+			setIs2XL(false);
+		}
+	}, []);
 	return (
 		<header p="5 lg:t-6 lg:x-32.5 lg:b-5 2xl:x-8 2xl:y-0">
 			<div
@@ -36,7 +46,7 @@ const Header = () => {
 				</nav>
 			</div>
 
-			<Nav />
+			{is2XL ? '' : <Nav />}
 		</header>
 	);
 };
