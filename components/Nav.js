@@ -82,7 +82,7 @@ const Nav = () => {
 
 	return (
 		<>
-			<button
+			<div
 				ref={buttonRef}
 				className="lg:hidden"
 				display="flex"
@@ -104,7 +104,7 @@ const Nav = () => {
 					height="20"
 					alt=""
 				/>
-			</button>
+			</div>
 
 			<AnimatePresence>
 				{visibleNav && (
