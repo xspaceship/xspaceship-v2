@@ -1,12 +1,20 @@
 import { NextSeo } from 'next-seo';
 import Layout from 'components/Layout';
 import Image from 'components/Image';
+import FullWidth from 'components/md/FullWidth';
+import Title from 'components/md/Title';
+import Paragraph from 'components/md/Paragraph';
+import Header from 'components/md/Header';
+import TwoColumns from 'components/md/TwoColumns';
+import RegularWidth from 'components/md/RegularWidth';
+import { getAllImage } from 'utils/image';
+import rootMeta from 'meta.json';
 
 export const meta = {
 	slug: 'fuze',
 	name: 'Fuze',
 	category: ['SaaS', 'Mobile'],
-	description: 'Unified Communication as a Service.',
+	description: 'Unified Communication as a Service',
 	sub: 'Mobile design',
 	year: 2019,
 	preview: '06',
@@ -16,10 +24,51 @@ export const meta = {
 	gradientTo: '#4F22AB',
 };
 
+export async function getStaticProps(context) {
+	const images = await getAllImage('fuze');
+	const { gradientFrom, gradientTo } = meta;
+	for (const key in images) {
+		images[key] = { ...images[key], gradientFrom, gradientTo };
+	}
+	const ogImage =
+		(process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+	const title = rootMeta.name + ' | ' + meta.name;
+	return { props: { images, ...meta, title, ogImage } };
+}
+
 export default ({ children }) => (
 	<Layout title={meta.name} p="2xl:t-8">
 		{children}
 	</Layout>
 );
 
-This is an App page
+<NextSeo
+	title={props.title}
+	description={props.description}
+	openGraph={{
+		title: props.title,
+		description: props.description,
+		images: [
+			{
+				url: props.ogImage,
+				alt: props.title,
+				type: 'png',
+			},
+		],
+	}}
+/>
+
+<Title text="Unified Communication as a Service (UCaaS)" sub="Fuze 2018" />
+
+<Header>1 — Main tabs</Header>
+
+<FullWidth>
+	<TwoColumns>
+		<Image {...props.images['main_01']} />
+		<Image {...props.images['main_02']} />
+	</TwoColumns>
+	<TwoColumns>
+		<Image {...props.images['main_03']} />
+		<Image {...props.images['main_04']} />
+	</TwoColumns>
+</FullWidth>
