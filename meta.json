@@ -18,13 +18,13 @@
 		}
 	],
 	"home": {
-		"title": "xspaceship",
-		"description": "Some description / for SEO purpose",
-		"headline": "Global Branding & Digital Products"
+		"title": "xspaceship | Full-service digital agency specializing in product design and web development",
+		"description": "We partner with start-ups and enterprises to design and build great brands and digital products. Achieve your biggest business ambitions with our world-class design and engineering team.",
+		"headline": "Digital Product Design & Web Development"
 	},
 	"about": {
 		"title": "About",
-		"description": "Some description / for SEO purpose",
+		"description": "We are a team of veterans from the world of Ogilvy & Mather, Collins, Facebook, & Uber to deliver the most unifying, thoughtful and comprehensive creative services.",
 		"headline": "We are a group of <span class='text-gradient-03'>art directors, product designers, & technologists</span>.",
 		"why": {
 			"headline": "The gap we are filling.",
@@ -52,7 +52,7 @@
 	},
 	"services": {
 		"title": "Services",
-		"description": "Some description / for SEO purpose",
+		"description": "We are a full-service digital agency. Our services include: digital design, web development and visual branding.",
 		"headline": "We fuse <span class='text-gradient-02'>creativity, craft, & technology</span> into  <span class='text-gradient-02'>experiences</span> that improve lives.",
 		"product": {
 			"headline": "Digital Design & Strategy",
