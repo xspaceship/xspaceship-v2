@@ -46,10 +46,7 @@ export default defineConfig({
 				lh01: '1.05rem',
 			},
 			fontFamily: {
-				montserrat: ['Montserrat', 'sans-serif'],
-				jetbrain: ['JetBrains Mono', 'monospace'],
 				worksans: ['Work Sans', 'sans-serif'],
-				ubermove: ['Uber Move', 'sans-serif'],
 				questrial: ['Questrial', 'sans-serif'],
 			},
 			textColor: {

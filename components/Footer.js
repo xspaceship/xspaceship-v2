@@ -6,7 +6,7 @@ const Footer = () => (
 		container="2xl:~"
 		m="2xl:x-auto"
 		p="5 lg:y-24 lg:x-32"
-		font="jetbrain"
+		font="worksans"
 		grid="lg:~ lg:cols-12 lg:gap-5"
 	>
 		<div grid="lg:col-span-10 lg:col-start-2">
@@ -26,7 +26,9 @@ const Footer = () => (
 				<h3 className="text-xs">
 					© {currentYear} {meta.shortName}
 				</h3>
-				<h3 className="text-xs">Site map</h3>
+				<a href="/sitemap.xml" className="text-xs">
+					Site map
+				</a>
 			</div>
 		</div>
 	</footer>

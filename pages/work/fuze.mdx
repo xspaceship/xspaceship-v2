@@ -78,20 +78,43 @@ export default ({ children }) => (
 <FullWidth>
 	<TwoColumns>
 		<Image {...props.images['intro_01']} />
-		<Image {...props.images['intro_02']} />
-	</TwoColumns>
+
+    	<Image {...props.images['intro_02']} />
+    </TwoColumns>
+
 </FullWidth>
 
 <Header>1 — Main tabs</Header>
 
 <FullWidth>
 	<TwoColumns>
+<<<<<<< HEAD
 		<Image {...props.images['main_01']} caption="Test" />
 		<Image {...props.images['main_02']} />
+=======
+		<Image
+			{...props.images['main_01']}
+			caption="Hello World"
+			captionAlignment="left"
+		/>
+		<Image
+			{...props.images['main_02']}
+			caption="Hello World"
+			captionAlignment="center"
+		/>
+>>>>>>> 3d9c0a48098a15bd9171d5e70d718e9c66e15f8e
 	</TwoColumns>
 	<TwoColumns>
-		<Image {...props.images['main_03']} />
-		<Image {...props.images['main_04']} />
+		<Image
+			{...props.images['main_03']}
+			caption="Hello World"
+			captionAlignment="right"
+		/>
+		<Image
+			{...props.images['main_04']}
+			caption="Hello World"
+			captionAlignment="center"
+		/>
 	</TwoColumns>
 </FullWidth>
 

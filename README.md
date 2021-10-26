@@ -2,7 +2,7 @@
 
 ```shell
 yarn
-cp .env.example .env.local
+cp .env.example .env
 ```
 
 ```shell
