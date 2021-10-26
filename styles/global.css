@@ -90,3 +90,7 @@ button:focus {
 	z-index: -1;
 	@apply opacity-0 transition-all duration-300;
 }
+
+.md-two-columns .image-wrapper {
+	height: initial;
+}
