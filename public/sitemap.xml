@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>http://https://localhost:3456/about/</loc>
+        <lastmod>2021-10-26</lastmod>
+		<xhtml:link rel="alternate" hreflang="en" href="http://https://localhost:3456/about/" />
+    </url>
+    <url>
+        <loc>http://https://localhost:3456/</loc>
+        <lastmod>2021-10-26</lastmod>
+		<xhtml:link rel="alternate" hreflang="en" href="http://https://localhost:3456/" />
+    </url>
+    <url>
+        <loc>http://https://localhost:3456/services/</loc>
+        <lastmod>2021-10-26</lastmod>
+		<xhtml:link rel="alternate" hreflang="en" href="http://https://localhost:3456/services/" />
+    </url>
+    <url>
+        <loc>http://https://localhost:3456/work/fuze/</loc>
+        <lastmod>2021-10-26</lastmod>
+		<xhtml:link rel="alternate" hreflang="en" href="http://https://localhost:3456/work/fuze/" />
+    </url>
+    <url>
+        <loc>http://https://localhost:3456/work/laha/</loc>
+        <lastmod>2021-10-26</lastmod>
+		<xhtml:link rel="alternate" hreflang="en" href="http://https://localhost:3456/work/laha/" />
+    </url>
+    <url>
+        <loc>http://https://localhost:3456/work/rapid-ascent/</loc>
+        <lastmod>2021-10-26</lastmod>
+		<xhtml:link rel="alternate" hreflang="en" href="http://https://localhost:3456/work/rapid-ascent/" />
+    </url>
+    <url>
+        <loc>http://https://localhost:3456/work/roomi/</loc>
+        <lastmod>2021-10-26</lastmod>
+		<xhtml:link rel="alternate" hreflang="en" href="http://https://localhost:3456/work/roomi/" />
+    </url>
+    <url>
+        <loc>http://https://localhost:3456/work/uber/</loc>
+        <lastmod>2021-10-26</lastmod>
+		<xhtml:link rel="alternate" hreflang="en" href="http://https://localhost:3456/work/uber/" />
+    </url>
+    <url>
+        <loc>http://https://localhost:3456/work/whippy/</loc>
+        <lastmod>2021-10-26</lastmod>
+		<xhtml:link rel="alternate" hreflang="en" href="http://https://localhost:3456/work/whippy/" />
+    </url>
+</urlset>

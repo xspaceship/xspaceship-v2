@@ -38,7 +38,7 @@ const About = ({
 			border="rounded-lg"
 			bg="bg02"
 		>
-			<h3
+			<h1
 				grid="col-span-12 md:col-span-9 2xl:col-span-11"
 				font="questrial ld01 md:leading-tight"
 				className="text-white text-fs01 md:text-7xl"

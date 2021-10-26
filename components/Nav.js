@@ -130,7 +130,7 @@ const Nav = () => {
 								flex="~"
 								justify="start"
 								align="items-center"
-								font="jetbrain"
+								font="worksans"
 								m="b-10 lg:t-16"
 							>
 								<Link href="/">
@@ -160,7 +160,7 @@ const Nav = () => {
 									</motion.div>
 								))}
 							</motion.nav>
-							<h3 font="jetbrain leading-4" className="text-xs">
+							<h3 font="worksans leading-4" className="text-xs">
 								© {currentYear} {meta.shortName}
 							</h3>
 						</motion.aside>

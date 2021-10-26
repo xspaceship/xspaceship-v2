@@ -78,6 +78,7 @@ export default ({ children }) => (
 <FullWidth>
 	<TwoColumns>
 		<Image {...props.images['intro_01']} />
+
 		<Image {...props.images['intro_02']} />
 	</TwoColumns>
 </FullWidth>
@@ -86,12 +87,28 @@ export default ({ children }) => (
 
 <FullWidth>
 	<TwoColumns>
-		<Image {...props.images['main_01']} />
-		<Image {...props.images['main_02']} />
+		<Image
+			{...props.images['main_01']}
+			caption="Hello World"
+			captionAlignment="left"
+		/>
+		<Image
+			{...props.images['main_02']}
+			caption="Hello World"
+			captionAlignment="center"
+		/>
 	</TwoColumns>
 	<TwoColumns>
-		<Image {...props.images['main_03']} />
-		<Image {...props.images['main_04']} />
+		<Image
+			{...props.images['main_03']}
+			caption="Hello World"
+			captionAlignment="right"
+		/>
+		<Image
+			{...props.images['main_04']}
+			caption="Hello World"
+			captionAlignment="center"
+		/>
 	</TwoColumns>
 </FullWidth>
 

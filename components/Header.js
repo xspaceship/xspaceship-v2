@@ -20,7 +20,7 @@ const Header = () => {
 				flex="~ 2xl:col"
 				justify="between 2xl:start"
 				align="items-center 2xl:items-start 2xl:self-start"
-				font="jetbrain"
+				font="worksans"
 				space="2xl:y-5"
 				pos="2xl:sticky 2xl:top-8"
 			>

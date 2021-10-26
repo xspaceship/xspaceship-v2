@@ -7,21 +7,21 @@ const Title = ({ text, sub }) => (
 		bg="lg:bg02"
 		className="md-title"
 	>
-		<h3
+		<h1
 			font="questrial children:questrial"
 			grid="col-span-12 md:col-span-9 lg:col-span-9"
 			className="text-fs01 lg:text-6xl"
 		>
 			{text}
-		</h3>
-		<h4
+		</h1>
+		<h2
 			font="worksans children:worksans"
 			m="lg:b-10"
 			grid="col-span-12"
 			className="text-xl"
 		>
 			{sub}
-		</h4>
+		</h2>
 	</section>
 );
 
