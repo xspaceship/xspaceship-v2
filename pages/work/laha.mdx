@@ -64,10 +64,76 @@ export default ({ children }) => (
 	<Image {...props.images['hero']} />
 </FullWidth>
 
+<Paragraph>
+	Laha came to us with an ambitious mission
+	<li>
+		Becomes the leading Cosmetic Dermatology center in Vietnam as well as
+		vocational training for skin cosmetic doctors and technicians, distributes
+		prestige and quality skin care products and creates a leading skin care
+		ecosystem in Vietnam
+	</li>
+	<li>
+		Brings happier life for customers and builds reputation for Vietnamese
+		dermatology practices in the international community
+	</li>
+</Paragraph>
+
+<Paragraph>
+	In order to get there, it became clear that Laha clinic needs a full rebrand.
+	The existing brand experience was fragmented and did not resonate with the
+	majority of its customers.
+</Paragraph>
+
 <Header>1 — Visual branding</Header>
 
+<Paragraph>
+	Company's Mission
+	<li>
+		{' '}
+		Pioneers in bringing knowledge of Cosmetic Dermatology and the importance of
+		beautiful skin to Vietnamese customers{' '}
+	</li>
+	<li>
+		Improves skin thereby increases confidence and the quality of life for
+		patients{' '}
+	</li>
+	<li>
+		Empower the beauty inside each person by awakening skin vitality in the most
+		natural and scientific way{' '}
+	</li>
+	<li>
+		Provides premium skin treatment services and a lifetime warranty, thus
+		bringing long lasting beautiful skin and confidence for patients{' '}
+	</li>
+</Paragraph>
+
 <RegularWidth>
-	<Image {...props.images['brand_00']} />
+	<TwoColumns>
+		<Paragraph>
+			Functional
+			<li>Science & Efficacy</li>
+			<li>Clinical</li>
+			<li>Scientific</li>
+			<li>Expertise & Knowledge</li>
+			<li>Premium & Prestige</li>
+		</Paragraph>
+		<Paragraph>
+			Emotional
+			<li>Nurturing & Sustainable</li>
+			<li>Elegant & Sophisticated</li>
+			<li>Natural</li>
+			<li>Optimistic & Confident</li>
+			<li>Vitality & Rejuvenating</li>
+		</Paragraph>
+	</TwoColumns>
+</RegularWidth>
+
+<RegularWidth>
+	<Image
+		{...props.images['brand_00']}
+		caption="Our custom logo is an evolution from our previous logo with a root to Vietnamese alphabet, while evoking a sense of refreshment through playing with ligatures and diacritics. It constantly juxtaposes the highly premium with youthful contemporariness."
+		captionAlignment="center"
+	/>
 </RegularWidth>
 
 <RegularWidth>
@@ -75,23 +141,48 @@ export default ({ children }) => (
 		<Image {...props.images['brand_01']} />
 		<Image {...props.images['brand_02']} />
 	</TwoColumns>
+	<Paragraph>
+		The logo also represent different business offerings that come with
+		different business lock ups.
+	</Paragraph>
 </RegularWidth>
 
 <RegularWidth>
 	<Image {...props.images['brand_03']} />
+	<Paragraph>
+		To communicate the brand's affinity to cutting-edge technology, we use a
+		vibrant royal blue as the primary color. Off-white is used to represent the
+		fashionable and softer aspect of the brand.
+	</Paragraph>
 </RegularWidth>
 
 <RegularWidth>
 	<TwoColumns>
-		<Image {...props.images['brand_04_A']} />
-		<Image {...props.images['brand_04_B']} />
+		<Image
+			{...props.images['brand_04_A']}
+			caption="Secondary colors"
+			captionAlignment="center"
+		/>
+		<Image
+			{...props.images['brand_04_B']}
+			caption="Gradients"
+			captionAlignment="center"
+		/>
 	</TwoColumns>
 </RegularWidth>
 
 <RegularWidth>
 	<TwoColumns>
-		<Image {...props.images['brand_05']} />
-		<Image {...props.images['brand_06']} />
+		<Image
+			{...props.images['brand_05']}
+			caption="Texture photography"
+			captionAlignment="center"
+		/>
+		<Image
+			{...props.images['brand_06']}
+			caption="Warm and light-hearted photography."
+			captionAlignment="center"
+		/>
 	</TwoColumns>
 </RegularWidth>
 
@@ -99,13 +190,25 @@ export default ({ children }) => (
 
 <RegularWidth>
 	<TwoColumns>
-		<Image {...props.images['prod_00']} />
-		<Image {...props.images['prod_01']} />
+		<Image
+			{...props.images['prod_00']}
+			caption="Office signage"
+			captionAlignment="center"
+		/>
+		<Image
+			{...props.images['prod_01']}
+			caption="Uniform"
+			captionAlignment="center"
+		/>
 	</TwoColumns>
 </RegularWidth>
 
 <RegularWidth>
-	<Image {...props.images['prod_02']} />
+	<Image
+		{...props.images['prod_02']}
+		caption="Service menu and marketing brochure"
+		captionAlignment="center"
+	/>
 </RegularWidth>
 
 <RegularWidth>
@@ -115,26 +218,53 @@ export default ({ children }) => (
 	</TwoColumns>
 </RegularWidth>
 
+<Paragraph>
+	Our house illustration style is representative of our ethos and allows us to
+	create compelling communications that get people to stop. Soft, organic forms
+	with airy and lighthearted line quality can convey both the nurturing side of
+	the brand, as well as the highly-tech side of the brand.
+</Paragraph>
+
 <RegularWidth>
-	<Image {...props.images['prod_05']} />
+	<Image
+		{...props.images['prod_05']}
+		caption="Cosmetic product packaging"
+		captionAlignment="center"
+	/>
 </RegularWidth>
 
 <RegularWidth>
-	<Image {...props.images['prod_06']} />
+	<Image
+		{...props.images['prod_06']}
+		caption="Shopping bag"
+		captionAlignment="center"
+	/>
 </RegularWidth>
 
 <Header>3 — Digital experience</Header>
 
 <RegularWidth>
-	<Image {...props.images['digi_01']} />
+	<Image
+		{...props.images['digi_01']}
+		caption="Monogram used as Instagram display photo"
+		captionAlignment="center"
+	/>
 </RegularWidth>
 
 <RegularWidth>
-	<Image {...props.images['digi_02']} />
+	<Image
+		{...props.images['digi_02']}
+		caption="Combining illustration, photography, and typography to create compelling Instagram posts"
+		captionAlignment="center"
+	/>
 </RegularWidth>
 
 <RegularWidth>
-	<Image {...props.images['digi_03']} />
+	<Image
+		{...props.images['digi_03']}
+		caption="Homepage"
+		captionAlignment="center"
+	/>
 </RegularWidth>
 
 <RegularWidth>
