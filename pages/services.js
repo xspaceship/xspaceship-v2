@@ -74,14 +74,14 @@ const About = ({
 					p="t-5 b-10 lg:y-0"
 				>
 					<div grid="lg:~ lg:cols-5 lg:gap-x-5">
-						<h3
+						<h2
 							font="questrial"
 							m="b-5 lg:b-12"
 							grid="col-span-3"
 							className="text-3xl lg:text-4xl"
 						>
 							{product.headline}
-						</h3>
+						</h2>
 						<ul
 							className="triangle-bullet"
 							font="worksans medium"
@@ -205,14 +205,14 @@ const About = ({
 					p="t-5 b-10 lg:y-0"
 				>
 					<div grid="lg:~ lg:cols-5 lg:gap-x-5">
-						<h3
+						<h2
 							font="questrial"
 							m="b-5 lg:b-12"
 							grid="col-span-3 col-start-2"
 							className="text-3xl lg:text-4xl"
 						>
 							{branding.headline}
-						</h3>
+						</h2>
 						<ul
 							className="triangle-bullet"
 							font="worksans medium"
@@ -262,14 +262,14 @@ const About = ({
 					p="t-5 b-10 lg:y-0"
 				>
 					<div grid="lg:~ lg:cols-5 lg:gap-x-5">
-						<h3
+						<h2
 							font="questrial"
 							m="b-5 lg:b-12"
 							grid="col-span-3"
 							className="text-3xl lg:text-4xl"
 						>
 							{development.headline}
-						</h3>
+						</h2>
 						<ul
 							className="triangle-bullet"
 							font="worksans medium"

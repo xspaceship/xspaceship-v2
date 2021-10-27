@@ -4,8 +4,8 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev -p 3456",
-		"generate-sitemap": "node sitemap.js",
-		"build": "yarn generate-sitemap && next build && next export",
+		"seo": "node seo.js",
+		"build": "yarn seo && next build && next export",
 		"analyze": "ANALYZE=true yarn build",
 		"start": "next start",
 		"lint": "next lint",

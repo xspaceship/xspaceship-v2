@@ -47,7 +47,28 @@
 		},
 		"branding": {
 			"headline": "Trusted by",
-			"image": ["03", "04", "05", "06"]
+			"image": [
+				{
+					"name": "03",
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
+				},
+				{
+					"name": "04",
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
+				},
+				{
+					"name": "05",
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
+				},
+				{
+					"name": "06",
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
+				}
+			]
 		}
 	},
 	"services": {

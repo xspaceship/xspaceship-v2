@@ -34,25 +34,26 @@ const Image = props => {
 				className={`image-wrapper ${isLoaded ? 'is-image-loaded' : ''}`}
 			>
 				<div
+					aria-hidden="true"
 					pos="inset-0 absolute"
 					w="full"
 					h="full"
 					border={round}
+					{...rest}
+					className={`${props.className} image-placeholder`}
 					style={{ ...style }}
-					aria-hidden="true"
-					className="image-placeholder"
 				/>
 				<NextImage
 					alt=""
 					quality="100"
-					{...rest}
 					border={round}
+					{...rest}
 					onLoadingComplete={() => setIsLoaded(true)}
 				/>
 			</div>
 			{caption ? (
 				<figcaption
-					m="t-5"
+					m="y-5"
 					font="worksans"
 					className={`text-${captionAlignment} text-sm`}
 				>

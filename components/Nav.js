@@ -92,16 +92,16 @@ const Nav = () => {
 				align="items-center"
 				z="20"
 				bg="black"
+				cursor="pointer"
 				onClick={toggleVisibleNav}
 			>
-				<Image
-					src={`/images/${
-						visibleNav ? 'close' : isDesktop ? 'hamburger-2' : 'hamburger'
-					}.png`}
-					width="20"
-					height="20"
-					alt=""
-				/>
+				{visibleNav ? (
+					<Image src="/images/close.png" width="20" height="20" alt="" />
+				) : isDesktop ? (
+					<Image src="/images/hamburger-2.png" width="20" height="20" alt="" />
+				) : (
+					<Image src="/images/hamburger.png" width="20" height="20" alt="" />
+				)}
 			</div>
 
 			<AnimatePresence>
@@ -125,25 +125,27 @@ const Nav = () => {
 							variants={navVariants}
 							className="bg-bg07 w-full p-5 lg:w-104 lg:py-8 lg:px-10"
 						>
-							<div
-								h="12.5 lg:14"
-								flex="~"
-								justify="start"
-								align="items-center"
-								font="worksans"
-								m="b-10 lg:t-16"
-							>
-								<Link href="/">
-									<a className="text-fs02">{meta.shortName}</a>
-								</Link>
-							</div>
 							<motion.nav
-								className="mb-10"
 								initial="closed"
 								animate="open"
 								exit="closed"
 								variants={sideVariants}
 							>
+								<motion.div variants={itemVariants}>
+									<div
+										h="12.5 lg:14"
+										flex="~"
+										justify="start"
+										align="items-center"
+										font="worksans"
+										m="b-10 lg:t-16"
+									>
+										<Link href="/">
+											<a className="text-fs02">{meta.shortName}</a>
+										</Link>
+									</div>
+								</motion.div>
+
 								{meta.nav.map(({ name, path }, index) => (
 									<motion.div key={index} variants={itemVariants}>
 										<Link href={path}>
@@ -159,10 +161,13 @@ const Nav = () => {
 										</Link>
 									</motion.div>
 								))}
+
+								<motion.div variants={itemVariants}>
+									<h3 font="worksans leading-4" m="t-10" className="text-xs">
+										© {currentYear} {meta.shortName}
+									</h3>
+								</motion.div>
 							</motion.nav>
-							<h3 font="worksans leading-4" className="text-xs">
-								© {currentYear} {meta.shortName}
-							</h3>
 						</motion.aside>
 					</div>
 				)}

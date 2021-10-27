@@ -33,6 +33,7 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
 					],
 				}}
 			/>
+
 			{/* Headline */}
 			<div p="y-7.5 md:y-10 lg:y-20 2xl:t-0" grid="~ gap-5 cols-12">
 				<h1
@@ -112,7 +113,7 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
 											p="10"
 											font="worksans"
 										>
-											<h3 className="text-white text-3xl">{name}</h3>
+											<h2 className="text-white text-3xl">{name}</h2>
 											<p className="text-tc05 text-3xl" m="b-5" w="lg:2/4">
 												{description}
 											</p>

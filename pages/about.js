@@ -138,7 +138,10 @@ export async function getStaticProps() {
 		...about,
 		what: { ...what, image: { ...what.image, ...images[what.image.name] } },
 		why: { ...why, image: { ...why.image, ...images[why.image.name] } },
-		branding: { ...branding, image: branding.image.map(i => images[i]) },
+		branding: {
+			...branding,
+			image: branding.image.map(i => ({ ...i, ...images[i.name] })),
+		},
 	};
 
 	return { props: { ...newAbout, ogImage: addedHostUrlOgImage } };
