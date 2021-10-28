@@ -6,7 +6,7 @@ const Paragraph = ({ children }) => (
 		m="b-5"
 		className="md-paragraph"
 	>
-		<div grid="col-span-8 md:col-span-8 md:col-start-3">
+		<div grid="lg:col-span-8 lg:col-start-3 md:col-span-8 md:col-start-3 sm:col-span-12">
 			<div
 				className="text-center text-xl"
 				space="y-5"
