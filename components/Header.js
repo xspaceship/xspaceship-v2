@@ -8,10 +8,16 @@ const Nav = dynamic(() => import('./Nav'));
 const Header = () => {
 	const [is2XL, setIs2XL] = useState(true);
 
+	const handleResize = e => {
+		setIs2XL(e.target.innerWidth >= 1800);
+	};
+
 	useEffect(() => {
 		if (window && window.innerWidth < 1800) {
 			setIs2XL(false);
 		}
+
+		window.addEventListener('resize', handleResize);
 	}, []);
 	return (
 		<header p="5 lg:t-6 lg:x-32.5 lg:b-5 2xl:x-8 2xl:y-0">

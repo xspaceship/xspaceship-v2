@@ -24,7 +24,7 @@ const Image = props => {
 			: { ...css, filter: 'blur(60px)' };
 
 	return (
-		<div flex="~ col">
+		<div flex="~ col" h="full">
 			<div
 				pos="relative"
 				display="block"
@@ -48,6 +48,7 @@ const Image = props => {
 					quality="100"
 					border={round}
 					{...rest}
+					className={props.className}
 					onLoadingComplete={() => setIsLoaded(true)}
 				/>
 			</div>

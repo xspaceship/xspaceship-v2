@@ -62,19 +62,22 @@ const Nav = () => {
 		},
 	};
 
+	const handleScroll = () => {
+		if (window.pageYOffset > 100) {
+			buttonRef.current.classList.remove('lg:hidden');
+		} else {
+			buttonRef.current.classList.add('lg:hidden');
+		}
+	};
+
 	useEffect(() => {
-		window.onscroll = () => {
-			if (window.pageYOffset > 100) {
-				buttonRef.current.classList.remove('lg:hidden');
-			} else {
-				buttonRef.current.classList.add('lg:hidden');
-			}
-		};
+		window.addEventListener('scroll', handleScroll);
 
 		setIsDesktop(window.innerWidth > 1024);
 
 		return () => {
 			if (navRef.current) clearAllBodyScrollLocks(navRef.current);
+			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
 

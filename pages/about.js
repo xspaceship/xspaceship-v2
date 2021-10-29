@@ -86,7 +86,7 @@ const About = ({
 					bg="lg:black"
 					grid="lg:col-span-8 lg:col-start-3"
 				>
-					<h3 m="b-4" className="text-gradient-01 uppercase text-4xl">
+					<h3 m="b-4" className="text-gradient-01 text-4xl">
 						{what.headline}
 					</h3>
 					<h3 font="medium" className="text-2xl">
