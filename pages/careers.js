@@ -44,12 +44,12 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 
 		{/* Working here */}
 		<RegularWidth>
-			<div className="grid font-worksans divide-y-1 divide-white ">
+			<div className="grid font-worksans divide-y-1 divide-white">
 				<div>
 					{/* Top section */}
-					<div className="mb-8 flex flex-col lg:flex-row mt-16">
+					<div className="flex flex-col lg:flex-row mt-16">
 						<div className="flex-grow">
-							<h3 className="font-medium mb-4 text-4xl">Working here</h3>
+							<h3 className="font-medium mb-16 text-4xl">Working here</h3>
 						</div>
 					</div>
 
@@ -94,7 +94,7 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 						</div>
 					</div>
 				</div>
-				<div className="pb-10 flex flex-col lg:flex-row">
+				<div className="pb-2 flex flex-col lg:flex-row">
 					<div className="flex-grow mt-16">
 						<h3 className="font-medium mb-4 text-4xl">Our work space</h3>
 					</div>
@@ -121,6 +121,41 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 				</div>
 			))}
 		</FullWidth>
+
+		<RegularWidth>
+			<h3 className="font-medium mb-12 mt-24 text-4xl font-worksans">
+				Open positions
+			</h3>
+			<div className="grid grid-cols-12 border border-bc03 rounded-lg p-16 font-worksans">
+				<div className="col-span-4">
+					<h3 className="text-3xl lg:text-4xl">Design</h3>
+				</div>
+				<div className="col-span-8 divide-y-1 divide-white">
+					<div className="p-8 pl-0 pt-0">
+						<h4 className="text-2xl mb-4">Lead Product Designer</h4>
+						<p>
+							Both a strategic thinker and a masterful craftsman. Can lead a
+							team, present in meetings with our clients and drive projects to
+							the finish line.
+						</p>
+					</div>
+					<div className="p-8 pl-0">
+						<h4 className="text-2xl mb-4">Product Designer</h4>
+						<p>
+							Generalist designer who can lead a design process end-to-end.
+							Equally skills with product thinking, interaction design and
+							visual design.
+						</p>
+					</div>
+					<div className="p-8 pl-0 pb-0">
+						<h4 className="text-2xl mb-4">Design Intern</h4>
+						<p>
+							A designer with strong foundation and can execute tactical tasks.
+						</p>
+					</div>
+				</div>
+			</div>
+		</RegularWidth>
 	</Layout>
 );
 
