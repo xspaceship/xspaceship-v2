@@ -263,9 +263,16 @@
 	"careers": {
 		"title": "xspaceship | Careers",
 		"description": "We are a team of veterans from the world of Ogilvy & Mather, Collins, Facebook, & Uber to deliver the most unifying, thoughtful and comprehensive creative services.",
-		"headline": "We are a group of <span class='text-gradient-03'>art directors, product designers, & technologists</span>.",
+		"headline": "<span class='text-gradient-03'>Join our team & grow with us.</span>.",
 		"location": {
-			"image": "location"
+			"image": [
+				{
+					"name": "location",
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
+				}
+			],
+			"text": "You will love our meeting space."
 		}
 	}
 }
