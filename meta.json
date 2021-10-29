@@ -15,6 +15,10 @@
 		{
 			"name": "About",
 			"path": "/about"
+		},
+		{
+			"name": "Careers",
+			"path": "/careers"
 		}
 	],
 	"home": {
@@ -254,6 +258,14 @@
 		"quote02": {
 			"text": "“There are three responses to a piece of design — yes, no, and WOW! Wow is the one to aim for.”",
 			"author": "Milton Glaser"
+		}
+	},
+	"careers": {
+		"title": "xspaceship | Careers",
+		"description": "We are a team of veterans from the world of Ogilvy & Mather, Collins, Facebook, & Uber to deliver the most unifying, thoughtful and comprehensive creative services.",
+		"headline": "We are a group of <span class='text-gradient-03'>art directors, product designers, & technologists</span>.",
+		"location": {
+			"image": "location"
 		}
 	}
 }
