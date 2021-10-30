@@ -52,48 +52,49 @@ const careers = ({
 		</div>
 
 		{/* Working here */}
-		<div>
-			<div className="grid grid-cols-12 font-worksans gap-x-12 gap-y-12 lg:mx-0 lg:px-22 md:px-16 lg:py-20 md:py-12 sm:py-8 sm:m-x-5">
+		<div className="lg:mx-32 md:mx-0 sm:mx-5 font-worksans divide-y-1 divide-bc03">
+			<div className="grid grid-cols-12 font-worksans gap-x-12 gap-y-8 lg:mx-0 md:px-0 lg:py-20 md:py-12 sm:py-8 sm:m-x-5 mb-0">
 				{/* Top section */}
 				<div className="col-span-12">
-					<h3 className="font-medium text-4xl">Working here</h3>
+					<h3 className="font-medium text-4xl mb-4">Working here</h3>
 				</div>
 
 				{/* Bottom section */}
-				<div className="lg:col-span-8 md:col-span-6 sm:col-span-12">
-					<div className="grid grid-cols-8 gap-x-12 gap-y-12">
+				<div className="lg:col-span-12 md:col-span-6 sm:col-span-12">
+					<div className="grid grid-cols-12 gap-x-20 gap-y-16">
 						{/* Working here loop */}
 
-						{working.working.map(({ name, description }, index) => (
-							<div className="lg:col-span-4 md:col-span-8 sm:col-span-12 ">
-								<h2 className="font-medium text-2xl"> {name} </h2>
-								<p className="mt-4">{description}</p>
+						{working.working.map(({ name, description, image }, index) => (
+							<div className="md:col-span-6 sm:col-span-12">
+								<div className="grid grid-cols-12 gap-x-8">
+									<img
+										src={image.name}
+										width="auto"
+										className="border border-bc03 rounded-lg p-6 col-span-3"
+									/>
+									<div class="col-span-9">
+										<h2 className="font-medium text-2xl"> {name} </h2>
+										<p className="mt-2">{description}</p>
+									</div>
+								</div>
 							</div>
 						))}
 					</div>
 				</div>
-
-				<div
-					className="row-span-2 lg:col-span-4 md:col-span-6 sm:col-span-12 border border-bc03 rounded-lg md:row-span-2 sm:row-span-8"
-					backgroundImage="{...team.image}"
-				>
-					{/* <Image {...team.image} alt="" /> */}
+			</div>
+			<div>
+				<div className="col-span-12 md:px-0 mt-20">
+					<h3 className="font-medium text-4xl mb-12">Our values</h3>
 				</div>
-			</div>
-		</div>
-
-		<div className="lg:mx-0 md:mx-0 sm:mx-5 font-worksans">
-			<div className="col-span-12 md:px-22">
-				<h3 className="font-medium text-4xl mb-8">Our values</h3>
-			</div>
-			<div className="grid grid-cols-3 gap-x-5 gap-y-5 pb-20 md:px-22 font-worksans">
-				{/* Loop values */}
-
-				{values.value.map(({ name }, index) => (
-					<div className="p-8 border border-bc03 rounded-lg">
-						<h4 className="text-2xl">{name}</h4>
-					</div>
-				))}
+				<div className="grid grid-cols-3 gap-x-5 gap-y-5 pb-20 md:px-0 font-worksans">
+					{/* Loop values */}
+					{/* style={{backgroundColor: color}} */}
+					{values.value.map(({ name, color }, index) => (
+						<div className="p-8 border border-bc03 rounded-lg">
+							<h4 className="text-2xl">{name}</h4>
+						</div>
+					))}
+				</div>
 			</div>
 		</div>
 
@@ -132,6 +133,7 @@ const careers = ({
 								<div className="p-8 pl-0">
 									<h4 className="text-2xl mb-4">{name}</h4>
 									<p className="mb-6">{job_description}</p>
+
 									{/* <Button text="Apply now" /> */}
 									<button
 										class="primary border px-6 py-2 rounded-md"
@@ -176,7 +178,7 @@ export async function getStaticProps() {
 		},
 		working: {
 			...working,
-			working: working.map(i => ({ ...i })),
+			working: working.map(i => ({ ...i, ...images[i.name] })),
 		},
 	};
 
