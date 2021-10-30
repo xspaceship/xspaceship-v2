@@ -41,7 +41,7 @@ const About = ({
 			<h1
 				grid="col-span-12 md:col-span-9 2xl:col-span-11"
 				font="questrial ld01 md:leading-tight"
-				className="text-white text-fs01 md:text-7xl"
+				text="white fs01 md:7xl"
 				dangerouslySetInnerHTML={{ __html: headline }}
 			/>
 		</div>
@@ -56,7 +56,7 @@ const About = ({
 		>
 			<div
 				grid="col-span-4"
-				font="worksans medium"
+				font="medium"
 				order="2 lg:1"
 				p="5 lg:0"
 				bg="bg08 lg:transparent"
@@ -79,17 +79,16 @@ const About = ({
 			<Image {...what.image} alt="" />
 			<div pos="lg:absolute lg:bottom-24" grid="lg:~ lg:cols-12 lg:gap-5">
 				<div
-					className="text-tc03 text-center text-2xl"
+					text="tc03 center 2xl"
 					p="x-5 y-10 lg:x-10"
-					font="worksans"
 					border="b bc02 lg:transparent lg:~ lg:rounded-lg"
 					bg="lg:black"
 					grid="lg:col-span-8 lg:col-start-3"
 				>
-					<h3 m="b-4" className="text-gradient-01 text-4xl">
+					<h3 m="b-4" text="4xl" className="text-gradient-01">
 						{what.headline}
 					</h3>
-					<h3 font="medium" className="text-2xl">
+					<h3 font="medium" text="2xl">
 						{what.text}
 					</h3>
 				</div>
@@ -99,11 +98,11 @@ const About = ({
 		{/* Section: Brand */}
 		<div m="x-5 y-10 lg:x-32.5 lg:y-24">
 			<h3
-				font="medium worksans"
+				font="medium"
 				display="block"
 				w="full"
 				m="b-5"
-				className="text-lg leading-7 text-tc05 text-center"
+				text="lg leading-7 tc05 center"
 			>
 				{branding.headline}
 			</h3>

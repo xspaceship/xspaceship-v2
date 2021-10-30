@@ -31,7 +31,9 @@ const Image = props => {
 				overflow="hidden"
 				h="full"
 				border={round}
-				className={`image-wrapper ${isLoaded ? 'is-image-loaded' : ''}`}
+				className={`image-wrapper ${props.className} ${
+					isLoaded ? 'is-image-loaded' : ''
+				}`}
 			>
 				<div
 					aria-hidden="true"
@@ -53,11 +55,7 @@ const Image = props => {
 				/>
 			</div>
 			{caption ? (
-				<figcaption
-					m="y-5"
-					font="worksans"
-					className={`text-${captionAlignment} text-sm`}
-				>
+				<figcaption m="y-5" className={`text-${captionAlignment} text-sm`}>
 					{caption}
 				</figcaption>
 			) : null}

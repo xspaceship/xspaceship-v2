@@ -7,11 +7,7 @@ const Caption = ({ children }) => (
 		p="x-5 lg:x-10"
 	>
 		<div grid="col-span-12 md:col-span-8 md:col-start-3">
-			<div
-				className="text-center text-sm"
-				space="y-5"
-				font="worksans children:worksans"
-			>
+			<div className="text-center text-sm" space="y-5">
 				{children}
 			</div>
 		</div>

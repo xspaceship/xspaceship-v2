@@ -7,11 +7,7 @@ const Paragraph = ({ children }) => (
 		className="md-paragraph"
 	>
 		<div grid="col-span-12 lg:col-span-8 lg:col-start-3 md:col-span-8 md:col-start-3 sm:col-span-12">
-			<div
-				className="text-center text-xl"
-				space="y-5"
-				font="worksans children:worksans lg:medium"
-			>
+			<div className="text-center text-xl" space="y-5" font="lg:medium">
 				{children}
 			</div>
 		</div>

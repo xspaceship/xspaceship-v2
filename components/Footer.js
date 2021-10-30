@@ -6,7 +6,6 @@ const Footer = () => (
 		container="2xl:~"
 		m="2xl:x-auto"
 		p="5 lg:y-24 lg:x-32"
-		font="worksans"
 		grid="lg:~ lg:cols-12 lg:gap-5"
 	>
 		<div grid="lg:col-span-10 lg:col-start-2">

@@ -14,12 +14,7 @@ const Title = ({ text, sub }) => (
 		>
 			{text}
 		</h1>
-		<h2
-			font="worksans children:worksans"
-			m="lg:b-10"
-			grid="col-span-12"
-			className="text-xl"
-		>
+		<h2 m="lg:b-10" grid="col-span-12" className="text-xl">
 			{sub}
 		</h2>
 	</section>
