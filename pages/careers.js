@@ -124,11 +124,11 @@ const careers = ({ title, description, ogImage, headline, location, team }) => (
 			</div>
 		</div>
 
-		<div className="lg:mx-0 md:mx-0 sm:mx-5">
-			<div className="col-span-12 font-worksans md:px-22">
+		<div className="lg:mx-0 md:mx-0 sm:mx-5 font-worksans">
+			<div className="col-span-12 md:px-22">
 				<h3 className="font-medium text-4xl mb-8">Our values</h3>
 			</div>
-			<div className="grid grid-cols-3 gap-x-5 gap-y-5 pb-20 md:px-22">
+			<div className="grid grid-cols-3 gap-x-5 gap-y-5 pb-20 md:px-22 font-worksans">
 				<div className="border border-bc03 rounded-lg p-8 text-2xl">
 					Inquisitive
 				</div>
@@ -175,7 +175,7 @@ const careers = ({ title, description, ogImage, headline, location, team }) => (
 					</div>
 					<div className="lg:col-span-8 md:col-span-8 sm:col-span-12">
 						<div className="col-span-8 divide-y-1 divide-white">
-							<div className="p-8 pl-0 pt-0">
+							{/* <div className="p-8 pl-0 pt-0">
 								<h4 className="text-2xl mb-4">Lead Product Designer</h4>
 								<p className="mb-6">
 									Both a strategic thinker and a masterful craftsman. Can lead a
@@ -192,12 +192,20 @@ const careers = ({ title, description, ogImage, headline, location, team }) => (
 									visual design.
 								</p>
 								<Button text="Apply now" />
+							</div> */}
+							<div className="p-8 pl-0 pt-0">
+								<h4 className="text-2xl mb-4">Product Design Intern</h4>
+								<p className="mb-6">
+									A designer with strong foundation in UX/UI and can execute
+									tactical tasks with high craft.
+								</p>
+								<Button text="Apply now" />
 							</div>
 							<div className="p-8 pl-0 pb-0">
-								<h4 className="text-2xl mb-4">Design Intern</h4>
+								<h4 className="text-2xl mb-4">Graphic Design Intern</h4>
 								<p className="mb-6">
-									A designer with strong foundation and can execute tactical
-									tasks.
+									A designer with strong foundation in visual branding and can
+									execute tactical tasks with high craft.
 								</p>
 								<Button text="Apply now" />
 							</div>
