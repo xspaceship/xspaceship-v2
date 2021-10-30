@@ -51,6 +51,10 @@ const careers = ({
 			/>
 		</div>
 
+		<div className="col-span-12 mx-10 rounded-lg">
+			<img src="/images/careers/team.png" className="rounded-lg" />
+		</div>
+
 		{/* Working here */}
 		<div className="lg:mx-32 md:mx-0 sm:mx-5 font-worksans divide-y-1 divide-bc03">
 			<div className="grid grid-cols-12 font-worksans gap-x-12 gap-y-8 lg:mx-0 md:px-0 lg:py-20 md:py-12 sm:py-8 sm:m-x-5 mb-0">
@@ -73,7 +77,7 @@ const careers = ({
 										className="border border-bc03 rounded-lg p-6 col-span-3"
 									/> */}
 
-									<div class="col-span-12 border border-bc03 rounded-lg p-8 row-span-3">
+									<div class="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
 										<img src={image.name} width="64" className="pb-4" />
 										<h2 className="font-medium text-2xl"> {name} </h2>
 										<p className="mt-2">{description}</p>
@@ -92,7 +96,7 @@ const careers = ({
 					{/* Loop values */}
 					{/* style={{backgroundColor: color}} */}
 					{values.value.map(({ name, color }, index) => (
-						<div className="p-8 border border-bc03 rounded-lg">
+						<div className="p-8 rounded-lg bg-white bg-opacity-5">
 							<h4 className="text-2xl">{name}</h4>
 						</div>
 					))}
@@ -102,7 +106,7 @@ const careers = ({
 
 		{/* Location */}
 
-		<div className="mx-5">
+		<div className="mx-10">
 			{location.image.map((i, index) => (
 				<div
 					grid="col-span-12"
