@@ -273,6 +273,13 @@
 				}
 			],
 			"text": "You will love our meeting space."
+		},
+		"team": {
+			"image": {
+				"name": "team",
+				"gradientFrom": "rgba(255,255,255,0.2)",
+				"gradientTo": "rgba(255,255,255,0.1)"
+			}
 		}
 	}
 }

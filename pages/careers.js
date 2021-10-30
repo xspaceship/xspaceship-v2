@@ -1,14 +1,16 @@
 import { NextSeo } from 'next-seo';
 import Layout from 'components/Layout';
 import Image from 'components/Image';
+import Button from 'components/Button';
 import meta from 'meta.json';
 import { getAllImage } from 'utils/image';
+import { template } from '@antfu/utils';
 // import FullWidth from 'components/md/FullWidth';
 // import TwoColumns from 'components/md/TwoColumns';
 // import Paragraph from 'components/md/Paragraph';
 // import RegularWidth from 'components/md/RegularWidth';
 
-const careers = ({ title, description, ogImage, headline, location }) => (
+const careers = ({ title, description, ogImage, headline, location, team }) => (
 	<Layout title={title} p="2xl:t-8">
 		{/* SEO */}
 		<NextSeo
@@ -113,7 +115,12 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 					</div>
 				</div>
 
-				<div className="row-span-2 lg:col-span-4 md:col-span-6 sm:col-span-12 border border-bc03 rounded-lg md:row-span-2 sm:row-span-8 "></div>
+				<div
+					className="row-span-2 lg:col-span-4 md:col-span-6 sm:col-span-12 border border-bc03 rounded-lg md:row-span-2 sm:row-span-8"
+					backgroundImage="{...team.image}"
+				>
+					{/* <Image {...team.image} alt="" /> */}
+				</div>
 			</div>
 		</div>
 
@@ -170,26 +177,29 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 						<div className="col-span-8 divide-y-1 divide-white">
 							<div className="p-8 pl-0 pt-0">
 								<h4 className="text-2xl mb-4">Lead Product Designer</h4>
-								<p>
+								<p className="mb-6">
 									Both a strategic thinker and a masterful craftsman. Can lead a
 									team, present in meetings with our clients and drive projects
 									to the finish line.
 								</p>
+								<Button text="Apply now" />
 							</div>
 							<div className="p-8 pl-0">
 								<h4 className="text-2xl mb-4">Product Designer</h4>
-								<p>
+								<p className="mb-6">
 									Generalist designer who can lead a design process end-to-end.
 									Equally skills with product thinking, interaction design and
 									visual design.
 								</p>
+								<Button text="Apply now" />
 							</div>
 							<div className="p-8 pl-0 pb-0">
 								<h4 className="text-2xl mb-4">Design Intern</h4>
-								<p>
+								<p className="mb-6">
 									A designer with strong foundation and can execute tactical
 									tasks.
 								</p>
+								<Button text="Apply now" />
 							</div>
 						</div>
 					</div>
@@ -207,10 +217,11 @@ export async function getStaticProps() {
 	const { ogImage } = meta;
 	const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;
 
-	const { location } = careers;
+	const { location, team } = careers;
 
 	const newCareers = {
 		...careers,
+		team: { ...team, image: { ...team.image, ...images[team.image.name] } },
 		location: {
 			...location,
 			image: location.image.map(i => ({ ...i, ...images[i.name] })),
