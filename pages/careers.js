@@ -2,15 +2,19 @@ import { NextSeo } from 'next-seo';
 import Layout from 'components/Layout';
 import Image from 'components/Image';
 import Button from 'components/Button';
-import meta from 'meta.json';
+import meta from 'content-careers.json';
 import { getAllImage } from 'utils/image';
 import { template } from '@antfu/utils';
-// import FullWidth from 'components/md/FullWidth';
-// import TwoColumns from 'components/md/TwoColumns';
-// import Paragraph from 'components/md/Paragraph';
-// import RegularWidth from 'components/md/RegularWidth';
 
-const careers = ({ title, description, ogImage, headline, location, team }) => (
+const careers = ({
+	title,
+	description,
+	ogImage,
+	headline,
+	location,
+	team,
+	positions,
+}) => (
 	<Layout title={title} p="2xl:t-8">
 		{/* SEO */}
 		<NextSeo
@@ -28,6 +32,7 @@ const careers = ({ title, description, ogImage, headline, location, team }) => (
 				],
 			}}
 		/>
+
 		{/* Headline */}
 		<div
 			p="x-16 y-16 lg:x-22.5 lg:y-22.5"
@@ -168,47 +173,22 @@ const careers = ({ title, description, ogImage, headline, location, team }) => (
 		</div>
 
 		<div className="grid grid-cols-12 gap-x-5 gap-y-5 pb-0 md:px-22 font-worksans mt-16">
-			<div className="border border-bc03 rounded-lg p-8 col-span-12">
+			<div className="border border-bc03 rounded-lg p-8 py-0 col-span-12">
 				<div className="grid grid-cols-12">
 					<div className="lg:col-span-4 md:col-span-4 sm:col-span-12">
-						<h3 className="text-3xl lg:text-4xl mb-12">Design</h3>
+						<h3 className="text-3xl lg:text-4xl mb-12 pt-8">Design</h3>
 					</div>
 					<div className="lg:col-span-8 md:col-span-8 sm:col-span-12">
-						<div className="col-span-8 divide-y-1 divide-white">
-							{/* <div className="p-8 pl-0 pt-0">
-								<h4 className="text-2xl mb-4">Lead Product Designer</h4>
-								<p className="mb-6">
-									Both a strategic thinker and a masterful craftsman. Can lead a
-									team, present in meetings with our clients and drive projects
-									to the finish line.
-								</p>
-								<Button text="Apply now" />
-							</div>
-							<div className="p-8 pl-0">
-								<h4 className="text-2xl mb-4">Product Designer</h4>
-								<p className="mb-6">
-									Generalist designer who can lead a design process end-to-end.
-									Equally skills with product thinking, interaction design and
-									visual design.
-								</p>
-								<Button text="Apply now" />
-							</div> */}
-							<div className="p-8 pl-0 pt-0">
-								<h4 className="text-2xl mb-4">Product Design Intern</h4>
-								<p className="mb-6">
-									A designer with strong foundation in UX/UI and can execute
-									tactical tasks with high craft.
-								</p>
-								<Button text="Apply now" />
-							</div>
-							<div className="p-8 pl-0 pb-0">
-								<h4 className="text-2xl mb-4">Graphic Design Intern</h4>
-								<p className="mb-6">
-									A designer with strong foundation in visual branding and can
-									execute tactical tasks with high craft.
-								</p>
-								<Button text="Apply now" />
-							</div>
+						<div className="col-span-8 divide-y-1 divide-bc03">
+							{/* Loop different jobs */}
+
+							{positions.position.map(({ name, job_description }, index) => (
+								<div className="p-8 pl-0">
+									<h4 className="text-2xl mb-4">{name}</h4>
+									<p className="mb-6">{job_description}</p>
+									<Button text="Apply now" />
+								</div>
+							))}
 						</div>
 					</div>
 				</div>
@@ -225,7 +205,7 @@ export async function getStaticProps() {
 	const { ogImage } = meta;
 	const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;
 
-	const { location, team } = careers;
+	const { location, team, positions } = careers;
 
 	const newCareers = {
 		...careers,
@@ -233,6 +213,10 @@ export async function getStaticProps() {
 		location: {
 			...location,
 			image: location.image.map(i => ({ ...i, ...images[i.name] })),
+		},
+		positions: {
+			...positions,
+			position: positions.map(i => ({ ...i, ...images[i.name] })),
 		},
 	};
 

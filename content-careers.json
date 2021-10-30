@@ -1,0 +1,37 @@
+{
+	"careers": {
+		"title": "xspaceship | Careers",
+		"description": "Join our world-class team and grow with us.",
+		"headline": "Join our <span class='text-gradient-03'>world-class</span> team & grow with us",
+
+		"location": {
+			"image": [
+				{
+					"name": "location",
+					"gradientFrom": "rgba(255,255,255,0.2)",
+					"gradientTo": "rgba(255,255,255,0.1)"
+				}
+			],
+			"text": "You will love our meeting space."
+		},
+
+		"team": {
+			"image": {
+				"name": "team",
+				"gradientFrom": "rgba(255,255,255,0.2)",
+				"gradientTo": "rgba(255,255,255,0.1)"
+			}
+		},
+		"positions": [
+			{
+				"name": "Product Design Intern",
+				"job_description": "A designer with strong foundation in UX/UI and can execute tactical tasks with high craft."
+			},
+
+			{
+				"name": "Graphic Design Intern",
+				"job_description": "A designer with strong foundation in visual branding and can execute tactical tasks with high craft."
+			}
+		]
+	}
+}
