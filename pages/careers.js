@@ -44,14 +44,14 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 
 		{/* Working here */}
 		<div>
-			<div className="grid grid-cols-12 font-worksans gap-x-12 gap-y-12 lg:mx-0 lg:px-22 md:px-16 py-20 sm:m-x-5">
+			<div className="grid grid-cols-12 font-worksans gap-x-12 gap-y-12 lg:mx-0 lg:px-22 md:px-16 lg:py-20 md:py-12 sm:py-8 sm:m-x-5">
 				{/* Top section */}
 				<div className="col-span-12">
 					<h3 className="font-medium text-4xl">Working here</h3>
 				</div>
 
 				{/* Bottom section */}
-				<div className="col-span-8">
+				<div className="lg:col-span-8 md:col-span-6 sm:col-span-12">
 					<div className="grid grid-cols-8 gap-x-12 gap-y-12">
 						<div className="lg:col-span-4 md:col-span-8 sm:col-span-12">
 							{/* <img
@@ -113,11 +113,11 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 					</div>
 				</div>
 
-				<div className="row-span-3 col-span-4 border border-bc03 rounded-lg md:row-span-3"></div>
+				<div className="row-span-2 lg:col-span-4 md:col-span-6 sm:col-span-12 border border-bc03 rounded-lg md:row-span-2 sm:row-span-8 "></div>
 			</div>
 		</div>
 
-		<div>
+		<div className="lg:mx-0 md:mx-0 sm:mx-5">
 			<div className="col-span-12 font-worksans md:px-22">
 				<h3 className="font-medium text-4xl mb-8">Our values</h3>
 			</div>
@@ -140,11 +140,12 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 		</div>
 
 		{/* Location */}
-		<div>
+
+		<div className="mx-5">
 			{location.image.map((i, index) => (
 				<div
-					grid="md:col-span-3"
-					w="48 md:full"
+					grid="col-span-12"
+					w="auto md:full"
 					className="scale-img-child"
 					m="x-auto"
 					key={index}
@@ -159,48 +160,13 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 			))}
 		</div>
 
-		{/* <div>
-			<div className="col-span-12 font-worksans md:px-22">
-				<h3 className="font-medium text-4xl mb-8">Open positions</h3>
-			</div>
-			<div className="grid grid-cols-12 border border-bc03 rounded-lg p-16 font-worksans">
-				<div className="col-span-4">
-					<h3 className="text-3xl lg:text-4xl">Design</h3>
-				</div>
-				<div className="col-span-8 divide-y-1 divide-white">
-					<div className="p-8 pl-0 pt-0">
-						<h4 className="text-2xl mb-4">Lead Product Designer</h4>
-						<p>
-							Both a strategic thinker and a masterful craftsman. Can lead a
-							team, present in meetings with our clients and drive projects to
-							the finish line.
-						</p>
-					</div>
-					<div className="p-8 pl-0">
-						<h4 className="text-2xl mb-4">Product Designer</h4>
-						<p>
-							Generalist designer who can lead a design process end-to-end.
-							Equally skills with product thinking, interaction design and
-							visual design.
-						</p>
-					</div>
-					<div className="p-8 pl-0 pb-0">
-						<h4 className="text-2xl mb-4">Design Intern</h4>
-						<p>
-							A designer with strong foundation and can execute tactical tasks.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div> */}
-
-		<div className="grid grid-cols-12 gap-x-5 gap-y-5 pb-0 md:px-22 font-worksans mt-16 ">
+		<div className="grid grid-cols-12 gap-x-5 gap-y-5 pb-0 md:px-22 font-worksans mt-16">
 			<div className="border border-bc03 rounded-lg p-8 col-span-12">
 				<div className="grid grid-cols-12">
-					<div className="col-span-4">
-						<h3 className="text-3xl lg:text-4xl">Design</h3>
+					<div className="lg:col-span-4 md:col-span-4 sm:col-span-12">
+						<h3 className="text-3xl lg:text-4xl mb-12">Design</h3>
 					</div>
-					<div className="col-span-8">
+					<div className="lg:col-span-8 md:col-span-8 sm:col-span-12">
 						<div className="col-span-8 divide-y-1 divide-white">
 							<div className="p-8 pl-0 pt-0">
 								<h4 className="text-2xl mb-4">Lead Product Designer</h4>
@@ -230,13 +196,6 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 				</div>
 			</div>
 		</div>
-
-		{/* <div>
-			<h3 className="col-span-12 font-medium lg:mt-12 text-4xl font-worksans lg:mb-12 md:m-x-5 sm:m-x-5">
-				Open positions
-			</h3>
-			
-		</div> */}
 	</Layout>
 );
 
