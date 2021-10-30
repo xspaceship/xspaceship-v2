@@ -26,7 +26,7 @@
 		"working": [
 			{
 				"name": "Professional growth",
-				"description": "We understand your needs & strengths to help you design a career growth plan that’s clear, actionable, and achievable. You will also be provided with the right resources and mentorship to learn new skills.",
+				"description": "We understand your needs to help you design a career growth plan that’s clear, actionable, and achievable. You will also be provided with the right resources and mentorship to learn new skills.",
 				"image": {
 					"name": "/images/careers/grow.gif",
 					"gradientFrom": "rgba(255,255,255,0.2)",
@@ -53,7 +53,7 @@
 			},
 			{
 				"name": "Remote-first",
-				"description": "Do your best work from the comfort of your home. We use the best technology to make asynchronous collaboration as seamless as in-person. Whenever needed, use our New York office for offline meetings.",
+				"description": "Do your best work from the comfort of your home. We use the best technology to make asynchronous collaboration seamless. Our New York office if available for meetings.",
 				"image": {
 					"name": "/images/careers/home.gif",
 					"gradientFrom": "rgba(255,255,255,0.2)",

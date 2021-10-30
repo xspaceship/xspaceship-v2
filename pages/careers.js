@@ -61,18 +61,20 @@ const careers = ({
 
 				{/* Bottom section */}
 				<div className="lg:col-span-12 md:col-span-6 sm:col-span-12">
-					<div className="grid grid-cols-12 gap-x-20 gap-y-16">
+					<div className="grid grid-cols-12 gap-x-5 gap-y-5">
 						{/* Working here loop */}
 
 						{working.working.map(({ name, description, image }, index) => (
 							<div className="md:col-span-6 sm:col-span-12">
 								<div className="grid grid-cols-12 gap-x-8">
-									<img
+									{/* <img
 										src={image.name}
 										width="auto"
 										className="border border-bc03 rounded-lg p-6 col-span-3"
-									/>
-									<div class="col-span-9">
+									/> */}
+
+									<div class="col-span-12 border border-bc03 rounded-lg p-8 row-span-3">
+										<img src={image.name} width="64" className="pb-4" />
 										<h2 className="font-medium text-2xl"> {name} </h2>
 										<p className="mt-2">{description}</p>
 									</div>
