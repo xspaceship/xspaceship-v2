@@ -14,6 +14,8 @@ const careers = ({
 	location,
 	team,
 	positions,
+	values,
+	working,
 }) => (
 	<Layout title={title} p="2xl:t-8">
 		{/* SEO */}
@@ -60,63 +62,14 @@ const careers = ({
 				{/* Bottom section */}
 				<div className="lg:col-span-8 md:col-span-6 sm:col-span-12">
 					<div className="grid grid-cols-8 gap-x-12 gap-y-12">
-						<div className="lg:col-span-4 md:col-span-8 sm:col-span-12">
-							{/* <img
-							src="https://i.pinimg.com/originals/e4/7c/2a/e47c2aa118c0b9143ea2c7cd93848bb9.jpg"
-							noRound
-							className="mb-8 rounded-full w-20 h-20"
-						/> */}
-							<h2 className="font-medium text-2xl">Professional growth</h2>
-							<p className="mt-4">
-								We understand your needs & strengths to help you design a career
-								growth plan that’s clear, actionable, and achievable. You will
-								also be provided with the right resources and mentorship to
-								learn new skills.
-							</p>
-						</div>
+						{/* Working here loop */}
 
-						<div className="lg:col-span-4 md:col-span-8 sm:col-span-12 ">
-							{/* <img
-							src="https://i.pinimg.com/originals/e4/7c/2a/e47c2aa118c0b9143ea2c7cd93848bb9.jpg"
-							noRound
-							className="mb-8 rounded-full w-20 h-20"
-						/> */}
-							<h2 className="font-medium text-2xl">Work / life balance</h2>
-							<p className="mt-4">
-								Happy employees mean productive employees. Our flexible time off
-								policy allows you to take good care of yourself and your family.
-								We believe that 10-6 is the best work schedule.
-							</p>
-						</div>
-
-						<div className="lg:col-span-4 md:col-span-8 sm:col-span-12 ">
-							{/* <img
-							src="https://i.pinimg.com/originals/e4/7c/2a/e47c2aa118c0b9143ea2c7cd93848bb9.jpg"
-							noRound
-							className="mb-8 rounded-full w-20 h-20"
-						/> */}
-							<h2 className="font-medium text-2xl">Start-up culture</h2>
-							<p className="mt-4">
-								We are nimble and flexible. We cut down on unecessary processes
-								and focus on delivering the best work. We adopt a flat hierarchy
-								and foster tight collaboration.
-							</p>
-						</div>
-
-						<div className="lg:col-span-4 md:col-span-8 sm:col-span-12 ">
-							{/* <img
-							src="https://i.pinimg.com/originals/e4/7c/2a/e47c2aa118c0b9143ea2c7cd93848bb9.jpg"
-							noRound
-							className="mb-8 rounded-full w-20 h-20"
-						/> */}
-							<h2 className="font-medium text-2xl">Remote-first</h2>
-							<p className="mt-4">
-								Do your best work from the comfort of your home. We use the best
-								technology to make asynchronous collaboration as seamless as
-								in-person. Whenever needed, use our New York office for offline
-								meetings.
-							</p>
-						</div>
+						{working.working.map(({ name, description }, index) => (
+							<div className="lg:col-span-4 md:col-span-8 sm:col-span-12 ">
+								<h2 className="font-medium text-2xl"> {name} </h2>
+								<p className="mt-4">{description}</p>
+							</div>
+						))}
 					</div>
 				</div>
 
@@ -134,20 +87,13 @@ const careers = ({
 				<h3 className="font-medium text-4xl mb-8">Our values</h3>
 			</div>
 			<div className="grid grid-cols-3 gap-x-5 gap-y-5 pb-20 md:px-22 font-worksans">
-				<div className="border border-bc03 rounded-lg p-8 text-2xl">
-					Inquisitive
-				</div>
-				<div className="border border-bc03 rounded-lg p-8 text-2xl">Nimble</div>
-				<div className="border border-bc03 rounded-lg p-8 text-2xl">
-					Passionate
-				</div>
-				<div className="border border-bc03 rounded-lg p-8 text-2xl">
-					High-craft
-				</div>
-				<div className="border border-bc03 rounded-lg p-8 text-2xl">Open</div>
-				<div className="border border-bc03 rounded-lg p-8 text-2xl">
-					Diverse
-				</div>
+				{/* Loop values */}
+
+				{values.value.map(({ name }, index) => (
+					<div className="p-8 border border-bc03 rounded-lg">
+						<h4 className="text-2xl">{name}</h4>
+					</div>
+				))}
 			</div>
 		</div>
 
@@ -205,7 +151,7 @@ export async function getStaticProps() {
 	const { ogImage } = meta;
 	const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;
 
-	const { location, team, positions } = careers;
+	const { location, team, positions, values, working } = careers;
 
 	const newCareers = {
 		...careers,
@@ -216,7 +162,15 @@ export async function getStaticProps() {
 		},
 		positions: {
 			...positions,
-			position: positions.map(i => ({ ...i, ...images[i.name] })),
+			position: positions.map(i => ({ ...i })),
+		},
+		values: {
+			...values,
+			value: values.map(i => ({ ...i, ...images[i.name] })),
+		},
+		working: {
+			...working,
+			working: working.map(i => ({ ...i })),
 		},
 	};
 
