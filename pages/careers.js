@@ -3,10 +3,10 @@ import Layout from 'components/Layout';
 import Image from 'components/Image';
 import meta from 'meta.json';
 import { getAllImage } from 'utils/image';
-import FullWidth from 'components/md/FullWidth';
-import TwoColumns from 'components/md/TwoColumns';
-import Paragraph from 'components/md/Paragraph';
-import RegularWidth from 'components/md/RegularWidth';
+// import FullWidth from 'components/md/FullWidth';
+// import TwoColumns from 'components/md/TwoColumns';
+// import Paragraph from 'components/md/Paragraph';
+// import RegularWidth from 'components/md/RegularWidth';
 
 const careers = ({ title, description, ogImage, headline, location }) => (
 	<Layout title={title} p="2xl:t-8">
@@ -43,8 +43,8 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 		</div>
 
 		{/* Working here */}
-		<FullWidth>
-			<div className="grid grid-cols-12 font-worksans gap-x-16 gap-y-12 lg:mx-0 py-24 sm:m-x-5">
+		<div>
+			<div className="grid grid-cols-12 font-worksans gap-x-16 gap-y-12 lg:mx-0 md:px-22 py-20 sm:m-x-5">
 				{/* Top section */}
 				<div className="col-span-12">
 					<h3 className="font-medium text-4xl">Working here</h3>
@@ -111,13 +111,13 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 					</p>
 				</div>
 			</div>
-		</FullWidth>
+		</div>
 
-		<FullWidth>
-			<div className="col-span-12 font-worksans">
+		<div>
+			<div className="col-span-12 font-worksans md:px-22">
 				<h3 className="font-medium text-4xl mb-8">Our values</h3>
 			</div>
-			<div className="grid grid-cols-3 gap-x-5 gap-y-5 pb-20">
+			<div className="grid grid-cols-3 gap-x-5 gap-y-5 pb-20 md:px-22">
 				<div className="border border-bc03 rounded-lg p-8 text-2xl">
 					Inquisitive
 				</div>
@@ -133,10 +133,10 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 					Diverse
 				</div>
 			</div>
-		</FullWidth>
+		</div>
 
 		{/* Location */}
-		<FullWidth>
+		<div>
 			{location.image.map((i, index) => (
 				<div
 					grid="md:col-span-3"
@@ -153,13 +153,13 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 					/>
 				</div>
 			))}
-		</FullWidth>
+		</div>
 
-		<RegularWidth>
-			<h3 className="font-medium lg:mt-12 text-4xl font-worksans lg:mb-12 md:m-x-5 sm:m-x-5">
-				Open positions
-			</h3>
-			<div className="grid grid-cols-12 border border-bc03 rounded-lg p-16 font-worksans md:m-x-5 sm:m-x-5">
+		{/* <div>
+			<div className="col-span-12 font-worksans md:px-22">
+				<h3 className="font-medium text-4xl mb-8">Open positions</h3>
+			</div>
+			<div className="grid grid-cols-12 border border-bc03 rounded-lg p-16 font-worksans">
 				<div className="col-span-4">
 					<h3 className="text-3xl lg:text-4xl">Design</h3>
 				</div>
@@ -188,7 +188,51 @@ const careers = ({ title, description, ogImage, headline, location }) => (
 					</div>
 				</div>
 			</div>
-		</RegularWidth>
+		</div> */}
+
+		<div className="grid grid-cols-12 gap-x-5 gap-y-5 pb-0 md:px-22 font-worksans mt-16 ">
+			<div className="border border-bc03 rounded-lg p-8 col-span-12">
+				<div className="grid grid-cols-12">
+					<div className="col-span-4">
+						<h3 className="text-3xl lg:text-4xl">Design</h3>
+					</div>
+					<div className="col-span-8">
+						<div className="col-span-8 divide-y-1 divide-white">
+							<div className="p-8 pl-0 pt-0">
+								<h4 className="text-2xl mb-4">Lead Product Designer</h4>
+								<p>
+									Both a strategic thinker and a masterful craftsman. Can lead a
+									team, present in meetings with our clients and drive projects
+									to the finish line.
+								</p>
+							</div>
+							<div className="p-8 pl-0">
+								<h4 className="text-2xl mb-4">Product Designer</h4>
+								<p>
+									Generalist designer who can lead a design process end-to-end.
+									Equally skills with product thinking, interaction design and
+									visual design.
+								</p>
+							</div>
+							<div className="p-8 pl-0 pb-0">
+								<h4 className="text-2xl mb-4">Design Intern</h4>
+								<p>
+									A designer with strong foundation and can execute tactical
+									tasks.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{/* <div>
+			<h3 className="col-span-12 font-medium lg:mt-12 text-4xl font-worksans lg:mb-12 md:m-x-5 sm:m-x-5">
+				Open positions
+			</h3>
+			
+		</div> */}
 	</Layout>
 );
 
@@ -204,10 +248,6 @@ export async function getStaticProps() {
 
 	const newCareers = {
 		...careers,
-		// location: {
-		// 	...location,
-		// 	image: { ...location.image, ...images[location.image.name] },
-		// },
 		location: {
 			...location,
 			image: location.image.map(i => ({ ...i, ...images[i.name] })),
