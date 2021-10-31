@@ -1,9 +1,9 @@
-import { NextSeo } from 'next-seo';
-import Layout from 'components/Layout';
-import Image from 'components/Image';
-import Button from 'components/Button';
-import meta from 'content-careers.json';
-import { getAllImage } from 'utils/image';
+// import { NextSeo } from 'next-seo';
+// import Layout from 'components/Layout';
+// import Image from 'components/Image';
+// import Button from 'components/Button';
+// import meta from 'content-careers.json';
+// import { getAllImage } from 'utils/image';
 
 // TEMPORARILY COMMENTED
 
