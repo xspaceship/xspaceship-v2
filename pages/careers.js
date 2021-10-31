@@ -72,7 +72,7 @@ const careers = ({
 										<p className="mt-2">{description}</p>
 									</div>
 								</div> */}
-								{name}
+								{name} {description}
 							</div>
 						))}
 					</div>
