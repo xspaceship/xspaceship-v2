@@ -39,7 +39,7 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
 				<h1
 					grid="col-span-12 md:col-span-9 2xl:col-span-7"
 					font="questrial ld01 md:leading-tight"
-					className="text-white text-fs01 md:text-7xl"
+					text="white fs01 md:7xl"
 				>
 					{headline}
 				</h1>
@@ -50,8 +50,8 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
 				m="b-10"
 				flex="~ wrap"
 				grid="gap-3"
-				font="worksans medium"
-				className="md:text-xl leading-6"
+				font="medium"
+				text="md:xl leading-6"
 			>
 				{types.map((type, index) => (
 					<div
@@ -100,7 +100,6 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
 											alt={name}
 											gradientFrom={gradientFrom}
 											gradientTo={gradientTo}
-											className="rounded"
 										/>
 										<div
 											className="child"
@@ -111,10 +110,9 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
 											h="full"
 											bg="bg09"
 											p="10"
-											font="worksans"
 										>
-											<h2 className="text-white text-3xl">{name}</h2>
-											<p className="text-tc05 text-3xl" m="b-5" w="lg:2/4">
+											<h2 text="white 3xl">{name}</h2>
+											<p text="tc05 3xl" m="b-5" w="lg:2/4">
 												{description}
 											</p>
 											<p className="text-tc05">

@@ -26,7 +26,6 @@ const Header = () => {
 				flex="~ 2xl:col"
 				justify="between 2xl:start"
 				align="items-center 2xl:items-start 2xl:self-start"
-				font="worksans"
 				space="2xl:y-5"
 				pos="2xl:sticky 2xl:top-8"
 			>
@@ -43,7 +42,8 @@ const Header = () => {
 						<Link href={path} key={index}>
 							<a
 								p="6 2xl:y-3 2xl:x-0"
-								className="transition-colors duration-300	hover:text-tc06"
+								transition="colors duration-300"
+								className="hover:text-tc06"
 							>
 								{name}
 							</a>

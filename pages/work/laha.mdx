@@ -6,7 +6,11 @@ import Title from 'components/md/Title';
 import Paragraph from 'components/md/Paragraph';
 import Header from 'components/md/Header';
 import TwoColumns from 'components/md/TwoColumns';
+import ThreeColumns from 'components/md/ThreeColumns';
 import RegularWidth from 'components/md/RegularWidth';
+import Caption from 'components/md/Caption';
+import List from 'components/md/List';
+import Table from 'components/md/Table';
 import { getAllImage } from 'utils/image';
 import rootMeta from 'meta.json';
 
@@ -64,79 +68,92 @@ export default ({ children }) => (
 	<Image {...props.images['hero']} />
 </FullWidth>
 
-<Paragraph>
-	Laha came to us with an ambitious mission
-	<li>
-		Becomes the leading Cosmetic Dermatology center in Vietnam as well as
-		vocational training for skin cosmetic doctors and technicians, distributes
-		prestige and quality skin care products and creates a leading skin care
-		ecosystem in Vietnam
-	</li>
-	<li>
-		Brings happier life for customers and builds reputation for Vietnamese
-		dermatology practices in the international community
-	</li>
-</Paragraph>
-
-<Paragraph>
-	In order to get there, it became clear that Laha clinic needs a full rebrand.
-	The existing brand experience was fragmented and did not resonate with the
-	majority of its customers.
-</Paragraph>
-
-<Header>1 — Visual branding</Header>
-
-<Paragraph>
-	Company's Mission
-	<li>
-		{' '}
-		Pioneers in bringing knowledge of Cosmetic Dermatology and the importance of
-		beautiful skin to Vietnamese customers{' '}
-	</li>
-	<li>
-		Improves skin thereby increases confidence and the quality of life for
-		patients{' '}
-	</li>
-	<li>
-		Empower the beauty inside each person by awakening skin vitality in the most
-		natural and scientific way{' '}
-	</li>
-	<li>
-		Provides premium skin treatment services and a lifetime warranty, thus
-		bringing long lasting beautiful skin and confidence for patients{' '}
-	</li>
-</Paragraph>
-
 <RegularWidth>
-	<TwoColumns>
-		<Paragraph>
-			Functional
-			<li>Science & Efficacy</li>
-			<li>Clinical</li>
-			<li>Scientific</li>
-			<li>Expertise & Knowledge</li>
-			<li>Premium & Prestige</li>
-		</Paragraph>
-		<Paragraph>
-			Emotional
-			<li>Nurturing & Sustainable</li>
-			<li>Elegant & Sophisticated</li>
-			<li>Natural</li>
-			<li>Optimistic & Confident</li>
-			<li>Vitality & Rejuvenating</li>
-		</Paragraph>
-	</TwoColumns>
+	<List
+		bgColor="#000"
+		borderColor="rgba(255, 255, 255, 0.2)"
+		textColor="#F4F4F4"
+		title="The challenge"
+		items={[
+			'The company can easily retain existing customers with its excellent services. However, reaching new customers was a real challenge.',
+			<div space="y-3">
+				<p>
+					The existing brand experience was highly fragmented and outdated, and
+					therefore did not resonate with the increasingly younger and more
+					fashionable market.
+				</p>
+				<p>It became clear to us that Laha needs a full re-brand.</p>
+			</div>,
+		]}
+	/>
 </RegularWidth>
 
 <RegularWidth>
+	<Header>0 — Research</Header>
+	<div text="left tc04">
+		Every project starts by deeply understanding our client. We interviewed the
+		owner, Dr. La Ha and her customers to uncover insights. At the end of our
+		research, we did not only gathered valuable information about the business,
+		but also help their team redefine their missions and core values.
+	</div>
+	<List
+		bgColor="#0B275D"
+		borderColor="transparent"
+		textColor="#B1CDE0"
+		title="Brand Missions"
+		items={[
+			'Pioneers in bringing knowledge of Cosmetic Dermatology and the importance of beautiful skin to Vietnamese customers',
+			'Improves skin thereby increases confidence and the quality of life for patients',
+			'Empower the beauty inside each person by awakening skin vitality in the most natural and scientific way',
+			'Provides premium skin treatment services and a lifetime warranty, thus bringing long lasting beautiful skin and confidence for patients',
+		]}
+	/>
+	<List
+		bgColor="#523C30"
+		borderColor="transparent"
+		textColor="#E7F0DA"
+		title="Brand Values"
+		items={['Clinical', 'Caring', 'Premium', 'Prestige']}
+	/>
+	<Paragraph>
+		We translated the complex brand DNA into concrete design principles that
+		help guide us along the re-brand process. The delicate balance between these
+		two opposing qualities defined the success of the design.
+	</Paragraph>
+	<Table
+		title01="Functional"
+		title02="Emotional"
+		textColor01="#B1CDE0"
+		textColor02="#E7F0DA"
+		items01={[
+			'Science & Efficacy',
+			'Clinical',
+			'Scientific',
+			'Expertise & Knowledge',
+			'Premium & Prestige',
+		]}
+		items02={[
+			'Nurturing & Sustainable',
+			'Elegant & Sophisticated',
+			'Natural',
+			'Optimistic & Confident',
+			'Vitality & Rejuvenating',
+		]}
+	/>
+</RegularWidth>
+
+<RegularWidth>
+	<Header>1 — Visual branding</Header>
 	<Image
 		{...props.images['brand_00']}
 		caption="Our custom logo is an evolution from our previous logo with a root to Vietnamese alphabet, while evoking a sense of refreshment through playing with ligatures and diacritics. It constantly juxtaposes the highly premium with youthful contemporariness."
 		captionAlignment="center"
 	/>
-</RegularWidth>
-
-<RegularWidth>
+	<ThreeColumns>
+		<Image {...props.images['brand_04_A']} />
+		<Image {...props.images['brand_04_A']} />
+		<Image {...props.images['brand_04_A']} />
+	</ThreeColumns>
 	<TwoColumns>
 		<Image {...props.images['brand_01']} />
 		<Image {...props.images['brand_02']} />
@@ -145,18 +162,12 @@ export default ({ children }) => (
 		The logo also represent different business offerings that come with
 		different business lock ups.
 	</Paragraph>
-</RegularWidth>
-
-<RegularWidth>
 	<Image {...props.images['brand_03']} />
 	<Paragraph>
 		To communicate the brand's affinity to cutting-edge technology, we use a
 		vibrant royal blue as the primary color. Off-white is used to represent the
 		fashionable and softer aspect of the brand.
 	</Paragraph>
-</RegularWidth>
-
-<RegularWidth>
 	<TwoColumns>
 		<Image
 			{...props.images['brand_04_A']}
@@ -169,9 +180,6 @@ export default ({ children }) => (
 			captionAlignment="center"
 		/>
 	</TwoColumns>
-</RegularWidth>
-
-<RegularWidth>
 	<TwoColumns>
 		<Image
 			{...props.images['brand_05']}
@@ -186,7 +194,9 @@ export default ({ children }) => (
 	</TwoColumns>
 </RegularWidth>
 
-<Header>2 — Physical products</Header>
+<RegularWidth>
+	<Header>2 — Physical products</Header>
+</RegularWidth>
 
 <RegularWidth>
 	<TwoColumns>
@@ -241,7 +251,9 @@ export default ({ children }) => (
 	/>
 </RegularWidth>
 
-<Header>3 — Digital experience</Header>
+<RegularWidth>
+	<Header>3 — Digital experience</Header>
+</RegularWidth>
 
 <RegularWidth>
 	<Image

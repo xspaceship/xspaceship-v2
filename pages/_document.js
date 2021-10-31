@@ -15,7 +15,7 @@ class MyDocument extends Document {
 					<link rel="shortcut icon" href="/favicon.ico" />
 					<meta name="theme-color" content="#000" />
 				</Head>
-				<body pos="relative">
+				<body pos="relative" font="worksans">
 					<Main />
 					<NextScript />
 				</body>

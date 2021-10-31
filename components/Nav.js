@@ -44,6 +44,12 @@ const Nav = () => {
 		},
 	};
 
+	const overlayVariants = {
+		initial: { opacity: 0 },
+		animate: { opacity: 1 },
+		exit: { opacity: 0 },
+	};
+
 	const itemVariants = {
 		closed: { opacity: 0 },
 		open: { opacity: 1 },
@@ -109,16 +115,15 @@ const Nav = () => {
 
 			<AnimatePresence>
 				{visibleNav && (
-					<div
+					<motion.div
 						ref={navRef}
-						pos="fixed top-0 right-0"
-						w="screen"
-						h="screen"
-						bg="bg10"
-						z="10"
-						flex="~"
-						justify="end"
+						className="fixed top-0 right-0 w-screen h-screen bg-bg10 flex justify-end z-10"
 						onClick={toggleVisibleNav}
+						initial="initial"
+						animate="animate"
+						exit="exit"
+						variants={overlayVariants}
+						transition={{ type: 'easeInOut', duration: 0.5 }}
 					>
 						<motion.aside
 							ref={navMainRef}
@@ -140,11 +145,11 @@ const Nav = () => {
 										flex="~"
 										justify="start"
 										align="items-center"
-										font="worksans"
 										m="b-10 lg:t-16"
+										text="fs02"
 									>
 										<Link href="/">
-											<a className="text-fs02">{meta.shortName}</a>
+											<a>{meta.shortName}</a>
 										</Link>
 									</div>
 								</motion.div>
@@ -156,7 +161,8 @@ const Nav = () => {
 												display="block"
 												p="y-5"
 												font="questrial lh01"
-												className="transition-colors duration-300	text-fs01 hover:text-tc06"
+												transition="colors duration-300"
+												className="text-fs01 hover:text-tc06"
 												border="t-1 last:b-1 bc01"
 											>
 												{name}
@@ -166,13 +172,13 @@ const Nav = () => {
 								))}
 
 								<motion.div variants={itemVariants}>
-									<h3 font="worksans leading-4" m="t-10" className="text-xs">
+									<h3 font="leading-4" m="t-10" text="xs">
 										© {currentYear} {meta.shortName}
 									</h3>
 								</motion.div>
 							</motion.nav>
 						</motion.aside>
-					</div>
+					</motion.div>
 				)}
 			</AnimatePresence>
 		</>

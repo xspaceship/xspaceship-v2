@@ -55,7 +55,7 @@ const About = ({
 				<h1
 					grid="col-span-12 md:col-span-9 2xl:col-span-11"
 					font="questrial ld01 md:leading-tight"
-					className="text-white text-fs01 md:text-7xl"
+					text="white fs01 md:7xl"
 					dangerouslySetInnerHTML={{ __html: headline }}
 				/>
 			</div>
@@ -78,13 +78,13 @@ const About = ({
 							font="questrial"
 							m="b-5 lg:b-12"
 							grid="col-span-3"
-							className="text-3xl lg:text-4xl"
+							text="3xl lg:4xl"
 						>
 							{product.headline}
 						</h2>
 						<ul
 							className="triangle-bullet"
-							font="worksans medium"
+							font="medium"
 							space="y-3"
 							grid="lg:col-span-4"
 						>
@@ -143,9 +143,9 @@ const About = ({
 				bg="bg06"
 			>
 				<div
-					font="medium worksans"
+					font="medium"
 					grid="lg:col-span-8 lg:col-start-3"
-					className="text-center text-tc03 text-2xl"
+					text="center tc03 2xl"
 				>
 					<h3 m="b-4">{quote01.text}</h3>
 					<h4>{quote01.author}</h4>
@@ -209,13 +209,13 @@ const About = ({
 							font="questrial"
 							m="b-5 lg:b-12"
 							grid="col-span-3 col-start-2"
-							className="text-3xl lg:text-4xl"
+							text="3xl lg:4xl"
 						>
 							{branding.headline}
 						</h2>
 						<ul
 							className="triangle-bullet"
-							font="worksans medium"
+							font="medium"
 							space="y-3"
 							grid="lg:col-span-4 lg:col-start-2"
 						>
@@ -239,9 +239,9 @@ const About = ({
 				bg="bg06"
 			>
 				<div
-					font="medium worksans"
+					font="medium"
 					grid="lg:col-span-8 lg:col-start-3"
-					className="text-center text-tc03 text-2xl"
+					text="center tc03 2xl"
 				>
 					<h3 m="b-4">{quote02.text}</h3>
 					<h4>{quote02.author}</h4>
@@ -266,13 +266,13 @@ const About = ({
 							font="questrial"
 							m="b-5 lg:b-12"
 							grid="col-span-3"
-							className="text-3xl lg:text-4xl"
+							text="3xl lg:4xl"
 						>
 							{development.headline}
 						</h2>
 						<ul
 							className="triangle-bullet"
-							font="worksans medium"
+							font="medium"
 							space="y-3"
 							grid="lg:col-span-4"
 						>
