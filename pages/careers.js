@@ -3,7 +3,6 @@ import Layout from 'components/Layout';
 import Image from 'components/Image';
 import meta from 'content-careers.json';
 import { getAllImage } from 'utils/image';
-import { template } from '@antfu/utils';
 
 const careers = ({
 	title,
@@ -115,38 +114,7 @@ const careers = ({
 			))}
 		</div>
 
-		<div className="grid grid-cols-12 gap-x-5 gap-y-5 pb-0 md:px-22 font-worksans mt-16">
-			<div className="col-span-12 mx-10 md:px-0 my-0">
-				<h3 className="font-medium text-4xl mb-8">Job openings</h3>
-			</div>
-			<div className="border border-bc03 rounded-lg p-8 py-0 col-span-12 mx-10">
-				<div className="grid grid-cols-12">
-					<div className="lg:col-span-4 md:col-span-4 sm:col-span-12">
-						<h3 className="text-3xl lg:text-4xl mb-12 pt-8">Design</h3>
-					</div>
-					<div className="lg:col-span-8 md:col-span-8 sm:col-span-12">
-						<div className="col-span-8 divide-y-1 divide-bc03">
-							{/* Loop different jobs */}
-
-							{positions.position.map(({ name, job_description }, index) => (
-								<div className="p-8 pl-0">
-									<h4 className="text-2xl mb-4">{name}</h4>
-									<p className="mb-6">{job_description}</p>
-
-									{/* <Button text="Apply now" /> */}
-									{/* <button
-										class="primary border px-6 py-2 rounded-md"
-										type="button"
-									>
-										Apply
-									</button> */}
-								</div>
-							))}
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		{/* Jobs  */}
 	</Layout>
 );
 
