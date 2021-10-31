@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 import Layout from 'components/Layout';
-import Image from 'components/Image';
+// import Image from 'components/Image';
 import meta from 'content-careers.json';
 import { getAllImage } from 'utils/image';
 
@@ -9,11 +9,11 @@ const careers = ({
 	description,
 	ogImage,
 	headline,
-	location,
-	team,
-	positions,
-	values,
-	working,
+	// location,
+	// team,
+	// positions,
+	// values,
+	// working,
 }) => (
 	<Layout title={title} p="2xl:t-8">
 		{/* SEO */}
