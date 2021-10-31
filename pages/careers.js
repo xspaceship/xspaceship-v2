@@ -71,7 +71,7 @@ const careers = ({
 										<h2 className="font-medium text-2xl"> {name} </h2>
 										<p className="mt-2">{description}</p>
 									</div> */}
-									<div class="col-span-12 rounded-lg p-8 bg-white bg-opacity-5">
+									<div class="col-span-12 rounded-lg p-8 border border-bc03 rounded-lg">
 										<h2 className="font-medium text-2xl"> {name}</h2>
 										<p className="mt-2">{description}</p>
 									</div>
