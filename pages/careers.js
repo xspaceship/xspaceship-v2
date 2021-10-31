@@ -66,13 +66,15 @@ const careers = ({
 
 						{workings.working.map(({ name, description }, index) => (
 							<div key={index}>
-								{/* <div className="grid grid-cols-12 gap-x-8">
-									<div class="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
+								<div className="grid grid-cols-12 gap-x-8">
+									{/* <div class="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
 										<h2 className="font-medium text-2xl"> {name} </h2>
 										<p className="mt-2">{description}</p>
-									</div>
-								</div> */}
-								{name} {description}
+									</div> */}
+
+									<h2 className="font-medium text-2xl"> {name}</h2>
+									<p className="mt-2">{description}</p>
+								</div>
 							</div>
 						))}
 					</div>
