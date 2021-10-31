@@ -78,13 +78,13 @@ export default ({ children }) => (
 <FullWidth>
 	<TwoColumns>
 		<Image {...props.images['intro_01']} />
-
-    	<Image {...props.images['intro_02']} />
-    </TwoColumns>
-
+		<Image {...props.images['intro_02']} />
+	</TwoColumns>
 </FullWidth>
 
-<Header>1 — Main tabs</Header>
+<RegularWidth>
+	<Header>1 — Main tabs</Header>
+</RegularWidth>
 
 <FullWidth>
 	<TwoColumns>
@@ -113,7 +113,9 @@ export default ({ children }) => (
 	</TwoColumns>
 </FullWidth>
 
-<Header>1 — Calling</Header>
+<RegularWidth>
+	<Header>1 — Calling</Header>
+</RegularWidth>
 
 <FullWidth>
 	<Image {...props.images['call_hero']} />
@@ -146,7 +148,9 @@ export default ({ children }) => (
 	</TwoColumns>
 </FullWidth>
 
-<Header>1 — Meeting</Header>
+<RegularWidth>
+	<Header>1 — Meeting</Header>
+</RegularWidth>
 
 <FullWidth>
 	<Image {...props.images['meet_hero']} />
@@ -203,7 +207,9 @@ export default ({ children }) => (
 	</TwoColumns>
 </FullWidth>
 
-<Header>1 — Chatting & collaborating</Header>
+<RegularWidth>
+	<Header>1 — Chatting & collaborating</Header>
+</RegularWidth>
 
 <FullWidth>
 	<Image {...props.images['chat_hero']} />

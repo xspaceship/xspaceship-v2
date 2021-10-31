@@ -41,6 +41,7 @@ export default defineConfig({
 			fontSize: {
 				fs01: '2.5rem',
 				fs02: '1.75rem',
+				fs03: '2.25rem',
 			},
 			lineHeight: {
 				lh01: '1.05rem',
@@ -83,6 +84,7 @@ export default defineConfig({
 				bc02: '#4F4F4F',
 				bc03: 'rgba(255, 255, 255, 0.2)',
 				bc04: 'rgba(255, 255, 255, 0.1)',
+				bc05: '#F4F4F4',
 			},
 		},
 	},

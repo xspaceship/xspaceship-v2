@@ -94,3 +94,9 @@ button:focus {
 .md-two-columns .image-wrapper {
 	height: initial;
 }
+
+.md-regular-width,
+.md-full-width ~ .md-regular-width,
+.md-full-width {
+	@apply mt-5;
+}
