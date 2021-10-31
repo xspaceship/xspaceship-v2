@@ -13,7 +13,7 @@ const careers = ({
 	// team,
 	// positions,
 	// values,
-	working,
+	workings,
 }) => (
 	<Layout title={title} p="2xl:t-8">
 		{/* SEO */}
@@ -64,17 +64,14 @@ const careers = ({
 					<div className="grid grid-cols-12 gap-x-5 gap-y-5">
 						{/* Working here loop */}
 
-						{working.working.map(({ name, description }, index) => (
-							// <div className="md:col-span-6 sm:col-span-12">
-							// 	<div className="grid grid-cols-12 gap-x-8">
-							// 		<div class="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
-							// 			<h2 className="font-medium text-2xl"> {name} </h2>
-							// 			<p className="mt-2">{description}</p>
-							// 		</div>
-							// 	</div>
-							// </div>
-							<div key={index}>
-								{name} {description}
+						{workings.working.map(({ name, description }, index) => (
+							<div key={index} className="md:col-span-6 sm:col-span-12">
+								<div className="grid grid-cols-12 gap-x-8">
+									<div class="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
+										<h2 className="font-medium text-2xl"> {name} </h2>
+										<p className="mt-2">{description}</p>
+									</div>
+								</div>
 							</div>
 						))}
 					</div>
@@ -92,7 +89,7 @@ export async function getStaticProps() {
 	const { ogImage } = meta;
 	const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;
 
-	const { location, team, positions, values, working } = careers;
+	const { location, team, positions, values, workings } = careers;
 
 	const newCareers = {
 		...careers,
@@ -109,9 +106,9 @@ export async function getStaticProps() {
 			...values,
 			value: values.map(i => ({ ...i, ...images[i.name] })),
 		},
-		working: {
-			...working,
-			working: working.map(i => ({ ...i, ...images[i.name] })),
+		workings: {
+			...workings,
+			working: workings.map(i => ({ ...i, ...images[i.name] })),
 		},
 	};
 
