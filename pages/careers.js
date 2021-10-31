@@ -1,7 +1,6 @@
 import { NextSeo } from 'next-seo';
 import Layout from 'components/Layout';
 import Image from 'components/Image';
-import Button from 'components/Button';
 import meta from 'content-careers.json';
 import { getAllImage } from 'utils/image';
 import { template } from '@antfu/utils';
@@ -71,12 +70,6 @@ const careers = ({
 						{working.working.map(({ name, description, image }, index) => (
 							<div className="md:col-span-6 sm:col-span-12">
 								<div className="grid grid-cols-12 gap-x-8">
-									{/* <img
-										src={image.name}
-										width="auto"
-										className="border border-bc03 rounded-lg p-6 col-span-3"
-									/> */}
-
 									<div class="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
 										<img src={image.name} width="64" className="pb-4" />
 										<h2 className="font-medium text-2xl"> {name} </h2>
@@ -113,7 +106,6 @@ const careers = ({
 					w="auto md:full"
 					className="scale-img-child"
 					m="x-auto"
-					key={index}
 				>
 					<Image
 						{...i}
@@ -126,7 +118,10 @@ const careers = ({
 		</div>
 
 		<div className="grid grid-cols-12 gap-x-5 gap-y-5 pb-0 md:px-22 font-worksans mt-16">
-			<div className="border border-bc03 rounded-lg p-8 py-0 col-span-12">
+			<div className="col-span-12 mx-10 md:px-0 my-0">
+				<h3 className="font-medium text-4xl mb-8">Job openings</h3>
+			</div>
+			<div className="border border-bc03 rounded-lg p-8 py-0 col-span-12 mx-10">
 				<div className="grid grid-cols-12">
 					<div className="lg:col-span-4 md:col-span-4 sm:col-span-12">
 						<h3 className="text-3xl lg:text-4xl mb-12 pt-8">Design</h3>
