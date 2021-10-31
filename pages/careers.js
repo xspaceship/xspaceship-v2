@@ -65,14 +65,11 @@ const careers = ({
 						{/* Working here loop */}
 
 						{workings.working.map(({ name, description }, index) => (
-							<div key={index}>
+							<div key={index} className="md:col-span-6 sm:col-span-12">
 								<div className="grid grid-cols-12 gap-x-8">
-									{/* <div class="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
-										<h2 className="font-medium text-2xl"> {name} </h2>
-										<p className="mt-2">{description}</p>
-									</div> */}
 									<div className="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
-										<h2 className="font-medium text-2xl"> {name}</h2>
+										{/* <img src={image.name} width="64" className="pb-4" /> */}
+										<h2 className="font-medium text-2xl"> {name} </h2>
 										<p className="mt-2">{description}</p>
 									</div>
 								</div>
