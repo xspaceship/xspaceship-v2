@@ -49,9 +49,9 @@ const careers = ({
 			/>
 		</div>
 
-		<div className="col-span-12 mx-10 rounded-lg">
+		{/* <div className="col-span-12 mx-10 rounded-lg">
 			<img src="/images/careers/team.png" className="rounded-lg" />
-		</div>
+		</div> */}
 	</Layout>
 );
 
