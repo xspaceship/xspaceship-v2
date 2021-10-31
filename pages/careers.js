@@ -71,9 +71,10 @@ const careers = ({
 										<h2 className="font-medium text-2xl"> {name} </h2>
 										<p className="mt-2">{description}</p>
 									</div> */}
-
-									<h2 className="font-medium text-2xl"> {name}</h2>
-									<p className="mt-2">{description}</p>
+									<div>
+										<h2 className="font-medium text-2xl"> {name}</h2>
+										<p className="mt-2">{description}</p>
+									</div>
 								</div>
 							</div>
 						))}
