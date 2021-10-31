@@ -73,7 +73,9 @@ const careers = ({
 							// 		</div>
 							// 	</div>
 							// </div>
-							<div key={index}>Hi</div>
+							<div key={index}>
+								{name} {description}
+							</div>
 						))}
 					</div>
 				</div>
