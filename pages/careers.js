@@ -134,12 +134,12 @@ const careers = ({
 									<p className="mb-6">{job_description}</p>
 
 									{/* <Button text="Apply now" /> */}
-									<button
+									{/* <button
 										class="primary border px-6 py-2 rounded-md"
 										type="button"
 									>
 										Apply
-									</button>
+									</button> */}
 								</div>
 							))}
 						</div>
