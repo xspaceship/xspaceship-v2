@@ -12,7 +12,7 @@ const careers = ({
 	// location,
 	// team,
 	// positions,
-	// values,
+	values,
 	workings,
 }) => (
 	<Layout title={title} p="2xl:t-8">
@@ -64,11 +64,11 @@ const careers = ({
 					<div className="grid grid-cols-12 gap-x-5 gap-y-5">
 						{/* Working here loop */}
 
-						{workings.working.map(({ name, description }, index) => (
-							<div key={index} className="md:col-span-6 sm:col-span-12">
+						{workings.working.map(({ name, description, image }, index) => (
+							<div className="md:col-span-6 sm:col-span-12">
 								<div className="grid grid-cols-12 gap-x-8">
 									<div className="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
-										{/* <img src={image.name} width="64" className="pb-4" /> */}
+										<img src={image.name} width="64" className="pb-4" />
 										<h2 className="font-medium text-2xl"> {name} </h2>
 										<p className="mt-2">{description}</p>
 									</div>
