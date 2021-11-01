@@ -55,7 +55,7 @@ const careers = ({
 
 		{/* Working here */}
 		<div className="lg:mx-32 md:mx-0 sm:mx-5 font-worksans divide-y-1 divide-bc03">
-			<div className="grid grid-cols-12 font-worksans gap-x-12 gap-y-8 lg:mx-0 md:px-0 lg:py-20 md:py-12 sm:py-8 sm:m-x-5 mb-0">
+			<div className="grid grid-cols-12 font-worksans lg:mb-0 gap-x-12 gap-y-8 lg:mx-0 md:px-0 lg:py-16 md:py-12 sm:py-8 sm:m-x-5">
 				<div className="col-span-12">
 					<h3 className="font-medium text-4xl mb-4">Working here</h3>
 				</div>
@@ -80,7 +80,7 @@ const careers = ({
 			</div>
 
 			<div>
-				<div className="col-span-12 md:px-0 mt-20">
+				<div className="col-span-12 md:px-0 mt-16">
 					<h3 className="font-medium text-4xl mb-12">Our values</h3>
 				</div>
 				<div className="grid grid-cols-3 gap-x-5 gap-y-5 pb-12 md:px-0 font-worksans">
@@ -117,7 +117,7 @@ const careers = ({
 
 			<div className="grid grid-cols-12 gap-x-5 gap-y-5 pb-0 font-worksans mt-12">
 				<div className="col-span-12 md:px-0 my-0">
-					<h3 className="font-medium text-4xl mb-4 mt-12">Job openings</h3>
+					<h3 className="font-medium text-4xl mb-4 mt-16">Job openings</h3>
 				</div>
 				<div className="border border-bc03 rounded-lg p-8 py-0 col-span-12">
 					<div className="grid grid-cols-12">
