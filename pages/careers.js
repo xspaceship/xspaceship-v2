@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 import Layout from 'components/Layout';
-// import Image from 'components/Image';
+import Image from 'components/Image';
 import meta from 'content-careers.json';
 import { getAllImage } from 'utils/image';
 
@@ -9,9 +9,9 @@ const careers = ({
 	description,
 	ogImage,
 	headline,
-	// location,
+	location,
 	// team,
-	// positions,
+	positions,
 	values,
 	workings,
 }) => (
@@ -83,7 +83,7 @@ const careers = ({
 				<div className="col-span-12 md:px-0 mt-20">
 					<h3 className="font-medium text-4xl mb-12">Our values</h3>
 				</div>
-				<div className="grid grid-cols-3 gap-x-5 gap-y-5 pb-20 md:px-0 font-worksans">
+				<div className="grid grid-cols-3 gap-x-5 gap-y-5 pb-12 md:px-0 font-worksans">
 					{/* Loop values */}
 					{/* style={{backgroundColor: color}} */}
 					{values.value.map(({ name }, index) => (
@@ -91,6 +91,60 @@ const careers = ({
 							<h4 className="text-2xl">{name}</h4>
 						</div>
 					))}
+				</div>
+
+				<div className="mx-0">
+					{location.image.map((i, index) => (
+						<div
+							grid="col-span-12"
+							w="auto md:full"
+							className="scale-img-child"
+							m="x-auto"
+						>
+							<Image
+								{...i}
+								key={index}
+								alt=""
+								caption="Our co-working space at Soho Works in Dumbo, Brooklyn, New York City"
+								captionAlignment="center"
+							/>
+						</div>
+					))}
+				</div>
+			</div>
+
+			{/* Jobs  */}
+
+			<div className="grid grid-cols-12 gap-x-5 gap-y-5 pb-0 font-worksans mt-12">
+				<div className="col-span-12 md:px-0 my-0">
+					<h3 className="font-medium text-4xl mb-4 mt-12">Job openings</h3>
+				</div>
+				<div className="border border-bc03 rounded-lg p-8 py-0 col-span-12">
+					<div className="grid grid-cols-12">
+						<div className="lg:col-span-4 md:col-span-4 sm:col-span-12">
+							<h3 className="text-3xl lg:text-4xl mb-12 pt-8">Design</h3>
+						</div>
+						<div className="lg:col-span-8 md:col-span-8 sm:col-span-12">
+							<div className="col-span-8 divide-y-1 divide-bc03">
+								{/* Loop different jobs */}
+
+								{positions.position.map(({ name, job_description }, index) => (
+									<div key={index} className="p-8 pl-0">
+										<h4 className="text-2xl mb-4">{name}</h4>
+										<p className="mb-6">{job_description}</p>
+
+										{/* <Button text="Apply now" /> */}
+										<button
+											className="primary border px-6 py-2 rounded-md"
+											type="button"
+										>
+											Apply
+										</button>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
