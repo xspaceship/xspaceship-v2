@@ -10,7 +10,6 @@ const careers = ({
 	ogImage,
 	headline,
 	location,
-	// team,
 	positions,
 	values,
 	workings,
@@ -100,10 +99,10 @@ const careers = ({
 							w="auto md:full"
 							className="scale-img-child"
 							m="x-auto"
+							key={index}
 						>
 							<Image
 								{...i}
-								key={index}
 								alt=""
 								caption="Our co-working space at Soho Works in Dumbo, Brooklyn, New York City"
 								captionAlignment="center"
