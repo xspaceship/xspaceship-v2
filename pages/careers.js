@@ -65,7 +65,7 @@ const careers = ({
 						{/* Working here loop */}
 
 						{workings.working.map(({ name, description, image }, index) => (
-							<div className="md:col-span-6 sm:col-span-12">
+							<div key={index} className="md:col-span-6 sm:col-span-12">
 								<div className="grid grid-cols-12 gap-x-8">
 									<div className="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
 										<img src={image.name} width="64" className="pb-4" />
@@ -87,7 +87,7 @@ const careers = ({
 					{/* Loop values */}
 					{/* style={{backgroundColor: color}} */}
 					{values.value.map(({ name, color }, index) => (
-						<div className="p-8 rounded-lg bg-white bg-opacity-5">
+						<div key={index} className="p-8 rounded-lg bg-white bg-opacity-5">
 							<h4 className="text-2xl">{name}</h4>
 						</div>
 					))}
