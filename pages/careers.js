@@ -78,6 +78,21 @@ const careers = ({
 					</div>
 				</div>
 			</div>
+
+			<div>
+				<div className="col-span-12 md:px-0 mt-20">
+					<h3 className="font-medium text-4xl mb-12">Our values</h3>
+				</div>
+				<div className="grid grid-cols-3 gap-x-5 gap-y-5 pb-20 md:px-0 font-worksans">
+					{/* Loop values */}
+					{/* style={{backgroundColor: color}} */}
+					{values.value.map(({ name, color }, index) => (
+						<div className="p-8 rounded-lg bg-white bg-opacity-5">
+							<h4 className="text-2xl">{name}</h4>
+						</div>
+					))}
+				</div>
+			</div>
 		</div>
 	</Layout>
 );
