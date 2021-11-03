@@ -60,8 +60,7 @@ const careers = ({
 				mt-16 lg:mb-0 
 				gap-x-12 gap-y-8 
 				lg:mx-0 md:px-0 sm:px-0 px-5
-				sm:px-0 px-0
-				"
+				sm:px-0 px-0"
 			>
 				<h3 className="col-span-12 font-medium text-4xl mb-12">Working here</h3>
 
