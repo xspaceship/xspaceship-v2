@@ -59,7 +59,7 @@ const careers = ({
 				className="
 				mt-16 lg:mb-0 
 				gap-x-12 gap-y-8 
-				lg:mx-0 md:px-0 sm:px-0 px-5
+				lg:mx-0 md:px-0 sm:mx-0 mx-5 sm:px-0 px-5
 				sm:px-0 px-0"
 			>
 				<h3 className="col-span-12 font-medium text-4xl mb-12">Working here</h3>
@@ -134,7 +134,7 @@ const careers = ({
 				<div className="border border-bc03 rounded-lg p-8 py-0 col-span-12">
 					<div className="grid grid-cols-12">
 						<div className="lg:col-span-4 md:col-span-4 sm:col-span-12 col-span-12">
-							<h3 className="text-3xl lg:text-4xl mb-12 pt-8">Design</h3>
+							<h3 className="text-3xl lg:text-4xl mb-0 pt-8">Design</h3>
 						</div>
 						<div className="lg:col-span-8 md:col-span-8 sm:col-span-12 col-span-12">
 							<div className="col-span-8 divide-y-1 divide-bc03">
