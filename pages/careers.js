@@ -35,7 +35,7 @@ const careers = ({
 
 		{/* Headline */}
 		<div
-			p="x-16 y-16 lg:x-22.5 lg:y-22.5"
+			p="x-16 y-16 lg:x-22.5 lg:y-22.5 sm:x-8 sm:y-8 x-8 y-8"
 			m="x-5 lg:x-10 b-5 sm:x-5"
 			grid="~ cols-12 gap-5"
 			border="rounded-lg"
@@ -62,7 +62,9 @@ const careers = ({
 				lg:mx-0 md:px-0 sm:mx-0 mx-5 sm:px-0 px-5
 				sm:px-0 px-0"
 			>
-				<h3 className="col-span-12 font-medium text-4xl mb-12">Working here</h3>
+				<h3 className="col-span-12 font-medium text-4xl lg:mb-12 md:mb-8 sm:mb-8 mb-8">
+					Working here
+				</h3>
 
 				<div className="col-span-12 mb-16">
 					<div className="grid grid-cols-12 gap-x-5 gap-y-5">
@@ -88,7 +90,9 @@ const careers = ({
 
 			<div className="lg:mx-0 md:mx-0 sm:mx-5 mx-5">
 				<div className="col-span-12 md:px-0 mt-16">
-					<h3 className="font-medium text-4xl mb-12">Our values</h3>
+					<h3 className="font-medium text-4xl lg:mb-12 md:mb-8 sm:mb-8 mb-8">
+						Our values
+					</h3>
 				</div>
 				<div className="col-span-12 pb-12 md:px-0 font-worksans">
 					<div className="grid grid-cols-3 gap-x-5 gap-y-5">
@@ -97,7 +101,7 @@ const careers = ({
 						{values.value.map(({ name }, index) => (
 							<div
 								key={index}
-								className="p-8 rounded-lg bg-white bg-opacity-5 lg:col-span-1 sm:col-span-3 col-span-12"
+								className="p-8 rounded-lg bg-white bg-opacity-5 lg:col-span-1 md:col-span-1 sm:col-span-3 col-span-12"
 							>
 								<h4 className="text-2xl">{name}</h4>
 							</div>
@@ -129,7 +133,9 @@ const careers = ({
 
 			<div className="gap-x-5 gap-y-5 pb-0 font-worksans mt-12 lg:mx-0 md:mx-0 sm:mx-5 mx-5">
 				<div className="col-span-12 md:px-0 my-0">
-					<h3 className="font-medium text-4xl mb-12 mt-16">Job openings</h3>
+					<h3 className="font-medium text-4xl lg:mb-12 md:mb-8 sm:mb-8 mb-8 mt-16">
+						Job openings
+					</h3>
 				</div>
 				<div className="border border-bc03 rounded-lg p-8 py-0 col-span-12">
 					<div className="grid grid-cols-12">
