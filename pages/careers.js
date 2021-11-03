@@ -42,30 +42,38 @@ const careers = ({
 			bg="bg02"
 		>
 			<h1
-				grid="col-span-8 md:col-span-8 2xl:col-span-8 sm:col-span-12"
+				grid="col-span-12 md:col-span-8 2xl:col-span-8 sm:col-span-12"
 				font="questrial ld01 md:leading-tight"
 				className="text-white text-fs01 md:text-7xl"
 				dangerouslySetInnerHTML={{ __html: headline }}
 			/>
 		</div>
 
-		<div className="col-span-12 mx-10 lg:mx-10 md:mx-5 sm:mx-5 rounded-lg">
+		<div className="col-span-12 mx-5 lg:mx-10 md:mx-5 sm:mx-5 rounded-lg">
 			<img src="/images/careers/team.png" className="rounded-lg" />
 		</div>
 
 		{/* Working here */}
-		<div className="lg:mx-32 lg:mx-10 md:mx-5 sm:mx-5 font-worksans divide-y-1 divide-bc03 ">
-			<div className="grid grid-cols-12 font-worksans mt-5 lg:mb-0 gap-x-12 gap-y-8 lg:mx-0 md:px-0 lg:py-16 md:py-12 sm:py-8">
-				<div className="col-span-12">
-					<h3 className="font-medium text-4xl mb-4">Working here</h3>
-				</div>
+		<div className="col-span-12 lg:mx-10 md:mx-5 sm:mx-5 divide-y-1 divide-bc03 ">
+			<div
+				className="
+				mt-16 lg:mb-0 
+				gap-x-12 gap-y-8 
+				lg:mx-0 md:px-0 sm:px-0 px-5
+				sm:px-0 px-0
+				"
+			>
+				<h3 className="col-span-12 font-medium text-4xl mb-12">Working here</h3>
 
-				<div className="col-span-12">
+				<div className="col-span-12 mb-16">
 					<div className="grid grid-cols-12 gap-x-5 gap-y-5">
 						{/* Working here loop */}
 
 						{workings.working.map(({ name, description, image }, index) => (
-							<div key={index} className="md:col-span-6 sm:col-span-12">
+							<div
+								key={index}
+								className="col-span-12 lg:col-span-6 md:col-span-6 sm:col-span-12"
+							>
 								<div className="grid grid-cols-12 gap-x-8">
 									<div className="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
 										<img src={image.name} width="64" className="pb-4" />
@@ -79,24 +87,26 @@ const careers = ({
 				</div>
 			</div>
 
-			<div className="lg:mx-0 md:mx-0 sm:mx-0">
+			<div className="lg:mx-0 md:mx-0 sm:mx-5 mx-5">
 				<div className="col-span-12 md:px-0 mt-16">
 					<h3 className="font-medium text-4xl mb-12">Our values</h3>
 				</div>
-				<div className="grid grid-cols-3 gap-x-5 gap-y-5 pb-12 md:px-0 font-worksans">
-					{/* Loop values */}
-					{/* style={{backgroundColor: color}} */}
-					{values.value.map(({ name }, index) => (
-						<div
-							key={index}
-							className="p-8 rounded-lg bg-white bg-opacity-5 lg:col-span-1 sm:col-span-3"
-						>
-							<h4 className="text-2xl">{name}</h4>
-						</div>
-					))}
+				<div className="col-span-12 pb-12 md:px-0 font-worksans">
+					<div className="grid grid-cols-3 gap-x-5 gap-y-5">
+						{/* Loop values */}
+						{/* style={{backgroundColor: color}} */}
+						{values.value.map(({ name }, index) => (
+							<div
+								key={index}
+								className="p-8 rounded-lg bg-white bg-opacity-5 lg:col-span-1 sm:col-span-3 col-span-12"
+							>
+								<h4 className="text-2xl">{name}</h4>
+							</div>
+						))}
+					</div>
 				</div>
 
-				<div className="mx-0">
+				<div className="mx-0 col-span-12">
 					{location.image.map((i, index) => (
 						<div
 							grid="col-span-12"
@@ -118,16 +128,16 @@ const careers = ({
 
 			{/* Jobs  */}
 
-			<div className="grid grid-cols-12 gap-x-5 gap-y-5 pb-0 font-worksans mt-12 lg:mx-0 sm:mx-0">
+			<div className="gap-x-5 gap-y-5 pb-0 font-worksans mt-12 lg:mx-0 md:mx-0 sm:mx-5 mx-5">
 				<div className="col-span-12 md:px-0 my-0">
-					<h3 className="font-medium text-4xl mb-4 mt-16">Job openings</h3>
+					<h3 className="font-medium text-4xl mb-12 mt-16">Job openings</h3>
 				</div>
 				<div className="border border-bc03 rounded-lg p-8 py-0 col-span-12">
 					<div className="grid grid-cols-12">
-						<div className="lg:col-span-4 md:col-span-4 sm:col-span-12">
+						<div className="lg:col-span-4 md:col-span-4 sm:col-span-12 col-span-12">
 							<h3 className="text-3xl lg:text-4xl mb-12 pt-8">Design</h3>
 						</div>
-						<div className="lg:col-span-8 md:col-span-8 sm:col-span-12">
+						<div className="lg:col-span-8 md:col-span-8 sm:col-span-12 col-span-12">
 							<div className="col-span-8 divide-y-1 divide-bc03">
 								{/* Loop different jobs */}
 
