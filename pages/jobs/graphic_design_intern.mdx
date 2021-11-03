@@ -1,0 +1,95 @@
+import { NextSeo } from 'next-seo';
+import Layout from 'components/Layout';
+import Image from 'components/Image';
+import FullWidth from 'components/md/FullWidth';
+import Title from 'components/md/Title';
+import Paragraph from 'components/md/Paragraph';
+import Header from 'components/md/Header';
+import TwoColumns from 'components/md/TwoColumns';
+import RegularWidth from 'components/md/RegularWidth';
+import { getAllImage } from 'utils/image';
+import rootMeta from 'meta.json';
+import Table from 'components/md/Table';
+import List from 'components/md/List';
+
+export const meta = {
+	name: 'Graphic Design Intern',
+	category: ['Design', 'UX', 'UI', 'Internship'],
+	description:
+		'A designer with strong foundation in visual branding and can execute tactical tasks with high craft.',
+	gradientFrom: '#714EB8',
+	gradientTo: '#4F22AB',
+};
+
+export async function getStaticProps(context) {
+	const images = await getAllImage('fuze');
+	const { gradientFrom, gradientTo } = meta;
+	for (const key in images) {
+		images[key] = { ...images[key], gradientFrom, gradientTo };
+	}
+	const ogImage =
+		(process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+	const title = rootMeta.name + ' | ' + meta.name;
+	return { props: { images, ...meta, title, ogImage } };
+}
+
+export default ({ children }) => (
+	<Layout title={meta.name} p="2xl:t-8">
+		{children}
+	</Layout>
+);
+
+<NextSeo
+	title={props.title}
+	description={props.description}
+	openGraph={{
+		title: props.title,
+		description: props.description,
+		images: [
+			{
+				url: props.ogImage,
+				alt: props.title,
+				type: 'png',
+			},
+		],
+	}}
+/>
+
+<Title text={meta.name} sub={meta.description} />
+
+<RegularWidth>
+
+    <List
+    	bgColor="black"
+    	borderColor="rgba(255,255,255,0.4"
+    	textColor="#B1CDE0"
+    	title="Qualifications"
+    	items={[
+    		'A portfolio that demonstrates product, branding, communication design experience',
+    		'Experience with holistic story-telling and design-systems thinking',
+    		'Visual Design skills with proficiency in typography, desktop/mobile UI, color, layout, iconography and aesthetic sense',
+    		'Experience in Adobe Creative Suite, including Photoshop, Illustrator and InDesign',
+    		'Must obtain work authorization in country of employment at the time of hire, and maintain ongoing work authorization during employment'
+    	]}
+    />
+
+    <List
+    	bgColor="black"
+    	borderColor="rgba(255,255,255,0.4"
+    	textColor="#B1CDE0"
+    	title="Responsibilities"
+    	items={[
+    		'As a Brand Design Intern, you will work closely with designers, engineers, content designers and marketing to define and ensure a coherent brand expression across our ecosystem',
+    		'You will have multidisciplinary projects that bridge brand work across interactive, printed and environmental applications',
+    		'You will have the opportunity to think systematically about a holistic brand system and articulate design decisions and iterate quickly',
+    		'You will cover the design spectrum–from quick, rough strategic ideation to polished final deliverables',
+    		'You will be expected to utilize your full range of product design, communication design, and visual design skills',
+    		'Concept, prototype and execute brand and marketing experiences in product',
+    		'Extending brand expression system to interactive digital experiences',
+    		'Ideating visual concepts and refining design work based on creative direction',
+    		'Developing visual identity platforms, systems, typography, palette, illustration, iconography systems',
+    		'Working cross-functionally and collaborating with internal and external team members'
+    	]}
+    />
+
+</RegularWidth>

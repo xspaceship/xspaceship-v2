@@ -1,9 +1,11 @@
 const Button = props => {
-	const { text } = props;
+	const { text, url } = props;
 	return (
-		<button className="primary border px-6 py-2 rounded-md" type="button">
-			{text}
-		</button>
+		<form action={url}>
+			<button className="primary border px-6 py-2 rounded-md" type="button">
+				{text}
+			</button>
+		</form>
 	);
 };
 

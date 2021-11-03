@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo';
 import Layout from 'components/Layout';
 import Image from 'components/Image';
-import Button from 'components/Button';
+import ButtonLink from 'components/ButtonLink';
 import meta from 'content-careers.json';
 import { getAllImage } from 'utils/image';
 
@@ -137,29 +137,29 @@ const careers = ({
 						Job openings
 					</h3>
 				</div>
+
 				<div className="border border-bc03 rounded-lg p-8 py-0 col-span-12">
 					<div className="grid grid-cols-12">
+						{/* Title */}
 						<div className="lg:col-span-4 md:col-span-4 sm:col-span-12 col-span-12">
 							<h3 className="text-3xl lg:text-4xl mb-0 pt-8">Design</h3>
 						</div>
+
 						<div className="lg:col-span-8 md:col-span-8 sm:col-span-12 col-span-12">
 							<div className="col-span-8 divide-y-1 divide-bc03">
 								{/* Loop different jobs */}
+								{positions.position.map(
+									({ name, job_description, location, url }, index) => (
+										<div key={index} className="p-8 pl-0">
+											<h4 className="text-2xl mb-4">{name}</h4>
+											<p className="mb-2">{job_description}</p>
+											<p className="mb-6">Location: {location}</p>
 
-								{positions.position.map(({ name, job_description }, index) => (
-									<div key={index} className="p-8 pl-0">
-										<h4 className="text-2xl mb-4">{name}</h4>
-										<p className="mb-6">{job_description}</p>
-
-										<Button text="View" />
-										{/* <button
-											className="primary border px-6 py-2 rounded-md"
-											type="button"
-										>
-											Apply
-										</button> */}
-									</div>
-								))}
+											<ButtonLink text="View" url={url} />
+										</div>
+									),
+								)}
+								{/* Loop ends */}
 							</div>
 						</div>
 					</div>

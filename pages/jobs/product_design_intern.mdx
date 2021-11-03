@@ -1,0 +1,87 @@
+import { NextSeo } from 'next-seo';
+import Layout from 'components/Layout';
+import Image from 'components/Image';
+import FullWidth from 'components/md/FullWidth';
+import Title from 'components/md/Title';
+import Paragraph from 'components/md/Paragraph';
+import Header from 'components/md/Header';
+import TwoColumns from 'components/md/TwoColumns';
+import RegularWidth from 'components/md/RegularWidth';
+import { getAllImage } from 'utils/image';
+import rootMeta from 'meta.json';
+import Table from 'components/md/Table';
+import List from 'components/md/List';
+
+export const meta = {
+	name: 'Product Design Intern',
+	category: ['Design', 'UX', 'UI', 'Internship'],
+	description:
+		'A designer with strong foundation in UX/UI and can execute tactical tasks with high craft.',
+	gradientFrom: '#714EB8',
+	gradientTo: '#4F22AB',
+};
+
+export async function getStaticProps(context) {
+	const images = await getAllImage('fuze');
+	const { gradientFrom, gradientTo } = meta;
+	for (const key in images) {
+		images[key] = { ...images[key], gradientFrom, gradientTo };
+	}
+	const ogImage =
+		(process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+	const title = rootMeta.name + ' | ' + meta.name;
+	return { props: { images, ...meta, title, ogImage } };
+}
+
+export default ({ children }) => (
+	<Layout title={meta.name} p="2xl:t-8">
+		{children}
+	</Layout>
+);
+
+<NextSeo
+	title={props.title}
+	description={props.description}
+	openGraph={{
+		title: props.title,
+		description: props.description,
+		images: [
+			{
+				url: props.ogImage,
+				alt: props.title,
+				type: 'png',
+			},
+		],
+	}}
+/>
+
+<Title text={meta.name} sub={meta.description} />
+
+<RegularWidth>
+
+    <List
+    	bgColor="black"
+    	borderColor="rgba(255,255,255,0.4"
+    	textColor="#B1CDE0"
+    	title="Qualifications"
+    	items={[
+    		'Current student pursuing an undergraduate or graduate degree in HCI, Graphic Design, or related field, with at least one semester/quarter remaining to complete',
+    		'A portfolio showing your high quality, thoughtful UI and UX work',
+    		'Availability to embark on an exciting 12-16 week internship focusing on a real-time, impactful business challenge to begin January 2022'
+    	]}
+    />
+
+    <List
+    	bgColor="black"
+    	borderColor="rgba(255,255,255,0.4"
+    	textColor="#B1CDE0"
+    	title="Responsibilities"
+    	items={[
+    		'Design simple, sophisticated experiences to simplify complex logistics workflows and processes',
+    		'Build wireframes, prototypes, and visual designs based on our UI framework to tackle difficult UX problems',
+    		'Collaborate with your cross functional team to build high-quality design solutions for your product',
+    		'Proactively solicit feedback and learning experiences from other designers to improve your design craft'
+    	]}
+    />
+
+</RegularWidth>
