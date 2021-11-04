@@ -35,7 +35,7 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
 			/>
 
 			{/* Headline */}
-			<div p="y-7.5 md:y-10 lg:y-20 2xl:t-0" grid="~ gap-5 cols-12">
+			{/* <div p="y-7.5 md:y-10 lg:y-20 2xl:t-0" grid="~ gap-5 cols-12">
 				<h1
 					grid="col-span-12 md:col-span-9 2xl:col-span-7"
 					font="questrial ld01 md:leading-tight"
@@ -43,6 +43,22 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
 				>
 					{headline}
 				</h1>
+			</div> */}
+
+			{/* Headline */}
+			<div
+				p="x-16 y-16 lg:x-22.5 lg:y-22.5 sm:x-8 sm:y-8 x-8 y-8"
+				m="x-0 lg:x-0 b-10 sm:x-5"
+				grid="~ cols-12 gap-5"
+				border="rounded-lg border border-white"
+				bg="bg02"
+			>
+				<h1
+					grid="col-span-12 md:col-span-8 2xl:col-span-8 sm:col-span-12"
+					font="questrial ld01 md:leading-tight"
+					className="text-white text-fs01 md:text-7xl"
+					dangerouslySetInnerHTML={{ __html: headline }}
+				/>
 			</div>
 
 			{/* Chip buttons */}
