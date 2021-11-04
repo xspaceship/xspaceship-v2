@@ -96,7 +96,7 @@ button:focus {
 }
 
 .md-regular-width,
-.md-full-width ~ .md-regular-width,
-.md-full-width {
+.md-fullwidth ~ .md-regular-width,
+.md-fullwidth {
 	@apply mt-5;
 }

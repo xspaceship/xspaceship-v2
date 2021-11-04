@@ -5,7 +5,7 @@ import ButtonLink from 'components/ButtonLink';
 import meta from 'content-careers.json';
 import { getAllImage } from 'utils/image';
 
-const careers = ({
+const Careers = ({
 	title,
 	description,
 	ogImage,
@@ -14,6 +14,7 @@ const careers = ({
 	positions,
 	values,
 	workings,
+	team,
 }) => (
 	<Layout title={title} p="2xl:t-8">
 		{/* SEO */}
@@ -50,7 +51,7 @@ const careers = ({
 		</div>
 
 		<div className="col-span-12 mx-5 lg:mx-10 md:mx-5 sm:mx-5 rounded-lg">
-			<img src="/images/careers/team.png" className="rounded-lg" alt="team" />
+			<Image {...team.image} alt={team.name} />
 		</div>
 
 		{/* Working here */}
@@ -70,20 +71,22 @@ const careers = ({
 					<div className="grid grid-cols-12 gap-x-5 gap-y-5">
 						{/* Working here loop */}
 
-						{workings.working.map(({ name, description, image }, index) => (
+						{workings.map(({ name, description, image }, index) => (
 							<div
 								key={index}
 								className="col-span-12 lg:col-span-6 md:col-span-6 sm:col-span-12"
 							>
-								<div className="grid grid-cols-12 gap-x-8">
+								<div h="full" className="grid grid-cols-12 gap-x-8">
 									<div className="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
-										<img
-											src={image.name}
-											width="64"
-											className="pb-4"
-											alt={image.name}
-										/>
-										<h2 className="font-medium text-2xl"> {name} </h2>
+										<div w="16" p="b-4">
+											<Image
+												{...image}
+												alt={image.name}
+												gradientFrom={image.gradientFrom}
+												gradientTo={image.gradientTo}
+											/>
+										</div>
+										<h2 className="font-medium text-2xl">{name}</h2>
 										<p className="mt-2">{description}</p>
 									</div>
 								</div>
@@ -103,7 +106,7 @@ const careers = ({
 					<div className="grid grid-cols-3 gap-x-5 gap-y-5">
 						{/* Loop values */}
 						{/* style={{backgroundColor: color}} */}
-						{values.value.map(({ name }, index) => (
+						{values.map(({ name }, index) => (
 							<div
 								key={index}
 								className="p-8 rounded-lg bg-white bg-opacity-5 lg:col-span-1 md:col-span-1 sm:col-span-3 col-span-12"
@@ -153,7 +156,7 @@ const careers = ({
 						<div className="lg:col-span-8 md:col-span-8 sm:col-span-12 col-span-12">
 							<div className="col-span-8 divide-y-1 divide-bc03">
 								{/* Loop different jobs */}
-								{positions.position.map(
+								{positions.map(
 									({ name, job_description, location, url }, index) => (
 										<div
 											key={index}
@@ -185,7 +188,7 @@ const careers = ({
 	</Layout>
 );
 
-export default careers;
+export default Careers;
 
 export async function getStaticProps() {
 	const images = await getAllImage('careers');
@@ -193,7 +196,7 @@ export async function getStaticProps() {
 	const { ogImage } = meta;
 	const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;
 
-	const { location, team, positions, values, workings } = careers;
+	const { location, team, workings } = careers;
 
 	const newCareers = {
 		...careers,
@@ -202,18 +205,10 @@ export async function getStaticProps() {
 			...location,
 			image: location.image.map(i => ({ ...i, ...images[i.name] })),
 		},
-		positions: {
-			...positions,
-			position: positions.map(i => ({ ...i })),
-		},
-		values: {
-			...values,
-			value: values.map(i => ({ ...i, ...images[i.name] })),
-		},
-		workings: {
-			...workings,
-			working: workings.map(i => ({ ...i, ...images[i.name] })),
-		},
+		workings: workings.map(i => ({
+			...i,
+			image: { ...i.image, ...images[i.image.name] },
+		})),
 	};
 
 	return { props: { ...newCareers, ogImage: addedHostUrlOgImage } };

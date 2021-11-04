@@ -28,7 +28,7 @@
 				"name": "Professional growth",
 				"description": "We understand your needs to help you design a career growth plan that’s clear, actionable, and achievable. You will also be provided with the right resources and mentorship to learn new skills.",
 				"image": {
-					"name": "/images/careers/grow.gif",
+					"name": "grow",
 					"gradientFrom": "rgba(255,255,255,0.2)",
 					"gradientTo": "rgba(255,255,255,0.1)"
 				}
@@ -37,7 +37,7 @@
 				"name": "Work / life balance",
 				"description": "Happy employees mean productive employees. Our flexible time off policy allows you to take good care of yourself and your family. We believe that 10-6 is the best work schedule.",
 				"image": {
-					"name": "/images/careers/watch.gif",
+					"name": "watch",
 					"gradientFrom": "rgba(255,255,255,0.2)",
 					"gradientTo": "rgba(255,255,255,0.1)"
 				}
@@ -46,7 +46,7 @@
 				"name": "Start-up culture",
 				"description": "We are nimble and dynamic. We cut down on unecessary processes and focus on delivering the best work. We adopt a flat hierarchy and foster tight collaboration.",
 				"image": {
-					"name": "/images/careers/rocket.gif",
+					"name": "rocket",
 					"gradientFrom": "rgba(255,255,255,0.2)",
 					"gradientTo": "rgba(255,255,255,0.1)"
 				}
@@ -55,7 +55,7 @@
 				"name": "Remote-first",
 				"description": "Do your best work from the comfort of your home. We use the best technology to make asynchronous collaboration seamless. Our New York office if available for meetings.",
 				"image": {
-					"name": "/images/careers/home.gif",
+					"name": "home",
 					"gradientFrom": "rgba(255,255,255,0.2)",
 					"gradientTo": "rgba(255,255,255,0.1)"
 				}

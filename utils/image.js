@@ -3,7 +3,7 @@ import { getPlaiceholder } from 'plaiceholder';
 import { getFileNameFromString } from './string';
 
 export const getAllImagePaths = dir =>
-	glob.sync(`public/images/${dir}/*.{jpg,png}`).map(file => {
+	glob.sync(`public/images/${dir}/*.{jpg,png,gif}`).map(file => {
 		const sep = '/';
 		const fileArr = file.split(sep);
 
