@@ -50,7 +50,7 @@ const careers = ({
 		</div>
 
 		<div className="col-span-12 mx-5 lg:mx-10 md:mx-5 sm:mx-5 rounded-lg">
-			<img src="/images/careers/team.png" className="rounded-lg" />
+			<img src="/images/careers/team.png" className="rounded-lg" alt="team" />
 		</div>
 
 		{/* Working here */}
@@ -77,7 +77,12 @@ const careers = ({
 							>
 								<div className="grid grid-cols-12 gap-x-8">
 									<div className="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
-										<img src={image.name} width="64" className="pb-4" />
+										<img
+											src={image.name}
+											width="64"
+											className="pb-4"
+											alt={image.name}
+										/>
 										<h2 className="font-medium text-2xl"> {name} </h2>
 										<p className="mt-2">{description}</p>
 									</div>
@@ -120,7 +125,7 @@ const careers = ({
 						>
 							<Image
 								{...i}
-								alt=""
+								alt="Our co-working space at Soho Works in Dumbo, Brooklyn, New York City"
 								caption="Our co-working space at Soho Works in Dumbo, Brooklyn, New York City"
 								captionAlignment="center"
 							/>
