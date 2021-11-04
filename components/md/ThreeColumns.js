@@ -1,9 +1,16 @@
+import { cloneElement } from 'react';
+
 const ThreeColumns = ({ children }) => (
-	<section
-		grid="~ cols-12 gap-5 children:col-span-12 lg:children:col-span-4"
-		className="md-three-columns"
-	>
-		{children}
+	<section grid="~ gap-5 cols-4 sm:cols-12" className="md-three-columns">
+		{children.map((child, index) => (
+			<div
+				key={index}
+				grid="col-span-2 sm:col-span-4"
+				className={`col-start-${index + 1} md:col-start-auto`}
+			>
+				{cloneElement(child)}
+			</div>
+		))}
 	</section>
 );
 

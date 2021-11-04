@@ -11,9 +11,14 @@ export default defineConfig({
 		options: {
 			safelist: [
 				/col-span-(1[0-2]|[0-9])/,
+				/col-start-(1[0-2]|[0-9])/,
 				/text-gradient-(1[0-2]|[0-9])/,
 				'col-span-6',
 				'col-span-12',
+				'col-start-auto',
+				// 'col-start-1',
+				// 'col-start-2',
+				// 'col-start-3',
 			],
 			keyframes: false,
 		},
