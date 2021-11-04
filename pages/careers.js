@@ -150,12 +150,23 @@ const careers = ({
 								{/* Loop different jobs */}
 								{positions.position.map(
 									({ name, job_description, location, url }, index) => (
-										<div key={index} className="p-8 pl-0">
-											<h4 className="text-2xl mb-4">{name}</h4>
-											<p className="mb-2">{job_description}</p>
-											<p className="mb-6">Location: {location}</p>
+										<div
+											key={index}
+											className="p-8 pl-0 sm:px-0 grid grid-cols-12"
+										>
+											<h4 className="text-2xl mb-4 col-span-12">{name}</h4>
 
-											<ButtonLink text="View" url={url} />
+											<p className="mb-4 col-span-12">{job_description}</p>
+
+											<div className="col-span-12 md:col-span-9 lg:col-span-9 mb-6">
+												<span className="float-left capitalize mt-1.5">
+													Location: {location}
+												</span>
+											</div>
+
+											<div className="col-span-12 md:col-span-9 lg:col-span-12">
+												<ButtonLink text="View" url={url} />
+											</div>
 										</div>
 									),
 								)}
