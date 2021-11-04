@@ -30,10 +30,11 @@ const About = ({
 				],
 			}}
 		/>
+
 		{/* Headline */}
 		<div
 			p="x-5 y-7.5 lg:x-22.5 lg:y-32"
-			m="x-5 lg:x-10"
+			m="x-5 b-0 lg:x-10 2xl:x-5"
 			grid="~ cols-12 gap-5"
 			border="rounded-lg"
 			bg="bg02"
@@ -49,7 +50,7 @@ const About = ({
 		{/* Section: Why */}
 		<div
 			m="lg:x-10"
-			p="y-5 lg:x-22.5 lg:y-24"
+			p="y-5 t-0 lg:x-22.5 lg:y-24"
 			grid="lg:cols-12 lg:gap-5"
 			flex="col"
 			display="flex lg:grid"

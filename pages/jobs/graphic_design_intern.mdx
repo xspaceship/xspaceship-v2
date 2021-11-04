@@ -11,6 +11,7 @@ import { getAllImage } from 'utils/image';
 import rootMeta from 'meta.json';
 import Table from 'components/md/Table';
 import List from 'components/md/List';
+import ButtonLink from 'components/ButtonLink';
 
 export const meta = {
 	name: 'Graphic Design Intern',
@@ -19,6 +20,7 @@ export const meta = {
 		'A designer with strong foundation in visual branding and can execute tactical tasks with high craft.',
 	gradientFrom: '#714EB8',
 	gradientTo: '#4F22AB',
+	location: 'remote',
 };
 
 export async function getStaticProps(context) {
@@ -55,14 +57,41 @@ export default ({ children }) => (
 	}}
 />
 
-<Title text={meta.name} sub={meta.description} />
+<section
+	p="5 lg:x-22.5 lg:y-20"
+	m="x-5 b-5 lg:x-10"
+	grid="~ cols-12 gap-5"
+	border="rounded-lg"
+	bg="bg02"
+	className="md-title"
+>
+	<div className="col-span-12 md:col-span-9 lg:col-span-9 mb-4">
+		<a href="/careers/">Back to Careers</a>
+	</div>
+	<h1
+		font="questrial leading-none"
+		grid="col-span-12 md:col-span-9 lg:col-span-9"
+		className="text-fs03 lg:text-6xl"
+	>
+		{meta.name}
+	</h1>
+	<h2 m="lg:b-2" grid="col-span-12" className="text-xl">
+		{meta.description}
+	</h2>
+	<div className="col-span-12 md:col-span-9 lg:col-span-9">
+		<span className="float-left">
+			<img src="../images/careers/location_pin.gif" width="40px" />
+		</span>
+		<span className="float-left capitalize ml-2 mt-1.5">{meta.location}</span>
+	</div>
+</section>
 
-<RegularWidth>
+<FullWidth>
 
     <List
     	bgColor="black"
-    	borderColor="rgba(255,255,255,0.4"
-    	textColor="#B1CDE0"
+    	borderColor="rgba(255, 255, 255, 0.2)"
+    	textColor="rgba(255, 255, 255, 0.8)"
     	title="Qualifications"
     	items={[
     		'A portfolio that demonstrates product, branding, communication design experience',
@@ -75,8 +104,8 @@ export default ({ children }) => (
 
     <List
     	bgColor="black"
-    	borderColor="rgba(255,255,255,0.4"
-    	textColor="#B1CDE0"
+    	borderColor="rgba(255, 255, 255, 0.2)"
+    	textColor="rgba(255, 255, 255, 0.8)"
     	title="Responsibilities"
     	items={[
     		'As a Brand Design Intern, you will work closely with designers, engineers, content designers and marketing to define and ensure a coherent brand expression across our ecosystem',
@@ -92,4 +121,4 @@ export default ({ children }) => (
     	]}
     />
 
-</RegularWidth>
+</FullWidth>
