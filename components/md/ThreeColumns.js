@@ -6,7 +6,7 @@ const ThreeColumns = ({ children }) => (
 			<div
 				key={index}
 				grid="col-span-2 sm:col-span-4"
-				className={`col-start-${index + 1} md:col-start-auto`}
+				className={`col-start-${index + 1} sm:col-start-auto`}
 			>
 				{cloneElement(child)}
 			</div>
