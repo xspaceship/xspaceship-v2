@@ -7,6 +7,7 @@ import Paragraph from 'components/md/Paragraph';
 import Header from 'components/md/Header';
 import TwoColumns from 'components/md/TwoColumns';
 import RegularWidth from 'components/md/RegularWidth';
+import AppStoreItem from 'components/md/AppStoreItem';
 import { getAllImage } from 'utils/image';
 import rootMeta from 'meta.json';
 
@@ -80,6 +81,9 @@ export default ({ children }) => (
 		<Image {...props.images['intro_01']} />
 		<Image {...props.images['intro_02']} />
 	</TwoColumns>
+
+    {/* <AppStoreItem url='https://apps.apple.com/us/app/fuze-mobile/id1160444971' /> */}
+
 </FullWidth>
 
 <RegularWidth>
