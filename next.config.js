@@ -1,3 +1,4 @@
+const path = require('path');
 const withPlugins = require('next-compose-plugins');
 const mdx = require('@next/mdx')({
 	extension: /\.mdx?$/,
@@ -12,6 +13,13 @@ const WindiCSS = require('windicss-webpack-plugin').default;
 module.exports = withPlugins([mdx, plaiceholder, bundleAnalyzer], {
 	reactStrictMode: true,
 	pageExtensions: ['js', 'jsx', 'mdx'],
+	sassOptions: {
+		includePaths: [path.join(__dirname, 'styles')],
+		prependData: `@import "variables.scss";`,
+	},
+	images: {
+		domains: ['apple-resources.s3.amazonaws.com'],
+	},
 
 	webpack(config, { isServer }) {
 		// Replace React with Preact only in client

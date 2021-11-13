@@ -100,3 +100,138 @@ button:focus {
 .md-fullwidth {
 	@apply mt-5;
 }
+
+.app-store-href {
+	@apply inline-block overflow-hidden;
+}
+
+.app-store-href,
+.app-store-href img {
+	border-radius: 13px;
+	width: 250px;
+	height: 83px;
+}
+
+.app-store-image {
+	border-radius: 20%;
+}
+
+.app-store-rating-stars-outlines {
+	width: 100px;
+	background-position: 0 19px;
+	line-height: 19px;
+	z-index: 1;
+}
+
+.app-store-rating-stars,
+.app-store-rating-stars-outlines {
+	display: inline-block;
+	height: 19px;
+	background-image: url('/images/star.svg');
+	background-size: 20px 38px;
+}
+
+.app-store-rating-stars {
+	width: 0;
+	background-position-x: 0;
+}
+
+.app-store-rating-stars-05 {
+	width: 30px;
+}
+
+.app-store-rating-stars-10 {
+	width: 40px;
+}
+
+.app-store-rating-stars-15 {
+	width: 50px;
+}
+
+.app-store-rating-stars-20 {
+	width: 50px;
+}
+
+.app-store-rating-stars-25 {
+	width: 50px;
+}
+
+.app-store-rating-stars-30 {
+	width: 60px;
+}
+
+.app-store-rating-stars-35 {
+	width: 70px;
+}
+
+.app-store-rating-stars-40 {
+	width: 80px;
+}
+
+.app-store-rating-stars-45 {
+	width: 90px;
+}
+
+.app-store-rating-stars-50 {
+	width: 100px;
+}
+
+.app-store-loader {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: 128px;
+	margin-top: 64px;
+	margin-bottom: 64px;
+}
+
+@keyframes pulsA {
+	0% {
+		box-shadow: inset 0 0 0 1.5rem #fff;
+		opacity: 1;
+	}
+	50%,
+	100% {
+		box-shadow: inset 0 0 0 0 #fff;
+		opacity: 0;
+	}
+}
+
+@keyframes pulsB {
+	0%,
+	50% {
+		box-shadow: 0 0 0 0 #fff;
+		opacity: 0;
+	}
+	100% {
+		box-shadow: 0 0 0 1.5rem #fff;
+		opacity: 1;
+	}
+}
+
+.app-store-loader:before,
+.app-store-loader:after {
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+	animation-duration: 1.8s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	filter: drop-shadow(0 0 1.5rem/2.25 rgba(#fff, 0.75));
+}
+
+.app-store-loader:before {
+	width: 100%;
+	padding-bottom: 100%;
+	box-shadow: inset 0 0 0 1.5rem #fff;
+	animation-name: pulsA;
+}
+
+.app-store-loader:after {
+	width: calc(100% - 1.5rem * 2);
+	padding-bottom: calc(100% - 1.5rem * 2);
+	box-shadow: 0 0 0 0 #fff;
+	animation-name: pulsB;
+}
