@@ -20,7 +20,7 @@ const Header = () => {
 		window.addEventListener('resize', handleResize);
 	}, []);
 	return (
-		<header p="5 lg:t-6 lg:x-32.5 lg:b-5 2xl:x-8 2xl:y-0">
+		<header flex="grow" p="5 lg:t-6 lg:x-32.5 lg:b-5 2xl:x-8 2xl:y-0">
 			<div
 				h="12.5 lg:14"
 				flex="~ 2xl:col"

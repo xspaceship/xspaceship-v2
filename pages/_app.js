@@ -11,12 +11,12 @@ const App = ({ Component, pageProps, router }) => (
 		/>
 		<Script id="ga-analytics">
 			{`
-					window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
 
-					gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-				`}
+				gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+			`}
 		</Script>
 		<AnimatePresence exitBeforeEnter>
 			<Component {...pageProps} key={router.route} />
