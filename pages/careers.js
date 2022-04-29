@@ -44,7 +44,7 @@ const Careers = ({
     >
       <h1
         grid="col-span-12 md:col-span-8 2xl:col-span-8 sm:col-span-12"
-        font="questrial ld01 md:leading-tight"
+        font="redhat ld01 md:leading-tight"
         className="text-white text-fs01 md:text-7xl"
         dangerouslySetInnerHTML={{ __html: headline }}
       />

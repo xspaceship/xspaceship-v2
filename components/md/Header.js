@@ -3,7 +3,7 @@ const Header = props => {
   return (
     <h3
       className="text-2xl lg:text-3xl md-header"
-      font="questrial"
+      font="redhat"
       p="y-10"
       m="t-5 lg:t-0 lg:b-5"
       border="<lg:t <lg:bc04"

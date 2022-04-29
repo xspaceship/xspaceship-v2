@@ -41,7 +41,7 @@ const About = ({
     >
       <h1
         grid="col-span-12 md:col-span-9 2xl:col-span-11"
-        font="questrial ld01 md:leading-tight"
+        font="redhat ld01 md:leading-tight"
         text="white fs01 md:7xl"
         dangerouslySetInnerHTML={{ __html: headline }}
       />

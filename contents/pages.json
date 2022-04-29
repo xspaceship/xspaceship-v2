@@ -71,6 +71,21 @@
           "name": "06",
           "gradientFrom": "rgba(255,255,255,0.2)",
           "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "07",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "08",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "09",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
         }
       ]
     }

@@ -1,4 +1,6 @@
+import content from 'contents/footer.json';
 import meta from 'contents/pages.json';
+import Image from 'next/image';
 import { currentYear } from 'utils/time';
 
 const Footer = () => (
@@ -9,15 +11,37 @@ const Footer = () => (
     grid="lg:~ lg:cols-12 lg:gap-5"
   >
     <div grid="lg:col-span-10 lg:col-start-2">
-      <a
-        href={`mailto:${meta.email}`}
-        display="block"
-        font="leading-9"
-        p="y-5 lg:y-0"
-        className="text-gradient-01 text-xl md:text-3xl"
+      <div
+        flex="~ col lg:row"
+        justify="between"
+        align="items-start lg:items-end"
       >
-        {meta.email}
-      </a>
+        <div>
+          <Image src="/images/union.png" width={60} height={60} alt="Union" />
+          <a
+            href={`mailto:${meta.email}`}
+            display="block"
+            font="leading-9"
+            p="y-5 lg:y-0"
+            m="lg:t-5"
+            className="text-xl md:text-3xl"
+          >
+            {meta.email}
+          </a>
+        </div>
+        <div space="x-6">
+          {content.social.map(({ name, image, path }, index) => (
+            <a key={index} target="_blank" href={path} rel="noreferrer">
+              <Image
+                src={`/images/${image}.png`}
+                width={24}
+                height={24}
+                alt={name}
+              />
+            </a>
+          ))}
+        </div>
+      </div>
       <hr m="t-5 lg:t-10 b-5" />
       <div flex="~" justify="between">
         <h3 className="text-xs">

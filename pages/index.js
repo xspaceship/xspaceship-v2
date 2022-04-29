@@ -38,7 +38,7 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
       {/* <div p="y-7.5 md:y-10 lg:y-20 2xl:t-0" grid="~ gap-5 cols-12">
 				<h1
 					grid="col-span-12 md:col-span-9 2xl:col-span-7"
-					font="questrial ld01 md:leading-tight"
+					font="redhat ld01 md:leading-tight"
 					text="white fs01 md:7xl"
 				>
 					{headline}
@@ -55,7 +55,7 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
       >
         <h1
           grid="col-span-12 md:col-span-8 2xl:col-span-8 sm:col-span-12"
-          font="questrial ld01 md:leading-tight"
+          font="redhat ld01 md:leading-tight"
           className="text-white text-fs01 md:text-7xl"
           dangerouslySetInnerHTML={{ __html: headline }}
         />

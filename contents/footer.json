@@ -1,0 +1,24 @@
+{
+  "social": [
+    {
+      "name": "Facebook",
+      "image": "facebook",
+      "path": "/"
+    },
+    {
+      "name": "Instagram",
+      "image": "instagram",
+      "path": "/"
+    },
+    {
+      "name": "LinkedIn",
+      "image": "linkedin",
+      "path": "/"
+    },
+    {
+      "name": "Twitter",
+      "image": "twitter",
+      "path": "/"
+    }
+  ]
+}

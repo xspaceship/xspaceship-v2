@@ -160,7 +160,7 @@ const Nav = () => {
                       <a
                         display="block"
                         p="y-5"
-                        font="questrial lh01"
+                        font="redhat lh01"
                         transition="colors duration-300"
                         className="text-fs01 hover:text-tc06"
                         border="t-1 last:b-1 bc01"

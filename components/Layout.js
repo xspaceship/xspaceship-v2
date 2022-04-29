@@ -19,10 +19,12 @@ const Layout = props => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ type: 'easeInOut', duration: 0.5 }}
-          className="2xl:flex-grow"
+          className="2xl:flex-1 2xl:flex 2xl:justify-center"
         >
-          <div {...rest}>{children}</div>
-          <Footer />
+          <div max-w="2xl:2000px">
+            <div {...rest}>{children}</div>
+            <Footer />
+          </div>
         </motion.main>
       </div>
     </>

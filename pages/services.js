@@ -54,7 +54,7 @@ const About = ({
       >
         <h1
           grid="col-span-12 md:col-span-9 2xl:col-span-11"
-          font="questrial ld01 md:leading-tight"
+          font="redhat ld01 md:leading-tight"
           text="white fs01 md:7xl"
           dangerouslySetInnerHTML={{ __html: headline }}
         />
@@ -75,7 +75,7 @@ const About = ({
         >
           <div grid="lg:~ lg:cols-5 lg:gap-x-5">
             <h2
-              font="questrial"
+              font="redhat"
               m="b-5 lg:b-12"
               grid="col-span-3"
               text="3xl lg:4xl"
@@ -206,7 +206,7 @@ const About = ({
         >
           <div grid="lg:~ lg:cols-5 lg:gap-x-5">
             <h2
-              font="questrial"
+              font="redhat"
               m="b-5 lg:b-12"
               grid="col-span-3 col-start-2"
               text="3xl lg:4xl"
@@ -263,7 +263,7 @@ const About = ({
         >
           <div grid="lg:~ lg:cols-5 lg:gap-x-5">
             <h2
-              font="questrial"
+              font="redhat"
               m="b-5 lg:b-12"
               grid="col-span-3"
               text="3xl lg:4xl"

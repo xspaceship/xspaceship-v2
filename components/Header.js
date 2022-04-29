@@ -1,12 +1,15 @@
 import Link from 'components/Link';
 import meta from 'contents/pages.json';
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { useEffect, useMemo, useState } from 'react';
 
 const Nav = dynamic(() => import('./Nav'));
 
 const Header = () => {
   const [is2XL, setIs2XL] = useState(true);
+
+  const wh = useMemo(() => (is2XL ? 60 : 40), [is2XL]);
 
   const handleResize = e => {
     setIs2XL(e.target.innerWidth >= 1800);
@@ -30,11 +33,16 @@ const Header = () => {
         flex="~ 2xl:col"
         justify="between 2xl:start"
         align="items-center 2xl:items-start 2xl:self-start"
-        space="2xl:y-5"
+        space="2xl:y-10"
         pos="2xl:sticky 2xl:top-8"
       >
         <Link href="/">
-          <a className="text-fs02 lg:text-fs01">{meta.shortName}</a>
+          <a className="text-fs02 lg:text-fs01 flex items-center 2xl:flex-col 2xl:items-start">
+            <Image src="/images/union.png" width={wh} height={wh} alt="Union" />
+            <span m="l-5 2xl:l-0 2xl:t-3" font="redhat">
+              {meta.shortName}
+            </span>
+          </a>
         </Link>
         <nav
           display="hidden lg:block"
@@ -45,7 +53,7 @@ const Header = () => {
           {meta.nav.map(({ name, path }, index) => (
             <Link href={path} key={index}>
               <a
-                p="6 2xl:y-3 2xl:x-0"
+                p="x-6 2xl:y-3 2xl:x-0"
                 transition="colors duration-300"
                 className="hover:text-tc06"
               >
