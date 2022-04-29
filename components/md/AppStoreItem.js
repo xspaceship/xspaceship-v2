@@ -6,7 +6,7 @@ const AppStoreItem = ({ url }) => {
   const [thumbImage, setThumbImage] = useState(
     'https://is3-ssl.mzstatic.com/image/thumb/Purple126/v4/0e/39/14/0e39140e-187c-8367-3c28-66bb7229a3b5/AppIcon-0-1x_U007emarketing-0-7-0-sRGB-85-220.png/230x0w.webp',
   );
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState('Fuze');
   const [loading, setLoading] = useState(true);
 
   const starClass = useMemo(() => {
@@ -116,6 +116,7 @@ const AppStoreItem = ({ url }) => {
         justify="center"
         align="items-center"
         border="rounded-lg"
+        p="y-22"
       >
         <a className="app-store-href" href={url}>
           <img

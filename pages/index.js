@@ -48,7 +48,7 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
       {/* Headline */}
       <div
         p="x-16 y-16 lg:x-22.5 lg:y-22.5 sm:x-8 sm:y-8 x-8 y-8"
-        m="x-0 lg:x-0 b-10 sm:x-5"
+        m="x-0 lg:x-0 b-10"
         grid="~ cols-12 gap-5"
         border="rounded-lg border border-white"
         bg="bg02"
