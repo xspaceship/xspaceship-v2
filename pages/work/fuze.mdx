@@ -1,241 +1,241 @@
-import { NextSeo } from 'next-seo';
-import Layout from 'components/Layout';
 import Image from 'components/Image';
-import FullWidth from 'components/md/FullWidth';
-import Title from 'components/md/Title';
-import Paragraph from 'components/md/Paragraph';
-import Header from 'components/md/Header';
-import TwoColumns from 'components/md/TwoColumns';
-import RegularWidth from 'components/md/RegularWidth';
+import Layout from 'components/Layout';
 import AppStoreItem from 'components/md/AppStoreItem';
+import FullWidth from 'components/md/FullWidth';
+import Header from 'components/md/Header';
+import Paragraph from 'components/md/Paragraph';
+import RegularWidth from 'components/md/RegularWidth';
+import Title from 'components/md/Title';
+import TwoColumns from 'components/md/TwoColumns';
+import rootMeta from 'contents/pages.json';
+import { NextSeo } from 'next-seo';
 import { getAllImage } from 'utils/image';
-import rootMeta from 'meta.json';
 
 export const meta = {
-	slug: 'fuze',
-	name: 'Fuze',
-	category: ['SaaS', 'Mobile'],
-	description: 'Unified Communication as a Service',
-	sub: 'Mobile design',
-	year: 2019,
-	preview: '06',
-	width: 'full',
-	order: 6,
-	gradientFrom: '#714EB8',
-	gradientTo: '#4F22AB',
+  slug: 'fuze',
+  name: 'Fuze',
+  category: ['SaaS', 'Mobile'],
+  description: 'Unified Communication as a Service',
+  sub: 'Mobile design',
+  year: 2019,
+  preview: '06',
+  width: 'full',
+  order: 6,
+  gradientFrom: '#714EB8',
+  gradientTo: '#4F22AB',
 };
 
 export async function getStaticProps(context) {
-	const images = await getAllImage('fuze');
-	const { gradientFrom, gradientTo } = meta;
-	for (const key in images) {
-		images[key] = { ...images[key], gradientFrom, gradientTo };
-	}
-	const ogImage =
-		(process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
-	const title = rootMeta.name + ' | ' + meta.name;
-	return { props: { images, ...meta, title, ogImage } };
+  const images = await getAllImage('fuze');
+  const { gradientFrom, gradientTo } = meta;
+  for (const key in images) {
+    images[key] = { ...images[key], gradientFrom, gradientTo };
+  }
+  const ogImage =
+    (process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+  const title = rootMeta.name + ' | ' + meta.name;
+  return { props: { images, ...meta, title, ogImage } };
 }
 
 export default ({ children }) => (
-	<Layout title={meta.name} p="2xl:t-8">
-		{children}
-	</Layout>
+  <Layout title={meta.name} p="2xl:t-8">
+    {children}
+  </Layout>
 );
 
 <NextSeo
-	title={props.title}
-	description={props.description}
-	openGraph={{
-		title: props.title,
-		description: props.description,
-		images: [
-			{
-				url: props.ogImage,
-				alt: props.title,
-				type: 'png',
-			},
-		],
-	}}
+  title={props.title}
+  description={props.description}
+  openGraph={{
+    title: props.title,
+    description: props.description,
+    images: [
+      {
+        url: props.ogImage,
+        alt: props.title,
+        type: 'png',
+      },
+    ],
+  }}
 />
 
 <Title text="Unified Communication as a Service (UCaaS)" sub="Fuze 2018" />
 
 <FullWidth>
-	<Image {...props.images['hero']} />
+  <Image {...props.images['hero']} />
 </FullWidth>
 
 <RegularWidth>
-	<Paragraph>
-		<div className="mb-3">
-			Power every business conversation with Fuze Mobile on the go. Stay
-			connected to coworkers, customers and partners anywhere, anytime on any
-			device. Seamlessly communicate with one app using voice calling, video
-			meetings, contact center, chat messaging and content sharing.
-		</div>
-	</Paragraph>
+  <Paragraph>
+    <div className="mb-3">
+      Power every business conversation with Fuze Mobile on the go. Stay
+      connected to coworkers, customers and partners anywhere, anytime on any
+      device. Seamlessly communicate with one app using voice calling, video
+      meetings, contact center, chat messaging and content sharing.
+    </div>
+  </Paragraph>
 </RegularWidth>
 
 <FullWidth>
-	<AppStoreItem url="https://apps.apple.com/us/app/fuze-mobile/id1160444971" />
+  <AppStoreItem url="https://apps.apple.com/us/app/fuze-mobile/id1160444971" />
 </FullWidth>
 
 <RegularWidth>
-	<Header>1 — Main tabs</Header>
+  <Header>1 — Main tabs</Header>
 </RegularWidth>
 
 <FullWidth>
-	<TwoColumns>
-		<Image
-			{...props.images['main_01']}
-			caption="Recents tab: keep up with all business messaging in one convenient place."
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['main_02']}
-			caption="Meetings tab: Never miss a meeting with Fuze calendar."
-			captionAlignment="center"
-		/>
-	</TwoColumns>
-	<TwoColumns>
-		<Image
-			{...props.images['main_03']}
-			caption="Familiar and ergonomic dialpad."
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['main_04']}
-			caption="Access your profile and settings with a side bar menu."
-			captionAlignment="center"
-		/>
-	</TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['main_01']}
+      caption="Recents tab: keep up with all business messaging in one convenient place."
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['main_02']}
+      caption="Meetings tab: Never miss a meeting with Fuze calendar."
+      captionAlignment="center"
+    />
+  </TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['main_03']}
+      caption="Familiar and ergonomic dialpad."
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['main_04']}
+      caption="Access your profile and settings with a side bar menu."
+      captionAlignment="center"
+    />
+  </TwoColumns>
 </FullWidth>
 
 <RegularWidth>
-	<Header>1 — Calling</Header>
+  <Header>1 — Calling</Header>
 </RegularWidth>
 
 <FullWidth>
-	<Image {...props.images['call_hero']} />
+  <Image {...props.images['call_hero']} />
 </FullWidth>
 
 <FullWidth>
-	<TwoColumns>
-		<Image
-			{...props.images['call_01']}
-			caption="Never miss a call with our beautiful and attention-grabbing interface."
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['call_02']}
-			caption="Easily turn a voice call into a video call with a simple switch."
-			captionAlignment="center"
-		/>
-	</TwoColumns>
-	<TwoColumns>
-		<Image
-			{...props.images['call_03']}
-			caption="Uncover opportunities and close business deals with Caller Insights."
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['call_04']}
-			caption="Being truly mobile with our ergonomic Car Mode interface."
-			captionAlignment="center"
-		/>
-	</TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['call_01']}
+      caption="Never miss a call with our beautiful and attention-grabbing interface."
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['call_02']}
+      caption="Easily turn a voice call into a video call with a simple switch."
+      captionAlignment="center"
+    />
+  </TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['call_03']}
+      caption="Uncover opportunities and close business deals with Caller Insights."
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['call_04']}
+      caption="Being truly mobile with our ergonomic Car Mode interface."
+      captionAlignment="center"
+    />
+  </TwoColumns>
 </FullWidth>
 
 <RegularWidth>
-	<Header>1 — Meeting</Header>
+  <Header>1 — Meeting</Header>
 </RegularWidth>
 
 <FullWidth>
-	<Image {...props.images['meet_hero']} />
+  <Image {...props.images['meet_hero']} />
 </FullWidth>
 
 <FullWidth>
-	<TwoColumns>
-		<Image
-			{...props.images['meet_01']}
-			caption="Take your meetings with you, anywhere."
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['meet_02']}
-			caption="Being closer to your co-workers more than ever with a full-screen meeting experience."
-			captionAlignment="center"
-		/>
-	</TwoColumns>
-	<TwoColumns>
-		<Image
-			{...props.images['meet_03']}
-			caption="Manage meetings easily with Fuze Roster List"
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['meet_04']}
-			caption="Feature-rich meeting capabilities, all in your mobile device."
-			captionAlignment="center"
-		/>
-	</TwoColumns>
-	<TwoColumns>
-		<Image
-			{...props.images['meet_05']}
-			caption="Watch screen-share and manage your meetings, all in one view."
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['meet_06']}
-			caption="Flexibly choose the best layouts for your meetings."
-			captionAlignment="center"
-		/>
-	</TwoColumns>
-	<TwoColumns>
-		<Image
-			{...props.images['meet_07']}
-			caption="Screen-share right from your mobile device."
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['meet_08']}
-			caption="Limited network connectivity? Dial-in instead."
-			captionAlignment="center"
-		/>
-	</TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['meet_01']}
+      caption="Take your meetings with you, anywhere."
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['meet_02']}
+      caption="Being closer to your co-workers more than ever with a full-screen meeting experience."
+      captionAlignment="center"
+    />
+  </TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['meet_03']}
+      caption="Manage meetings easily with Fuze Roster List"
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['meet_04']}
+      caption="Feature-rich meeting capabilities, all in your mobile device."
+      captionAlignment="center"
+    />
+  </TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['meet_05']}
+      caption="Watch screen-share and manage your meetings, all in one view."
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['meet_06']}
+      caption="Flexibly choose the best layouts for your meetings."
+      captionAlignment="center"
+    />
+  </TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['meet_07']}
+      caption="Screen-share right from your mobile device."
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['meet_08']}
+      caption="Limited network connectivity? Dial-in instead."
+      captionAlignment="center"
+    />
+  </TwoColumns>
 </FullWidth>
 
 <RegularWidth>
-	<Header>1 — Chatting & collaborating</Header>
+  <Header>1 — Chatting & collaborating</Header>
 </RegularWidth>
 
 <FullWidth>
-	<Image {...props.images['chat_hero']} />
+  <Image {...props.images['chat_hero']} />
 </FullWidth>
 
 <FullWidth>
-	<TwoColumns>
-		<Image
-			{...props.images['chat_01']}
-			caption="Be more mindful of work / life boundaries with Quiet Mode."
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['chat_02']}
-			caption="Information-rich business profile."
-			captionAlignment="center"
-		/>
-	</TwoColumns>
-	<TwoColumns>
-		<Image
-			{...props.images['chat_03']}
-			caption="View and download files easily on mobile."
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['chat_04']}
-			caption="Search anything with our powerful search semantics."
-			captionAlignment="center"
-		/>
-	</TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['chat_01']}
+      caption="Be more mindful of work / life boundaries with Quiet Mode."
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['chat_02']}
+      caption="Information-rich business profile."
+      captionAlignment="center"
+    />
+  </TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['chat_03']}
+      caption="View and download files easily on mobile."
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['chat_04']}
+      caption="Search anything with our powerful search semantics."
+      captionAlignment="center"
+    />
+  </TwoColumns>
 </FullWidth>

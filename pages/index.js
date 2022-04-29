@@ -1,41 +1,41 @@
-import { useState, useCallback } from 'react';
-import { NextSeo } from 'next-seo';
-import Link from 'components/Link';
-import Layout from 'components/Layout';
 import Image from 'components/Image';
-import meta from 'meta.json';
-import { allWorks } from 'utils/work';
+import Layout from 'components/Layout';
+import Link from 'components/Link';
+import meta from 'contents/pages.json';
+import { NextSeo } from 'next-seo';
+import { useCallback, useState } from 'react';
 import { getAllImage } from 'utils/image';
+import { allWorks } from 'utils/work';
 
 const Index = ({ types, works, title, description, headline, ogImage }) => {
-	const [activeType, setActiveType] = useState('All');
-	const isActiveType = useCallback(type => activeType === type, [activeType]);
-	const isIncludeActiveType = useCallback(
-		type => type.includes(activeType),
-		[activeType],
-	);
+  const [activeType, setActiveType] = useState('All');
+  const isActiveType = useCallback(type => activeType === type, [activeType]);
+  const isIncludeActiveType = useCallback(
+    type => type.includes(activeType),
+    [activeType],
+  );
 
-	return (
-		<Layout title={title} p="x-5 lg:x-32.5 2xl:x-5 2xl:t-8">
-			{/* SEO */}
-			<NextSeo
-				title={title}
-				description={description}
-				openGraph={{
-					title,
-					description,
-					images: [
-						{
-							url: ogImage,
-							alt: title,
-							type: 'png',
-						},
-					],
-				}}
-			/>
+  return (
+    <Layout title={title} p="x-5 lg:x-32.5 2xl:x-5 2xl:t-8">
+      {/* SEO */}
+      <NextSeo
+        title={title}
+        description={description}
+        openGraph={{
+          title,
+          description,
+          images: [
+            {
+              url: ogImage,
+              alt: title,
+              type: 'png',
+            },
+          ],
+        }}
+      />
 
-			{/* Headline */}
-			{/* <div p="y-7.5 md:y-10 lg:y-20 2xl:t-0" grid="~ gap-5 cols-12">
+      {/* Headline */}
+      {/* <div p="y-7.5 md:y-10 lg:y-20 2xl:t-0" grid="~ gap-5 cols-12">
 				<h1
 					grid="col-span-12 md:col-span-9 2xl:col-span-7"
 					font="questrial ld01 md:leading-tight"
@@ -45,138 +45,138 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
 				</h1>
 			</div> */}
 
-			{/* Headline */}
-			<div
-				p="x-16 y-16 lg:x-22.5 lg:y-22.5 sm:x-8 sm:y-8 x-8 y-8"
-				m="x-0 lg:x-0 b-10 sm:x-5"
-				grid="~ cols-12 gap-5"
-				border="rounded-lg border border-white"
-				bg="bg02"
-			>
-				<h1
-					grid="col-span-12 md:col-span-8 2xl:col-span-8 sm:col-span-12"
-					font="questrial ld01 md:leading-tight"
-					className="text-white text-fs01 md:text-7xl"
-					dangerouslySetInnerHTML={{ __html: headline }}
-				/>
-			</div>
+      {/* Headline */}
+      <div
+        p="x-16 y-16 lg:x-22.5 lg:y-22.5 sm:x-8 sm:y-8 x-8 y-8"
+        m="x-0 lg:x-0 b-10 sm:x-5"
+        grid="~ cols-12 gap-5"
+        border="rounded-lg border border-white"
+        bg="bg02"
+      >
+        <h1
+          grid="col-span-12 md:col-span-8 2xl:col-span-8 sm:col-span-12"
+          font="questrial ld01 md:leading-tight"
+          className="text-white text-fs01 md:text-7xl"
+          dangerouslySetInnerHTML={{ __html: headline }}
+        />
+      </div>
 
-			{/* Chip buttons */}
-			<div
-				m="b-10"
-				flex="~ wrap"
-				grid="gap-3"
-				font="medium"
-				text="md:xl leading-6"
-			>
-				{types.map((type, index) => (
-					<div
-						p="x-4 y-2"
-						border="~ rounded-full bc02"
-						cursor="pointer"
-						display="inline-block"
-						className={`${
-							isActiveType(type)
-								? 'bg-white text-black'
-								: 'hover:bg-bg11 transition-colors duration-300'
-						}`}
-						onClick={() => setActiveType(type)}
-						key={index}
-					>
-						{type}
-					</div>
-				))}
-			</div>
+      {/* Chip buttons */}
+      <div
+        m="b-10"
+        flex="~ wrap"
+        grid="gap-3"
+        font="medium"
+        text="md:xl leading-6"
+      >
+        {types.map((type, index) => (
+          <div
+            p="x-4 y-2"
+            border="~ rounded-full bc02"
+            cursor="pointer"
+            display="inline-block"
+            className={`${
+              isActiveType(type)
+                ? 'bg-white text-black'
+                : 'hover:bg-bg11 transition-colors duration-300'
+            }`}
+            onClick={() => setActiveType(type)}
+            key={index}
+          >
+            {type}
+          </div>
+        ))}
+      </div>
 
-			{/* Works */}
-			<div grid="~ gap-5 cols-12">
-				{works.map(
-					({
-						slug,
-						name,
-						description,
-						sub,
-						year,
-						preview,
-						width,
-						category,
-						gradientFrom,
-						gradientTo,
-					}) => {
-						if (activeType === 'All' || isIncludeActiveType(category)) {
-							return (
-								<Link href={`/work/${slug}`} key={slug}>
-									<a
-										className={`${
-											width === 'full' ? 'col-span-12' : 'col-span-6'
-										} relative parent`}
-									>
-										<Image
-											{...preview}
-											alt={name}
-											gradientFrom={gradientFrom}
-											gradientTo={gradientTo}
-										/>
-										<div
-											className="child"
-											display="hidden lg:block"
-											border="rounded-lg"
-											pos="absolute top-0 left-0"
-											w="full"
-											h="full"
-											bg="bg09"
-											p="10"
-										>
-											<h2 text="white 3xl">{name}</h2>
-											<p text="tc05 3xl" m="b-5" w="lg:2/4">
-												{description}
-											</p>
-											<p className="text-tc05">
-												{sub} | {year}
-											</p>
-										</div>
-									</a>
-								</Link>
-							);
-						}
+      {/* Works */}
+      <div grid="~ gap-5 cols-12">
+        {works.map(
+          ({
+            slug,
+            name,
+            description,
+            sub,
+            year,
+            preview,
+            width,
+            category,
+            gradientFrom,
+            gradientTo,
+          }) => {
+            if (activeType === 'All' || isIncludeActiveType(category)) {
+              return (
+                <Link href={`/work/${slug}`} key={slug}>
+                  <a
+                    className={`${
+                      width === 'full' ? 'col-span-12' : 'col-span-6'
+                    } relative parent`}
+                  >
+                    <Image
+                      {...preview}
+                      alt={name}
+                      gradientFrom={gradientFrom}
+                      gradientTo={gradientTo}
+                    />
+                    <div
+                      className="child"
+                      display="hidden lg:block"
+                      border="rounded-lg"
+                      pos="absolute top-0 left-0"
+                      w="full"
+                      h="full"
+                      bg="bg09"
+                      p="10"
+                    >
+                      <h2 text="white 3xl">{name}</h2>
+                      <p text="tc05 3xl" m="b-5" w="lg:2/4">
+                        {description}
+                      </p>
+                      <p className="text-tc05">
+                        {sub} | {year}
+                      </p>
+                    </div>
+                  </a>
+                </Link>
+              );
+            }
 
-						return null;
-					},
-				)}
-			</div>
-		</Layout>
-	);
+            return null;
+          },
+        )}
+      </div>
+    </Layout>
+  );
 };
 
 export default Index;
 
 export async function getStaticProps() {
-	const { title, headline, description } = meta.home;
-	const { ogImage } = meta;
+  const { title, headline, description } = meta.home;
+  const { ogImage } = meta;
 
-	const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;
+  const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;
 
-	const worksByOrder = allWorks.sort(
-		(first, second) => first.order - second.order,
-	);
+  const worksByOrder = allWorks.sort(
+    (first, second) => first.order - second.order,
+  );
 
-	const allTypes = worksByOrder.reduce((acc, i) => [...acc, ...i.category], []);
-	const types = ['All', ...new Set(allTypes)];
+  const allTypes = worksByOrder.reduce((acc, i) => [...acc, ...i.category], []);
+  const types = ['All', ...new Set(allTypes)];
 
-	const images = await getAllImage('home');
-	const worksWithImage = worksByOrder.map(work => ({
-		...work,
-		preview: images[work.preview],
-	}));
+  const images = await getAllImage('home');
+  const worksWithImage = worksByOrder.map(work => ({
+    ...work,
+    preview: images[work.preview],
+  }));
 
-	return {
-		props: {
-			types,
-			works: worksWithImage,
-			title,
-			description,
-			headline,
-			ogImage: addedHostUrlOgImage,
-		},
-	};
+  return {
+    props: {
+      types,
+      works: worksWithImage,
+      title,
+      description,
+      headline,
+      ogImage: addedHostUrlOgImage,
+    },
+  };
 }

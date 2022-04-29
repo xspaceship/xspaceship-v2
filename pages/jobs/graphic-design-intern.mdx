@@ -1,89 +1,89 @@
-import { NextSeo } from 'next-seo';
-import Layout from 'components/Layout';
-import Image from 'components/Image';
-import FullWidth from 'components/md/FullWidth';
-import Title from 'components/md/Title';
-import Paragraph from 'components/md/Paragraph';
-import Header from 'components/md/Header';
-import TwoColumns from 'components/md/TwoColumns';
-import RegularWidth from 'components/md/RegularWidth';
-import { getAllImage } from 'utils/image';
-import rootMeta from 'meta.json';
-import Table from 'components/md/Table';
-import List from 'components/md/List';
 import ButtonLink from 'components/ButtonLink';
+import Image from 'components/Image';
+import Layout from 'components/Layout';
+import FullWidth from 'components/md/FullWidth';
+import Header from 'components/md/Header';
+import List from 'components/md/List';
+import Paragraph from 'components/md/Paragraph';
+import RegularWidth from 'components/md/RegularWidth';
+import Table from 'components/md/Table';
+import Title from 'components/md/Title';
+import TwoColumns from 'components/md/TwoColumns';
+import rootMeta from 'contents/pages.json';
+import { NextSeo } from 'next-seo';
+import { getAllImage } from 'utils/image';
 
 export const meta = {
-	name: 'Graphic Design Intern',
-	category: ['Design', 'UX', 'UI', 'Internship'],
-	description:
-		'A designer with strong foundation in visual branding and can execute tactical tasks with high craft.',
-	gradientFrom: '#714EB8',
-	gradientTo: '#4F22AB',
-	location: 'remote',
+  name: 'Graphic Design Intern',
+  category: ['Design', 'UX', 'UI', 'Internship'],
+  description:
+    'A designer with strong foundation in visual branding and can execute tactical tasks with high craft.',
+  gradientFrom: '#714EB8',
+  gradientTo: '#4F22AB',
+  location: 'remote',
 };
 
 export async function getStaticProps(context) {
-	const images = await getAllImage('fuze');
-	const { gradientFrom, gradientTo } = meta;
-	for (const key in images) {
-		images[key] = { ...images[key], gradientFrom, gradientTo };
-	}
-	const ogImage =
-		(process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
-	const title = rootMeta.name + ' | ' + meta.name;
-	return { props: { images, ...meta, title, ogImage } };
+  const images = await getAllImage('fuze');
+  const { gradientFrom, gradientTo } = meta;
+  for (const key in images) {
+    images[key] = { ...images[key], gradientFrom, gradientTo };
+  }
+  const ogImage =
+    (process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+  const title = rootMeta.name + ' | ' + meta.name;
+  return { props: { images, ...meta, title, ogImage } };
 }
 
 export default ({ children }) => (
-	<Layout title={meta.name} p="2xl:t-8">
-		{children}
-	</Layout>
+  <Layout title={meta.name} p="2xl:t-8">
+    {children}
+  </Layout>
 );
 
 <NextSeo
-	title={props.title}
-	description={props.description}
-	openGraph={{
-		title: props.title,
-		description: props.description,
-		images: [
-			{
-				url: props.ogImage,
-				alt: props.title,
-				type: 'png',
-			},
-		],
-	}}
+  title={props.title}
+  description={props.description}
+  openGraph={{
+    title: props.title,
+    description: props.description,
+    images: [
+      {
+        url: props.ogImage,
+        alt: props.title,
+        type: 'png',
+      },
+    ],
+  }}
 />
 
 <section
-	p="5 lg:x-22.5 lg:y-20"
-	m="x-5 b-5 lg:x-10"
-	grid="~ cols-12 gap-5"
-	border="rounded-lg"
-	bg="bg02"
-	className="md-title"
+  p="5 lg:x-22.5 lg:y-20"
+  m="x-5 b-5 lg:x-10"
+  grid="~ cols-12 gap-5"
+  border="rounded-lg"
+  bg="bg02"
+  className="md-title"
 >
-	<div className="col-span-12 md:col-span-9 lg:col-span-9 mb-4">
-		<a href="/careers/">Back to Careers</a>
-	</div>
-	<h1
-		font="questrial leading-none"
-		grid="col-span-12 md:col-span-9 lg:col-span-9"
-		className="text-fs03 lg:text-6xl"
-	>
-		{meta.name}
-	</h1>
-	<h2 m="lg:b-2" grid="col-span-12" className="text-xl">
-		{meta.description}
-	</h2>
-	<div className="col-span-12 md:col-span-9 lg:col-span-9">
-		<span className="float-left">
-			<img src="../images/careers/location_pin.gif" width="40px" />
-		</span>
-		<span className="float-left capitalize ml-2 mt-1.5">{meta.location}</span>
-	</div>
+  <div className="col-span-12 md:col-span-9 lg:col-span-9 mb-4">
+    <a href="/careers/">Back to Careers</a>
+  </div>
+  <h1
+    font="questrial leading-none"
+    grid="col-span-12 md:col-span-9 lg:col-span-9"
+    className="text-fs03 lg:text-6xl"
+  >
+    {meta.name}
+  </h1>
+  <h2 m="lg:b-2" grid="col-span-12" className="text-xl">
+    {meta.description}
+  </h2>
+  <div className="col-span-12 md:col-span-9 lg:col-span-9">
+    <span className="float-left">
+      <img src="../images/careers/location_pin.gif" width="40px" />
+    </span>
+    <span className="float-left capitalize ml-2 mt-1.5">{meta.location}</span>
+  </div>
 </section>
 
 <RegularWidth>

@@ -1,84 +1,84 @@
-import { NextSeo } from 'next-seo';
-import Layout from 'components/Layout';
 import Image from 'components/Image';
-import FullWidth from 'components/md/FullWidth';
-import Title from 'components/md/Title';
-import Paragraph from 'components/md/Paragraph';
-import Header from 'components/md/Header';
-import TwoColumns from 'components/md/TwoColumns';
-import RegularWidth from 'components/md/RegularWidth';
+import Layout from 'components/Layout';
 import Caption from 'components/md/Caption';
+import FullWidth from 'components/md/FullWidth';
+import Header from 'components/md/Header';
+import Paragraph from 'components/md/Paragraph';
+import RegularWidth from 'components/md/RegularWidth';
+import Title from 'components/md/Title';
+import TwoColumns from 'components/md/TwoColumns';
+import rootMeta from 'contents/pages.json';
+import { NextSeo } from 'next-seo';
 import { getAllImage } from 'utils/image';
-import rootMeta from 'meta.json';
 
 export const meta = {
-	slug: 'whippy',
-	name: 'Whippy',
-	category: ['SaaS', 'Branding'],
-	description: 'Smart branding: conversational marketing',
-	sub: 'Branding, web design & development',
-	year: 2021,
-	preview: '04',
-	width: 'full',
-	order: 5,
-	gradientFrom: '#90BAFD',
-	gradientTo: '#C7C7FF',
+  slug: 'whippy',
+  name: 'Whippy',
+  category: ['SaaS', 'Branding'],
+  description: 'Smart branding: conversational marketing',
+  sub: 'Branding, web design & development',
+  year: 2021,
+  preview: '04',
+  width: 'full',
+  order: 5,
+  gradientFrom: '#90BAFD',
+  gradientTo: '#C7C7FF',
 };
 
 export async function getStaticProps() {
-	const images = await getAllImage('whippy');
-	const { gradientFrom, gradientTo } = meta;
-	for (const key in images) {
-		images[key] = { ...images[key], gradientFrom, gradientTo };
-	}
-	const ogImage =
-		(process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
-	const title = rootMeta.name + ' | ' + meta.name;
-	return { props: { images, ...meta, title, ogImage } };
+  const images = await getAllImage('whippy');
+  const { gradientFrom, gradientTo } = meta;
+  for (const key in images) {
+    images[key] = { ...images[key], gradientFrom, gradientTo };
+  }
+  const ogImage =
+    (process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+  const title = rootMeta.name + ' | ' + meta.name;
+  return { props: { images, ...meta, title, ogImage } };
 }
 
 export default ({ children }) => (
-	<Layout title={meta.name} p="2xl:t-8">
-		{children}
-	</Layout>
+  <Layout title={meta.name} p="2xl:t-8">
+    {children}
+  </Layout>
 );
 
 <NextSeo
-	title={props.title}
-	description={props.description}
-	openGraph={{
-		title: props.title,
-		description: props.description,
-		images: [
-			{
-				url: props.ogImage,
-				alt: props.title,
-				type: 'png',
-			},
-		],
-	}}
+  title={props.title}
+  description={props.description}
+  openGraph={{
+    title: props.title,
+    description: props.description,
+    images: [
+      {
+        url: props.ogImage,
+        alt: props.title,
+        type: 'png',
+      },
+    ],
+  }}
 />
 
 <Title text="Conversational marketing" sub="Whippy 2021" />
 
 <FullWidth space="y-5">
-	<Image {...props.images['hero']} />
-	<Image {...props.images['11']} />
-	<TwoColumns>
-		<Image {...props.images['02']} />
-		<Image {...props.images['03']} />
-	</TwoColumns>
-	<Image {...props.images['04']} />
-	<TwoColumns>
-		<Image {...props.images['05']} />
-		<Image {...props.images['06']} />
-	</TwoColumns>
-	<Image {...props.images['07']} />
-	<TwoColumns>
-		<Image {...props.images['08']} />
-		<Image {...props.images['09']} />
-	</TwoColumns>
-	<Image {...props.images['10']} />
-	<Image {...props.images['12']} />
-	<Image {...props.images['13']} />
+  <Image {...props.images['hero']} />
+  <Image {...props.images['11']} />
+  <TwoColumns>
+    <Image {...props.images['02']} />
+    <Image {...props.images['03']} />
+  </TwoColumns>
+  <Image {...props.images['04']} />
+  <TwoColumns>
+    <Image {...props.images['05']} />
+    <Image {...props.images['06']} />
+  </TwoColumns>
+  <Image {...props.images['07']} />
+  <TwoColumns>
+    <Image {...props.images['08']} />
+    <Image {...props.images['09']} />
+  </TwoColumns>
+  <Image {...props.images['10']} />
+  <Image {...props.images['12']} />
+  <Image {...props.images['13']} />
 </FullWidth>

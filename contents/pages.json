@@ -1,0 +1,285 @@
+{
+  "name": "xspaceship",
+  "shortName": "xspaceship",
+  "email": "hello@xspaceship.com",
+  "ogImage": "/images/xspaceship.png",
+  "nav": [
+    {
+      "name": "Work",
+      "path": "/"
+    },
+    {
+      "name": "Services",
+      "path": "/services"
+    },
+    {
+      "name": "About",
+      "path": "/about"
+    },
+    {
+      "name": "Careers",
+      "path": "/careers"
+    }
+  ],
+  "home": {
+    "title": "xspaceship | Full-service digital design & development agency",
+    "description": "We partner with start-ups and enterprises to design and build great brands and digital products. Achieve your biggest business ambitions with our world-class design and engineering team.",
+    "headline": "Digital Design & Web Development"
+  },
+  "about": {
+    "title": "xspaceship | About",
+    "description": "We are a team of veterans from the world of Ogilvy & Mather, Collins, Facebook, & Uber to deliver the most unifying, thoughtful and comprehensive creative services.",
+    "headline": "We are a group of <span class='text-gradient-03'>art directors, product designers, & technologists</span>.",
+    "why": {
+      "headline": "The gap we are filling.",
+      "text": "Most agencies can only do one thing well — branding or digital strategy. That results in a big dilemma: hiring both, or only one.",
+      "subtext": "That means you are choosing between an expensive & fragmented process, or a sacrifice in quality. Both options are not great.",
+      "image": {
+        "name": "01",
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      }
+    },
+    "what": {
+      "headline": "xspaceship",
+      "text": "We are a team of veterans from the world of Ogilvy & Mather, Collins, Facebook, & Uber to deliver the most unifying, thoughtful and comprehensive creative services.",
+      "image": {
+        "name": "02",
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      }
+    },
+    "branding": {
+      "headline": "Trusted by",
+      "image": [
+        {
+          "name": "03",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "04",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "05",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "06",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      ]
+    }
+  },
+  "services": {
+    "title": "xspaceship | Services",
+    "description": "We are a full-service digital agency. Our services include: digital design, web development and visual branding.",
+    "headline": "We fuse <span class='text-gradient-02'>creativity, craft, & technology</span> into  <span class='text-gradient-02'>experiences</span> that improve lives.",
+    "product": {
+      "headline": "Digital Design & Strategy",
+      "list": ["Mobile applications", "Web applications", "Digital campaigns"],
+      "image": [
+        {
+          "name": "01",
+          "span": 7,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "02",
+          "span": 3,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "03",
+          "span": 4,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "04",
+          "span": 7,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      ],
+      "imageM": [
+        {
+          "name": "13",
+          "span": 7,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "02",
+          "span": 3,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "14",
+          "span": 4,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "15",
+          "span": 7,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      ]
+    },
+    "branding": {
+      "headline": "Branding",
+      "list": ["Logo", "Typography", "Illustration", "Photography"],
+      "image": [
+        {
+          "name": "05",
+          "span": 7,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "06",
+          "span": 4,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "07",
+          "span": 3,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "08",
+          "span": 7,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      ],
+      "imageM": [
+        {
+          "name": "16",
+          "span": 7,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "06",
+          "span": 4,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "07",
+          "span": 3,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "17",
+          "span": 7,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      ]
+    },
+    "development": {
+      "headline": "Development",
+      "list": [
+        "Mobile apps (iOS & Android)",
+        "Web applications",
+        "Web campaigns and marketing sites"
+      ],
+      "image": [
+        {
+          "name": "09",
+          "span": 7,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "10",
+          "span": 3,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "11",
+          "span": 4,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "12",
+          "span": 7,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      ],
+      "imageM": [
+        {
+          "name": "18",
+          "span": 7,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "10",
+          "span": 3,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "19",
+          "span": 4,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        {
+          "name": "20",
+          "span": 7,
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      ]
+    },
+    "quote01": {
+      "text": "“You've got to start with the customer experience and work backwards to the technology. You can't start with the technology and try to figure out where can I sell it.”",
+      "author": "Steve Jobs"
+    },
+    "quote02": {
+      "text": "“There are three responses to a piece of design — yes, no, and WOW! Wow is the one to aim for.”",
+      "author": "Milton Glaser"
+    }
+  },
+  "careers": {
+    "title": "xspaceship | Careers",
+    "description": "We are a team of veterans from the world of Ogilvy & Mather, Collins, Facebook, & Uber to deliver the most unifying, thoughtful and comprehensive creative services.",
+    "headline": "Join our <span class='text-gradient-03'>world class</span> team & grow with us",
+    "location": {
+      "image": [
+        {
+          "name": "location",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      ],
+      "text": "You will love our meeting space."
+    },
+    "team": {
+      "image": {
+        "name": "team",
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      }
+    }
+  }
+}

@@ -1,288 +1,288 @@
-import { NextSeo } from 'next-seo';
-import Layout from 'components/Layout';
 import Image from 'components/Image';
-import FullWidth from 'components/md/FullWidth';
-import Title from 'components/md/Title';
-import Paragraph from 'components/md/Paragraph';
-import Header from 'components/md/Header';
-import TwoColumns from 'components/md/TwoColumns';
-import ThreeColumns from 'components/md/ThreeColumns';
-import RegularWidth from 'components/md/RegularWidth';
+import Layout from 'components/Layout';
 import Caption from 'components/md/Caption';
+import FullWidth from 'components/md/FullWidth';
+import Header from 'components/md/Header';
 import List from 'components/md/List';
+import Paragraph from 'components/md/Paragraph';
+import RegularWidth from 'components/md/RegularWidth';
 import Table from 'components/md/Table';
+import ThreeColumns from 'components/md/ThreeColumns';
+import Title from 'components/md/Title';
+import TwoColumns from 'components/md/TwoColumns';
+import rootMeta from 'contents/pages.json';
+import { NextSeo } from 'next-seo';
 import { getAllImage } from 'utils/image';
-import rootMeta from 'meta.json';
 
 export const meta = {
-	slug: 'laha',
-	name: 'Laha',
-	category: ['Beauty', 'Branding', 'Web'],
-	description: 'Skincare clinic transformation.',
-	sub: 'Branding',
-	year: 2020,
-	preview: '03',
-	width: 'half',
-	order: 3,
-	gradientFrom: '#EAE1D6',
-	gradientTo: '#C1C0E3',
+  slug: 'laha',
+  name: 'Laha',
+  category: ['Beauty', 'Branding', 'Web'],
+  description: 'Skincare clinic transformation.',
+  sub: 'Branding',
+  year: 2020,
+  preview: '03',
+  width: 'half',
+  order: 3,
+  gradientFrom: '#EAE1D6',
+  gradientTo: '#C1C0E3',
 };
 
 export async function getStaticProps(context) {
-	const images = await getAllImage('laha');
-	const { gradientFrom, gradientTo } = meta;
-	for (const key in images) {
-		images[key] = { ...images[key], gradientFrom, gradientTo };
-	}
-	const ogImage =
-		(process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
-	const title = rootMeta.name + ' | ' + meta.name;
-	return { props: { images, ...meta, title, ogImage } };
+  const images = await getAllImage('laha');
+  const { gradientFrom, gradientTo } = meta;
+  for (const key in images) {
+    images[key] = { ...images[key], gradientFrom, gradientTo };
+  }
+  const ogImage =
+    (process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+  const title = rootMeta.name + ' | ' + meta.name;
+  return { props: { images, ...meta, title, ogImage } };
 }
 
 export default ({ children }) => (
-	<Layout title={meta.name} p="2xl:t-8">
-		{children}
-	</Layout>
+  <Layout title={meta.name} p="2xl:t-8">
+    {children}
+  </Layout>
 );
 
 <NextSeo
-	title={props.title}
-	description={props.description}
-	openGraph={{
-		title: props.title,
-		description: props.description,
-		images: [
-			{
-				url: props.ogImage,
-				alt: props.title,
-				type: 'png',
-			},
-		],
-	}}
+  title={props.title}
+  description={props.description}
+  openGraph={{
+    title: props.title,
+    description: props.description,
+    images: [
+      {
+        url: props.ogImage,
+        alt: props.title,
+        type: 'png',
+      },
+    ],
+  }}
 />
 
 <Title text="Skincare clinic transformation." sub="Laha 2020" />
 
 <FullWidth>
-	<Image {...props.images['hero']} />
+  <Image {...props.images['hero']} />
 </FullWidth>
 
 <RegularWidth>
-	<List
-		bgColor="#000"
-		borderColor="rgba(255, 255, 255, 0.2)"
-		textColor="#F4F4F4"
-		title="The challenge"
-		items={[
-			'The company can easily retain existing customers with its excellent services. However, reaching new customers was a real challenge.',
-			<div space="y-3">
-				<p>
-					The existing brand experience was highly fragmented and outdated, and
-					therefore did not resonate with the increasingly younger and more
-					fashionable market.
-				</p>
-				<p>It became clear to us that Laha needs a full re-brand.</p>
-			</div>,
-		]}
-	/>
+  <List
+    bgColor="#000"
+    borderColor="rgba(255, 255, 255, 0.2)"
+    textColor="#F4F4F4"
+    title="The challenge"
+    items={[
+      'The company can easily retain existing customers with its excellent services. However, reaching new customers was a real challenge.',
+      <div space="y-3">
+        <p>
+          The existing brand experience was highly fragmented and outdated, and
+          therefore did not resonate with the increasingly younger and more
+          fashionable market.
+        </p>
+        <p>It became clear to us that Laha needs a full re-brand.</p>
+      </div>,
+    ]}
+  />
 </RegularWidth>
 
 <RegularWidth>
-	<Header>0 — Research</Header>
-	<div text="left tc04">
-		Every project starts by deeply understanding our client. We interviewed the
-		owner, Dr. La Ha and her customers to uncover insights. At the end of our
-		research, we did not only gathered valuable information about the business,
-		but also help their team redefine their missions and core values.
-	</div>
-	<List
-		bgColor="#0B275D"
-		borderColor="transparent"
-		textColor="#B1CDE0"
-		title="Brand Missions"
-		items={[
-			'Pioneers in bringing knowledge of Cosmetic Dermatology and the importance of beautiful skin to Vietnamese customers',
-			'Improves skin thereby increases confidence and the quality of life for patients',
-			'Empower the beauty inside each person by awakening skin vitality in the most natural and scientific way',
-			'Provides premium skin treatment services and a lifetime warranty, thus bringing long lasting beautiful skin and confidence for patients',
-		]}
-	/>
-	<List
-		bgColor="#523C30"
-		borderColor="transparent"
-		textColor="#E7F0DA"
-		title="Brand Values"
-		items={['Clinical', 'Caring', 'Premium', 'Prestige']}
-	/>
-	<Paragraph>
-		We translated the complex brand DNA into concrete design principles that
-		help guide us along the re-brand process. The delicate balance between these
-		two opposing qualities defined the success of the design.
-	</Paragraph>
-	<Table
-		title01="Functional"
-		title02="Emotional"
-		textColor01="#B1CDE0"
-		textColor02="#E7F0DA"
-		items01={[
-			'Science & Efficacy',
-			'Clinical',
-			'Scientific',
-			'Expertise & Knowledge',
-			'Premium & Prestige',
-		]}
-		items02={[
-			'Nurturing & Sustainable',
-			'Elegant & Sophisticated',
-			'Natural',
-			'Optimistic & Confident',
-			'Vitality & Rejuvenating',
-		]}
-	/>
+  <Header>0 — Research</Header>
+  <div text="left tc04">
+    Every project starts by deeply understanding our client. We interviewed the
+    owner, Dr. La Ha and her customers to uncover insights. At the end of our
+    research, we did not only gathered valuable information about the business,
+    but also help their team redefine their missions and core values.
+  </div>
+  <List
+    bgColor="#0B275D"
+    borderColor="transparent"
+    textColor="#B1CDE0"
+    title="Brand Missions"
+    items={[
+      'Pioneers in bringing knowledge of Cosmetic Dermatology and the importance of beautiful skin to Vietnamese customers',
+      'Improves skin thereby increases confidence and the quality of life for patients',
+      'Empower the beauty inside each person by awakening skin vitality in the most natural and scientific way',
+      'Provides premium skin treatment services and a lifetime warranty, thus bringing long lasting beautiful skin and confidence for patients',
+    ]}
+  />
+  <List
+    bgColor="#523C30"
+    borderColor="transparent"
+    textColor="#E7F0DA"
+    title="Brand Values"
+    items={['Clinical', 'Caring', 'Premium', 'Prestige']}
+  />
+  <Paragraph>
+    We translated the complex brand DNA into concrete design principles that
+    help guide us along the re-brand process. The delicate balance between these
+    two opposing qualities defined the success of the design.
+  </Paragraph>
+  <Table
+    title01="Functional"
+    title02="Emotional"
+    textColor01="#B1CDE0"
+    textColor02="#E7F0DA"
+    items01={[
+      'Science & Efficacy',
+      'Clinical',
+      'Scientific',
+      'Expertise & Knowledge',
+      'Premium & Prestige',
+    ]}
+    items02={[
+      'Nurturing & Sustainable',
+      'Elegant & Sophisticated',
+      'Natural',
+      'Optimistic & Confident',
+      'Vitality & Rejuvenating',
+    ]}
+  />
 </RegularWidth>
 
 <RegularWidth>
-	<Header>1 — Visual branding</Header>
-	<Image
-		{...props.images['brand_00']}
-		caption="Our custom logo is an evolution from our previous logo with a root to Vietnamese alphabet, while evoking a sense of refreshment through playing with ligatures and diacritics. It constantly juxtaposes the highly premium with youthful contemporariness."
-		captionAlignment="center"
-	/>
-	<ThreeColumns>
-		<Image {...props.images['inspo_01']} />
-		<Image {...props.images['inspo_02']} />
-		<Image {...props.images['inspo_03']} />
-	</ThreeColumns>
-	<TwoColumns>
-		<Image {...props.images['brand_01']} />
-		<Image {...props.images['brand_02']} />
-	</TwoColumns>
-	<Paragraph>
-		The logo also represent different business offerings that come with
-		different business lock ups.
-	</Paragraph>
-	<Image {...props.images['brand_03']} />
-	<Paragraph>
-		To communicate the brand's affinity to cutting-edge technology, we use a
-		vibrant royal blue as the primary color. Off-white is used to represent the
-		fashionable and softer aspect of the brand.
-	</Paragraph>
-	<TwoColumns>
-		<Image
-			{...props.images['brand_04_A']}
-			caption="Secondary colors"
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['brand_04_B']}
-			caption="Gradients"
-			captionAlignment="center"
-		/>
-	</TwoColumns>
-	<TwoColumns>
-		<Image
-			{...props.images['brand_05']}
-			caption="Texture photography"
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['brand_06']}
-			caption="Warm and light-hearted photography."
-			captionAlignment="center"
-		/>
-	</TwoColumns>
+  <Header>1 — Visual branding</Header>
+  <Image
+    {...props.images['brand_00']}
+    caption="Our custom logo is an evolution from our previous logo with a root to Vietnamese alphabet, while evoking a sense of refreshment through playing with ligatures and diacritics. It constantly juxtaposes the highly premium with youthful contemporariness."
+    captionAlignment="center"
+  />
+  <ThreeColumns>
+    <Image {...props.images['inspo_01']} />
+    <Image {...props.images['inspo_02']} />
+    <Image {...props.images['inspo_03']} />
+  </ThreeColumns>
+  <TwoColumns>
+    <Image {...props.images['brand_01']} />
+    <Image {...props.images['brand_02']} />
+  </TwoColumns>
+  <Paragraph>
+    The logo also represent different business offerings that come with
+    different business lock ups.
+  </Paragraph>
+  <Image {...props.images['brand_03']} />
+  <Paragraph>
+    To communicate the brand's affinity to cutting-edge technology, we use a
+    vibrant royal blue as the primary color. Off-white is used to represent the
+    fashionable and softer aspect of the brand.
+  </Paragraph>
+  <TwoColumns>
+    <Image
+      {...props.images['brand_04_A']}
+      caption="Secondary colors"
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['brand_04_B']}
+      caption="Gradients"
+      captionAlignment="center"
+    />
+  </TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['brand_05']}
+      caption="Texture photography"
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['brand_06']}
+      caption="Warm and light-hearted photography."
+      captionAlignment="center"
+    />
+  </TwoColumns>
 </RegularWidth>
 
 <RegularWidth>
-	<Header>2 — Physical products</Header>
+  <Header>2 — Physical products</Header>
 </RegularWidth>
 
 <RegularWidth>
-	<TwoColumns>
-		<Image
-			{...props.images['prod_00']}
-			caption="Office signage"
-			captionAlignment="center"
-		/>
-		<Image
-			{...props.images['prod_01']}
-			caption="Uniform"
-			captionAlignment="center"
-		/>
-	</TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['prod_00']}
+      caption="Office signage"
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['prod_01']}
+      caption="Uniform"
+      captionAlignment="center"
+    />
+  </TwoColumns>
 </RegularWidth>
 
 <RegularWidth>
-	<Image
-		{...props.images['prod_02']}
-		caption="Service menu and marketing brochure"
-		captionAlignment="center"
-	/>
+  <Image
+    {...props.images['prod_02']}
+    caption="Service menu and marketing brochure"
+    captionAlignment="center"
+  />
 </RegularWidth>
 
 <RegularWidth>
-	<TwoColumns>
-		<Image {...props.images['prod_03']} />
-		<Image {...props.images['prod_04']} />
-	</TwoColumns>
+  <TwoColumns>
+    <Image {...props.images['prod_03']} />
+    <Image {...props.images['prod_04']} />
+  </TwoColumns>
 </RegularWidth>
 
 <Paragraph>
-	Our house illustration style is representative of our ethos and allows us to
-	create compelling communications that get people to stop. Soft, organic forms
-	with airy and lighthearted line quality can convey both the nurturing side of
-	the brand, as well as the highly-tech side of the brand.
+  Our house illustration style is representative of our ethos and allows us to
+  create compelling communications that get people to stop. Soft, organic forms
+  with airy and lighthearted line quality can convey both the nurturing side of
+  the brand, as well as the highly-tech side of the brand.
 </Paragraph>
 
 <RegularWidth>
-	<Image
-		{...props.images['prod_05']}
-		caption="Cosmetic product packaging"
-		captionAlignment="center"
-	/>
+  <Image
+    {...props.images['prod_05']}
+    caption="Cosmetic product packaging"
+    captionAlignment="center"
+  />
 </RegularWidth>
 
 <RegularWidth>
-	<Image
-		{...props.images['prod_06']}
-		caption="Shopping bag"
-		captionAlignment="center"
-	/>
+  <Image
+    {...props.images['prod_06']}
+    caption="Shopping bag"
+    captionAlignment="center"
+  />
 </RegularWidth>
 
 <RegularWidth>
-	<Header>3 — Digital experience</Header>
+  <Header>3 — Digital experience</Header>
 </RegularWidth>
 
 <RegularWidth>
-	<Image
-		{...props.images['digi_01']}
-		caption="Monogram used as Instagram display photo"
-		captionAlignment="center"
-	/>
+  <Image
+    {...props.images['digi_01']}
+    caption="Monogram used as Instagram display photo"
+    captionAlignment="center"
+  />
 </RegularWidth>
 
 <RegularWidth>
-	<Image
-		{...props.images['digi_02']}
-		caption="Combining illustration, photography, and typography to create compelling Instagram posts"
-		captionAlignment="center"
-	/>
+  <Image
+    {...props.images['digi_02']}
+    caption="Combining illustration, photography, and typography to create compelling Instagram posts"
+    captionAlignment="center"
+  />
 </RegularWidth>
 
 <RegularWidth>
-	<Image
-		{...props.images['digi_03']}
-		caption="Homepage"
-		captionAlignment="center"
-	/>
+  <Image
+    {...props.images['digi_03']}
+    caption="Homepage"
+    captionAlignment="center"
+  />
 </RegularWidth>
 
 <RegularWidth>
-	<Image {...props.images['digi_04']} />
+  <Image {...props.images['digi_04']} />
 </RegularWidth>
 
 <RegularWidth>
-	<Image {...props.images['digi_05']} />
+  <Image {...props.images['digi_05']} />
 </RegularWidth>
