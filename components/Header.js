@@ -45,9 +45,9 @@ const Header = () => {
                 alt="Union"
               />
             </div>
-            <span m="l-5 2xl:l-0 2xl:t-3" font="redhat">
+            <h1 m="l-5 2xl:l-0 2xl:t-3" font="redhat">
               {meta.shortName}
-            </span>
+            </h1>
           </a>
         </Link>
         <nav

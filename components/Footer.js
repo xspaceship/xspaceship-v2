@@ -44,9 +44,9 @@ const Footer = () => (
       </div>
       <hr m="t-5 lg:t-10 b-5" />
       <div flex="~" justify="between">
-        <h3 className="text-xs">
+        <h6 className="text-xs">
           © {currentYear} {meta.shortName}
-        </h3>
+        </h6>
         <a href="/sitemap.xml" className="text-xs">
           Site map
         </a>
