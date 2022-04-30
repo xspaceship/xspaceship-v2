@@ -2,14 +2,12 @@ import Link from 'components/Link';
 import meta from 'contents/pages.json';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Nav = dynamic(() => import('./Nav'));
 
 const Header = () => {
   const [is2XL, setIs2XL] = useState(true);
-
-  const wh = useMemo(() => (is2XL ? 60 : 40), [is2XL]);
 
   const handleResize = e => {
     setIs2XL(e.target.innerWidth >= 1800);
@@ -22,6 +20,7 @@ const Header = () => {
 
     window.addEventListener('resize', handleResize);
   }, []);
+
   return (
     <header
       w="2xl:1/5"
@@ -38,7 +37,22 @@ const Header = () => {
       >
         <Link href="/">
           <a className="text-fs02 lg:text-fs01 flex items-center 2xl:flex-col 2xl:items-start">
-            <Image src="/images/union.png" width={wh} height={wh} alt="Union" />
+            <div display="2xl:hidden" flex="~">
+              <Image
+                src="/images/union.png"
+                width={40}
+                height={40}
+                alt="Union"
+              />
+            </div>
+            <div display="hidden 2xl:block">
+              <Image
+                src="/images/union.png"
+                width={60}
+                height={60}
+                alt="Union"
+              />
+            </div>
             <span m="l-5 2xl:l-0 2xl:t-3" font="redhat">
               {meta.shortName}
             </span>
