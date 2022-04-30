@@ -42,8 +42,8 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
         border="rounded-lg border border-white"
       >
         <h1
-          grid="col-span-12 md:col-span-8 2xl:col-span-8 sm:col-span-12"
-          font="redhat ld01 md:leading-tight"
+          grid="col-span-12 lg:col-span-8 2xl:col-span-8"
+          font="redhat leading-lh01 md:leading-tight"
           className="text-white text-fs01 md:text-7xl"
           dangerouslySetInnerHTML={{ __html: headline }}
         />

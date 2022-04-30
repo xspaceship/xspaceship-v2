@@ -42,8 +42,8 @@ const Careers = ({
       border="rounded-lg"
     >
       <h1
-        grid="col-span-12 md:col-span-8 2xl:col-span-8 sm:col-span-12"
-        font="redhat ld01 md:leading-tight"
+        grid="col-span-12 lg:col-span-9 2xl:col-span-8"
+        font="redhat leading-lh01 md:leading-tight"
         className="text-white text-fs01 md:text-7xl"
         dangerouslySetInnerHTML={{ __html: headline }}
       />
@@ -138,7 +138,7 @@ const Careers = ({
 
       {/* Jobs  */}
 
-      <div className="gap-x-5 gap-y-5 pb-0 font-worksans mt-12 lg:mx-0 md:mx-0 sm:mx-5 mx-5">
+      <div className="gap-x-5 gap-y-5 pb-0 font-worksans mt-12 md:mx-0">
         <div className="col-span-12 md:px-0 my-0">
           <h3 className="font-medium text-4xl lg:mb-12 md:mb-8 sm:mb-8 mb-8 mt-16">
             Job openings

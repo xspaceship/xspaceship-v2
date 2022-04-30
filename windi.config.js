@@ -17,6 +17,9 @@ export default defineConfig({
         'col-span-6',
         'col-span-12',
         'col-start-auto',
+        'lg:block',
+        'md:block',
+        'hidden',
       ],
       keyframes: true,
     },
@@ -48,7 +51,8 @@ export default defineConfig({
         fs03: '2.25rem',
       },
       lineHeight: {
-        lh01: '1.05rem',
+        lh01: '1.1',
+        lh02: '1.2',
       },
       fontFamily: {
         worksans: ['Work Sans', 'sans-serif'],

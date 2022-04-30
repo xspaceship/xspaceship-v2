@@ -33,14 +33,14 @@ const About = ({
 
     {/* Headline */}
     <div
-      p="x-5 y-7.5 lg:x-22.5 lg:y-32 2xl:x-0"
+      p="y-7.5 lg:x-22.5 lg:y-32 2xl:x-0"
       m="x-5 b-0 lg:x-10 2xl:x-5"
       grid="~ cols-12 gap-5"
       border="rounded-lg"
     >
       <h1
         grid="col-span-12 md:col-span-9 2xl:col-span-11"
-        font="redhat ld01 md:leading-tight"
+        font="redhat leading-lh01 md:leading-tight"
         text="white fs01 md:7xl"
         dangerouslySetInnerHTML={{ __html: headline }}
       />
