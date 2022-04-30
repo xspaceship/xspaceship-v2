@@ -24,7 +24,7 @@
   "home": {
     "title": "xspaceship | Full-service digital design & development agency",
     "description": "We partner with start-ups and enterprises to design and build great brands and digital products. Achieve your biggest business ambitions with our world-class design and engineering team.",
-    "headline": "Digital Design & Web Development"
+    "headline": "Global Branding<br />& Digital Products"
   },
   "about": {
     "title": "xspaceship | About",
@@ -273,28 +273,6 @@
     "quote02": {
       "text": "“There are three responses to a piece of design — yes, no, and WOW! Wow is the one to aim for.”",
       "author": "Milton Glaser"
-    }
-  },
-  "careers": {
-    "title": "xspaceship | Careers",
-    "description": "We are a team of veterans from the world of Ogilvy & Mather, Collins, Facebook, & Uber to deliver the most unifying, thoughtful and comprehensive creative services.",
-    "headline": "Join our <span class='text-gradient-03'>world class</span> team & grow with us",
-    "location": {
-      "image": [
-        {
-          "name": "location",
-          "gradientFrom": "rgba(255,255,255,0.2)",
-          "gradientTo": "rgba(255,255,255,0.1)"
-        }
-      ],
-      "text": "You will love our meeting space."
-    },
-    "team": {
-      "image": {
-        "name": "team",
-        "gradientFrom": "rgba(255,255,255,0.2)",
-        "gradientTo": "rgba(255,255,255,0.1)"
-      }
     }
   }
 }

@@ -33,11 +33,10 @@ const About = ({
 
     {/* Headline */}
     <div
-      p="x-5 y-7.5 lg:x-22.5 lg:y-32"
+      p="x-5 y-7.5 lg:x-22.5 lg:y-32 2xl:x-0"
       m="x-5 b-0 lg:x-10 2xl:x-5"
       grid="~ cols-12 gap-5"
       border="rounded-lg"
-      bg="bg02"
     >
       <h1
         grid="col-span-12 md:col-span-9 2xl:col-span-11"
@@ -50,7 +49,7 @@ const About = ({
     {/* Section: Why */}
     <div
       m="lg:x-10"
-      p="y-5 t-0 lg:x-22.5 lg:y-24"
+      p="y-5 t-0 lg:x-22.5 lg:y-24 2xl:x-0"
       grid="lg:cols-12 lg:gap-5"
       flex="col"
       display="flex lg:grid"
@@ -97,7 +96,7 @@ const About = ({
     </div>
 
     {/* Section: Brand */}
-    <div m="x-5 y-10 lg:x-32.5 lg:y-24">
+    <div m="x-5 y-10 lg:x-10 lg:y-24" p="lg:x-22.5">
       <h3
         font="medium"
         display="block"

@@ -24,8 +24,8 @@ const Header = () => {
   }, []);
   return (
     <header
-      w="2xl:3/12"
-      max-w="2xl:600px"
+      w="2xl:1/5"
+      max-w="2xl:400px"
       p="5 lg:t-6 lg:x-32.5 lg:b-5 2xl:x-8 2xl:y-0"
     >
       <div

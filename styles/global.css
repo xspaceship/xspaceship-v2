@@ -58,6 +58,11 @@ button:focus {
 }
 
 /* image */
+.image-wrapper > span {
+  display: block !important;
+  height: inherit !important;
+}
+
 .image-wrapper img,
 .image-wrapper .image-placeholder {
   @apply transition-all duration-1000;

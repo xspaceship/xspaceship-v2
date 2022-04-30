@@ -36,11 +36,10 @@ const Careers = ({
 
     {/* Headline */}
     <div
-      p="x-16 y-16 lg:x-22.5 lg:y-22.5 sm:x-8 sm:y-8 x-8 y-8"
+      p="y-8 lg:x-22.5 lg:y-22.5 2xl:x-0"
       m="x-5 lg:x-10 b-5"
       grid="~ cols-12 gap-5"
       border="rounded-lg"
-      bg="bg02"
     >
       <h1
         grid="col-span-12 md:col-span-8 2xl:col-span-8 sm:col-span-12"

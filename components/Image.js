@@ -11,6 +11,7 @@ const Image = props => {
     gradientTo,
     caption,
     captionAlignment = 'center',
+    className = '',
     ...rest
   } = props;
 
@@ -31,7 +32,7 @@ const Image = props => {
         overflow="hidden"
         h="full"
         border={round}
-        className={`image-wrapper ${props.className} ${
+        className={`image-wrapper ${className} ${
           isLoaded ? 'is-image-loaded' : ''
         }`}
       >
@@ -42,7 +43,7 @@ const Image = props => {
           h="full"
           border={round}
           {...rest}
-          className={`${props.className} image-placeholder`}
+          className={`${className} image-placeholder`}
           style={{ ...style }}
         />
         <NextImage
@@ -50,7 +51,7 @@ const Image = props => {
           quality="100"
           border={round}
           {...rest}
-          className={props.className}
+          className={className}
           onLoadingComplete={() => setIsLoaded(true)}
         />
       </div>
