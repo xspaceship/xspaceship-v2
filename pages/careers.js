@@ -50,7 +50,7 @@ const Careers = ({
     </div>
 
     <div className="col-span-12 mx-5 lg:mx-10 md:mx-5 sm:mx-5 rounded-lg">
-      <Image {...team.image} alt={team.name} />
+      <Image {...team.image} alt={team.image.name} />
     </div>
 
     {/* Working here */}
@@ -138,7 +138,7 @@ const Careers = ({
 
       {/* Jobs  */}
 
-      <div className="gap-x-5 gap-y-5 pb-0 font-worksans mt-12 md:mx-0">
+      <div className="gap-x-5 gap-y-5 pb-0 font-worksans mt-12 md:mx-0 mx-5">
         <div className="col-span-12 md:px-0 my-0">
           <h3 className="font-medium text-4xl lg:mb-12 md:mb-8 sm:mb-8 mb-8 mt-16">
             Job openings
@@ -209,6 +209,8 @@ export async function getStaticProps() {
       image: { ...i.image, ...images[i.image.name] },
     })),
   };
+
+  console.log(123, newCareers.team);
 
   return { props: { ...newCareers, ogImage: addedHostUrlOgImage } };
 }

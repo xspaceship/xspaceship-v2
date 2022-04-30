@@ -24,7 +24,7 @@ const Footer = () => (
             font="leading-9"
             p="y-5 lg:y-0"
             m="lg:t-5"
-            className="text-xl md:text-3xl"
+            className="text-2xl md:text-3xl"
           >
             {meta.email}
           </a>

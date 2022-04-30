@@ -2,7 +2,7 @@ const Title = props => {
   const { text, sub, ...rest } = props;
   return (
     <section
-      p="5 lg:x-22.5 lg:y-20 2xl:x-0"
+      p="y-5 lg:x-22.5 lg:y-20 2xl:x-0"
       m="x-5 b-5 lg:x-10"
       grid="~ cols-12 gap-5 lg:gap-10"
       border="rounded-lg"

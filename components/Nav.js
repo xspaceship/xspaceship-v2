@@ -104,13 +104,25 @@ const Nav = () => {
         cursor="pointer"
         onClick={toggleVisibleNav}
       >
-        {visibleNav ? (
-          <Image src="/images/close.png" width="20" height="20" alt="" />
-        ) : isDesktop ? (
-          <Image src="/images/hamburger-2.png" width="20" height="20" alt="" />
-        ) : (
-          <Image src="/images/hamburger.png" width="20" height="20" alt="" />
-        )}
+        <div w="5" flex="~">
+          {visibleNav ? (
+            <Image src="/images/close.png" width="40" height="40" alt="Close" />
+          ) : isDesktop ? (
+            <Image
+              src="/images/hamburger-2.png"
+              width="40"
+              height="40"
+              alt="Hamburger"
+            />
+          ) : (
+            <Image
+              src="/images/hamburger.png"
+              width="40"
+              height="40"
+              alt="Hamburger"
+            />
+          )}
+        </div>
       </div>
 
       <AnimatePresence>
@@ -172,9 +184,9 @@ const Nav = () => {
                 ))}
 
                 <motion.div variants={itemVariants}>
-                  <h3 font="leading-4" m="t-10" text="xs">
+                  <h5 font="leading-4" m="t-10" text="xs">
                     © {currentYear} {meta.shortName}
-                  </h3>
+                  </h5>
                 </motion.div>
               </motion.nav>
             </motion.aside>

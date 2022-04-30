@@ -5,10 +5,10 @@ import 'windi.css';
 
 const App = ({ Component, pageProps, router }) => (
   <>
-    <Script
-      strategy="lazyOnload"
-      src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-    />
+    {/* <Script */}
+    {/*  strategy="lazyOnload" */}
+    {/*  src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} */}
+    {/* /> */}
     <Script id="ga-analytics">
       {`
 				window.dataLayer = window.dataLayer || [];

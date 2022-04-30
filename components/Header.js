@@ -37,19 +37,11 @@ const Header = () => {
       >
         <Link href="/">
           <a className="text-fs02 lg:text-fs01 flex items-center 2xl:flex-col 2xl:items-start">
-            <div display="2xl:hidden" flex="~">
+            <div w="10 2xl:15" flex="~">
               <Image
                 src="/images/union.png"
-                width={40}
-                height={40}
-                alt="Union"
-              />
-            </div>
-            <div display="hidden 2xl:block">
-              <Image
-                src="/images/union.png"
-                width={60}
-                height={60}
+                width={80}
+                height={80}
                 alt="Union"
               />
             </div>
