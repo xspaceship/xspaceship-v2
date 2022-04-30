@@ -210,7 +210,5 @@ export async function getStaticProps() {
     })),
   };
 
-  console.log(123, newCareers.team);
-
   return { props: { ...newCareers, ogImage: addedHostUrlOgImage } };
 }
