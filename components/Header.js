@@ -45,7 +45,7 @@ const Header = () => {
                 alt="Union"
               />
             </div>
-            <h1 m="l-5 2xl:l-0 2xl:t-3" font="redhat">
+            <h1 m="l-5 2xl:l-0 2xl:t-3" font="redhat black">
               {meta.shortName}
             </h1>
           </a>
@@ -55,13 +55,14 @@ const Header = () => {
           flex="2xl:~ 2xl:col"
           align="2xl:self-start"
           className="text-tc01"
+          space="2xl:y-5"
         >
           {meta.nav.map(({ name, path }, index) => (
             <Link href={path} key={index}>
               <a
-                p="x-6 2xl:y-3 2xl:x-0"
+                p="x-6 2xl:x-0"
                 transition="colors duration-300"
-                className="hover:text-tc06"
+                className="2xl:text-2xl hover:text-tc06"
               >
                 {name}
               </a>

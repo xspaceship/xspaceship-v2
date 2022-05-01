@@ -43,7 +43,7 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
       >
         <h1
           grid="col-span-12 lg:col-span-8 2xl:col-span-8"
-          font="redhat leading-lh01 md:leading-tight"
+          font="redhat leading-lh01 bold md:leading-tight"
           className="text-white text-fs01 md:text-7xl"
           dangerouslySetInnerHTML={{ __html: headline }}
         />

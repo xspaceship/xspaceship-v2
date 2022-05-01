@@ -1,24 +1,14 @@
 {
   "social": [
     {
-      "name": "Facebook",
-      "image": "facebook",
-      "path": "/"
-    },
-    {
       "name": "Instagram",
       "image": "instagram",
-      "path": "/"
+      "path": "https://www.instagram.com/xspaceship.nyc/"
     },
     {
       "name": "LinkedIn",
       "image": "linkedin",
-      "path": "/"
-    },
-    {
-      "name": "Twitter",
-      "image": "twitter",
-      "path": "/"
+      "path": "https://www.linkedin.com/company/xspaceship/about/"
     }
   ]
 }

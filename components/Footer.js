@@ -16,12 +16,12 @@ const Footer = () => (
         justify="between"
         align="items-start lg:items-end"
       >
-        <div>
+        <div m="t-10 lg:t-0">
           <Image src="/images/union.png" width={60} height={60} alt="Union" />
           <a
             href={`mailto:${meta.email}`}
             display="block"
-            font="leading-9"
+            font="leading-9 bold"
             p="y-5 lg:y-0"
             m="lg:t-5"
             className="text-2xl md:text-3xl"
