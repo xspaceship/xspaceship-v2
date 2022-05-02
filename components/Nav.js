@@ -7,16 +7,22 @@ import Link from 'components/Link';
 import meta from 'contents/pages.json';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import { currentYear, delay } from 'utils/time';
 
 const SCROLL_LOCK_OPTION = { reserveScrollBarGap: true };
 
 const NAV_VARIANTS = {
-  initial: { x: '100%' },
-  animate: { x: '0%', transition: { duration: 0.3 } },
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 0.3 } },
   exit: {
-    x: '100%',
+    opacity: 1,
     transition: { delay: 0.2, duration: 0.3 },
   },
 };
@@ -72,11 +78,16 @@ const Nav = () => {
     };
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     delay(10).then(() => {
       if (!navRef.current) return;
       const fn = visibleNav ? disableBodyScroll : enableBodyScroll;
+      const storedRequestAnimationFrame = window.requestAnimationFrame;
+
+      if (visibleNav) window.requestAnimationFrame = () => 42;
+
       fn(navRef.current, SCROLL_LOCK_OPTION);
+      window.requestAnimationFrame = storedRequestAnimationFrame;
     });
   }, [visibleNav]);
 
