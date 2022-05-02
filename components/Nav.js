@@ -15,6 +15,7 @@ import {
   useState,
 } from 'react';
 import { currentYear, delay } from 'utils/time';
+import Logo from './Logo';
 
 const SCROLL_LOCK_OPTION = { reserveScrollBarGap: true };
 
@@ -165,17 +166,7 @@ const Nav = () => {
                   >
                     <Link href="/">
                       <a className="flex">
-                        <div w="10 2xl:15" flex="~">
-                          <Image
-                            src="/images/union.png"
-                            width={80}
-                            height={80}
-                            alt="Union"
-                          />
-                        </div>
-                        <span className="ml-4 font-redhat font-bold">
-                          {meta.shortName}
-                        </span>
+                        <Logo />
                       </a>
                     </Link>
                   </div>

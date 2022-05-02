@@ -3,6 +3,7 @@ import meta from 'contents/pages.json';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Logo from './Logo';
 
 const Nav = dynamic(() => import('./Nav'));
 
@@ -37,17 +38,7 @@ const Header = () => {
       >
         <Link href="/">
           <a className="text-fs02 lg:text-fs01 flex items-center 2xl:flex-col 2xl:items-start">
-            <div w="10 2xl:15" flex="~">
-              <Image
-                src="/images/union.png"
-                width={80}
-                height={80}
-                alt="Union"
-              />
-            </div>
-            <h1 m="l-5 2xl:l-0 2xl:t-3" font="redhat black">
-              {meta.shortName}
-            </h1>
+            <Logo />
           </a>
         </Link>
         <nav
