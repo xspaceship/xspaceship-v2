@@ -8,77 +8,62 @@ import meta from 'contents/pages.json';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { currentYear } from 'utils/time';
+import { currentYear, delay } from 'utils/time';
+
+const SCROLL_LOCK_OPTION = { reserveScrollBarGap: true };
+
+const NAV_VARIANTS = {
+  initial: { x: '100%' },
+  animate: { x: '0%', transition: { duration: 0.3 } },
+  exit: {
+    x: '100%',
+    transition: { delay: 0.2, duration: 0.3 },
+  },
+};
+
+const OVERLAY_VARIANTS = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+};
+
+const ITEM_VARIANTS = {
+  closed: { opacity: 0 },
+  open: { opacity: 1 },
+};
+
+const SIDE_VARIANTS = {
+  closed: {
+    transition: { staggerChildren: 0.2, staggerDirection: -1 },
+  },
+  open: {
+    transition: {
+      staggerChildren: 0.2,
+      staggerDirection: 1,
+      delayChildren: 0.1,
+    },
+  },
+};
 
 const Nav = () => {
   const [visibleNav, setVisibleNav] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const navRef = useRef(null);
   const buttonRef = useRef(null);
-  const navMainRef = useRef(null);
 
   const toggleVisibleNav = useCallback(() => {
     if (!window) return;
 
-    const option = {
-      reserveScrollBarGap: true,
-    };
-
-    setVisibleNav(v => {
-      if (v) {
-        enableBodyScroll(navRef.current, option);
-      } else {
-        disableBodyScroll(navRef.current, option);
-      }
-
-      return !v;
-    });
+    setVisibleNav(v => !v);
   }, []);
 
-  const navVariants = {
-    initial: { x: '100%' },
-    animate: { x: '0%', transition: { duration: 0.3 } },
-    exit: {
-      x: '100%',
-      transition: { delay: 0.2, duration: 0.3 },
-    },
-  };
-
-  const overlayVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 },
-  };
-
-  const itemVariants = {
-    closed: { opacity: 0 },
-    open: { opacity: 1 },
-  };
-
-  const sideVariants = {
-    closed: {
-      transition: { staggerChildren: 0.2, staggerDirection: -1 },
-    },
-    open: {
-      transition: {
-        staggerChildren: 0.2,
-        staggerDirection: 1,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const handleScroll = () => {
-    if (window.pageYOffset > 100) {
-      buttonRef.current.classList.remove('lg:hidden');
-    } else {
-      buttonRef.current.classList.add('lg:hidden');
-    }
-  };
-
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      const fn = window.pageYOffset > 100 ? 'remove' : 'add';
+      buttonRef.current.classList[fn]('lg:hidden');
+    };
 
+    window.addEventListener('scroll', handleScroll);
     setIsDesktop(window.innerWidth > 1024);
 
     return () => {
@@ -86,6 +71,14 @@ const Nav = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    delay(10).then(() => {
+      if (!navRef.current) return;
+      const fn = visibleNav ? disableBodyScroll : enableBodyScroll;
+      fn(navRef.current, SCROLL_LOCK_OPTION);
+    });
+  }, [visibleNav]);
 
   return (
     <>
@@ -134,24 +127,23 @@ const Nav = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            variants={overlayVariants}
+            variants={OVERLAY_VARIANTS}
             transition={{ type: 'easeInOut', duration: 0.5 }}
           >
             <motion.aside
-              ref={navMainRef}
               initial="initial"
               animate="animate"
               exit="exit"
-              variants={navVariants}
+              variants={NAV_VARIANTS}
               className="bg-bg07 w-full p-5 lg:w-104 lg:py-8 lg:px-10"
             >
               <motion.nav
                 initial="closed"
                 animate="open"
                 exit="closed"
-                variants={sideVariants}
+                variants={SIDE_VARIANTS}
               >
-                <motion.div variants={itemVariants}>
+                <motion.div variants={ITEM_VARIANTS}>
                   <div
                     h="12.5 lg:14"
                     flex="~"
@@ -161,13 +153,25 @@ const Nav = () => {
                     text="fs02"
                   >
                     <Link href="/">
-                      <a>{meta.shortName}</a>
+                      <a className="flex">
+                        <div w="10 2xl:15" flex="~">
+                          <Image
+                            src="/images/union.png"
+                            width={80}
+                            height={80}
+                            alt="Union"
+                          />
+                        </div>
+                        <span className="ml-4 font-redhat font-bold">
+                          {meta.shortName}
+                        </span>
+                      </a>
                     </Link>
                   </div>
                 </motion.div>
 
                 {meta.nav.map(({ name, path }, index) => (
-                  <motion.div key={index} variants={itemVariants}>
+                  <motion.div key={index} variants={ITEM_VARIANTS}>
                     <Link href={path}>
                       <a
                         display="block"
@@ -183,7 +187,7 @@ const Nav = () => {
                   </motion.div>
                 ))}
 
-                <motion.div variants={itemVariants}>
+                <motion.div variants={ITEM_VARIANTS}>
                   <h5 font="leading-4" m="t-10" text="xs">
                     © {currentYear} {meta.shortName}
                   </h5>
