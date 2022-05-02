@@ -1,7 +1,6 @@
 import Link from 'components/Link';
 import meta from 'contents/pages.json';
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Logo from './Logo';
 
