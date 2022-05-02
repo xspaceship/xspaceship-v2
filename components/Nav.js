@@ -99,19 +99,19 @@ const Nav = () => {
       >
         <div w="5" flex="~">
           {visibleNav ? (
-            <Image src="/images/close.png" width="40" height="40" alt="Close" />
+            <Image src="/images/close.png" width="80" height="80" alt="Close" />
           ) : isDesktop ? (
             <Image
               src="/images/hamburger-2.png"
-              width="40"
-              height="40"
+              width="80"
+              height="80"
               alt="Hamburger"
             />
           ) : (
             <Image
               src="/images/hamburger.png"
-              width="40"
-              height="40"
+              width="80"
+              height="80"
               alt="Hamburger"
             />
           )}
