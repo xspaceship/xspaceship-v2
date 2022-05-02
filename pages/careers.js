@@ -75,8 +75,8 @@ const Careers = ({
                 key={index}
                 className="col-span-12 lg:col-span-6 md:col-span-6 sm:col-span-12"
               >
-                <div h="full" className="grid grid-cols-12 gap-x-8">
-                  <div className="col-span-12 rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
+                <div h="full" className="gap-x-8">
+                  <div className="rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
                     <div w="16" p="b-4">
                       <Image
                         {...image}
