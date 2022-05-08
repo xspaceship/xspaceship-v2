@@ -9,7 +9,7 @@ const Link = ({ children, ...props }) => {
   const isActive = [props.href, props.as].includes(asPath);
 
   return (
-    <NextLink {...props} scroll={false}>
+    <NextLink {...props}>
       {cloneElement(child, {
         className: `${childClassName} ${isActive ? 'text-white' : ''}`,
       })}
