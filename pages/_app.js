@@ -5,19 +5,22 @@ import 'windi.css';
 
 const App = ({ Component, pageProps, router }) => (
   <>
-    {/* <Script */}
-    {/*  strategy="lazyOnload" */}
-    {/*  src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} */}
-    {/* /> */}
-    <Script id="ga-analytics">
-      {`
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-				gtag('js', new Date());
+    <Script
+      strategy="worker"
+      src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+    />
+    <script
+      type="text/partytown"
+      dangerouslySetInnerHTML={{
+        __html: `
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-				gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-			`}
-    </Script>
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+        `,
+      }}
+    />
     <AnimatePresence exitBeforeEnter>
       <Component {...pageProps} key={router.route} />
     </AnimatePresence>

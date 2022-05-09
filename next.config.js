@@ -20,6 +20,9 @@ module.exports = withPlugins([mdx, plaiceholder, bundleAnalyzer], {
   images: {
     domains: ['apple-resources.s3.amazonaws.com'],
   },
+  experimental: {
+    nextScriptWorkers: true,
+  },
 
   webpack(config, { isServer }) {
     // Replace React with Preact only in client

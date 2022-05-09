@@ -16,6 +16,7 @@
     "*.{js,css,mdx,jsx,html}": "eslint --cache --fix"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.5.4",
     "@mdx-js/loader": "^2.1.1",
     "@next/bundle-analyzer": "^11.1.4",
     "@next/mdx": "^11.1.4",
