@@ -11,31 +11,34 @@ const Footer = () => (
     grid="lg:~ lg:cols-12 lg:gap-5"
   >
     <div grid="lg:col-span-10 lg:col-start-2">
-      <div
-        flex="~ col lg:row"
-        justify="between"
-        align="items-start lg:items-end"
-      >
-        <div m="t-10 lg:t-0">
-          <Image src="/images/union.png" width={60} height={60} alt="Union" />
-          <a
-            href={`mailto:${meta.email}`}
-            display="block"
-            font="leading-9 bold"
-            p="y-5 lg:y-0"
-            m="lg:t-5"
-            className="text-2xl md:text-3xl"
-          >
-            {meta.email}
-          </a>
-        </div>
-        <div space="x-6">
+      <div m="t-10 lg:t-0 lg:b-5">
+        <Image src="/images/union.png" width={60} height={60} alt="Union" />
+      </div>
+      <div flex="~ col lg:row" justify="between" align="lg:items-center">
+        <a
+          href={`mailto:${meta.email}`}
+          display="block"
+          font="leading-9 bold"
+          p="y-5 lg:y-0"
+          className="text-2xl md:text-3xl"
+        >
+          {meta.email}
+        </a>
+        <div space="x-6" flex="~">
           {content.social.map(({ name, image, path }, index) => (
-            <a key={index} target="_blank" href={path} rel="noreferrer">
+            <a
+              key={index}
+              target="_blank"
+              href={path}
+              rel="noreferrer"
+              flex="inline"
+              w="10 lg:6"
+              h="10 lg:6"
+            >
               <Image
                 src={`/images/${image}.png`}
-                width={24}
-                height={24}
+                width={40}
+                height={40}
                 alt={name}
               />
             </a>
