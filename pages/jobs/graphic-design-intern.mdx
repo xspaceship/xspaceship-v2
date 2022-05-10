@@ -1,6 +1,7 @@
 import ButtonLink from 'components/ButtonLink';
 import Image from 'components/Image';
 import Layout from 'components/Layout';
+import Link from 'components/Link';
 import FullWidth from 'components/md/FullWidth';
 import Header from 'components/md/Header';
 import List from 'components/md/List';
@@ -60,75 +61,78 @@ export default ({ children }) => (
 <section
   p="5 lg:x-22.5 lg:y-20"
   m="b-5 lg:x-10"
-  grid="~ cols-12 gap-5"
   border="rounded-lg"
   className="md-title"
+  space="y-5"
 >
-  <div className="col-span-12 md:col-span-9 lg:col-span-9 mb-4">
-    <a href="/careers/">Back to Careers</a>
+  <div m="!b-10">
+    <Link href="/careers/">
+      <a>Back to Careers</a>
+    </Link>
   </div>
-  <h1
-    font="redhat leading-none"
-    grid="col-span-12 md:col-span-9 lg:col-span-9"
-    className="text-fs03 lg:text-6xl"
-  >
+  <h1 font="redhat leading-none" className="text-fs03 lg:text-6xl">
     {meta.name}
   </h1>
-  <h2 m="lg:b-2" grid="col-span-12" className="text-xl">
+  <h2 m="lg:b-2" className="text-xl">
     {meta.description}
   </h2>
-  <div className="col-span-12 md:col-span-9 lg:col-span-9">
-    <span className="float-left">
-      <img src="../images/careers/location_pin.gif" width="40px" />
-    </span>
-    <span className="float-left capitalize ml-2 mt-1.5">{meta.location}</span>
+  <div flex="~" align="items-center">
+    <img
+      src="../images/careers/location_pin.gif"
+      width="40px"
+      pos="relative -left-2 top-0"
+    />
+    <span text="capitalize">{meta.location}</span>
   </div>
 </section>
 
 <RegularWidth>
 
-    <List
-    	bgColor="#523C30"
-    	borderColor="transparent"
-    	textColor="#E7F0DA"
-    	title="About us"
-    	items={[
-    		'We are a full-service digital agency based in New York City.',
-    		'If you are passionate about building lasting brands for large enterprises and start-ups, please consider joining us.'
-    	]}
-    />
+{' '}
+<List
+  bgColor="#523C30"
+  borderColor="transparent"
+  textColor="#E7F0DA"
+  title="About us"
+  items={[
+    'We are a full-service digital agency based in New York City.',
+    'If you are passionate about building lasting brands for large enterprises and start-ups, please consider joining us.',
+  ]}
+/>
 
-    <List
-    	bgColor="black"
-    	borderColor="rgba(255, 255, 255, 0.2)"
-    	textColor="rgba(255, 255, 255, 0.8)"
-    	title="Qualifications"
-    	items={[
-    		'A portfolio that demonstrates product, branding, communication design experience',
-    		'Experience with holistic story-telling and design-systems thinking',
-    		'Visual Design skills with proficiency in typography, desktop/mobile UI, color, layout, iconography and aesthetic sense',
-    		'Experience in Adobe Creative Suite, including Photoshop, Illustrator and InDesign',
-    		'Must obtain work authorization in country of employment at the time of hire, and maintain ongoing work authorization during employment'
-    	]}
-    />
+{' '}
+<List
+  bgColor="black"
+  borderColor="rgba(255, 255, 255, 0.2)"
+  textColor="rgba(255, 255, 255, 0.8)"
+  title="Qualifications"
+  items={[
+    'A portfolio that demonstrates product, branding, communication design experience',
+    'Experience with holistic story-telling and design-systems thinking',
+    'Visual Design skills with proficiency in typography, desktop/mobile UI, color, layout, iconography and aesthetic sense',
+    'Experience in Adobe Creative Suite, including Photoshop, Illustrator and InDesign',
+    'Must obtain work authorization in country of employment at the time of hire, and maintain ongoing work authorization during employment',
+  ]}
+/>
 
-    <List
-    	bgColor="black"
-    	borderColor="rgba(255, 255, 255, 0.2)"
-    	textColor="rgba(255, 255, 255, 0.8)"
-    	title="Responsibilities"
-    	items={[
-    		'As a Brand Design Intern, you will work closely with designers, engineers, content designers and marketing to define and ensure a coherent brand expression across our ecosystem',
-    		'You will have multidisciplinary projects that bridge brand work across interactive, printed and environmental applications',
-    		'You will have the opportunity to think systematically about a holistic brand system and articulate design decisions and iterate quickly',
-    		'You will cover the design spectrum–from quick, rough strategic ideation to polished final deliverables',
-    		'You will be expected to utilize your full range of product design, communication design, and visual design skills',
-    		'Concept, prototype and execute brand and marketing experiences in product',
-    		'Extending brand expression system to interactive digital experiences',
-    		'Ideating visual concepts and refining design work based on creative direction',
-    		'Developing visual identity platforms, systems, typography, palette, illustration, iconography systems',
-    		'Working cross-functionally and collaborating with internal and external team members'
-    	]}
-    />
+{' '}
+<List
+  bgColor="black"
+  borderColor="rgba(255, 255, 255, 0.2)"
+  textColor="rgba(255, 255, 255, 0.8)"
+  title="Responsibilities"
+  items={[
+    'As a Brand Design Intern, you will work closely with designers, engineers, content designers and marketing to define and ensure a coherent brand expression across our ecosystem',
+    'You will have multidisciplinary projects that bridge brand work across interactive, printed and environmental applications',
+    'You will have the opportunity to think systematically about a holistic brand system and articulate design decisions and iterate quickly',
+    'You will cover the design spectrum–from quick, rough strategic ideation to polished final deliverables',
+    'You will be expected to utilize your full range of product design, communication design, and visual design skills',
+    'Concept, prototype and execute brand and marketing experiences in product',
+    'Extending brand expression system to interactive digital experiences',
+    'Ideating visual concepts and refining design work based on creative direction',
+    'Developing visual identity platforms, systems, typography, palette, illustration, iconography systems',
+    'Working cross-functionally and collaborating with internal and external team members',
+  ]}
+/>
 
 </RegularWidth>

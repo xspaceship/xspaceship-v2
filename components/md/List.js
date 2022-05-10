@@ -10,10 +10,10 @@ const List = props => {
   return (
     <div
       border="~ rounded-lg"
-      p="10"
+      p="4 lg:10"
       style={{ borderColor, backgroundColor: bgColor, color: textColor }}
       flex="~ col lg:row"
-      gap="10"
+      gap="4 lg:10"
       m="y-5 !lg:y-10"
     >
       <h3 font="medium" text="4xl" w="lg:400px" min-w="lg:400px">
