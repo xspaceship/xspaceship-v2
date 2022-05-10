@@ -67,7 +67,7 @@ const Careers = ({
         </h3>
 
         <div className="col-span-12 mb-16">
-          <div className="grid grid-cols-12 gap-x-5 gap-y-5">
+          <div className="grid grid-cols-12 gap-3 lg:gap-5">
             {/* Working here loop */}
 
             {workings.map(({ name, description, image }, index) => (
@@ -76,7 +76,7 @@ const Careers = ({
                 className="col-span-12 lg:col-span-6 md:col-span-6 sm:col-span-12"
               >
                 <div h="full" className="gap-x-8">
-                  <div className="rounded-lg p-8 row-span-3 bg-white bg-opacity-5">
+                  <div className="rounded-lg p-4 lg:p-8 row-span-3 bg-white bg-opacity-5">
                     <div w="16" p="b-4">
                       <Image
                         {...image}
@@ -102,13 +102,11 @@ const Careers = ({
           </h3>
         </div>
         <div className="col-span-12 pb-12 md:px-0 font-worksans">
-          <div className="grid grid-cols-3 gap-x-5 gap-y-5">
-            {/* Loop values */}
-            {/* style={{backgroundColor: color}} */}
+          <div className="grid grid-cols-3 gap-3 lg:gap-5">
             {values.map(({ name }, index) => (
               <div
                 key={index}
-                className="p-8 rounded-lg bg-white bg-opacity-5 lg:col-span-1 md:col-span-1 sm:col-span-3 col-span-12"
+                className="p-4 lg:p-8 rounded-lg bg-white bg-opacity-5 lg:col-span-1 md:col-span-1 sm:col-span-3 col-span-12"
               >
                 <h4 className="text-2xl">{name}</h4>
               </div>
@@ -137,49 +135,32 @@ const Careers = ({
       </div>
 
       {/* Jobs  */}
+      <div gap="5" m="x-5 md:x-0 t-12">
+        <h3 font="medium" text="4xl" m="b-8 lg:b-12 t-16">
+          Job openings
+        </h3>
 
-      <div className="gap-x-5 gap-y-5 pb-0 font-worksans mt-12 md:mx-0 mx-5">
-        <div className="col-span-12 md:px-0 my-0">
-          <h3 className="font-medium text-4xl lg:mb-12 md:mb-8 sm:mb-8 mb-8 mt-16">
-            Job openings
+        <div grid="md:~ md:cols-3" border="~ bc03 rounded-lg" p="4 md:8">
+          <h3 text="3xl md:4xl" m="b-4 md:b-8" grid="md:col-span-1">
+            Design
           </h3>
-        </div>
-
-        <div className="border border-bc03 rounded-lg p-8 py-0 col-span-12">
-          <div className="grid grid-cols-12">
-            {/* Title */}
-            <div className="lg:col-span-4 md:col-span-4 sm:col-span-12 col-span-12">
-              <h3 className="text-3xl lg:text-4xl mb-0 pt-8">Design</h3>
-            </div>
-
-            <div className="lg:col-span-8 md:col-span-8 sm:col-span-12 col-span-12">
-              <div className="col-span-8 divide-y-1 divide-bc03">
-                {/* Loop different jobs */}
-                {positions.map(
-                  ({ name, job_description, location, url }, index) => (
-                    <div
-                      key={index}
-                      className="p-8 pl-0 sm:px-0 grid grid-cols-12"
-                    >
-                      <h4 className="text-2xl mb-4 col-span-12">{name}</h4>
-
-                      <p className="mb-4 col-span-12">{job_description}</p>
-
-                      <div className="col-span-12 md:col-span-9 lg:col-span-9 mb-6">
-                        <span className="float-left capitalize mt-1.5">
-                          Location: {location}
-                        </span>
-                      </div>
-
-                      <div className="col-span-12 md:col-span-9 lg:col-span-12">
-                        <ButtonLink text="View" url={url} />
-                      </div>
-                    </div>
-                  ),
-                )}
-                {/* Loop ends */}
-              </div>
-            </div>
+          <div grid="md:col-span-2" divide="y-1 bc03">
+            {positions.map(
+              ({ name, job_description, location, url }, index) => (
+                <div
+                  key={index}
+                  p="not-first:t-4 not-last:b-4 md:not-first:t-8 md:not-last:b-8"
+                  space="y-4"
+                >
+                  <h4 className="text-2xl">{name}</h4>
+                  <p>{job_description}</p>
+                  <div className="capitalize">Location: {location}</div>
+                  <div m="!t-8">
+                    <ButtonLink text="View" url={url} />
+                  </div>
+                </div>
+              ),
+            )}
           </div>
         </div>
       </div>

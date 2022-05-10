@@ -49,7 +49,7 @@ const About = ({
     {/* Section: Why */}
     <div
       m="lg:x-10"
-      p="y-5 t-0 lg:x-22.5 lg:y-24 2xl:x-0"
+      p="lg:x-22.5 lg:y-24 2xl:x-0"
       grid="lg:cols-12 lg:gap-5"
       flex="col"
       display="flex lg:grid"
@@ -70,13 +70,23 @@ const About = ({
         <p text="md:lg">{why.subtext}</p>
       </div>
       <div grid="col-span-7 col-start-6" order="1">
-        <Image {...why.image} alt="" />
+        <Image
+          {...why.image}
+          alt={why.headline}
+          noRound
+          className="lg:rounded-lg"
+        />
       </div>
     </div>
 
     {/* Section: What */}
     <div pos="relative" m="lg:x-10">
-      <Image {...what.image} alt="" />
+      <Image
+        {...what.image}
+        alt={what.headline}
+        noRound
+        className="lg:rounded-lg"
+      />
       <div pos="lg:absolute lg:bottom-24" grid="lg:~ lg:cols-12 lg:gap-5">
         <div
           text="tc03 center 2xl"
@@ -115,7 +125,7 @@ const About = ({
             m="x-auto"
             key={index}
           >
-            <Image {...i} alt="" />
+            <Image {...i} alt={branding.headline} />
           </div>
         ))}
       </div>

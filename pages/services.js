@@ -251,7 +251,7 @@ const About = ({
         m="lg:x-10 2xl:x-5"
         p="5 lg:x-22.5 lg:y-0"
         bg="bg05"
-        border="rounded-b-lg"
+        border="lg:rounded-b-lg"
         grid="lg:~ lg:cols-12 lg:gap-5"
       >
         <div

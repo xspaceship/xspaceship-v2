@@ -32,9 +32,9 @@ const Image = props => {
         overflow="hidden"
         h="full"
         border={round}
-        className={`image-wrapper ${className} ${
+        className={`image-wrapper ${
           isLoaded ? 'is-image-loaded' : ''
-        }`}
+        } ${className}`}
       >
         <div
           aria-hidden="true"
@@ -55,11 +55,11 @@ const Image = props => {
           onLoadingComplete={() => setIsLoaded(true)}
         />
       </div>
-      {caption ? (
+      {caption && (
         <figcaption m="y-5" className={`text-${captionAlignment} text-sm`}>
           {caption}
         </figcaption>
-      ) : null}
+      )}
     </div>
   );
 };

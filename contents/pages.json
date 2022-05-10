@@ -93,7 +93,7 @@
   "services": {
     "title": "xspaceship | Services",
     "description": "We are a full-service digital agency. Our services include: digital design, web development and visual branding.",
-    "headline": "We fuse <span class='text-gradient-02'>creativity, craft, & technology</span> into  <span class='text-gradient-02'>experiences</span> that improve lives.",
+    "headline": "We fuse <span class='text-gradient-02'>creativity, craft, & technology</span> into <span class='text-gradient-02'>experiences</span> that improve lives.",
     "product": {
       "headline": "Digital Design & Strategy",
       "list": ["Mobile applications", "Web applications", "Digital campaigns"],
@@ -137,13 +137,13 @@
           "gradientTo": "rgba(255,255,255,0.1)"
         },
         {
-          "name": "14",
+          "name": "03",
           "span": 4,
           "gradientFrom": "rgba(255,255,255,0.2)",
           "gradientTo": "rgba(255,255,255,0.1)"
         },
         {
-          "name": "15",
+          "name": "14",
           "span": 7,
           "gradientFrom": "rgba(255,255,255,0.2)",
           "gradientTo": "rgba(255,255,255,0.1)"
@@ -181,7 +181,7 @@
       ],
       "imageM": [
         {
-          "name": "16",
+          "name": "15",
           "span": 7,
           "gradientFrom": "rgba(255,255,255,0.2)",
           "gradientTo": "rgba(255,255,255,0.1)"
@@ -199,7 +199,7 @@
           "gradientTo": "rgba(255,255,255,0.1)"
         },
         {
-          "name": "17",
+          "name": "16",
           "span": 7,
           "gradientFrom": "rgba(255,255,255,0.2)",
           "gradientTo": "rgba(255,255,255,0.1)"
@@ -241,7 +241,7 @@
       ],
       "imageM": [
         {
-          "name": "18",
+          "name": "17",
           "span": 7,
           "gradientFrom": "rgba(255,255,255,0.2)",
           "gradientTo": "rgba(255,255,255,0.1)"
@@ -253,13 +253,13 @@
           "gradientTo": "rgba(255,255,255,0.1)"
         },
         {
-          "name": "19",
+          "name": "11",
           "span": 4,
           "gradientFrom": "rgba(255,255,255,0.2)",
           "gradientTo": "rgba(255,255,255,0.1)"
         },
         {
-          "name": "20",
+          "name": "18",
           "span": 7,
           "gradientFrom": "rgba(255,255,255,0.2)",
           "gradientTo": "rgba(255,255,255,0.1)"
