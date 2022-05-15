@@ -10,7 +10,7 @@ const Title = props => {
       {...rest}
     >
       <h1
-        font="redhat !leading-lh02 bold"
+        font="redhat !leading-lh02 semibold"
         grid="col-span-12 md:col-span-9 lg:col-span-9"
         className="text-fs03 lg:text-6xl"
       >

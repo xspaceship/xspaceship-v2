@@ -19,6 +19,9 @@ export default defineConfig({
         'col-start-auto',
         'lg:block',
         'md:block',
+        'xl:block',
+        '2xl:block',
+        'h-lg:block',
         'hidden',
       ],
       keyframes: true,
@@ -29,6 +32,7 @@ export default defineConfig({
     extend: {
       screens: {
         lg: '1280px',
+        'h-lg': '1400px',
         '2xl': '1800px',
       },
       backgroundColor: {
@@ -51,7 +55,7 @@ export default defineConfig({
         fs03: '2.25rem',
       },
       lineHeight: {
-        lh01: '1.1',
+        lh01: '1.25',
         lh02: '1.2',
       },
       fontFamily: {
@@ -65,6 +69,7 @@ export default defineConfig({
         tc04: '#F4F4F4',
         tc05: '#9D9D9D',
         tc06: '#A5A6F6',
+        tc07: '#9391CB',
       },
       padding: {
         7.5: '1.875rem',

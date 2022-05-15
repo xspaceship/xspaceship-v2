@@ -46,12 +46,6 @@ button:focus {
 }
 
 .text-gradient-02 {
-  background: linear-gradient(90deg, #8683c2 0%, #c2bfd5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-03 {
   background: linear-gradient(90deg, #a78462 0%, #a5cdbb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

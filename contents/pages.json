@@ -13,8 +13,8 @@
       "path": "/services"
     },
     {
-      "name": "About",
-      "path": "/about"
+      "name": "Why Us",
+      "path": "/why-us"
     },
     {
       "name": "Careers",
@@ -24,12 +24,12 @@
   "home": {
     "title": "xspaceship | Full-service digital design & development agency",
     "description": "We partner with start-ups and enterprises to design and build great brands and digital products. Achieve your biggest business ambitions with our world-class design and engineering team.",
-    "headline": "Global Branding<br />& Digital Products"
+    "headline": "We help <span class='text-gradient-01'>start-ups & enterprises</span><br class='hidden h-lg:block' /> design & build great <br class='hidden h-lg:block' /><span class='text-gradient-01'>digital products</span>"
   },
   "about": {
-    "title": "xspaceship | About",
+    "title": "xspaceship | Why Us",
     "description": "We are a team of veterans from the world of Ogilvy & Mather, Collins, Facebook, & Uber to deliver the most unifying, thoughtful and comprehensive creative services.",
-    "headline": "We are a group of <span class='text-gradient-03'>art directors, product designers, & technologists</span>.",
+    "headline": "Design & build products with our <br class='hidden h-lg:block' /> group of <span class='text-gradient-01'>talented product designers, engineers, & art directors</span>",
     "why": {
       "headline": "The gap we are filling.",
       "text": "Most agencies can only do one thing well — branding or digital strategy. That results in a big dilemma: hiring both, or only one.",
@@ -93,7 +93,7 @@
   "services": {
     "title": "xspaceship | Services",
     "description": "We are a full-service digital agency. Our services include: digital design, web development and visual branding.",
-    "headline": "We fuse <span class='text-gradient-02'>creativity, craft, & technology</span> into <span class='text-gradient-02'>experiences</span> that improve lives.",
+    "headline": "We fuse <span class='text-gradient-01'>creativity, craft, & <br class='hidden h-lg:block' /> technology</span> into <span class='text-gradient-01'>experiences</span> that <br class='hidden h-lg:block' /> improve people's lives.",
     "product": {
       "headline": "Digital Design & Strategy",
       "list": ["Mobile applications", "Web applications", "Digital campaigns"],

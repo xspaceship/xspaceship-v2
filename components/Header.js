@@ -1,6 +1,8 @@
 import Link from 'components/Link';
+import content from 'contents/footer.json';
 import meta from 'contents/pages.json';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Logo from './Logo';
 
@@ -59,6 +61,35 @@ const Header = () => {
             </Link>
           ))}
         </nav>
+        <div display="hidden 2xl:block" space="y-5">
+          <a
+            href={`mailto:${meta.email}`}
+            font="leading-5 medium"
+            className="text-tc07"
+          >
+            {meta.email}
+          </a>
+          <div space="x-5" flex="~">
+            {content.social.map(({ name, image, path }, index) => (
+              <a
+                key={index}
+                target="_blank"
+                href={path}
+                rel="noreferrer"
+                flex="inline"
+                w="6"
+                h="6"
+              >
+                <Image
+                  src={`/images/${image}.png`}
+                  width={40}
+                  height={40}
+                  alt={name}
+                />
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
 
       {is2XL ? '' : <Nav />}

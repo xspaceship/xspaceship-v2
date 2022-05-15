@@ -52,8 +52,8 @@ const About = ({
         border="rounded-lg"
       >
         <h1
-          grid="col-span-12 md:col-span-9 2xl:col-span-11"
-          font="redhat leading-lh01 bold md:leading-tight"
+          grid="col-span-12"
+          font="redhat leading-lh01 semibold md:leading-tight"
           text="white fs01 md:7xl"
           dangerouslySetInnerHTML={{ __html: headline }}
         />
