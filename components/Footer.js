@@ -1,4 +1,3 @@
-import content from 'contents/footer.json';
 import meta from 'contents/pages.json';
 import Image from 'next/image';
 import { currentYear } from 'utils/time';
@@ -25,7 +24,7 @@ const Footer = () => (
           {meta.email}
         </a>
         <div space="x-6" flex="~">
-          {content.social.map(({ name, image, path }, index) => (
+          {meta.social.map(({ name, image, path }, index) => (
             <a
               key={index}
               target="_blank"

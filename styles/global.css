@@ -234,3 +234,7 @@ button:focus {
   box-shadow: 0 0 0 0 #fff;
   animation-name: pulsB;
 }
+
+.swiper-slide {
+  display: flex;
+}

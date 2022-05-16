@@ -1,5 +1,4 @@
 import Link from 'components/Link';
-import content from 'contents/footer.json';
 import meta from 'contents/pages.json';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -70,7 +69,7 @@ const Header = () => {
             {meta.email}
           </a>
           <div space="x-5" flex="~">
-            {content.social.map(({ name, image, path }, index) => (
+            {meta.social.map(({ name, image, path }, index) => (
               <a
                 key={index}
                 target="_blank"

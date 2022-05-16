@@ -1,6 +1,7 @@
 import Image from 'components/Image';
 import Layout from 'components/Layout';
 import Link from 'components/Link';
+import home from 'contents/home.json';
 import meta from 'contents/pages.json';
 import { NextSeo } from 'next-seo';
 import { useCallback, useState } from 'react';
@@ -139,7 +140,7 @@ const Index = ({ types, works, title, description, headline, ogImage }) => {
 export default Index;
 
 export async function getStaticProps() {
-  const { title, headline, description } = meta.home;
+  const { title, headline, description } = home;
   const { ogImage } = meta;
 
   const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;

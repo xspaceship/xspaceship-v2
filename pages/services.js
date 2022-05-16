@@ -1,6 +1,7 @@
 import Image from 'components/Image';
 import Layout from 'components/Layout';
 import meta from 'contents/pages.json';
+import services from 'contents/services.json';
 import { NextSeo } from 'next-seo';
 import { useCallback } from 'react';
 import { getAllImage } from 'utils/image';
@@ -330,7 +331,6 @@ export default About;
 
 export async function getStaticProps() {
   const images = await getAllImage('services');
-  const services = { ...meta.services };
   const { ogImage } = meta;
 
   const { product, branding, development } = services;
@@ -338,10 +338,7 @@ export async function getStaticProps() {
   const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;
 
   const transformImage = image =>
-    image.map(i => ({
-      ...i,
-      name: images[i.name],
-    }));
+    image.map(i => ({ ...i, name: images[i.name] }));
 
   const getTransformedImage = src => {
     const image = transformImage(src.image);

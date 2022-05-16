@@ -23,6 +23,7 @@ export default defineConfig({
         '2xl:block',
         'h-lg:block',
         'hidden',
+        'col-span-4',
       ],
       keyframes: true,
     },
@@ -48,6 +49,7 @@ export default defineConfig({
         bg10: 'rgba(0, 0, 0, 0.4)',
         bg11: 'rgba(255, 255, 255, 0.2)',
         bg12: '#111111',
+        bg13: '#141414',
       },
       fontSize: {
         fs01: '2.5rem',
@@ -70,6 +72,8 @@ export default defineConfig({
         tc05: '#9D9D9D',
         tc06: '#A5A6F6',
         tc07: '#9391CB',
+        tc08: '#ECB0B0',
+        tc09: '##C2C2C2',
       },
       padding: {
         7.5: '1.875rem',

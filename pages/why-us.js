@@ -1,6 +1,8 @@
+import Features from 'components/Features';
 import Image from 'components/Image';
 import Layout from 'components/Layout';
 import meta from 'contents/pages.json';
+import whyUs from 'contents/why-us.json';
 import { NextSeo } from 'next-seo';
 import { getAllImage } from 'utils/image';
 
@@ -10,7 +12,7 @@ const About = ({
   ogImage,
   headline,
   why,
-  what,
+  // what,
   branding,
 }) => (
   <Layout title={title} p="2xl:t-8">
@@ -47,62 +49,27 @@ const About = ({
     </div>
 
     {/* Section: Why */}
-    <div
-      m="lg:x-10"
-      p="lg:x-22.5 lg:y-24 2xl:x-0"
-      grid="lg:cols-12 lg:gap-5"
-      flex="col"
-      display="flex lg:grid"
-    >
-      <div
-        grid="col-span-4"
-        font="medium"
-        order="2 lg:1"
-        p="5 lg:0"
-        bg="bg08 lg:transparent"
-      >
-        <h2 m="y-6" text="4xl">
-          {why.headline}
-        </h2>
-        <p m="b-2" text="md:lg">
-          {why.text}
-        </p>
-        <p text="md:lg">{why.subtext}</p>
+    <div p="lg:x-22.5 2xl:x-0" m="x-5 lg:x-10 2xl:x-5">
+      <div font="redhat semibold leading-lh02" text="2xl lg:fs01" m="b-10">
+        {why.headline}
       </div>
-      <div grid="col-span-7 col-start-6" order="1">
-        <Image
-          {...why.image}
-          alt={why.headline}
-          noRound
-          className="lg:rounded-lg"
-        />
+      <div m="b-10">
+        <div font="redhat semibold" text="2xl" m="b-5">
+          {why.description01}
+        </div>
+        <Features features={why.feature01} />
+      </div>
+      <div m="b-10">
+        <div font="redhat semibold" text="2xl" m="b-5">
+          {why.description02}
+        </div>
+        <Features features={why.feature02} />
       </div>
     </div>
 
     {/* Section: What */}
     <div pos="relative" m="lg:x-10">
-      <Image
-        {...what.image}
-        alt={what.headline}
-        noRound
-        className="lg:rounded-lg"
-      />
-      <div pos="lg:absolute lg:bottom-24" grid="lg:~ lg:cols-12 lg:gap-5">
-        <div
-          text="tc03 center 2xl"
-          p="x-5 y-10 lg:x-10"
-          border="b bc02 lg:transparent lg:~ lg:rounded-lg"
-          bg="lg:black"
-          grid="lg:col-span-8 lg:col-start-3"
-        >
-          <h3 m="b-4" text="4xl" className="text-gradient-01">
-            {what.headline}
-          </h3>
-          <h3 font="medium" text="2xl">
-            {what.text}
-          </h3>
-        </div>
-      </div>
+      456
     </div>
 
     {/* Section: Brand */}
@@ -112,7 +79,7 @@ const About = ({
         display="block"
         w="full"
         m="b-5"
-        text="lg leading-7 tc05 center"
+        text="fs01 leading-lh02 center"
       >
         {branding.headline}
       </h3>
@@ -137,21 +104,18 @@ export default About;
 
 export async function getStaticProps() {
   const images = await getAllImage('about');
-  const about = { ...meta.about };
   const { ogImage } = meta;
   const addedHostUrlOgImage = (process.env.HOST || '') + ogImage;
 
-  const { what, why, branding } = about;
+  const { branding } = whyUs;
 
-  const newAbout = {
-    ...about,
-    what: { ...what, image: { ...what.image, ...images[what.image.name] } },
-    why: { ...why, image: { ...why.image, ...images[why.image.name] } },
+  const newWhyUs = {
+    ...whyUs,
     branding: {
       ...branding,
       image: branding.image.map(i => ({ ...i, ...images[i.name] })),
     },
   };
 
-  return { props: { ...newAbout, ogImage: addedHostUrlOgImage } };
+  return { props: { ...newWhyUs, ogImage: addedHostUrlOgImage } };
 }

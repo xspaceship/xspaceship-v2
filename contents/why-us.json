@@ -1,0 +1,78 @@
+{
+  "title": "xspaceship | Why Us",
+  "description": "We are a team of veterans from the world of Ogilvy & Mather, Collins, Facebook, & Uber to deliver the most unifying, thoughtful and comprehensive creative services.",
+  "headline": "Design & build products with our <br class='hidden h-lg:block' /> group of <span class='text-gradient-01'>talented product designers, engineers, & art directors</span>",
+  "why": {
+    "headline": "The problems we are solving for",
+    "description01": "Hiring traditional agencies",
+    "feature01": [
+      {
+        "headline": "Low quality work",
+        "description": "Traditional agencies typically work on simple short-term projects and are not familiar with building complex SaaS products."
+      },
+      {
+        "headline": "Broken collaboration",
+        "description": "Traditional agencies work in silo. You are blind-sided from their progress and frustration builds when the end-result is less than desirable."
+      },
+      {
+        "headline": "Lacking context",
+        "description": "Constantly context-switch leads to teams lacking business context as well as in-depth industry knowledge."
+      }
+    ],
+    "description02": "Hiring full-time workers",
+    "feature02": [
+      {
+        "headline": "Long, arduous hiring process",
+        "description": "Hiring a full-timer can be a daunting task: vetting the right candidates, figuring out scheduling logistics, the back-and-forth negotiations, the ghosting, and the turn-downs."
+      },
+      {
+        "headline": "High risk",
+        "description": "After months of onboarding and integrating this person into the team, you realized you hired the wrong person."
+      },
+      {
+        "headline": "High costs",
+        "description": "Along with the salary, you will be paying premium for employee benefits."
+      }
+    ]
+  },
+  "branding": {
+    "headline": "Our trusted partners",
+    "image": [
+      {
+        "name": "03",
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "04",
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "05",
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "06",
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "07",
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "08",
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "09",
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      }
+    ]
+  }
+}
