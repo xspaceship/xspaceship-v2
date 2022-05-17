@@ -1,4 +1,5 @@
 import Link from 'components/Link';
+import { BREAKPOINT_2XL } from 'consts';
 import meta from 'contents/pages.json';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -11,12 +12,14 @@ const Header = () => {
   const [is2XL, setIs2XL] = useState(true);
 
   const handleResize = e => {
-    setIs2XL(e.target.innerWidth >= 1800);
+    setIs2XL(e.target.innerWidth >= BREAKPOINT_2XL);
   };
 
   useEffect(() => {
-    if (window && window.innerWidth < 1800) {
+    if (window && window.innerWidth < BREAKPOINT_2XL) {
       setIs2XL(false);
+    } else {
+      setIs2XL(true);
     }
 
     window.addEventListener('resize', handleResize);

@@ -24,6 +24,10 @@ export default defineConfig({
         'h-lg:block',
         'hidden',
         'col-span-4',
+        'text-black',
+        'text-white',
+        'order-2',
+        'lg:order-1',
       ],
       keyframes: true,
     },
@@ -50,6 +54,9 @@ export default defineConfig({
         bg11: 'rgba(255, 255, 255, 0.2)',
         bg12: '#111111',
         bg13: '#141414',
+        bg14: '#EEEEEE',
+        bg15: '#3D3D3D',
+        bg16: '#252525',
       },
       fontSize: {
         fs01: '2.5rem',
@@ -74,6 +81,7 @@ export default defineConfig({
         tc07: '#9391CB',
         tc08: '#ECB0B0',
         tc09: '##C2C2C2',
+        tc10: '##A3A3A3',
       },
       padding: {
         7.5: '1.875rem',

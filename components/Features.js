@@ -6,19 +6,24 @@ const Features = ({ features }) => {
   const swiperRef = useRef();
 
   useEffect(() => {
-    if (swiperRef.current) {
-      let maxHeight = 0;
-      const slides = swiperRef.current.querySelectorAll('.swiper-slide');
+    const timeout = setTimeout(() => {
+      if (swiperRef.current) {
+        let maxHeight = 0;
+        const slides = swiperRef.current.querySelectorAll('.swiper-slide');
 
-      for (const slide of slides) {
-        if (slide.clientHeight > maxHeight) maxHeight = slide.clientHeight;
+        for (const slide of slides) {
+          if (slide.clientHeight > maxHeight) maxHeight = slide.clientHeight;
+        }
+
+        for (const slide of slides) {
+          slide.style.height = `${maxHeight}px`;
+        }
       }
 
-      for (const slide of slides) {
-        slide.style.height = `${maxHeight}px`;
-      }
-    }
+      clearTimeout(timeout);
+    }, 50);
   }, []);
+
   return (
     <>
       <div display="hidden lg:grid" grid="cols-3 gap-5">
@@ -41,8 +46,8 @@ const Features = ({ features }) => {
       >
         {features.map((feature, index) => (
           <SwiperSlide key={index}>
-            <div bg="bg13" p="10" space="y-5" border="rounded-lg">
-              <h4 text="tc08 2xl leading-lh01" font="semibold redhat">
+            <div bg="bg13" p="6" space="y-4" border="rounded-lg">
+              <h4 text="tc08 xl leading-lh01" font="semibold redhat">
                 {feature.headline}
               </h4>
               <p text="leading-lh01 tc09" font="worksans">

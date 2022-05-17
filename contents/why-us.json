@@ -4,7 +4,7 @@
   "headline": "Design & build products with our <br class='hidden h-lg:block' /> group of <span class='text-gradient-01'>talented product designers, engineers, & art directors</span>",
   "why": {
     "headline": "The problems we are solving for",
-    "description01": "Hiring traditional agencies",
+    "description01": "traditional agencies",
     "feature01": [
       {
         "headline": "Low quality work",
@@ -19,7 +19,7 @@
         "description": "Constantly context-switch leads to teams lacking business context as well as in-depth industry knowledge."
       }
     ],
-    "description02": "Hiring full-time workers",
+    "description02": "full-time workers",
     "feature02": [
       {
         "headline": "Long, arduous hiring process",
@@ -35,41 +35,141 @@
       }
     ]
   },
+  "what": {
+    "headline": "Our embedded model is the solution",
+    "feature": [
+      {
+        "headline": "An all-star team",
+        "description": "Our design and engineering leads have stellar track-record designing and building world-class products at Uber and Meta.",
+        "image": {
+          "name": "01",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        "imageM": {
+          "name": "01m",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        "icon": {
+          "name": "02",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      },
+      {
+        "headline": "Fully embedded",
+        "description": "Our team integrates into your team seamlessly for smooth collaboration.",
+        "image": {
+          "name": "03",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        "imageM": {
+          "name": "03m",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        "icon": {
+          "name": "04",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      },
+      {
+        "headline": "Diverse talents",
+        "description": "Leverage our talent pools in product design, brand design, and engineering  to fulfill your product needs without having to hire or pay more.",
+        "image": {
+          "name": "05",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        "imageM": {
+          "name": "05m",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        "icon": {
+          "name": "06",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      },
+      {
+        "headline": "Risk-free",
+        "description": "Your needs changed? No worries, with a short-term notice we will help you wrap up and hand off the projects.",
+        "image": {
+          "name": "07",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        "imageM": {
+          "name": "07m",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        "icon": {
+          "name": "08",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      },
+      {
+        "headline": "Long-term Partnership",
+        "description": "We will spend time building industry knowledge, and deeply empathizing with your user problems.",
+        "image": {
+          "name": "09",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        "imageM": {
+          "name": "09m",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        },
+        "icon": {
+          "name": "06",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      }
+    ]
+  },
   "branding": {
     "headline": "Our trusted partners",
     "image": [
       {
-        "name": "03",
+        "name": "10",
         "gradientFrom": "rgba(255,255,255,0.2)",
         "gradientTo": "rgba(255,255,255,0.1)"
       },
       {
-        "name": "04",
+        "name": "11",
         "gradientFrom": "rgba(255,255,255,0.2)",
         "gradientTo": "rgba(255,255,255,0.1)"
       },
       {
-        "name": "05",
+        "name": "12",
         "gradientFrom": "rgba(255,255,255,0.2)",
         "gradientTo": "rgba(255,255,255,0.1)"
       },
       {
-        "name": "06",
+        "name": "13",
         "gradientFrom": "rgba(255,255,255,0.2)",
         "gradientTo": "rgba(255,255,255,0.1)"
       },
       {
-        "name": "07",
+        "name": "14",
         "gradientFrom": "rgba(255,255,255,0.2)",
         "gradientTo": "rgba(255,255,255,0.1)"
       },
       {
-        "name": "08",
+        "name": "15",
         "gradientFrom": "rgba(255,255,255,0.2)",
         "gradientTo": "rgba(255,255,255,0.1)"
       },
       {
-        "name": "09",
+        "name": "16",
         "gradientFrom": "rgba(255,255,255,0.2)",
         "gradientTo": "rgba(255,255,255,0.1)"
       }
