@@ -128,7 +128,7 @@
           "gradientTo": "rgba(255,255,255,0.1)"
         },
         "icon": {
-          "name": "06",
+          "name": "10",
           "gradientFrom": "rgba(255,255,255,0.2)",
           "gradientTo": "rgba(255,255,255,0.1)"
         }
@@ -138,11 +138,6 @@
   "branding": {
     "headline": "Our trusted partners",
     "image": [
-      {
-        "name": "10",
-        "gradientFrom": "rgba(255,255,255,0.2)",
-        "gradientTo": "rgba(255,255,255,0.1)"
-      },
       {
         "name": "11",
         "gradientFrom": "rgba(255,255,255,0.2)",
@@ -170,6 +165,11 @@
       },
       {
         "name": "16",
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "17",
         "gradientFrom": "rgba(255,255,255,0.2)",
         "gradientTo": "rgba(255,255,255,0.1)"
       }
