@@ -32,7 +32,7 @@ const Image = props => {
         overflow="hidden"
         h="full"
         border={round}
-        className={`image-wrapper ${
+        className={`image-wrapper ${round ? 'is-rounded' : ''} ${
           isLoaded ? 'is-image-loaded' : ''
         } ${className}`}
       >

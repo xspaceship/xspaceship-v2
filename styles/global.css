@@ -56,6 +56,9 @@ button:focus {
   display: block !important;
   height: inherit !important;
 }
+.image-wrapper.is-rounded > span {
+  border-radius: 8px;
+}
 
 .image-wrapper img,
 .image-wrapper .image-placeholder {
