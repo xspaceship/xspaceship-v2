@@ -1,0 +1,152 @@
+import Image from 'components/Image';
+import Layout from 'components/Layout';
+import Caption from 'components/md/Caption';
+import FullWidth from 'components/md/FullWidth';
+import Header from 'components/md/Header';
+import Paragraph from 'components/md/Paragraph';
+import RegularWidth from 'components/md/RegularWidth';
+import Title from 'components/md/Title';
+import TwoColumns from 'components/md/TwoColumns';
+import rootMeta from 'contents/pages.json';
+import { NextSeo } from 'next-seo';
+import { getAllImage } from 'utils/image';
+
+export const meta = {
+  slug: 'roomi',
+  name: 'Roomi',
+  category: ['Real Estate', 'SaaS', 'Mobile'],
+  description: 'A verified community for roommates.',
+  sub: 'Mobile design',
+  year: 2020,
+  preview: '05',
+  width: 'full',
+  order: 3,
+  gradientFrom: '#B0D0D1',
+  gradientTo: '#5277DC',
+};
+
+export async function getStaticProps(context) {
+  const images = await getAllImage('roomi');
+  const { gradientFrom, gradientTo } = meta;
+  for (const key in images) {
+    images[key] = { ...images[key], gradientFrom, gradientTo };
+  }
+  const ogImage =
+    (process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+  const title = rootMeta.name + ' | ' + meta.name;
+  return { props: { images, ...meta, title, ogImage } };
+}
+
+export default ({ children }) => (
+  <Layout title={meta.name} p="2xl:t-8">
+    {children}
+  </Layout>
+);
+
+<NextSeo
+  title={props.title}
+  description={props.description}
+  openGraph={{
+    title: props.title,
+    description: props.description,
+    images: [
+      {
+        url: props.ogImage,
+        alt: props.title,
+        type: 'png',
+      },
+    ],
+  }}
+/>
+
+<Title
+  text="Rent rooms and find roommates in a verified community."
+  sub="Roomi 2021"
+/>
+
+<FullWidth>
+  <Image {...props.images['01']} />
+</FullWidth>
+
+<RegularWidth>
+  <Paragraph>
+    <div className="mb-3">
+      Roomi is the largest social network for roommates. It’s a dynamic
+      marketplace where people can get verified, matched based on compatibility,
+      search for their ideal rooms, and post their rooms for rent.
+    </div>
+    <div>
+      We partnered with the Roomi team to revamp the mobile applications on iOS
+      and Android, with a common goal to streamline user experience and maximize
+      values to users.
+    </div>
+  </Paragraph>
+</RegularWidth>
+
+<RegularWidth>
+  <Header>1 — Getting started</Header>
+  <TwoColumns>
+    <Image {...props.images['02']} />
+    <Image {...props.images['03']} />
+  </TwoColumns>
+  <Caption>
+    After downloading the application, users can already browse listing without
+    signing up. This lowers the barrier to entry and enable users to get values
+    out of the application immediately. The sign up experience is extremely
+    simple with only a few basic questions. Users will then go through a phone
+    verification to guarantee maximum security.
+  </Caption>
+</RegularWidth>
+
+<RegularWidth>
+  <Header>2 — Finding a place to stay</Header>
+  <TwoColumns>
+    <Image {...props.images['04']} />
+    <Image {...props.images['05']} />
+  </TwoColumns>
+  <Caption>
+    To find rooms and apartments, users go to the very first tab - Listings.
+    Here users can scroll through thousands of listings with a high-level
+    overview with important information. Tapping on each listing reveals a
+    detailed screen that show case comprehensive and well-organized information,
+    such as layouts, capacity, host profile, amenities, house rules,
+    transportations, and more.
+  </Caption>
+  <TwoColumns>
+    <Image {...props.images['06']} />
+    <Image {...props.images['07']} />
+  </TwoColumns>
+  <Caption>
+    To ensure that we are showing the best results. We have designed a robust
+    filtering system, which enable users to tailor their search in various
+    requirements, such as Location, neighborhood, listing type, number of beds,
+    baths, budget, etc.
+  </Caption>
+</RegularWidth>
+
+<RegularWidth>
+  <Header>3 — Searching for roomate</Header>
+  <Image {...props.images['08']} />
+  <Caption>
+    Finding a roommate is like dating. We use an algorithm to give you the best
+    roommate matches. The experience is gamified to make the search fun. We
+    designed a rich profile experience that brings out diverse personalities.
+  </Caption>
+  <Image {...props.images['09']} />
+</RegularWidth>
+
+<RegularWidth>
+  <Header>4 — Getting verified</Header>
+  <Image {...props.images['10']} />
+  <Caption>
+    Roomi’s biggest value proposition is being the safest social network with
+    robust background verifications. We created digital touch points that
+    appeared at the right moments to educate users about how Roomi verifies
+    users and at the same time, prompt user to get verified.
+  </Caption>
+</RegularWidth>
+
+<RegularWidth>
+  <Header>5 — Boosts</Header>
+  <Image {...props.images['11']} />
+</RegularWidth>

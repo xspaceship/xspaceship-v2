@@ -1,0 +1,36 @@
+{
+  "name": "xspaceship",
+  "shortName": "xspaceship",
+  "email": "hello@xspaceship.com",
+  "ogImage": "/images/xspaceship.png",
+  "nav": [
+    {
+      "name": "Work",
+      "path": "/"
+    },
+    {
+      "name": "Services",
+      "path": "/services"
+    },
+    {
+      "name": "Why Us",
+      "path": "/why-us"
+    },
+    {
+      "name": "Careers",
+      "path": "/careers"
+    }
+  ],
+  "social": [
+    {
+      "name": "Instagram",
+      "image": "instagram",
+      "path": "https://www.instagram.com/xspaceship.nyc/"
+    },
+    {
+      "name": "LinkedIn",
+      "image": "linkedin",
+      "path": "https://www.linkedin.com/company/xspaceship/about/"
+    }
+  ]
+}

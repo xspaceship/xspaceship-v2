@@ -1,0 +1,364 @@
+import Image from 'components/Image';
+import Layout from 'components/Layout';
+import Caption from 'components/md/Caption';
+import FullWidth from 'components/md/FullWidth';
+import Header from 'components/md/Header';
+import Paragraph from 'components/md/Paragraph';
+import RegularWidth from 'components/md/RegularWidth';
+import Title from 'components/md/Title';
+import TwoColumns from 'components/md/TwoColumns';
+import rootMeta from 'contents/pages.json';
+import { NextSeo } from 'next-seo';
+import { getAllImage } from 'utils/image';
+
+export const meta = {
+  slug: 'uber',
+  name: 'Uber',
+  category: ['Analytics', 'SaaS', 'Web'],
+  description: 'An alert framework for global live ops',
+  sub: 'Branding, web design & development',
+  year: 2021,
+  preview: '02',
+  width: 'half',
+  order: 5,
+  gradientFrom: '#92BFC2',
+  gradientTo: '#D0D0C7',
+};
+
+export async function getStaticProps() {
+  const images = await getAllImage('uber');
+  const { gradientFrom, gradientTo } = meta;
+  for (const key in images) {
+    images[key] = { ...images[key], gradientFrom, gradientTo };
+  }
+  const ogImage =
+    (process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+  const title = rootMeta.name + ' | ' + meta.name;
+  return { props: { images, ...meta, title, ogImage } };
+}
+
+export default ({ children }) => (
+  <Layout title={meta.name} p="2xl:t-8">
+    {children}
+  </Layout>
+);
+
+<NextSeo
+  title={props.title}
+  description={props.description}
+  openGraph={{
+    title: props.title,
+    description: props.description,
+    images: [
+      {
+        url: props.ogImage,
+        alt: props.title,
+        type: 'png',
+      },
+    ],
+  }}
+/>
+
+<Title text="An alert framework for global live ops." sub="UberEats 2020" />
+
+<FullWidth>
+  <Image {...props.images['01']} />
+</FullWidth>
+
+<RegularWidth>
+  <Paragraph>
+    Terra is UberEats’ marketplace real-time monitoring tool used by global Live
+    Ops to manage our global marketplace dynamics. When there is an imbalance in
+    supply and demand (a sudden spike in demand, for example), ops teams can
+    pull various levers that help balance the marketplace in real-time.
+  </Paragraph>
+</RegularWidth>
+
+<RegularWidth>
+  <Header>1 — The new feature</Header>
+  <Image {...props.images['02']} />
+  <Paragraph>
+    We designed and developed a new activity and alert framework within Terra
+    that gave UberEats Live Ops team timely alerts and full context of global
+    marketplace dynamics. This new feature led to:
+  </Paragraph>
+</RegularWidth>
+
+<RegularWidth>
+  <div p="y-10" flex="~" justify="center">
+    <div flex="~ col lg:row" gap="5">
+      <div flex="~" gap="6">
+        <div w="60px" h="60px">
+          <Image {...props.images['arrow_up']} />
+        </div>
+        <li list="none" font="medium" m="b-3 lg:b-5" text="4xl lg:6xl">
+          25%
+        </li>
+        <li list="none" opacity="50" text="lg:xl">
+          Agents productivity
+        </li>
+      </div>
+      <div flex="~" gap="6">
+        <div w="60px" h="60px">
+          <Image {...props.images['arrow_down']} />
+        </div>
+        <li list="none" font="medium" m="b-3 lg:b-5" text="4xl lg:6xl">
+          15m
+        </li>
+        <li list="none" opacity="50" text="lg:xl">
+          Alerts resolvement time
+        </li>
+      </div>
+    </div>
+  </div>
+</RegularWidth>
+
+<RegularWidth>
+  <Header>2 — The challenge</Header>
+  <Image {...props.images['03']} />
+</RegularWidth>
+
+<RegularWidth>
+  <div
+    flex="col"
+    display="flex lg:grid"
+    grid="cols-12"
+    gap="10"
+    p="y-10 lg:y-20"
+    m="lg:b-5"
+  >
+    <div grid="lg:col-start-2 lg:col-span-4" text="xl" font="medium">
+      <div m="lg:b-3">
+        There was not a centralized place to view actions taken to manage the
+        marketplace.
+      </div>
+      <div>
+        Ops needed multiple tools to understand what was happening in the
+        marketplace:
+      </div>
+    </div>
+    <div grid="lg:col-start-7 lg:col-span-5">
+      <div bg="white opacity-10" p="5" m="b-5" border="rounded-xl">
+        <h3 m="b-3" font="bold">
+          Gchat bot
+        </h3>
+        <p font="medium">
+          Ops built a bot that share real-time alerts in Gchat. However, this
+          chat does not give agents full context of the marketplace dynamics.
+        </p>
+      </div>
+      <div bg="white opacity-10" p="5" m="b-5" border="rounded-xl">
+        <h3 m="b-3" font="bold">
+          Klaxon web app
+        </h3>
+        <p font="medium">
+          Independent app that stores global marketplace real-time alerts, which
+          does not provide any context about marketplace health.
+        </p>
+      </div>
+      <div bg="white opacity-10" p="5" m="b-5" border="rounded-xl">
+        <h3 m="b-3" font="bold">
+          Ops activity query
+        </h3>
+        <p font="medium">
+          Terra logs all actions taken and state of the market at the time.
+          However, this is only available in a database that must be queried
+          externally and on an ad hoc basis.
+        </p>
+      </div>
+    </div>
+  </div>
+</RegularWidth>
+
+<RegularWidth>
+  <Image {...props.images['04']} />
+</RegularWidth>
+
+<RegularWidth>
+  <Header>3 — User research</Header>
+</RegularWidth>
+
+<RegularWidth>
+	<div
+		m="b-10 lg:b-20"
+		grid="lg:~ lg:cols-12"
+		gap="lg:gap-5"
+	>
+		<div border="~ bc03 rounded-lg" p="5 lg:10" grid="lg:col-span-10 lg:col-start-2">
+			<div p="b-10" flex="~ col lg:row" border="b bc03">
+				<Image
+					{...props.images['A01']}
+					noRound
+					border="rounded-full"
+					className="w-32 h-32 mr-10 mb-4 lg:mb-0"
+				/>
+				<div m="lg:l-10">
+					<h3 font="bold" m="b-4" text="2xl">Sam - Ops Manager</h3>
+					<p font="medium" w="lg:w-7/12">
+						Ensure consistent supply and demand across Eats marketplace through
+						continuous analytical assessment and intervention. Manage a team of
+						COEs.
+					</p>
+				</div>
+			</div>
+			<div className="flex pt-10 flex-col lg:flex-row">
+				<div w="lg:6/12" p="lg:r-4">
+					<h4 font="bold leading-5" m="b-4">Tasks & Responsibilities</h4>
+					<ul text="sm" space="y-2">
+						<li>• Use Terra once a week for reviewing and reportingpurposes</li>
+						<li>
+							• Help COE agents when serious issues arise, or when COE agents
+							request to review their work
+						</li>
+						<li>• Run queries once a week to review COE performance</li>
+					</ul>
+				</div>
+				<div w="lg:6/12" p="lg:l-4">
+					<h4 font="bold leading-5" m="b-4">Core needs</h4>
+					<ul text="sm" space="y-2">
+						<li>
+							• Comprehensive picture of Marketplace health and COEs’ actions.
+							Data is real-time so historical metrics are crucial in his
+							evaluation of team performance
+						</li>
+						<li>
+							• Deeply care about COE agents responsiveness to alerts and the
+							results of their actions
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div
+    	m="!b-10 !lg:b-20"
+    	grid="lg:~ lg:cols-12"
+    	gap="lg:gap-5"
+    >
+    	<div border="~ bc03 rounded-lg" p="5 lg:10" grid="lg:col-span-10 lg:col-start-2">
+    		<div p="b-10" flex="~ col lg:row" border="b bc03">
+    			<Image
+    				{...props.images['A02']}
+    				noRound
+    				border="rounded-full"
+    				className="w-32 h-32 mr-10 mb-4 lg:mb-0"
+    			/>
+    			<div m="lg:l-10">
+    				<h3 font="bold" m="b-4" text="2xl">Peter - Center of Excellence agent</h3>
+    				<p font="medium" w="lg:w-7/12">
+    					Monitor the Marketplace in real-time and resolve when problems
+    					arise. If the problem is serious, escalate to Ops managers.
+    				</p>
+    			</div>
+    		</div>
+    		<div className="flex pt-10 flex-col lg:flex-row">
+    			<div w="lg:6/12" p="lg:r-4">
+    				<h4 font="bold leading-5" m="b-4">Tasks & Responsibilities</h4>
+    				<ul text="sm" space="y-2">
+    					<li>• Use Terra daily for marketplace monitoring</li>
+    					<li>• Depending on level of autonomy, fix problems when they arise</li>
+    					<li>• For serious issues, escalate to Ops Managers</li>
+    				</ul>
+    			</div>
+    			<div w="lg:6/12" p="lg:l-4">
+    				<h4 font="bold leading-5" m="b-4">Core needs</h4>
+    				<ul text="sm" space="y-2">
+    					<li>• Monitor the latest alerts in real-time</li>
+    					<li>
+    						• Avoid duplicated efforts by having insights into his team’s work
+    						progress
+    					</li>
+    					<li>
+    						• The ability to communicate to his team when special
+    						circumstances happen that they decided to do something out of the
+    						norm
+    					</li>
+    				</ul>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+</RegularWidth>
+
+<RegularWidth>
+  <Image {...props.images['05']} />
+</RegularWidth>
+
+<RegularWidth>
+  <Header>4 — Setting goals</Header>
+  <Image {...props.images['06']} />
+  <Image {...props.images['07']} />
+</RegularWidth>
+
+<RegularWidth>
+  <div flex="~" justify="center" p="t-10 lg:t-20">
+    <div flex="~ col" gap="5">
+      <div flex="~" items="center" gap="4 lg:10">
+        <div w="10" h="10" min-w="10">
+          <Image {...props.images['arrow_up']} />
+        </div>
+        <h3 font="medium" text="xl lg:4xl">
+          User adoption: 7-day active users
+        </h3>
+      </div>
+      <div flex="~" items="center" gap="4 lg:10">
+        <div w="10" h="10" min-w="10">
+          <Image {...props.images['arrow_down']} />
+        </div>
+        <h3 font="medium" text="xl lg:4xl">
+          Time to alerts resolvement
+        </h3>
+      </div>
+      <div flex="~" items="center" gap="4 lg:10">
+        <div w="10" h="10" min-w="10">
+          <Image {...props.images['arrow_up']} />
+        </div>
+        <h3 font="medium" text="xl lg:4xl">
+          # of markets per agent
+        </h3>
+      </div>
+      <div flex="~" items="center" gap="4 lg:10">
+        <div w="10" h="10" min-w="10">
+          <Image {...props.images['arrow_up']} />
+        </div>
+        <h3 font="medium" text="xl lg:4xl">
+          # of markets per agent
+        </h3>
+      </div>
+    </div>
+  </div>
+</RegularWidth>
+
+<RegularWidth>
+  <Header>5 — The solutions</Header>
+  <Image {...props.images['08']} />
+  <Caption>
+    We streamlined the workflow by removing the dependency on Klaxon. This
+    helped conslidate the number of steps because agents have full context of
+    marketplace dynamics within Terra. Team communication is streamlined since
+    agents have visibility over who works on which tasks.
+  </Caption>
+  <Image {...props.images['09']} />
+  <Caption>
+    Agents can filter alerts by locations, down to the country and region level.
+  </Caption>
+  <Image {...props.images['10']} />
+  <Caption>
+    Tapping on each row reveals full context of marketplace dynamics at that
+    time. A graph helps ops understand how and why the alert was fired.
+  </Caption>
+  <Image {...props.images['11']} />
+  <Caption>
+    On Activity tab, Ops managers can monitor team performance at any time.
+    There’s no need to run hours long query anymore. Terra highlights actions
+    that go against AI’s recommendations to make it easier for managers to
+    inspect special cases.
+  </Caption>
+  <Image {...props.images['12']} />
+  <Caption>
+    We added alerts to the historical chart to help ops managers understand the
+    relationship between alerts and market conditions.
+  </Caption>
+</RegularWidth>

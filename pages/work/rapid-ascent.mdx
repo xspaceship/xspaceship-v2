@@ -1,0 +1,83 @@
+import Image from 'components/Image';
+import Layout from 'components/Layout';
+import FullWidth from 'components/md/FullWidth';
+import Header from 'components/md/Header';
+import Paragraph from 'components/md/Paragraph';
+import RegularWidth from 'components/md/RegularWidth';
+import Title from 'components/md/Title';
+import TwoColumns from 'components/md/TwoColumns';
+import rootMeta from 'contents/pages.json';
+import { NextSeo } from 'next-seo';
+import { getAllImage } from 'utils/image';
+
+export const meta = {
+  slug: 'rapid-ascent',
+  name: 'RapidAscent',
+  category: ['SaaS', 'Education', 'Web'],
+  description:
+    'Become a cyber security professional with a cutting-edge and immersive training program.',
+  sub: 'Branding, web design & development',
+  year: 2021,
+  preview: '01',
+  width: 'full',
+  order: 6,
+  gradientFrom: '#3330F0',
+  gradientTo: '#4EC5CD',
+};
+
+export async function getStaticProps() {
+  const images = await getAllImage('rapid-ascent');
+  const { gradientFrom, gradientTo } = meta;
+  for (const key in images) {
+    images[key] = { ...images[key], gradientFrom, gradientTo };
+  }
+  const ogImage =
+    (process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+  const title = rootMeta.name + ' | ' + meta.name;
+  return { props: { images, ...meta, title, ogImage } };
+}
+
+export default ({ children }) => (
+  <Layout title={meta.name} p="2xl:t-8">
+    {children}
+  </Layout>
+);
+
+<NextSeo
+  title={props.title}
+  description={props.description}
+  openGraph={{
+    title: props.title,
+    description: props.description,
+    images: [
+      {
+        url: props.ogImage,
+        alt: props.title,
+        type: 'png',
+      },
+    ],
+  }}
+/>
+
+<Title text={meta.description} sub="RapidAscent 2021" />
+
+<FullWidth>
+  <Image {...props.images['01']} />
+</FullWidth>
+
+<RegularWidth>
+  <Header>1 — The program</Header>
+  <Image {...props.images['02']} />
+  <Image {...props.images['03']} />
+  <Image {...props.images['04']} />
+</RegularWidth>
+
+<RegularWidth>
+  <Header>2 — Application flow</Header>
+  <Image {...props.images['apply_01']} />
+  <Image {...props.images['apply_02']} />
+  <Image {...props.images['apply_03']} />
+  <Image {...props.images['apply_04']} />
+  <Image {...props.images['apply_05']} />
+  <Image {...props.images['apply_06']} />
+</RegularWidth>

@@ -1,0 +1,102 @@
+{
+  "careers": {
+    "title": "xspaceship | Careers",
+    "description": "Join our world-class team and grow with us.",
+    "headline": "Join our <span class='text-gradient-01'>world-class</span> team <br class='hidden lg:block' /> & grow with us",
+    "location": {
+      "image": [
+        {
+          "name": "location",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      ],
+      "text": "You will love our meeting space."
+    },
+    "team": {
+      "image": {
+        "name": "team",
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      }
+    },
+    "workings": [
+      {
+        "name": "Professional growth",
+        "description": "We understand your needs to help you design a career growth plan that’s clear, actionable, and achievable. You will also be provided with the right resources and mentorship to learn new skills.",
+        "image": {
+          "name": "grow",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      },
+      {
+        "name": "Work / life balance",
+        "description": "Happy employees mean productive employees. Our flexible time off policy allows you to take good care of yourself and your family. We believe that 10-6 is the best work schedule.",
+        "image": {
+          "name": "watch",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      },
+      {
+        "name": "Start-up culture",
+        "description": "We are nimble and dynamic. We cut down on unecessary processes and focus on delivering the best work. We adopt a flat hierarchy and foster tight collaboration.",
+        "image": {
+          "name": "rocket",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      },
+      {
+        "name": "Remote-first",
+        "description": "Do your best work from the comfort of your home. We use the best technology to make asynchronous collaboration seamless. Our New York office if available for meetings.",
+        "image": {
+          "name": "home",
+          "gradientFrom": "rgba(255,255,255,0.2)",
+          "gradientTo": "rgba(255,255,255,0.1)"
+        }
+      }
+    ],
+    "positions": [
+      {
+        "name": "Product Design Intern",
+        "job_description": "A designer with strong foundation in UX/UI and can execute tactical tasks with high craft.",
+        "location": "Remote",
+        "url": "/jobs/product-design-intern"
+      },
+      {
+        "name": "Graphic Design Intern",
+        "job_description": "A designer with strong foundation in visual branding and can execute tactical tasks with high craft.",
+        "location": "Remote",
+        "url": "/jobs/graphic-design-intern"
+      }
+    ],
+    "values": [
+      {
+        "name": "Nimble",
+        "color": "#13185F"
+      },
+      {
+        "name": "Passionate",
+        "color": "#533124"
+      },
+      {
+        "name": "High-craft",
+        "color": "#28441D"
+      },
+      {
+        "name": "Empathy",
+        "color": "#4E1C1C"
+      },
+      {
+        "name": "Open-minded",
+        "color": "#20434A"
+      },
+      {
+        "name": "Diverse",
+        "color": "#564C29"
+      }
+    ]
+  }
+}

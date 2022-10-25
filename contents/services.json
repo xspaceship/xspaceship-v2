@@ -1,0 +1,185 @@
+{
+  "title": "xspaceship | Services",
+  "description": "We are a full-service digital agency. Our services include: digital design, web development and visual branding.",
+  "headline": "We fuse <span class='text-gradient-01'>creativity, craft, & <br class='hidden h-lg:block' /> technology</span> into <span class='text-gradient-01'>experiences</span> that <br class='hidden h-lg:block' /> improve people's lives.",
+  "product": {
+    "headline": "Digital Design & Strategy",
+    "list": ["Mobile applications", "Web applications", "Digital campaigns"],
+    "image": [
+      {
+        "name": "01",
+        "span": 7,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "02",
+        "span": 3,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "03",
+        "span": 4,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "04",
+        "span": 7,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      }
+    ],
+    "imageM": [
+      {
+        "name": "13",
+        "span": 7,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "02",
+        "span": 3,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "03",
+        "span": 4,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "14",
+        "span": 7,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      }
+    ]
+  },
+  "branding": {
+    "headline": "Branding",
+    "list": ["Logo", "Typography", "Illustration", "Photography"],
+    "image": [
+      {
+        "name": "05",
+        "span": 7,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "06",
+        "span": 4,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "07",
+        "span": 3,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "08",
+        "span": 7,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      }
+    ],
+    "imageM": [
+      {
+        "name": "15",
+        "span": 7,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "06",
+        "span": 4,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "07",
+        "span": 3,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "16",
+        "span": 7,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      }
+    ]
+  },
+  "development": {
+    "headline": "Development",
+    "list": [
+      "Mobile apps (iOS & Android)",
+      "Web applications",
+      "Web campaigns and marketing sites"
+    ],
+    "image": [
+      {
+        "name": "09",
+        "span": 7,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "10",
+        "span": 3,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "11",
+        "span": 4,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "12",
+        "span": 7,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      }
+    ],
+    "imageM": [
+      {
+        "name": "17",
+        "span": 7,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "10",
+        "span": 3,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "11",
+        "span": 4,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      },
+      {
+        "name": "18",
+        "span": 7,
+        "gradientFrom": "rgba(255,255,255,0.2)",
+        "gradientTo": "rgba(255,255,255,0.1)"
+      }
+    ]
+  },
+  "quote01": {
+    "text": "“You've got to start with the customer experience and work backwards to the technology. You can't start with the technology and try to figure out where can I sell it.”",
+    "author": "Steve Jobs"
+  },
+  "quote02": {
+    "text": "“There are three responses to a piece of design — yes, no, and WOW! Wow is the one to aim for.”",
+    "author": "Milton Glaser"
+  }
+}

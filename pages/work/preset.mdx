@@ -1,0 +1,242 @@
+import Image from 'components/Image';
+import Layout from 'components/Layout';
+import AppStoreItem from 'components/md/AppStoreItem';
+import FullWidth from 'components/md/FullWidth';
+import Header from 'components/md/Header';
+import Paragraph from 'components/md/Paragraph';
+import RegularWidth from 'components/md/RegularWidth';
+import Title from 'components/md/Title';
+import TwoColumns from 'components/md/TwoColumns';
+import rootMeta from 'contents/pages.json';
+import { NextSeo } from 'next-seo';
+import { getAllImage } from 'utils/image';
+
+export const meta = {
+  slug: 'preset',
+  name: 'Preset',
+  category: ['SaaS', 'Mobile'],
+  description: '90-Second Hype Sessions That Help You Perform At Your Best',
+  sub: 'Mobile design',
+  year: 2022,
+  preview: '07',
+  width: 'full',
+  order: 7,
+  gradientFrom: '#2E0426',
+  gradientTo: '#260420',
+};
+
+export async function getStaticProps(context) {
+  const images = await getAllImage('preset');
+  const { gradientFrom, gradientTo } = meta;
+  for (const key in images) {
+    images[key] = { ...images[key], gradientFrom, gradientTo };
+  }
+  const ogImage =
+    (process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+  const title = rootMeta.name + ' | ' + meta.name;
+  const features = [
+    { image: 'icon_01', description: 'Get fired up and motivated, remove mental blockers, build grit and resilience, and bring your vision to life.' },
+    { image: 'icon_02', description: "You've got a lot to do, so sessions take just 90 seconds a day. (And they're pretty fun, too.)" },
+    { image: 'icon_03', description: 'Built on the foundations of performance psychology, sports science, and growth mindset research.' },
+  ]
+
+return { props: { images, ...meta, title, ogImage, features } };
+}
+
+export default ({ children }) => (
+  <Layout title={meta.name} p="2xl:t-8">
+    {children}
+  </Layout>
+);
+
+<NextSeo
+  title={props.title}
+  description={props.description}
+  openGraph={{
+    title: props.title,
+    description: props.description,
+    images: [
+      {
+        url: props.ogImage,
+        alt: props.title,
+        type: 'png',
+      },
+    ],
+  }}
+/>
+
+<FullWidth>
+  <Image {...props.images['01']} />
+</FullWidth>
+
+<RegularWidth>
+  <Paragraph>
+    Preset's quick hype sessions teach you how to perform at your best, using
+    techniques developed by psychologists and experts from leading universities,
+    top sports teams, and elite military units.
+  </Paragraph>
+</RegularWidth>
+
+<FullWidth>
+  <div display="grid" grid="cols-1 lg:cols-3 gap-5">
+    {props.features.map((feature, index) => (
+      <div
+        display="flex"
+        flex="col"
+        justify="center"
+        items="center"
+        bg="bg13"
+        p="10"
+        space="y-5"
+        border="rounded-lg"
+        key={index}
+      >
+        <div display="flex w-30 h-30" text="center">
+          <Image {...props.images[feature.image]} />
+        </div>
+        <p text="leading-lh01 tc09" font="worksans" text="center">
+          {feature.description}
+        </p>
+      </div>
+    ))}
+  </div>
+  <Image {...props.images['02']} />
+</FullWidth>
+
+<RegularWidth>
+  <AppStoreItem
+    url="https://apps.apple.com/app/preset-mindset-motivation/id6443488694"
+    name="Preset"
+    s={4.9}
+    r="34"
+    i="https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/6f/48/31/6f4831c3-de8c-1bfd-6294-277961662db6/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/460x0w.webp"
+  />
+</RegularWidth>
+
+<RegularWidth>
+  <Header>1 — A viral loop</Header>
+</RegularWidth>
+
+<RegularWidth>
+  <TwoColumns>
+    <Image
+      {...props.images['main_01']}
+      caption="You receive a video recommended by a friend"
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['main_02']}
+      caption="You download the Preset App, and start to get your mind right!"
+      captionAlignment="center"
+    />
+  </TwoColumns>
+</RegularWidth>
+
+<RegularWidth>
+  <Header>2 — Core experience</Header>
+</RegularWidth>
+
+<RegularWidth>
+  <TwoColumns>
+    <Image
+      {...props.images['main_03']}
+      caption="Turn on notifications to get timely updates and build a habit"
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['main_04']}
+      caption="A dynamic interface that feels like watching live interactive TV."
+      captionAlignment="center"
+    />
+  </TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['main_05']}
+      caption="Interactive modal to help users engage more with the content."
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['main_06']}
+      caption="Interactive modal to help users engage more with the content."
+      captionAlignment="center"
+    />
+  </TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['main_07']}
+      caption="Leave comments and get support from the community"
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['main_08']}
+      caption="Share the session to hype up a friend"
+      captionAlignment="center"
+    />
+  </TwoColumns>
+</RegularWidth>
+
+<RegularWidth>
+  <Header>3 — Freemium to Premium</Header>
+</RegularWidth>
+
+<RegularWidth>
+  <TwoColumns>
+    <Image
+      {...props.images['main_09']}
+      caption="Upselling premium membership at the right touch points"
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['main_10']}
+      caption="A paywall that converts"
+      captionAlignment="center"
+    />
+  </TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['main_11']}
+      caption="Premium content and features are gated behind a paywall"
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['main_12']}
+      caption="Upselling premium membership at the right touch points"
+      captionAlignment="center"
+    />
+  </TwoColumns>
+</RegularWidth>
+
+<RegularWidth>
+  <Header>4 — Account and Settings</Header>
+</RegularWidth>
+
+<RegularWidth>
+  <TwoColumns>
+    <Image
+      {...props.images['main_13']}
+      caption="Create an account"
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['main_14']}
+      caption="Settings"
+      captionAlignment="center"
+    />
+  </TwoColumns>
+  <TwoColumns>
+    <Image
+      {...props.images['main_15']}
+      caption="Notifications"
+      captionAlignment="center"
+    />
+    <Image
+      {...props.images['main_16']}
+      caption="Account Management"
+      captionAlignment="center"
+    />
+  </TwoColumns>
+</RegularWidth>
+
+<FullWidth>
+  <Image {...props.images['03']} />
+</FullWidth>
