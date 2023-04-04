@@ -1,0 +1,152 @@
+import Image from 'components/Image';
+import Layout from 'components/Layout';
+import AppStoreItem from 'components/md/AppStoreItem';
+import FullWidth from 'components/md/FullWidth';
+import Header from 'components/md/Header';
+import Paragraph from 'components/md/Paragraph';
+import RegularWidth from 'components/md/RegularWidth';
+import Title from 'components/md/Title';
+import TwoColumns from 'components/md/TwoColumns';
+import Caption from 'components/md/Caption';
+import rootMeta from 'contents/pages.json';
+import { NextSeo } from 'next-seo';
+import { getAllImage } from 'utils/image';
+
+export const meta = {
+  slug: 'whatsapp',
+  name: 'Whatsapp Business Cloud API',
+  category: ['SaaS', 'Technology'],
+  description: 'Developer Experience',
+  sub: 'Technology',
+  year: 2022,
+  preview: '08',
+  width: 'full',
+  order: 8,
+  gradientFrom: '#3CC069',
+  gradientTo: '#BEE0F3',
+};
+
+export async function getStaticProps(context) {
+  const images = await getAllImage('whatsapp');
+  const { gradientFrom, gradientTo } = meta;
+  for (const key in images) {
+    images[key] = { ...images[key], gradientFrom, gradientTo };
+  }
+  const ogImage =
+    (process.env.HOST || '') + '/images/home/' + meta.preview + '.png';
+  const title = rootMeta.name + ' | ' + meta.name;
+
+const features = [
+{ image: 'icon_01', description: 'Directly onboard and test the WhatsApp Cloud API within minutes' },
+{ image: 'icon_02', description: "Effortlessly learn, build, and launch applications on our API" },
+{ image: 'icon_03', description: 'Reliably scale and monetize applications to grow their businesses on our API' },
+]
+return { props: { images, ...meta, title, ogImage, features } };
+}
+
+export default ({ children }) => (
+  <Layout title={meta.name} p="2xl:t-8">
+    {children}
+  </Layout>
+);
+
+<NextSeo
+  title={props.title}
+  description={props.description}
+  openGraph={{
+    title: props.title,
+    description: props.description,
+    images: [
+      {
+        url: props.ogImage,
+        alt: props.title,
+        type: 'png',
+      },
+    ],
+  }}
+/>
+
+<FullWidth>
+  <Image {...props.images['01']} />
+</FullWidth>
+
+<RegularWidth>
+  <Paragraph>
+    On May 19th 2022, WhatsApp launched Developer Experience - General
+    Availability to enable businesses and developers globally to onboard and
+    build on the Cloud API directly.
+  </Paragraph>
+</RegularWidth>
+
+<RegularWidth>
+  <TwoColumns>
+    <Image {...props.images['02']} />
+    <Image {...props.images['03']} />
+  </TwoColumns>
+  <Caption>
+    Mark Zuckerberg introduced the WhatsApp CloudAPI to the world on Instagram
+    and Facebook.
+  </Caption>
+</RegularWidth>
+
+<RegularWidth>
+  <Image {...props.images['04']} />
+</RegularWidth>
+
+<RegularWidth>
+  <Paragraph>
+    <span style={{ color: '#20C659' }}>The WhatsApp Business Cloud API</span>{' '}
+    enables businesses to chat with customers on their preferred channel through
+    a customized experience that’s quick to implement. This critical launch
+    enabled developers to:
+  </Paragraph>
+</RegularWidth>
+
+<FullWidth>
+  <div display="grid" grid="cols-1 lg:cols-3 gap-5">
+    {props.features.map((feature, index) => (
+      <div
+        display="flex"
+        flex="col"
+        justify="center"
+        items="center"
+        bg="bg13"
+        p="10"
+        space="y-5"
+        border="rounded-lg"
+        key={index}
+      >
+        <div display="flex w-30 h-30" text="center">
+          <Image {...props.images[feature.image]} />
+        </div>
+        <p text="leading-lh01 tc09" font="worksans" text="center">
+          {feature.description}
+        </p>
+      </div>
+    ))}
+  </div>
+</FullWidth>
+
+<RegularWidth>
+  <Header>1 — Key product miletones</Header>
+</RegularWidth>
+
+<RegularWidth>
+  <Image {...props.images['main_01']} />
+</RegularWidth>
+
+<RegularWidth>
+  <Header>2 — Core user experience</Header>
+</RegularWidth>
+
+<RegularWidth>
+  <Image {...props.images['main_02']} />
+  <Image {...props.images['main_03']} />
+  <Image {...props.images['main_04']} />
+  <Image {...props.images['main_05']} />
+  <Image {...props.images['main_06']} />
+  <Image {...props.images['main_07']} />
+  <Image {...props.images['main_08']} />
+  <Image {...props.images['main_09']} />
+  <Image {...props.images['main_10']} />
+</RegularWidth>
