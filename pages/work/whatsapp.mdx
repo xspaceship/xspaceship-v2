@@ -40,8 +40,70 @@ const features = [
 { image: 'icon_01', description: 'Directly onboard and test the WhatsApp Cloud API within minutes' },
 { image: 'icon_02', description: "Effortlessly learn, build, and launch applications on our API" },
 { image: 'icon_03', description: 'Reliably scale and monetize applications to grow their businesses on our API' },
+];
+
+const keys = [
+{
+color: '#1C2B34',
+time:'Milestone 1 - November, 2021',
+name: 'Private Beta',
+scale: '~10 developers',
+locale: 'US, Brazil, India',
+first: '~ a few weeks',
+problems: [
+'User must provide and validate their own phone numbers to test.',
+'App review required (Meta Developer Platform requirement)',
+'Private API available to selected partners only',
+'Manual business verification',
+'Can only send messages via an OS’s terminal interface',
+'Users dropped off during Meta for Developers onboarding flow',
+],
+solutions: [
+'Self-served experience'
 ]
-return { props: { images, ...meta, title, ogImage, features } };
+},
+{
+color: '#0D5633',
+time:'Milestone 2 - March, 2022',
+name: 'Public Beta',
+scale: '~500 developers',
+locale: 'US, Brazil, India',
+first: '~ a few days',
+problems: [
+'Requires App Review',
+'Requires Biz verification and Display Name Review for Trust Tier',
+'Credit card payment not supported, relying on line of credit',
+'Users dropped off during Meta onboarding flow',
+],
+solutions: [
+'Private API -> Public API',
+'One-click self-serve onboarding',
+'User is provided with a test phone number',
+'Send messages directly from the dev console',
+'Explore the API more easily with Postman Collection',
+'Manage phone numbers more easily with Account Overview',
+]
+},
+{
+color: '#0C953A',
+time:'Milestone 3 - March, 2022',
+name: 'General Availability',
+scale: 'Global',
+locale: 'Global',
+first: '~ a few minutes',
+problems: [
+'Users dropped off during Meta onboarding flow',
+],
+solutions: [
+'Step-by-step Getting Started page',
+'CC-supported payment',
+'App Review removal',
+'Trust Tier (Business Verification and Display Name Review removal from onboarding)',
+]
+}
+];
+
+return { props: { images, ...meta, title, ogImage, features, keys } };
 }
 
 export default ({ children }) => (
@@ -132,7 +194,69 @@ export default ({ children }) => (
 </RegularWidth>
 
 <RegularWidth>
-  <Image {...props.images['main_01']} />
+  <div display="grid" grid="cols-1 lg:cols-3 gap-4">
+    {props.keys.map((k, index) => (
+      <div border="rounded-lg" className="whatsapp-feature" key={index}>
+        <div
+          p="8"
+          border="rounded-lg"
+          text="[#E5F8E1]"
+          style={{ backgroundColor: k.color }}
+        >
+          <p font="redhat semibold" m="b-3">
+            {k.time}
+          </p>
+          <p font="redhat semibold" text="3xl" m="b-8">
+            {k.name}
+          </p>
+          <div flex="~" gap="5" m="b-5">
+            <div>
+              <label text="xs" m="b-1">
+                Scale
+              </label>
+              <p font="worksans">{k.scale}</p>
+            </div>
+            <div>
+              <label text="xs" m="b-1">
+                Locales
+              </label>
+              <p font="worksans">{k.locale}</p>
+            </div>
+          </div>
+          <div>
+            <label text="xs" m="b-1">
+              Time to send the first test message:
+            </label>
+            <p font="worksans">{k.first}</p>
+          </div>
+        </div>
+        <div p="8">
+          <div m="b-2" flex="~" gap="2">
+            <div h="6" w="6">
+              <Image {...props.images['problem']} />
+            </div>
+            <label font="worksans medium">Problems</label>
+          </div>
+          <ul font="normal" text="sm" list="disc" m="l-[22px] b-8">
+            {k.problems.map((i, probIndex) => (
+              <li key={probIndex}>{i}</li>
+            ))}
+          </ul>
+          <div m="b-2" flex="~" gap="2">
+            <div h="6" w="6">
+              <Image {...props.images['solution']} />
+            </div>
+            <label font="worksans medium">Solutions</label>
+          </div>
+          <ul font="normal" text="sm" list="disc" m="l-[22px] b-8">
+            {k.solutions.map((i, solIndex) => (
+              <li key={solIndex}>{i}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ))}
+  </div>
 </RegularWidth>
 
 <RegularWidth>

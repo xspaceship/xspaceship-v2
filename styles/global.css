@@ -241,3 +241,12 @@ button:focus {
 .swiper-slide {
   display: flex;
 }
+
+.whatsapp-feature {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.04)
+    ),
+    #0e0e0e;
+}
