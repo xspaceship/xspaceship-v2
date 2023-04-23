@@ -1,3 +1,8 @@
+@font-face {
+  font-family: NewYork;
+  src: url('/newyork.otf') format('opentype');
+}
+
 body {
   @apply bg-bg01 text-white;
 }
@@ -249,4 +254,61 @@ button:focus {
       rgba(255, 255, 255, 0.04)
     ),
     #0e0e0e;
+}
+
+.coaching-headline {
+  background: -webkit-linear-gradient(0deg, #dcddb7, #dcddb7),
+    linear-gradient(134.77deg, #d0e2dd 1.46%, #f7d060 77.78%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.coaching-button {
+  background: linear-gradient(134.77deg, #d0e2dd 1.46%, #f7d060 77.78%);
+}
+
+.coaching-modal {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.08)
+    ),
+    #040404;
+  border: 1px solid rgba(18, 23, 24, 0.05);
+}
+
+.coaching-checkbox {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  position: relative;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.coaching-checkbox:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 4px;
+  border: 2px solid #e0e0e0;
+  cursor: pointer;
+}
+
+.coaching-checkbox:checked:after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;utf-8,<svg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M9.04731 1.01279C9.34958 1.296 9.36503 1.77062 9.08182 2.07289L4.19342 7.29032C3.77774 7.73398 3.07363 7.73398 2.65795 7.29032L1.01279 5.53443C0.729585 5.23216 0.745038 4.75754 1.04731 4.47433C1.34958 4.19112 1.8242 4.20658 2.1074 4.50884L3.42568 5.91586L7.98721 1.04731C8.27042 0.745037 8.74504 0.729585 9.04731 1.01279Z' fill='white'/></svg>");
+}
+
+.calendly-spinner {
+  display: none !important;
 }

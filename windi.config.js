@@ -58,6 +58,7 @@ export default defineConfig({
         bg14: '#EEEEEE',
         bg15: '#3D3D3D',
         bg16: '#252525',
+        bg17: '#C2C2C2',
       },
       fontSize: {
         fs01: '2.5rem',
@@ -71,6 +72,8 @@ export default defineConfig({
       fontFamily: {
         worksans: ['Work Sans', 'sans-serif'],
         redhat: ['Red Hat Display', 'sans-serif'],
+        questrial: ['Questrial', 'sans-serif'],
+        newyork: ['NewYork', 'sans-serif'],
       },
       textColor: {
         tc01: 'rgba(255, 255, 255, 0.6)',
@@ -81,8 +84,13 @@ export default defineConfig({
         tc06: '#A5A6F6',
         tc07: '#9391CB',
         tc08: '#ECB0B0',
-        tc09: '##C2C2C2',
-        tc10: '##A3A3A3',
+        tc09: '#C2C2C2',
+        tc10: '#A3A3A3',
+        tc11: '#F9F9F9',
+        tc12: '#858585',
+        tc13: '#040404',
+        tc14: '#252525',
+        tc15: '#121718',
       },
       padding: {
         7.5: '1.875rem',
@@ -111,6 +119,7 @@ export default defineConfig({
         bc03: 'rgba(255, 255, 255, 0.2)',
         bc04: 'rgba(255, 255, 255, 0.1)',
         bc05: '#F4F4F4',
+        bc06: '#3D3D3D',
       },
     },
   },
