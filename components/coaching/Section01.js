@@ -6,7 +6,10 @@ const Section01 = ({ setStep }) => (
     p="x-5 y-7.5 lg:x-22.5 lg:y-16 2xl:x-10"
     m="b-10 lg:x-10 2xl:x-5"
     border="rounded-lg"
-    className="bg-[#1F2030]"
+    style={{
+      background:
+        'linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),#1F2030',
+    }}
     grid="~ cols-1 lg:cols-2"
     gap="10"
   >
@@ -50,7 +53,7 @@ const Section01 = ({ setStep }) => (
         - Billy Wu, Parsons School of Design, NYC
       </p>
     </div>
-    <div>
+    <div className="p-10 bg-[#1F2030] rounded-lg">
       <Image src={Cover} m="b-5" />
 
       <h3 font="medium" text="3xl tc04" m="b-4">

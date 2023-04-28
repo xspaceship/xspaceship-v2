@@ -27,19 +27,19 @@ const Step01 = ({ value, onChange }) => {
                   )
                 }
               />
-              <label className="text-tc04">{t}</label>
+              <label className="text-tc04 font-light">{t}</label>
             </div>
           ))}
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <div className="mb-2">
           <span className="text-tc04">Hours needed</span>{' '}
           <span className="text-tc01">(max 3)</span>
         </div>
         <input
-          className="w-full rounded px-4 py-3 border border-bc06 mb-3 outline-none bg-transparent"
+          className="w-full rounded px-4 py-3 border border-bc06 mb-3 outline-none bg-transparent placeholder-neutral-700"
           type="number"
           placeholder="1"
           max={3}
@@ -56,24 +56,25 @@ const Step01 = ({ value, onChange }) => {
             }
           }}
         />
-        <p className="text-tc04 text-sm">
+        <p className="text-tc04 text-sm font-light">
           Please keep in mind that each topic will take at least 30 minutes.
         </p>
-      </div>
+      </div> */}
 
       <div>
         <div className="mb-2 flex justify-between">
           <span className="text-tc04">Message</span>{' '}
           <span className="text-tc01">{value.message.length}/200</span>
         </div>
-        <input
-          className="w-full rounded px-4 py-3 border border-bc06 mb-3 outline-none bg-transparent"
+        <textarea
+          className="w-full rounded px-4 py-3 border border-bc06 mb-3 outline-none bg-transparent placeholder-neutral-700"
           placeholder="You can include any special requests, and URLs to your portfolio, projects here."
           value={value.message}
           onChange={e => onChange('message', e.target.value)}
           maxLength="200"
+          rows={2}
         />
-        <p className="text-tc04 text-sm">
+        <p className="text-tc04 text-sm font-light">
           You can also send any files to hello@xspaceship.com. Please remember
           to put your name on the subject line.
         </p>
@@ -82,7 +83,7 @@ const Step01 = ({ value, onChange }) => {
       <div>
         <div className="mb-2 flex justify-between">Your email address</div>
         <input
-          className="w-full rounded px-4 py-3 border border-bc06 mb-3 outline-none bg-transparent"
+          className="w-full rounded px-4 py-3 border border-bc06 mb-3 outline-none bg-transparent placeholder-neutral-700"
           type="email"
           value={value.email}
           onChange={e => onChange('email', e.target.value)}
@@ -95,8 +96,8 @@ const Step01 = ({ value, onChange }) => {
           <span className="text-tc01">(optional)</span>
         </div>
         <input
-          className="w-full rounded px-4 py-3 border border-bc06 mb-3 outline-none bg-transparent"
-          placeholder="+1 (000) 000-0000+1"
+          className="w-full rounded px-4 py-3 border border-bc06 mb-3 outline-none bg-transparent placeholder-neutral-700"
+          placeholder="+1 (XXX) XXX-XXXX"
           value={value.phone}
           onChange={e => onChange('phone', e.target.value)}
           type="tel"

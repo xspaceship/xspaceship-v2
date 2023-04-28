@@ -21,7 +21,7 @@ const Layout = props => {
           transition={{ type: 'easeInOut', duration: 0.5 }}
           className="2xl:flex-1 2xl:flex 2xl:justify-center"
         >
-          <div max-w="2xl:2000px">
+          <div max-w="2xl:2000px" className="2xl:flex-1">
             <div {...rest}>{children}</div>
             <Footer />
           </div>

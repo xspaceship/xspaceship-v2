@@ -1,6 +1,7 @@
 import Layout from 'components/Layout';
 import Section01 from 'components/coaching/Section01';
 import Section02 from 'components/coaching/Section02';
+import Section03 from 'components/coaching/Section03';
 import Step01 from 'components/coaching/Step01';
 import Step02 from 'components/coaching/Step02';
 import Step03 from 'components/coaching/Step03';
@@ -9,10 +10,20 @@ import meta from 'contents/pages.json';
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import Cover from 'public/images/coaching/cover.png';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Dialog } from '@headlessui/react';
 
 const NEXT_LABEL = ['Continue to schedule', 'Continue to payment', 'Finish'];
+
+const sendEmail = async (payload = {}) => {
+  await fetch('/api/mail', {
+    method: 'POST',
+    body: JSON.stringify({
+      subject: '[xspaceship] Coaching',
+      ...payload,
+    }),
+  });
+};
 
 const Coaching = ({ title, description, ogImage }) => {
   const [step, setStep] = useState(-1);
@@ -49,6 +60,13 @@ const Coaching = ({ title, description, ogImage }) => {
     return false;
   }, [info, step]);
 
+  useEffect(() => {
+    if (step === 2) {
+      const { message, email, topic, phone } = info;
+      sendEmail({ message, email, topic, phone });
+    }
+  }, [step, info]);
+
   return (
     <Layout title="xspaceship | Coaching" p="2xl:t-8">
       {/* SEO */}
@@ -68,6 +86,7 @@ const Coaching = ({ title, description, ogImage }) => {
         }}
       />
       <Section01 setStep={setStep} />
+      <Section03 />
       <Section02 />
 
       <Dialog
@@ -112,26 +131,22 @@ const Coaching = ({ title, description, ogImage }) => {
                         UberEats, WeWork, and various well-known startups.
                       </p>
                       <div className="border-b border-bc03" m="b-4"></div>
-                      <div className="flex flex-col gap-1">
+                      <div className="flex flex-col gap-4">
                         <div className="flex justify-between gap-4 text-sm text-tc04">
                           <span>Coaching rates</span>
                           <span>$200/hour</span>
                         </div>
-                        {step > 0 && info.duration && (
-                          <>
-                            <div className="flex justify-between gap-4 text-sm text-tc04">
-                              <span>Duration</span>
-                              <span>
-                                {info.duration} hour
-                                {info.duration > 1 ? 's' : ''}
-                              </span>
-                            </div>
-                            <div className="flex justify-between gap-4 text-sm text-tc04">
-                              <span>Total</span>
-                              <span>${info.duration * 200}</span>
-                            </div>
-                          </>
-                        )}
+                        <div className="flex justify-between gap-4 text-sm text-tc04">
+                          <span>Duration</span>
+                          <span>
+                            {info.duration} hour
+                            {info.duration > 1 ? 's' : ''}
+                          </span>
+                        </div>
+                        <div className="flex justify-between gap-4 text-sm text-tc04">
+                          <span>Total</span>
+                          <span>${info.duration * 200}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
