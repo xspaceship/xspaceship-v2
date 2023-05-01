@@ -23,7 +23,13 @@ const Section02 = () => (
             gap="4"
             align="items-center"
           >
-            <Image src="/images/coaching/solution.png" width={24} height={24} />
+            <div className="min-w-[24px] min-h-[24px]">
+              <Image
+                src="/images/coaching/solution.png"
+                width={24}
+                height={24}
+              />
+            </div>
             <span>{item}</span>
           </li>
         ))}
