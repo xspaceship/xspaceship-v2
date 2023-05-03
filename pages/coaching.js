@@ -137,6 +137,10 @@ const Coaching = ({ title, description, ogImage }) => {
                           <span>$200/hour</span>
                         </div>
                         <div className="flex justify-between gap-4 text-sm text-tc04">
+                          <span>The 1st hour promotion</span>
+                          <span>$150/hour</span>
+                        </div>
+                        <div className="flex justify-between gap-4 text-sm text-tc04">
                           <span>Duration</span>
                           <span>
                             {info.duration} hour
@@ -145,7 +149,7 @@ const Coaching = ({ title, description, ogImage }) => {
                         </div>
                         <div className="flex justify-between gap-4 text-sm text-tc04">
                           <span>Total</span>
-                          <span>${info.duration * 200}</span>
+                          <span>${info.duration * 150}</span>
                         </div>
                       </div>
                     </div>
