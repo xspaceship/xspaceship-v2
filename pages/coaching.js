@@ -147,10 +147,10 @@ const Coaching = ({ title, description, ogImage }) => {
                             {info.duration > 1 ? 's' : ''}
                           </span>
                         </div>
-                        <div className="flex justify-between gap-4 text-sm text-tc04">
+                        {/* <div className="flex justify-between gap-4 text-sm text-tc04">
                           <span>Total</span>
                           <span>${info.duration * 150}</span>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>

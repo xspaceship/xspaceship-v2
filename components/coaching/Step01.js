@@ -26,8 +26,11 @@ const Step01 = ({ value, onChange }) => {
                       : [...value.topic, t],
                   )
                 }
+                id={t}
               />
-              <label className="text-tc04 font-light">{t}</label>
+              <label htmlFor={t} className="text-tc04 font-light">
+                {t}
+              </label>
             </div>
           ))}
         </div>
