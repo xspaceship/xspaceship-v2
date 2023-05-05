@@ -18,10 +18,7 @@ const NEXT_LABEL = ['Continue to schedule', 'Continue to payment', 'Finish'];
 const sendEmail = async (payload = {}) => {
   await fetch('/api/mail', {
     method: 'POST',
-    body: JSON.stringify({
-      subject: '[xspaceship] Coaching',
-      ...payload,
-    }),
+    body: JSON.stringify(payload),
   });
 };
 
@@ -30,9 +27,7 @@ const Coaching = ({ title, description, ogImage }) => {
   const [info, setInfo] = useState({
     duration: 1,
     scheduled: null,
-    message: '',
     phone: '',
-    email: '',
     topic: [],
   });
 
@@ -50,7 +45,7 @@ const Coaching = ({ title, description, ogImage }) => {
 
   const isDisabled = useMemo(() => {
     if (step === 0) {
-      return !(info.email && info.topic.length && info.duration);
+      return !(info.topic.length && info.duration);
     }
 
     if (step === 1) {
@@ -62,8 +57,7 @@ const Coaching = ({ title, description, ogImage }) => {
 
   useEffect(() => {
     if (step === 2) {
-      const { message, email, topic, phone } = info;
-      sendEmail({ message, email, topic, phone });
+      sendEmail(info);
     }
   }, [step, info]);
 
@@ -98,14 +92,20 @@ const Coaching = ({ title, description, ogImage }) => {
         <div className="fixed inset-0 bg-black bg-opacity-75" />
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex min-h-full items-center justify-center text-center">
-            <Dialog.Panel className="border border-[#2D2D40] rounded w-full max-w-6xl transform overflow-hidden text-left align-middle transition-all shadow coaching-modal">
+            <Dialog.Panel className="border border-[#2D2D40] rounded w-full max-w-4xl transform overflow-hidden text-left align-middle transition-all shadow coaching-modal">
               <Dialog.Title
                 as="h3"
                 className="flex justify-between items-center px-8 py-4 border-b border-[#2D2D40]"
               >
-                <div className="text-xl font-medium text-tc04">
-                  Book a coaching session
+                <div>
+                  <div className="text-xl font-medium text-tc04 mb-1">
+                    Book a coaching session
+                  </div>
+                  <div className="text-sm text-tc04">
+                    Support: hello@xspaceship.com or text 6462838488
+                  </div>
                 </div>
+
                 <button
                   className="py-1 px-[10px] mr-[-16px]"
                   onClick={() => setStep(-1)}

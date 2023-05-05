@@ -36,18 +36,19 @@ const Step01 = ({ value, onChange }) => {
         </div>
       </div>
 
-      {/* <div>
+      <div>
         <div className="mb-2">
           <span className="text-tc04">Hours needed</span>{' '}
           <span className="text-tc01">(max 3)</span>
         </div>
         <input
-          className="w-full rounded px-4 py-3 border border-bc06 mb-3 outline-none bg-transparent placeholder-neutral-700"
+          className="w-full rounded px-4 py-3 border border-bc06 mb-3 outline-none bg-transparent placeholder-neutral-700 cursor-not-allowed"
           type="number"
           placeholder="1"
           max={3}
           min={1}
           value={value.duration}
+          disabled
           onChange={e => onChange('duration', e.target.value)}
           onBlur={e => {
             if (
@@ -61,10 +62,11 @@ const Step01 = ({ value, onChange }) => {
         />
         <p className="text-tc04 text-sm font-light">
           Please keep in mind that each topic will take at least 30 minutes.
+          Create a new meeting to schedule more time.
         </p>
-      </div> */}
+      </div>
 
-      <div>
+      {/* <div>
         <div className="mb-2 flex justify-between">
           <span className="text-tc04">Message</span>{' '}
           <span className="text-tc01">{value.message.length}/200</span>
@@ -91,7 +93,7 @@ const Step01 = ({ value, onChange }) => {
           value={value.email}
           onChange={e => onChange('email', e.target.value)}
         />
-      </div>
+      </div> */}
 
       <div>
         <div className="mb-2 flex">

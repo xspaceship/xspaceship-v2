@@ -2,7 +2,13 @@ import nodemailer from 'nodemailer';
 
 const email = 'engineering@xspaceship.com';
 const pass = 'zsdlniobvsrvnqxy';
-const toEmail = 'hello@xspaceship.com';
+const toEmail = 'engineering@xspaceship.com';
+const calendlyOption = {
+  headers: {
+    authorization:
+      'Bearer eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNjgzMjU5NTcyLCJqdGkiOiI2M2UwNzYzMC1mYTg5LTRmMmItYWRhNy1hNDZmM2RiZjMxMjkiLCJ1c2VyX3V1aWQiOiI4M2VjZGVlZS1kYThjLTQ0MTEtODgzZS03NGQyZWY5ZTRlN2UifQ.9iZyO13_-GoemIWy0d0cG9KAaYyOSLw48uPGNMkkHJPcQ2hWF5RbPEXd5laRQF3CcrwA5mfo98_XQ6ljLEPdtw',
+  },
+};
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -13,11 +19,13 @@ const transporter = nodemailer.createTransport({
 });
 
 const CONTACT_MESSAGE_FIELDS = {
-  phone: 'Phone',
+  name: 'Name',
   email: 'Email',
   message: 'Message',
+  phone: 'Phone',
   topic: 'Topic',
-  subject: 'Subject',
+  time: 'Time',
+  duration: 'Duration (hour)',
 };
 
 const generateEmailContent = data => {
@@ -43,16 +51,37 @@ const generateEmailContent = data => {
 const handler = async (req, res) => {
   if (req.method === 'POST') {
     const data = JSON.parse(req.body);
-    if (!data || !data.topic?.length || !data.email || !data.subject) {
+    const { topic, scheduled, duration, phone } = data;
+    if (!data || !topic?.length || !scheduled) {
       return res.status(400).send({ message: 'Bad request' });
     }
+
+    const eventUrl = scheduled.replace(/\/invitee.*/gi, '');
+
+    const eventRespose = await fetch(eventUrl, calendlyOption);
+    const eventJson = await eventRespose.json();
+    const time = eventJson?.resource?.start_time || '';
+
+    const inviteeRespose = await fetch(scheduled, calendlyOption);
+    const inviteeJson = await inviteeRespose.json();
+    const { name, email, questions_and_answers } = inviteeJson?.resource || {};
+
+    const content = {
+      time,
+      name,
+      email,
+      message: questions_and_answers[0].answer,
+      topic,
+      duration,
+      phone,
+    };
 
     try {
       await transporter.sendMail({
         from: email,
         to: toEmail,
-        ...generateEmailContent(data),
-        subject: data.subject,
+        ...generateEmailContent(content),
+        subject: `xspaceship - coaching - ${name} - ${email}`,
       });
 
       return res.status(200).json({ success: true });
