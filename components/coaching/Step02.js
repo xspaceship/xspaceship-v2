@@ -10,7 +10,7 @@ const Step02 = ({ value, onChange }) => {
     <div>
       <InlineWidget
         isLoading={false}
-        url="https://calendly.com/xspaceship-engineering/test-1-hour"
+        url="https://calendly.com/xspaceship/coaching-1-hour"
         prefill={{
           name: value.email,
           email: value.email,

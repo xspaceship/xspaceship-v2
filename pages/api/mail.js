@@ -2,11 +2,11 @@ import nodemailer from 'nodemailer';
 
 const email = 'engineering@xspaceship.com';
 const pass = 'zsdlniobvsrvnqxy';
-const toEmail = 'engineering@xspaceship.com';
+const toEmail = 'hello@xspaceship.com';
 const calendlyOption = {
   headers: {
     authorization:
-      'Bearer eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNjgzMjU5NTcyLCJqdGkiOiI2M2UwNzYzMC1mYTg5LTRmMmItYWRhNy1hNDZmM2RiZjMxMjkiLCJ1c2VyX3V1aWQiOiI4M2VjZGVlZS1kYThjLTQ0MTEtODgzZS03NGQyZWY5ZTRlN2UifQ.9iZyO13_-GoemIWy0d0cG9KAaYyOSLw48uPGNMkkHJPcQ2hWF5RbPEXd5laRQF3CcrwA5mfo98_XQ6ljLEPdtw',
+      'Bearer eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNjgzNDI4NTExLCJqdGkiOiJkMTBhZWIzYS01OGJmLTQ3MjYtODE1My0xODE1MzNjMzZmMDciLCJ1c2VyX3V1aWQiOiI4NmZlMjE0Yi1iYjhiLTQ1NmUtYmEyZS00Y2ZiNTlmNGIyNGIifQ.mJ1AA0Y85meWPlzjD5nM4KyyPoIgoFTMNOr-4xNjE9ldOnYbThqzceuHD5cYyEfsHiXK20nJ-XeLJoQxu-J_zg',
   },
 };
 
