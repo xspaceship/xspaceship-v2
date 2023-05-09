@@ -5,8 +5,9 @@ import Venmo from 'public/images/coaching/venmo.png';
 const Step03 = () => {
   return (
     <div className="p-8 text-center flex flex-col items-center">
-      <p className="text-tc04 mb-8">
-        Pay with Venmo to confirm the appointment:
+      <p className="text-tc04 mb-2">
+        Pay with Venmo to confirm the appointment. Without payment, you
+        appointment will be cancelled.
       </p>
       <p className="text-tc04 mb-2">@tpham01</p>
       <div className="m-5 w-[200px]">
