@@ -134,11 +134,11 @@ const Coaching = ({ title, description, ogImage }) => {
                       <div className="flex flex-col gap-4">
                         <div className="flex justify-between gap-4 text-sm text-tc04">
                           <span>Coaching rates</span>
-                          <span>$200/hour</span>
+                          <span>$170/hour</span>
                         </div>
                         <div className="flex justify-between gap-4 text-sm text-tc04">
                           <span>The 1st hour promotion</span>
-                          <span>$150/hour</span>
+                          <span>$120/hour</span>
                         </div>
                         <div className="flex justify-between gap-4 text-sm text-tc04">
                           <span>Duration</span>
